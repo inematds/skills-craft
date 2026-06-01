@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 5 — O Que Pensar | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-teal-400 bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">TRILHA 5 · FINAL</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 O Que Pensar</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Os modelos mentais: quando vale (e quando NÃO vale) uma skill, os anti-padrões que matam skills, e como publicar, versionar e medir — do GitHub ao portal.</p>
+      <svg viewBox="0 0 640 180" role="img" aria-label="Diagrama do ciclo de decisão e publicação de uma skill" class="w-full h-auto max-w-2xl my-6">
+        <defs>
+          <filter id="heroglow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <linearGradient id="herograd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+        </defs>
+        <line x1="80" y1="90" x2="560" y2="90" stroke="url(#herograd)" stroke-width="2" filter="url(#heroglow)" opacity="0.7"/>
+        <g filter="url(#heroglow)">
+          <circle cx="80" cy="90" r="26" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/>
+          <circle cx="240" cy="90" r="26" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="400" cy="90" r="26" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/>
+          <circle cx="560" cy="90" r="26" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="2"/>
+        </g>
+        <text x="80" y="95" text-anchor="middle" font-size="22" fill="#14b8a6">🧭</text>
+        <text x="240" y="95" text-anchor="middle" font-size="22" fill="#38bdf8">⚠️</text>
+        <text x="400" y="95" text-anchor="middle" font-size="22" fill="#14b8a6">🚀</text>
+        <text x="560" y="95" text-anchor="middle" font-size="22" fill="#38bdf8">📈</text>
+        <text x="80" y="145" text-anchor="middle" font-size="13" fill="#9ca3af">Decidir</text>
+        <text x="240" y="145" text-anchor="middle" font-size="13" fill="#9ca3af">Evitar erros</text>
+        <text x="400" y="145" text-anchor="middle" font-size="13" fill="#9ca3af">Publicar</text>
+        <text x="560" y="145" text-anchor="middle" font-size="13" fill="#9ca3af">Medir</text>
+      </svg>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">12</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">85</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Avançado</div><div class="text-xs text-neutral-400">Nível</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- MÓDULO 5.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.1</span><span class="text-xs text-neutral-500">~42 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🧭 Quando vale uma skill (e os anti-padrões)</h3>
+        <p class="text-neutral-400 text-sm">A árvore de decisão completa: workflow repetível ou one-off? Skill, CLAUDE.md, MCP ou subagente? E os três anti-padrões que matam skills antes mesmo de disparar.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">✅</span>
+            <div><span class="font-medium">Quando VALE</span><span class="text-neutral-500 text-sm ml-2">- os quatro sinais verdes</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma skill se justifica quando há um workflow repetível, conhecimento de contexto do time, output verificável e tarefa multi-step. Quando ≥2 desses sinais aparecem, vale empacotar.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill mal aplicada vira ruído no contexto. Saber os sinais verdes evita criar skills que ninguém dispara — e que poluem o catálogo.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">workflow repetível · conhecimento de contexto · output verificável · multi-step</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🚫</span>
+            <div><span class="font-medium">Quando NÃO vale</span><span class="text-neutral-500 text-sm ml-2">- os sinais vermelhos</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Tarefa one-off, algo que o modelo já faz sozinho com qualidade, ou uma query simples de 1 passo não precisam de skill. Skill aqui é over-engineering.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A maioria das skills ruins é criada para problemas que não existiam. Reconhecer o anti-caso poupa esforço e mantém o agente leve.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">tarefa one-off · capacidade nativa do modelo · query de 1 passo</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🌳</span>
+            <div><span class="font-medium">Skill vs CLAUDE.md vs MCP vs subagente</span><span class="text-neutral-500 text-sm ml-2">- a árvore de decisão</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Quatro ferramentas, quatro propósitos: CLAUDE.md para regras sempre-ativas, MCP para conectar serviços externos, subagente para trabalho isolado paralelo, e skill para conhecimento que dispara sob demanda.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Usar a ferramenta errada é o erro mais comum. Skill não é MCP, e regra global não é skill. A árvore de decisão resolve em segundos.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">sempre-ativo vs sob-demanda · conhecimento vs conexão vs isolamento</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">🐘</span>
+            <div><span class="font-medium">Anti-padrão: escopo gigante</span><span class="text-neutral-500 text-sm ml-2">- "tudo-sobre-X"</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A skill "tudo-sobre-react" de 800 linhas que tenta cobrir tudo. O agente absorve mal, a description fica vaga e o trigger nunca acerta. Divida em skills atômicas.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escopo gigante é o anti-padrão mais sedutor — parece eficiente, mas degrada tanto o trigger quanto a qualidade da resposta.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">atomicidade · uma responsabilidade · &lt;500 linhas · split por gatilho</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">📢</span>
+            <div><span class="font-medium">Anti-padrão: MUSTs e overfit</span><span class="text-neutral-500 text-sm ml-2">- maiúsculas que não ensinam</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Encher a skill de "VOCÊ DEVE" em maiúscula e colar exemplos específicos demais. O modelo decora os casos e falha fora deles. Explique o PORQUÊ e generalize além dos exemplos.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Overfit é silencioso: a skill passa nos seus testes e quebra na vida real. Entender o porquê torna a instrução robusta.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">explicar o porquê · generalização · imperativo calmo · evitar overfit</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🎯</span>
+            <div><span class="font-medium">Anti-padrão: description vaga</span><span class="text-neutral-500 text-sm ml-2">- gatilho ruim mata a skill</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A description é o gatilho. Se ela for vaga ("ajuda com código"), a skill nunca dispara — ou dispara errado, no contexto errado. Diga O QUE faz E QUANDO usar.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma skill brilhante com description ruim é invisível. O gatilho é o único nível sempre no contexto — vale ouro investir nele.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">o que + quando · um pouco pushy · evitar subdisparo · triggers explícitos</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-5-1')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-5-1.html" class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MÓDULO 5.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.2</span><span class="text-xs text-neutral-500">~43 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🚀 Publicar, versionar e medir</h3>
+        <p class="text-neutral-400 text-sm">Do repo GitHub ao skills.sh: estrutura de pasta, versionamento via git, aparecer no diretório, medir triggering, segurança e o ciclo de vida completo da skill.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">📁</span>
+            <div><span class="font-medium">Estrutura de repo pra publicar</span><span class="text-neutral-500 text-sm ml-2">- pasta skills/ + resources</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um repo publicável tem uma pasta <code>skills/</code>, e dentro dela cada skill com seu <code>SKILL.md</code> mais os resources (scripts/, references/, assets/). Convenção que o CLI e o skills.sh entendem.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Estrutura fora do padrão = skill não é indexada nem instalável. A convenção é o passaporte para o ecossistema.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">pasta skills/ · SKILL.md · scripts/ references/ assets/ · progressive disclosure</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🔀</span>
+            <div><span class="font-medium">Versionar via git</span><span class="text-neutral-500 text-sm ml-2">- symlinks e npx skills update</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills vivem em git. Como são instaladas como symlinks, um <code>git push</code> + <code>npx skills update</code> propaga a nova versão para todos que instalaram. Versionar bem importa.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você não controla só seu repo — controla o comportamento de quem instalou. Versionamento descuidado quebra agentes alheios.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">git como fonte · symlink · npx skills update · changelog</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🌐</span>
+            <div><span class="font-medium">Aparecer no skills.sh</span><span class="text-neutral-500 text-sm ml-2">- install count e descoberta</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O skills.sh indexa repos públicos e mostra install count como métrica social. É a vitrine: das 39.366 skills do catálogo, só 0,3% passam de 100k installs.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Descoberta é metade do jogo. Entender a lei de potência do catálogo calibra expectativas e estratégia de naming/description.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">install count · leaderboard · lei de potência · 53,9M installs somadas</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">📊</span>
+            <div><span class="font-medium">Medir triggering</span><span class="text-neutral-500 text-sm ml-2">- evals de gatilho</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A description dispara nos casos certos? Você mede com evals de gatilho: listas de queries should-trigger e should-not-trigger, mais os near-misses que confundem.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Triggering é o KPI mais ignorado. Sem medir, você não sabe se a skill some no contexto certo ou invade o errado.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">should-trigger · should-not-trigger · near-miss · precisão/recall do gatilho</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🛡️</span>
+            <div><span class="font-medium">Princípio da não-surpresa</span><span class="text-neutral-500 text-sm ml-2">- segurança e confiança</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma skill não deve fazer nada que o usuário não esperaria pela description — nada de deletar arquivos, enviar dados ou rodar comandos destrutivos surpresa.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skills rodam com a confiança do usuário. Uma surpresa destrutiva queima a reputação do repo inteiro — e do ecossistema.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">não-surpresa · least privilege · transparência · auditar resources</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">♻️</span>
+            <div><span class="font-medium">O ciclo de vida</span><span class="text-neutral-500 text-sm ml-2">- publicar → observar → iterar</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-teal-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Publicar não é o fim: é publicar → observar installs e feedback → iterar na description e no corpo → republicar. E onde continuar aprendendo: o portal INEMA.CLUB.</p></div>
+            <div><span class="text-teal-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill é produto vivo. O ciclo de vida fecha o curso e te dá o mapa de para onde ir depois da sua primeira skill.</p></div>
+            <div><span class="text-teal-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">publicar · observar · iterar · INEMA.CLUB</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-5-2')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-5-2.html" class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MAPA DA TRILHA -->
+    <h2 class="text-2xl font-bold mb-6 mt-12">Mapa da trilha</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <a href="modulo-5-1.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-teal-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.1</span><span class="text-xs text-neutral-500">~42 min</span></div>
+        <div class="font-semibold mb-1">🧭 Quando vale uma skill (e os anti-padrões)</div>
+        <p class="text-neutral-400 text-sm">Decida em 30 segundos: skill ou não? E pare de matar suas skills sem querer.</p>
+      </a>
+      <a href="modulo-5-2.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-teal-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.2</span><span class="text-xs text-neutral-500">~43 min</span></div>
+        <div class="font-semibold mb-1">🚀 Publicar, versionar e medir</div>
+        <p class="text-neutral-400 text-sm">Do git ao skills.sh. Publique, meça o gatilho e itere como produto vivo.</p>
+      </a>
+    </div>
+
+    <!-- CTA portal -->
+    <div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8 mb-8">
+      <h2 class="text-2xl font-bold mb-3 flex items-center"><span class="mr-3">🎓</span> Fim da jornada — e começo da sua</h2>
+      <p class="text-neutral-300 mb-4">Esta é a última trilha do curso. Você já sabe o panorama, a qualidade, a anatomia, o loop de criação e agora os modelos mentais de decisão e publicação. O próximo passo é publicar sua primeira skill — e continuar aprendendo no portal.</p>
+      <div class="flex justify-start">
+        <a href="https://inema.club" target="_blank" class="px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors">Explorar mais cursos no INEMA.CLUB →</a>
+      </div>
+    </div>
+
+    <!-- NAV PREV/NEXT -->
+    <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+      <a href="../trilha4/index.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors text-center">← Trilha 4 · Criar</a>
+      <a href="https://inema.club" target="_blank" class="px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors text-center">Explorar mais cursos no INEMA.CLUB →</a>
+    </div>
+
+  </main>
+
+  <!-- MODAIS -->
+  <div id="modal-5-1" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.1</span><span class="font-semibold">Quando vale uma skill (e os anti-padrões)</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-5-1.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+  <div id="modal-5-2" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.2</span><span class="font-semibold">Publicar, versionar e medir</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-5-2.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button){const i=button.closest('.topic-item');const e=i.querySelector('.topic-explanation');const c=button.closest('.bg-dark-800');c.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')});e.classList.toggle('active');}
+    function openModal(id){const m=document.getElementById(id);if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';}}
+    function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));document.body.style.overflow='auto';}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

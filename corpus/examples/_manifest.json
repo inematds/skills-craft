@@ -1,0 +1,202 @@
+[
+ {
+  "id": "vercel-labs/skills/find-skills",
+  "group": "Other / Niche",
+  "installs": 1802925,
+  "file": "vercel-labs__skills__find-skills.SKILL.md",
+  "path": "skills/find-skills/SKILL.md",
+  "bytes": 5430
+ },
+ {
+  "id": "vercel-labs/agent-browser/agent-browser",
+  "group": "AI / LLM / Agents",
+  "installs": 332522,
+  "file": "vercel-labs__agent-browser__agent-browser.SKILL.md",
+  "path": "skills/agent-browser/SKILL.md",
+  "bytes": 3261
+ },
+ {
+  "id": "anthropics/skills/frontend-design",
+  "group": "Web & Frontend",
+  "installs": 488299,
+  "file": "anthropics__skills__frontend-design.SKILL.md",
+  "path": "skills/frontend-design/SKILL.md",
+  "bytes": 4440
+ },
+ {
+  "id": "anthropics/skills/skill-creator",
+  "group": "AI / LLM / Agents",
+  "installs": 246327,
+  "file": "anthropics__skills__skill-creator.SKILL.md",
+  "path": "skills/skill-creator/SKILL.md",
+  "bytes": 32987
+ },
+ {
+  "id": "microsoft/azure-skills/azure-ai",
+  "group": "DevOps & Cloud",
+  "installs": 358744,
+  "file": "microsoft__azure-skills__azure-ai.SKILL.md",
+  "path": "skills/azure-ai/SKILL.md",
+  "bytes": 3268
+ },
+ {
+  "id": "microsoft/azure-skills/microsoft-foundry",
+  "group": "DevOps & Cloud",
+  "installs": 360755,
+  "file": "microsoft__azure-skills__microsoft-foundry.SKILL.md",
+  "path": "skills/microsoft-foundry/SKILL.md",
+  "bytes": 19835
+ },
+ {
+  "id": "supabase/agent-skills/supabase-postgres-best-practices",
+  "group": "Data & Databases",
+  "installs": 203163,
+  "file": "supabase__agent-skills__supabase-postgres-best-practices.SKILL.md",
+  "path": "skills/supabase-postgres-best-practices/SKILL.md",
+  "bytes": 2576
+ },
+ {
+  "id": "supabase/agent-skills/supabase",
+  "group": "Data & Databases",
+  "installs": 99805,
+  "file": "supabase__agent-skills__supabase.SKILL.md",
+  "path": "skills/supabase/SKILL.md",
+  "bytes": 11229
+ },
+ {
+  "id": "larksuite/cli/lark-doc",
+  "group": "Docs & Content",
+  "installs": 188340,
+  "file": "larksuite__cli__lark-doc.SKILL.md",
+  "path": "skills/lark-doc/SKILL.md",
+  "bytes": 5375
+ },
+ {
+  "id": "larksuite/cli/lark-base",
+  "group": "Dev Tooling & Code",
+  "installs": 187929,
+  "file": "larksuite__cli__lark-base.SKILL.md",
+  "path": "skills/lark-base/SKILL.md",
+  "bytes": 26922
+ },
+ {
+  "id": "larksuite/cli/lark-calendar",
+  "group": "Productivity & PM",
+  "installs": 187082,
+  "file": "larksuite__cli__lark-calendar.SKILL.md",
+  "path": "skills/lark-calendar/SKILL.md",
+  "bytes": 7504
+ },
+ {
+  "id": "runcomfy-com/skills/gpt-image-2",
+  "group": "Media & Creative",
+  "installs": 76590,
+  "file": "runcomfy-com__skills__gpt-image-2.SKILL.md",
+  "path": "gpt-image-2/SKILL.md",
+  "bytes": 10520
+ },
+ {
+  "id": "larksuite/cli/lark-im",
+  "group": "Dev Tooling & Code",
+  "installs": 187660,
+  "file": "larksuite__cli__lark-im.SKILL.md",
+  "path": "skills/lark-im/SKILL.md",
+  "bytes": 11824
+ },
+ {
+  "id": "larksuite/cli/lark-workflow-standup-report",
+  "group": "Automation & Workflows",
+  "installs": 185661,
+  "file": "larksuite__cli__lark-workflow-standup-report.SKILL.md",
+  "path": "skills/lark-workflow-standup-report/SKILL.md",
+  "bytes": 3002
+ },
+ {
+  "id": "larksuite/cli/lark-workflow-meeting-summary",
+  "group": "Automation & Workflows",
+  "installs": 185901,
+  "file": "larksuite__cli__lark-workflow-meeting-summary.SKILL.md",
+  "path": "skills/lark-workflow-meeting-summary/SKILL.md",
+  "bytes": 2978
+ },
+ {
+  "id": "larksuite/cli/lark-openapi-explorer",
+  "group": "Backend & APIs",
+  "installs": 185694,
+  "file": "larksuite__cli__lark-openapi-explorer.SKILL.md",
+  "path": "skills/lark-openapi-explorer/SKILL.md",
+  "bytes": 3165
+ },
+ {
+  "id": "heygen-com/hyperframes/waapi",
+  "group": "Backend & APIs",
+  "installs": 52440,
+  "file": "heygen-com__hyperframes__waapi.SKILL.md",
+  "path": "skills/waapi/SKILL.md",
+  "bytes": 3217
+ },
+ {
+  "id": "larksuite/cli/lark-slides",
+  "group": "Office & Files",
+  "installs": 139627,
+  "file": "larksuite__cli__lark-slides.SKILL.md",
+  "path": "skills/lark-slides/SKILL.md",
+  "bytes": 12842
+ },
+ {
+  "id": "antfu/skills/slidev",
+  "group": "Office & Files",
+  "installs": 9259,
+  "file": "antfu__skills__slidev.SKILL.md",
+  "path": "skills/slidev/SKILL.md",
+  "bytes": 8782
+ },
+ {
+  "id": "lllllllama/ai-paper-reproduction-skill/minimal-run-and-audit",
+  "group": "Security",
+  "installs": 139587,
+  "file": "lllllllama__ai-paper-reproduction-skill__minimal-run-and-audit.SKILL.md",
+  "path": "skills/minimal-run-and-audit/SKILL.md",
+  "bytes": 2717
+ },
+ {
+  "id": "coreyhaines31/marketingskills/seo-audit",
+  "group": "Security",
+  "installs": 125407,
+  "file": "coreyhaines31__marketingskills__seo-audit.SKILL.md",
+  "path": "skills/seo-audit/SKILL.md",
+  "bytes": 16424
+ },
+ {
+  "id": "obra/superpowers/test-driven-development",
+  "group": "Testing & QA",
+  "installs": 107848,
+  "file": "obra__superpowers__test-driven-development.SKILL.md",
+  "path": "skills/test-driven-development/SKILL.md",
+  "bytes": 9857
+ },
+ {
+  "id": "coreyhaines31/marketingskills/marketing-psychology",
+  "group": "Marketing & SEO",
+  "installs": 84784,
+  "file": "coreyhaines31__marketingskills__marketing-psychology.SKILL.md",
+  "path": "skills/marketing-psychology/SKILL.md",
+  "bytes": 21836
+ },
+ {
+  "id": "coreyhaines31/marketingskills/programmatic-seo",
+  "group": "Marketing & SEO",
+  "installs": 77808,
+  "file": "coreyhaines31__marketingskills__programmatic-seo.SKILL.md",
+  "path": "skills/programmatic-seo/SKILL.md",
+  "bytes": 7090
+ },
+ {
+  "id": "stripe/ai/stripe-best-practices",
+  "group": "Finance & Business",
+  "installs": 8773,
+  "file": "stripe__ai__stripe-best-practices.SKILL.md",
+  "path": "skills/stripe-best-practices/SKILL.md",
+  "bytes": 3698
+ }
+]

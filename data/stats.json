@@ -1,0 +1,83 @@
+{
+ "total": 39366,
+ "totalInstalls": 53926532,
+ "withInstalls": 39366,
+ "zero": 0,
+ "sourceRepos": 5075,
+ "buckets": {
+  "0": 0,
+  "1-99": 23685,
+  "100-999": 12108,
+  "1k-9.9k": 3016,
+  "10k-99k": 426,
+  "100k+": 131
+ },
+ "top100Share": 43.7,
+ "groups": {
+  "Other / Niche": {
+   "count": 11872,
+   "installs": 13013850
+  },
+  "Web & Frontend": {
+   "count": 4694,
+   "installs": 4518476
+  },
+  "DevOps & Cloud": {
+   "count": 907,
+   "installs": 8306067
+  },
+  "AI / LLM / Agents": {
+   "count": 12693,
+   "installs": 12903993
+  },
+  "Media & Creative": {
+   "count": 550,
+   "installs": 1850322
+  },
+  "Data & Databases": {
+   "count": 1385,
+   "installs": 791537
+  },
+  "Docs & Content": {
+   "count": 364,
+   "installs": 1488371
+  },
+  "Dev Tooling & Code": {
+   "count": 796,
+   "installs": 4367503
+  },
+  "Productivity & PM": {
+   "count": 92,
+   "installs": 206130
+  },
+  "Automation & Workflows": {
+   "count": 336,
+   "installs": 1031575
+  },
+  "Backend & APIs": {
+   "count": 2685,
+   "installs": 1383776
+  },
+  "Office & Files": {
+   "count": 249,
+   "installs": 243484
+  },
+  "Security": {
+   "count": 512,
+   "installs": 704721
+  },
+  "Testing & QA": {
+   "count": 1339,
+   "installs": 601740
+  },
+  "Marketing & SEO": {
+   "count": 582,
+   "installs": 2302323
+  },
+  "Finance & Business": {
+   "count": 310,
+   "installs": 212664
+  }
+ },
+ "generatedNote": "skills.sh harvest"
+}

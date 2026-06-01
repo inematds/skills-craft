@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criando Agent Skills — Do Catálogo à Sua Primeira Skill | INEMA.CLUB</title>
+  <meta name="description" content="Curso data-driven sobre Agent Skills: análise de 39.366 skills reais do skills.sh, classificação por grupos, as melhores com exemplos, e como criar a sua.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span>
+            <span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="curso/trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="curso/trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="curso/trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="curso/trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="curso/trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-emerald-900/30 via-dark-900 to-dark-900 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-6">CURSO · DATA-DRIVEN · GRATUITO</span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-6">Criando <span class="text-emerald-400">Agent Skills</span><br>Do Catálogo à Sua Primeira Skill</h1>
+      <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mb-8">
+        Em vez de teoria solta, este curso parte de uma análise real de <strong class="text-emerald-400">39.366 skills</strong> coletadas do <code class="bg-dark-700 px-1.5 py-0.5 rounded text-sm">skills.sh</code>. Você vai entender o ecossistema, reconhecer o que é uma skill <em>boa</em>, dissecar as melhores e aprender a criar a sua — com o que realmente importa.
+      </p>
+
+      <!-- HERO SVG -->
+      <svg viewBox="0 0 760 200" role="img" aria-label="Funil do ecossistema: 39 mil skills filtradas até a sua skill" class="w-full h-auto max-w-3xl mb-10">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#38bdf8"/>
+          </linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g opacity="0.12" stroke="#10b981">
+          <line x1="0" y1="50" x2="760" y2="50"/><line x1="0" y1="100" x2="760" y2="100"/><line x1="0" y1="150" x2="760" y2="150"/>
+        </g>
+        <rect x="20" y="40" width="180" height="120" rx="10" fill="#10b981" opacity="0.10" stroke="#10b981" stroke-width="1.5"/>
+        <text x="110" y="95" text-anchor="middle" fill="#10b981" font-size="26" font-weight="bold">39.366</text>
+        <text x="110" y="120" text-anchor="middle" fill="#9ca3af" font-size="12">skills no catálogo</text>
+        <path d="M200 70 L300 90" stroke="url(#hg)" stroke-width="2" filter="url(#glow)"/>
+        <path d="M200 130 L300 110" stroke="url(#hg)" stroke-width="2" filter="url(#glow)"/>
+        <rect x="300" y="60" width="160" height="80" rx="10" fill="#38bdf8" opacity="0.10" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="380" y="100" text-anchor="middle" fill="#38bdf8" font-size="22" font-weight="bold">131</text>
+        <text x="380" y="122" text-anchor="middle" fill="#9ca3af" font-size="11">com 100k+ instalações</text>
+        <path d="M460 90 L560 100" stroke="url(#hg)" stroke-width="2" filter="url(#glow)"/>
+        <path d="M460 110 L560 100" stroke="url(#hg)" stroke-width="2" filter="url(#glow)"/>
+        <rect x="560" y="70" width="180" height="60" rx="10" fill="#FACC15" opacity="0.12" stroke="#FACC15" stroke-width="1.5"/>
+        <text x="650" y="98" text-anchor="middle" fill="#FACC15" font-size="16" font-weight="bold">a SUA skill</text>
+        <text x="650" y="118" text-anchor="middle" fill="#9ca3af" font-size="11">feita do jeito certo</text>
+      </svg>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="curso/trilha1/index.html" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-center transition-colors">Começar pela Trilha 1 →</a>
+        <a href="#trilhas" class="px-8 py-4 bg-dark-700 hover:bg-dark-600 text-neutral-200 rounded-xl font-bold text-center transition-colors">Ver as 5 trilhas</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <p class="text-sm text-neutral-500 mb-4 text-center">O retrato do ecossistema que serve de base para o curso (coleta via API do skills.sh):</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+        <div class="text-3xl font-extrabold text-emerald-400">39.366</div>
+        <div class="text-sm text-neutral-400 mt-1">skills catalogadas</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+        <div class="text-3xl font-extrabold text-blue-400">5.075</div>
+        <div class="text-sm text-neutral-400 mt-1">repositórios fonte</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+        <div class="text-3xl font-extrabold text-purple-400">53,9M</div>
+        <div class="text-sm text-neutral-400 mt-1">instalações somadas</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-6 border border-dark-600 text-center">
+        <div class="text-3xl font-extrabold text-amber-400">16</div>
+        <div class="text-sm text-neutral-400 mt-1">grupos temáticos</div>
+      </div>
+    </div>
+    <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mt-6">
+      <p class="text-neutral-300 text-sm"><span class="text-primary font-semibold">📊 O dado que muda tudo:</span> 60% das skills têm menos de 100 instalações e apenas <strong>131</strong> passam de 100 mil. As <strong>100 mais instaladas</strong> concentram <strong>43,7%</strong> de todos os installs. O ecossistema é uma lei de potência — e este curso ensina a jogar do lado certo da curva.</p>
+    </div>
+  </section>
+
+  <!-- TRILHAS -->
+  <section id="trilhas" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h2 class="text-3xl font-bold mb-2">As 5 trilhas</h2>
+    <p class="text-neutral-400 mb-8">Um arco do panorama à prática: entender → reconhecer → dissecar → criar → pensar.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <a href="curso/trilha1/index.html" class="block bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 hover:border-emerald-400 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="text-emerald-400 font-bold text-sm">TRILHA 1</span><span class="text-xs text-neutral-500">2 módulos</span></div>
+        <h3 class="text-2xl font-bold mb-2">🌍 Panorama do Ecossistema</h3>
+        <p class="text-neutral-400 text-sm">O que é uma agent skill, por que o formato venceu, e o mapa real do skills.sh: 39k skills, a lei de potência e os 16 grupos.</p>
+      </a>
+
+      <a href="curso/trilha2/index.html" class="block bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 hover:border-blue-400 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="text-blue-400 font-bold text-sm">TRILHA 2</span><span class="text-xs text-neutral-500">2 módulos</span></div>
+        <h3 class="text-2xl font-bold mb-2">⭐ Qualidade & As Melhores</h3>
+        <p class="text-neutral-400 text-sm">Como ler sinais de qualidade (installs, fonte, descrição) e uma vitrine das melhores skills por grupo, com exemplos reais.</p>
+      </a>
+
+      <a href="curso/trilha3/index.html" class="block bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 hover:border-purple-400 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="text-purple-400 font-bold text-sm">TRILHA 3</span><span class="text-xs text-neutral-500">2 módulos</span></div>
+        <h3 class="text-2xl font-bold mb-2">🧬 Anatomia de uma Skill</h3>
+        <p class="text-neutral-400 text-sm">SKILL.md por dentro: frontmatter, corpo, progressive disclosure em 3 níveis, e a description que faz a skill disparar na hora certa.</p>
+      </a>
+
+      <a href="curso/trilha4/index.html" class="block bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 hover:border-amber-400 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="text-amber-400 font-bold text-sm">TRILHA 4</span><span class="text-xs text-neutral-500">2 módulos</span></div>
+        <h3 class="text-2xl font-bold mb-2">🛠️ Como Criar (o loop)</h3>
+        <p class="text-neutral-400 text-sm">Do intent ao primeiro draft, e o loop de testar → avaliar → iterar com evals e otimização de description. O método do skill-creator.</p>
+      </a>
+
+      <a href="curso/trilha5/index.html" class="block bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 hover:border-teal-400 transition-colors md:col-span-2">
+        <div class="flex items-center justify-between mb-3"><span class="text-teal-400 font-bold text-sm">TRILHA 5</span><span class="text-xs text-neutral-500">2 módulos</span></div>
+        <h3 class="text-2xl font-bold mb-2">🧠 O Que Pensar</h3>
+        <p class="text-neutral-400 text-sm">Os modelos mentais: quando vale (e quando NÃO vale) uma skill, os anti-padrões que matam skills, e como publicar, versionar e medir — do GitHub ao portal.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BEST-OF PREVIEW -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h2 class="text-2xl font-bold mb-6">🏆 As 5 mais instaladas do catálogo</h2>
+    <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+      <div class="divide-y divide-dark-600">
+        <div class="flex items-center justify-between px-6 py-4"><div><span class="font-semibold">find-skills</span> <span class="text-neutral-500 text-sm">· vercel-labs/skills</span></div><span class="text-emerald-400 font-bold">1.802.925</span></div>
+        <div class="flex items-center justify-between px-6 py-4"><div><span class="font-semibold">frontend-design</span> <span class="text-neutral-500 text-sm">· anthropics/skills</span></div><span class="text-emerald-400 font-bold">488.299</span></div>
+        <div class="flex items-center justify-between px-6 py-4"><div><span class="font-semibold">vercel-react-best-practices</span> <span class="text-neutral-500 text-sm">· vercel-labs/agent-skills</span></div><span class="text-emerald-400 font-bold">443.261</span></div>
+        <div class="flex items-center justify-between px-6 py-4"><div><span class="font-semibold">microsoft-foundry</span> <span class="text-neutral-500 text-sm">· microsoft/azure-skills</span></div><span class="text-emerald-400 font-bold">360.755</span></div>
+        <div class="flex items-center justify-between px-6 py-4"><div><span class="font-semibold">web-design-guidelines</span> <span class="text-neutral-500 text-sm">· vercel-labs/agent-skills</span></div><span class="text-emerald-400 font-bold">358.627</span></div>
+      </div>
+    </div>
+    <p class="text-neutral-500 text-sm mt-3">A Trilha 2 destrincha por que estas (e as melhores de cada grupo) chegaram lá.</p>
+  </section>
+
+  <!-- CTA PORTAL -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-2xl border border-emerald-500/30 p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Faz parte da biblioteca INEMA.CLUB</h2>
+      <p class="text-neutral-400 mb-6 max-w-2xl mx-auto">Mais de 100 cursos gratuitos sobre IA, agentes e automação. Comece por aqui e explore o resto.</p>
+      <a href="https://inema.club" target="_blank" class="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white rounded-xl font-bold transition-colors">Ver todos os cursos no portal →</a>
+    </div>
+  </section>
+
+  <footer class="border-t border-dark-600 py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

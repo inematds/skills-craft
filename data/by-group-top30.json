@@ -1,0 +1,2914 @@
+{
+ "Other / Niche": [
+  {
+   "id": "vercel-labs/skills/find-skills",
+   "name": "find-skills",
+   "installs": 1802925,
+   "source": "vercel-labs/skills"
+  },
+  {
+   "id": "remotion-dev/skills/remotion-best-practices",
+   "name": "remotion-best-practices",
+   "installs": 343133,
+   "source": "remotion-dev/skills"
+  },
+  {
+   "id": "mattpocock/skills/grill-me",
+   "name": "grill-me",
+   "installs": 245252,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "soultrace-ai/soultrace-skill/soultrace",
+   "name": "soultrace",
+   "installs": 207102,
+   "source": "soultrace-ai/soultrace-skill"
+  },
+  {
+   "id": "mattpocock/skills/improve-codebase-architecture",
+   "name": "improve-codebase-architecture",
+   "installs": 198452,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "obra/superpowers/brainstorming",
+   "name": "brainstorming",
+   "installs": 194823,
+   "source": "obra/superpowers"
+  },
+  {
+   "id": "mattpocock/skills/tdd",
+   "name": "tdd",
+   "installs": 188850,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "xixu-me/skills/secure-linux-web-hosting",
+   "name": "secure-linux-web-hosting",
+   "installs": 183966,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "xixu-me/skills/opensource-guide-coach",
+   "name": "opensource-guide-coach",
+   "installs": 183733,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "xixu-me/skills/tzst",
+   "name": "tzst",
+   "installs": 180786,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "mattpocock/skills/to-prd",
+   "name": "to-prd",
+   "installs": 170377,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/to-issues",
+   "name": "to-issues",
+   "installs": 163789,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/diagnose",
+   "name": "diagnose",
+   "installs": 163074,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "roin-orca/skills/simple",
+   "name": "simple",
+   "installs": 161983,
+   "source": "roin-orca/skills"
+  },
+  {
+   "id": "mattpocock/skills/write-a-skill",
+   "name": "write-a-skill",
+   "installs": 158240,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/zoom-out",
+   "name": "zoom-out",
+   "installs": 157748,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/setup-matt-pocock-skills",
+   "name": "setup-matt-pocock-skills",
+   "installs": 156413,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/caveman",
+   "name": "caveman",
+   "installs": 153012,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "open.feishu.cn/lark-approval",
+   "name": "lark-approval",
+   "installs": 147333,
+   "source": "open.feishu.cn"
+  },
+  {
+   "id": "open.feishu.cn/lark-mail",
+   "name": "lark-mail",
+   "installs": 147129,
+   "source": "open.feishu.cn"
+  },
+  {
+   "id": "open.feishu.cn/lark-skill-maker",
+   "name": "lark-skill-maker",
+   "installs": 147060,
+   "source": "open.feishu.cn"
+  },
+  {
+   "id": "mattpocock/skills/triage",
+   "name": "triage",
+   "installs": 145460,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "lllllllama/ai-paper-reproduction-skill/paper-context-resolver",
+   "name": "paper-context-resolver",
+   "installs": 139939,
+   "source": "lllllllama/ai-paper-reproduction-skill"
+  },
+  {
+   "id": "lllllllama/ai-paper-reproduction-skill/repo-intake-and-plan",
+   "name": "repo-intake-and-plan",
+   "installs": 139616,
+   "source": "lllllllama/ai-paper-reproduction-skill"
+  },
+  {
+   "id": "lllllllama/ai-paper-reproduction-skill/env-and-assets-bootstrap",
+   "name": "env-and-assets-bootstrap",
+   "installs": 139597,
+   "source": "lllllllama/ai-paper-reproduction-skill"
+  },
+  {
+   "id": "xixu-me/skills/develop-userscripts",
+   "name": "develop-userscripts",
+   "installs": 137884,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "mattpocock/skills/prototype",
+   "name": "prototype",
+   "installs": 117832,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/handoff",
+   "name": "handoff",
+   "installs": 110679,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "vercel-labs/next-skills/next-best-practices",
+   "name": "next-best-practices",
+   "installs": 97891,
+   "source": "vercel-labs/next-skills"
+  },
+  {
+   "id": "leonxlnx/taste-skill/high-end-visual-design",
+   "name": "high-end-visual-design",
+   "installs": 84417,
+   "source": "leonxlnx/taste-skill"
+  }
+ ],
+ "Web & Frontend": [
+  {
+   "id": "anthropics/skills/frontend-design",
+   "name": "frontend-design",
+   "installs": 488299,
+   "source": "anthropics/skills"
+  },
+  {
+   "id": "vercel-labs/agent-skills/vercel-react-best-practices",
+   "name": "vercel-react-best-practices",
+   "installs": 443261,
+   "source": "vercel-labs/agent-skills"
+  },
+  {
+   "id": "vercel-labs/agent-skills/web-design-guidelines",
+   "name": "web-design-guidelines",
+   "installs": 358627,
+   "source": "vercel-labs/agent-skills"
+  },
+  {
+   "id": "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+   "name": "ui-ux-pro-max",
+   "installs": 194672,
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill"
+  },
+  {
+   "id": "shadcn/ui/shadcn",
+   "name": "shadcn",
+   "installs": 170165,
+   "source": "shadcn/ui"
+  },
+  {
+   "id": "vercel-labs/agent-skills/vercel-react-native-skills",
+   "name": "vercel-react-native-skills",
+   "installs": 131735,
+   "source": "vercel-labs/agent-skills"
+  },
+  {
+   "id": "arvindrk/extract-design-system/extract-design-system",
+   "name": "extract-design-system",
+   "installs": 119355,
+   "source": "arvindrk/extract-design-system"
+  },
+  {
+   "id": "leonxlnx/taste-skill/design-taste-frontend",
+   "name": "design-taste-frontend",
+   "installs": 99009,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "leonxlnx/taste-skill/minimalist-ui",
+   "name": "minimalist-ui",
+   "installs": 77425,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "leonxlnx/taste-skill/industrial-brutalist-ui",
+   "name": "industrial-brutalist-ui",
+   "installs": 71966,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "get-convex/agent-skills/convex-create-component",
+   "name": "convex-create-component",
+   "installs": 57651,
+   "source": "get-convex/agent-skills"
+  },
+  {
+   "id": "pbakaus/impeccable/frontend-design",
+   "name": "frontend-design",
+   "installs": 53598,
+   "source": "pbakaus/impeccable"
+  },
+  {
+   "id": "heygen-com/hyperframes/tailwind",
+   "name": "tailwind",
+   "installs": 53363,
+   "source": "heygen-com/hyperframes"
+  },
+  {
+   "id": "leonxlnx/taste-skill/imagegen-frontend-web",
+   "name": "imagegen-frontend-web",
+   "installs": 48304,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "vercel-labs/agent-skills/vercel-react-view-transitions",
+   "name": "vercel-react-view-transitions",
+   "installs": 47126,
+   "source": "vercel-labs/agent-skills"
+  },
+  {
+   "id": "leonxlnx/taste-skill/imagegen-frontend-mobile",
+   "name": "imagegen-frontend-mobile",
+   "installs": 47077,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "google-labs-code/stitch-skills/react:components",
+   "name": "react:components",
+   "installs": 47001,
+   "source": "google-labs-code/stitch-skills"
+  },
+  {
+   "id": "expo/skills/building-native-ui",
+   "name": "building-native-ui",
+   "installs": 46920,
+   "source": "expo/skills"
+  },
+  {
+   "id": "wshobson/agents/tailwind-design-system",
+   "name": "tailwind-design-system",
+   "installs": 45853,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "anthropics/claude-code/frontend-design",
+   "name": "frontend-design",
+   "installs": 41384,
+   "source": "anthropics/claude-code"
+  },
+  {
+   "id": "google-labs-code/stitch-skills/shadcn-ui",
+   "name": "shadcn-ui",
+   "installs": 38374,
+   "source": "google-labs-code/stitch-skills"
+  },
+  {
+   "id": "vercel-labs/next-skills/next-cache-components",
+   "name": "next-cache-components",
+   "installs": 32821,
+   "source": "vercel-labs/next-skills"
+  },
+  {
+   "id": "expo/skills/expo-tailwind-setup",
+   "name": "expo-tailwind-setup",
+   "installs": 32795,
+   "source": "expo/skills"
+  },
+  {
+   "id": "msmps/opentui-skill/opentui",
+   "name": "opentui",
+   "installs": 26330,
+   "source": "msmps/opentui-skill"
+  },
+  {
+   "id": "antfu/skills/vue",
+   "name": "vue",
+   "installs": 24451,
+   "source": "antfu/skills"
+  },
+  {
+   "id": "jimliu/baoyu-skills/baoyu-markdown-to-html",
+   "name": "baoyu-markdown-to-html",
+   "installs": 24297,
+   "source": "jimliu/baoyu-skills"
+  },
+  {
+   "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:design-system",
+   "name": "ckm:design-system",
+   "installs": 23637,
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill"
+  },
+  {
+   "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:design",
+   "name": "ckm:design",
+   "installs": 23493,
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill"
+  },
+  {
+   "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:ui-styling",
+   "name": "ckm:ui-styling",
+   "installs": 23435,
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill"
+  },
+  {
+   "id": "nextlevelbuilder/ui-ux-pro-max-skill/ckm:brand",
+   "name": "ckm:brand",
+   "installs": 23098,
+   "source": "nextlevelbuilder/ui-ux-pro-max-skill"
+  }
+ ],
+ "DevOps & Cloud": [
+  {
+   "id": "microsoft/azure-skills/microsoft-foundry",
+   "name": "microsoft-foundry",
+   "installs": 360755,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-ai",
+   "name": "azure-ai",
+   "installs": 358744,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-deploy",
+   "name": "azure-deploy",
+   "installs": 358372,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-diagnostics",
+   "name": "azure-diagnostics",
+   "installs": 358340,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-prepare",
+   "name": "azure-prepare",
+   "installs": 358291,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-storage",
+   "name": "azure-storage",
+   "installs": 358028,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-validate",
+   "name": "azure-validate",
+   "installs": 357692,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/appinsights-instrumentation",
+   "name": "appinsights-instrumentation",
+   "installs": 357665,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/entra-app-registration",
+   "name": "entra-app-registration",
+   "installs": 357638,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-resource-lookup",
+   "name": "azure-resource-lookup",
+   "installs": 357575,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-compliance",
+   "name": "azure-compliance",
+   "installs": 357570,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-rbac",
+   "name": "azure-rbac",
+   "installs": 357549,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-aigateway",
+   "name": "azure-aigateway",
+   "installs": 357479,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-kusto",
+   "name": "azure-kusto",
+   "installs": 357436,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-messaging",
+   "name": "azure-messaging",
+   "installs": 347241,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-hosted-copilot-sdk",
+   "name": "azure-hosted-copilot-sdk",
+   "installs": 330645,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-compute",
+   "name": "azure-compute",
+   "installs": 301456,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-cloud-migrate",
+   "name": "azure-cloud-migrate",
+   "installs": 291631,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-quotas",
+   "name": "azure-quotas",
+   "installs": 228536,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-upgrade",
+   "name": "azure-upgrade",
+   "installs": 221018,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-cost-optimization",
+   "name": "azure-cost-optimization",
+   "installs": 206708,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-enterprise-infra-planner",
+   "name": "azure-enterprise-infra-planner",
+   "installs": 195131,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-kubernetes",
+   "name": "azure-kubernetes",
+   "installs": 188017,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "xixu-me/skills/openclaw-secure-linux-cloud",
+   "name": "openclaw-secure-linux-cloud",
+   "installs": 184208,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-cost",
+   "name": "azure-cost",
+   "installs": 163606,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/airunway-aks-setup",
+   "name": "airunway-aks-setup",
+   "installs": 108780,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-observability",
+   "name": "azure-observability",
+   "installs": 98135,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-reliability",
+   "name": "azure-reliability",
+   "installs": 43415,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "expo/skills/expo-deployment",
+   "name": "expo-deployment",
+   "installs": 31315,
+   "source": "expo/skills"
+  },
+  {
+   "id": "cloudflare/skills/wrangler",
+   "name": "wrangler",
+   "installs": 18272,
+   "source": "cloudflare/skills"
+  }
+ ],
+ "AI / LLM / Agents": [
+  {
+   "id": "vercel-labs/agent-browser/agent-browser",
+   "name": "agent-browser",
+   "installs": 332522,
+   "source": "vercel-labs/agent-browser"
+  },
+  {
+   "id": "anthropics/skills/skill-creator",
+   "name": "skill-creator",
+   "installs": 246327,
+   "source": "anthropics/skills"
+  },
+  {
+   "id": "vercel-labs/agent-skills/vercel-composition-patterns",
+   "name": "vercel-composition-patterns",
+   "installs": 195636,
+   "source": "vercel-labs/agent-skills"
+  },
+  {
+   "id": "xixu-me/skills/running-claude-code-via-litellm-copilot",
+   "name": "running-claude-code-via-litellm-copilot",
+   "installs": 183847,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "sleekdotdesign/agent-skills/sleek-design-mobile-apps",
+   "name": "sleek-design-mobile-apps",
+   "installs": 182266,
+   "source": "sleekdotdesign/agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/video-edit",
+   "name": "video-edit",
+   "installs": 170850,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/image-to-video",
+   "name": "image-to-video",
+   "installs": 170740,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/image-edit",
+   "name": "image-edit",
+   "installs": 170483,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/skills/agentspace",
+   "name": "agentspace",
+   "installs": 170455,
+   "source": "agentspace-so/skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/nano-banana-2",
+   "name": "nano-banana-2",
+   "installs": 170308,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/happyhorse-1-0",
+   "name": "happyhorse-1-0",
+   "installs": 170050,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/agent-skills/gpt-image-2",
+   "name": "gpt-image-2",
+   "installs": 163534,
+   "source": "agentspace-so/agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/kling-3-0",
+   "name": "kling-3-0",
+   "installs": 146644,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/codex-pet",
+   "name": "codex-pet",
+   "installs": 135023,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "anthropics/skills/pptx",
+   "name": "pptx",
+   "installs": 129622,
+   "source": "anthropics/skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/ai-image-generation",
+   "name": "ai-image-generation",
+   "installs": 114330,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/ai-video-generation",
+   "name": "ai-video-generation",
+   "installs": 114313,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/runcomfy-cli",
+   "name": "runcomfy-cli",
+   "installs": 113901,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/face-swap",
+   "name": "face-swap",
+   "installs": 113690,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/ai-avatar-video",
+   "name": "ai-avatar-video",
+   "installs": 113561,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/image-inpainting",
+   "name": "image-inpainting",
+   "installs": 111456,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/video-inpainting",
+   "name": "video-inpainting",
+   "installs": 111294,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "anthropics/skills/docx",
+   "name": "docx",
+   "installs": 111207,
+   "source": "anthropics/skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/controlnet-pose",
+   "name": "controlnet-pose",
+   "installs": 111182,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/lipsync",
+   "name": "lipsync",
+   "installs": 111151,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/video-extend",
+   "name": "video-extend",
+   "installs": 111025,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/image-outpainting",
+   "name": "image-outpainting",
+   "installs": 110935,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/relight",
+   "name": "relight",
+   "installs": 110795,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/video-outpainting",
+   "name": "video-outpainting",
+   "installs": 110725,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  },
+  {
+   "id": "agentspace-so/runcomfy-agent-skills/elevenlabs-music-generation",
+   "name": "elevenlabs-music-generation",
+   "installs": 110539,
+   "source": "agentspace-so/runcomfy-agent-skills"
+  }
+ ],
+ "Media & Creative": [
+  {
+   "id": "skills-shell/skills/ai-video-generation",
+   "name": "ai-video-generation",
+   "installs": 211428,
+   "source": "skills-shell/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/gpt-image-2",
+   "name": "gpt-image-2",
+   "installs": 76590,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/image-to-video",
+   "name": "image-to-video",
+   "installs": 76510,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/video-edit",
+   "name": "video-edit",
+   "installs": 76461,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "doany-ai/skills/image-outpainting",
+   "name": "image-outpainting",
+   "installs": 76451,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "doany-ai/skills/ai-avatar-video",
+   "name": "ai-avatar-video",
+   "installs": 76413,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/ai-image-generation",
+   "name": "ai-image-generation",
+   "installs": 76254,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "doany-ai/skills/ai-image-generation",
+   "name": "ai-image-generation",
+   "installs": 76177,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "doany-ai/skills/video-edit",
+   "name": "video-edit",
+   "installs": 76166,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "doany-ai/skills/gpt-image-2",
+   "name": "gpt-image-2",
+   "installs": 76162,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "doany-ai/skills/image-edit",
+   "name": "image-edit",
+   "installs": 76154,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/ai-video-generation",
+   "name": "ai-video-generation",
+   "installs": 76144,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/ai-avatar-video",
+   "name": "ai-avatar-video",
+   "installs": 76140,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "doany-ai/skills/image-to-video",
+   "name": "image-to-video",
+   "installs": 76048,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "doany-ai/skills/ai-video-generation",
+   "name": "ai-video-generation",
+   "installs": 76029,
+   "source": "doany-ai/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/image-edit",
+   "name": "image-edit",
+   "installs": 76011,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "runcomfy-com/skills/image-outpainting",
+   "name": "image-outpainting",
+   "installs": 75933,
+   "source": "runcomfy-com/skills"
+  },
+  {
+   "id": "leonxlnx/taste-skill/image-to-code",
+   "name": "image-to-code",
+   "installs": 50688,
+   "source": "leonxlnx/taste-skill"
+  },
+  {
+   "id": "kepano/obsidian-skills/json-canvas",
+   "name": "json-canvas",
+   "installs": 27940,
+   "source": "kepano/obsidian-skills"
+  },
+  {
+   "id": "jimliu/baoyu-skills/baoyu-image-gen",
+   "name": "baoyu-image-gen",
+   "installs": 24409,
+   "source": "jimliu/baoyu-skills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/image",
+   "name": "image",
+   "installs": 22204,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/video",
+   "name": "video",
+   "installs": 22195,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "pilioai/skills/gpt-image-2",
+   "name": "gpt-image-2",
+   "installs": 19532,
+   "source": "pilioai/skills"
+  },
+  {
+   "id": "gargantuax/openskills/gpt-image-2",
+   "name": "gpt-image-2",
+   "installs": 16578,
+   "source": "gargantuax/openskills"
+  },
+  {
+   "id": "skills-shell/skills/youtube-thumbnail-design",
+   "name": "youtube-thumbnail-design",
+   "installs": 13343,
+   "source": "skills-shell/skills"
+  },
+  {
+   "id": "pilioai/skills/upscale-image",
+   "name": "upscale-image",
+   "installs": 7358,
+   "source": "pilioai/skills"
+  },
+  {
+   "id": "pilioai/skills/remove-image-watermark",
+   "name": "remove-image-watermark",
+   "installs": 7342,
+   "source": "pilioai/skills"
+  },
+  {
+   "id": "jimliu/baoyu-skills/baoyu-image-cards",
+   "name": "baoyu-image-cards",
+   "installs": 6253,
+   "source": "jimliu/baoyu-skills"
+  },
+  {
+   "id": "elevenlabs/skills/text-to-speech",
+   "name": "text-to-speech",
+   "installs": 5775,
+   "source": "elevenlabs/skills"
+  },
+  {
+   "id": "elevenlabs/skills/speech-to-text",
+   "name": "speech-to-text",
+   "installs": 4216,
+   "source": "elevenlabs/skills"
+  }
+ ],
+ "Data & Databases": [
+  {
+   "id": "supabase/agent-skills/supabase-postgres-best-practices",
+   "name": "supabase-postgres-best-practices",
+   "installs": 203163,
+   "source": "supabase/agent-skills"
+  },
+  {
+   "id": "supabase/agent-skills/supabase",
+   "name": "supabase",
+   "installs": 99805,
+   "source": "supabase/agent-skills"
+  },
+  {
+   "id": "neondatabase/agent-skills/neon-postgres",
+   "name": "neon-postgres",
+   "installs": 38407,
+   "source": "neondatabase/agent-skills"
+  },
+  {
+   "id": "microsoft/azure-skills/azure-postgres",
+   "name": "azure-postgres",
+   "installs": 27809,
+   "source": "microsoft/azure-skills"
+  },
+  {
+   "id": "wshobson/agents/postgresql-table-design",
+   "name": "postgresql-table-design",
+   "installs": 18503,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "wshobson/agents/sql-optimization-patterns",
+   "name": "sql-optimization-patterns",
+   "installs": 14016,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "wshobson/agents/database-migration",
+   "name": "database-migration",
+   "installs": 12478,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "github/awesome-copilot/postgresql-optimization",
+   "name": "postgresql-optimization",
+   "installs": 12309,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/sql-optimization",
+   "name": "sql-optimization",
+   "installs": 11819,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/sql-code-review",
+   "name": "sql-code-review",
+   "installs": 10887,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "prisma/skills/prisma-database-setup",
+   "name": "prisma-database-setup",
+   "installs": 10670,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "github/awesome-copilot/postgresql-code-review",
+   "name": "postgresql-code-review",
+   "installs": 10371,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "prisma/skills/prisma-cli",
+   "name": "prisma-cli",
+   "installs": 8851,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "wshobson/agents/deployment-pipeline-design",
+   "name": "deployment-pipeline-design",
+   "installs": 8850,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "flutter/skills/flutter-working-with-databases",
+   "name": "flutter-working-with-databases",
+   "installs": 8469,
+   "source": "flutter/skills"
+  },
+  {
+   "id": "wshobson/agents/ml-pipeline-workflow",
+   "name": "ml-pipeline-workflow",
+   "installs": 6976,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "prisma/skills/prisma-postgres",
+   "name": "prisma-postgres",
+   "installs": 6726,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "affaan-m/everything-claude-code/postgres-patterns",
+   "name": "postgres-patterns",
+   "installs": 6177,
+   "source": "affaan-m/everything-claude-code"
+  },
+  {
+   "id": "affaan-m/everything-claude-code/database-migrations",
+   "name": "database-migrations",
+   "installs": 5184,
+   "source": "affaan-m/everything-claude-code"
+  },
+  {
+   "id": "google/skills/bigquery-basics",
+   "name": "bigquery-basics",
+   "installs": 4821,
+   "source": "google/skills"
+  },
+  {
+   "id": "affaan-m/everything-claude-code/cost-aware-llm-pipeline",
+   "name": "cost-aware-llm-pipeline",
+   "installs": 4655,
+   "source": "affaan-m/everything-claude-code"
+  },
+  {
+   "id": "google/skills/cloud-sql-basics",
+   "name": "cloud-sql-basics",
+   "installs": 4523,
+   "source": "google/skills"
+  },
+  {
+   "id": "planetscale/database-skills/mysql",
+   "name": "mysql",
+   "installs": 4499,
+   "source": "planetscale/database-skills"
+  },
+  {
+   "id": "planetscale/database-skills/postgres",
+   "name": "postgres",
+   "installs": 4456,
+   "source": "planetscale/database-skills"
+  },
+  {
+   "id": "affaan-m/everything-claude-code/ralphinho-rfc-pipeline",
+   "name": "ralphinho-rfc-pipeline",
+   "installs": 4038,
+   "source": "affaan-m/everything-claude-code"
+  },
+  {
+   "id": "prisma/skills/prisma-upgrade-v7",
+   "name": "prisma-upgrade-v7",
+   "installs": 4014,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "prisma/skills/prisma-driver-adapter-implementation",
+   "name": "prisma-driver-adapter-implementation",
+   "installs": 3985,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "jeffallan/claude-skills/postgres-pro",
+   "name": "postgres-pro",
+   "installs": 3979,
+   "source": "jeffallan/claude-skills"
+  },
+  {
+   "id": "jeffallan/claude-skills/sql-pro",
+   "name": "sql-pro",
+   "installs": 3833,
+   "source": "jeffallan/claude-skills"
+  },
+  {
+   "id": "softaworks/agent-toolkit/database-schema-designer",
+   "name": "database-schema-designer",
+   "installs": 3796,
+   "source": "softaworks/agent-toolkit"
+  }
+ ],
+ "Docs & Content": [
+  {
+   "id": "larksuite/cli/lark-doc",
+   "name": "lark-doc",
+   "installs": 188340,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "mattpocock/skills/grill-with-docs",
+   "name": "grill-with-docs",
+   "installs": 188189,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "xixu-me/skills/github-actions-docs",
+   "name": "github-actions-docs",
+   "installs": 187060,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "xixu-me/skills/readme-i18n",
+   "name": "readme-i18n",
+   "installs": 183432,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/copywriting",
+   "name": "copywriting",
+   "installs": 115063,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "larksuite/cli/lark-markdown",
+   "name": "lark-markdown",
+   "installs": 102529,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "obra/superpowers/writing-skills",
+   "name": "writing-skills",
+   "installs": 87010,
+   "source": "obra/superpowers"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/content-strategy",
+   "name": "content-strategy",
+   "installs": 80253,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/social-content",
+   "name": "social-content",
+   "installs": 67236,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "kepano/obsidian-skills/obsidian-markdown",
+   "name": "obsidian-markdown",
+   "installs": 38364,
+   "source": "kepano/obsidian-skills"
+  },
+  {
+   "id": "jimliu/baoyu-skills/baoyu-url-to-markdown",
+   "name": "baoyu-url-to-markdown",
+   "installs": 22767,
+   "source": "jimliu/baoyu-skills"
+  },
+  {
+   "id": "jimliu/baoyu-skills/baoyu-format-markdown",
+   "name": "baoyu-format-markdown",
+   "installs": 20550,
+   "source": "jimliu/baoyu-skills"
+  },
+  {
+   "id": "googleworkspace/cli/recipe-draft-email-from-doc",
+   "name": "recipe-draft-email-from-doc",
+   "installs": 15855,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "googleworkspace/cli/recipe-save-email-to-doc",
+   "name": "recipe-save-email-to-doc",
+   "installs": 15679,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "mattpocock/skills/writing-fragments",
+   "name": "writing-fragments",
+   "installs": 9171,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/writing-shape",
+   "name": "writing-shape",
+   "installs": 9152,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "mattpocock/skills/writing-beats",
+   "name": "writing-beats",
+   "installs": 9085,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "dontbesilent2025/dbskill/dbs-content",
+   "name": "dbs-content",
+   "installs": 7438,
+   "source": "dontbesilent2025/dbskill"
+  },
+  {
+   "id": "spillwavesolutions/design-doc-mermaid/design-doc-mermaid",
+   "name": "design-doc-mermaid",
+   "installs": 3594,
+   "source": "spillwavesolutions/design-doc-mermaid"
+  },
+  {
+   "id": "samber/cc-skills-golang/golang-documentation",
+   "name": "golang-documentation",
+   "installs": 3502,
+   "source": "samber/cc-skills-golang"
+  },
+  {
+   "id": "makenotion/skills/notion-cli",
+   "name": "notion-cli",
+   "installs": 2998,
+   "source": "makenotion/skills"
+  },
+  {
+   "id": "trailofbits/skills/harness-writing",
+   "name": "harness-writing",
+   "installs": 2787,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "shirenchuang/web-content-fetcher/web-content-fetcher",
+   "name": "web-content-fetcher",
+   "installs": 2652,
+   "source": "shirenchuang/web-content-fetcher"
+  },
+  {
+   "id": "bahayonghang/academic-writing-skills/latex-paper-en",
+   "name": "latex-paper-en",
+   "installs": 2569,
+   "source": "bahayonghang/academic-writing-skills"
+  },
+  {
+   "id": "markdown-viewer/skills/architecture",
+   "name": "architecture",
+   "installs": 2482,
+   "source": "markdown-viewer/skills"
+  },
+  {
+   "id": "markdown-viewer/skills/uml",
+   "name": "uml",
+   "installs": 2424,
+   "source": "markdown-viewer/skills"
+  },
+  {
+   "id": "markdown-viewer/skills/infographic",
+   "name": "infographic",
+   "installs": 2270,
+   "source": "markdown-viewer/skills"
+  },
+  {
+   "id": "markdown-viewer/skills/graphviz",
+   "name": "graphviz",
+   "installs": 2188,
+   "source": "markdown-viewer/skills"
+  },
+  {
+   "id": "markdown-viewer/skills/canvas",
+   "name": "canvas",
+   "installs": 2180,
+   "source": "markdown-viewer/skills"
+  },
+  {
+   "id": "bahayonghang/academic-writing-skills/latex-thesis-zh",
+   "name": "latex-thesis-zh",
+   "installs": 2151,
+   "source": "bahayonghang/academic-writing-skills"
+  }
+ ],
+ "Dev Tooling & Code": [
+  {
+   "id": "larksuite/cli/lark-base",
+   "name": "lark-base",
+   "installs": 187929,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-im",
+   "name": "lark-im",
+   "installs": 187660,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-drive",
+   "name": "lark-drive",
+   "installs": 187385,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-shared",
+   "name": "lark-shared",
+   "installs": 187189,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-wiki",
+   "name": "lark-wiki",
+   "installs": 186876,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-whiteboard",
+   "name": "lark-whiteboard",
+   "installs": 186715,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-sheets",
+   "name": "lark-sheets",
+   "installs": 186681,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-task",
+   "name": "lark-task",
+   "installs": 186625,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-mail",
+   "name": "lark-mail",
+   "installs": 186620,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-vc",
+   "name": "lark-vc",
+   "installs": 186455,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-minutes",
+   "name": "lark-minutes",
+   "installs": 186405,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-event",
+   "name": "lark-event",
+   "installs": 186227,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-contact",
+   "name": "lark-contact",
+   "installs": 186031,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-skill-maker",
+   "name": "lark-skill-maker",
+   "installs": 185573,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "xixu-me/skills/skills-cli",
+   "name": "skills-cli",
+   "installs": 183926,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "larksuite/cli/lark-approval",
+   "name": "lark-approval",
+   "installs": 159845,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-attendance",
+   "name": "lark-attendance",
+   "installs": 138793,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-okr",
+   "name": "lark-okr",
+   "installs": 124161,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "obra/superpowers/requesting-code-review",
+   "name": "requesting-code-review",
+   "installs": 109409,
+   "source": "obra/superpowers"
+  },
+  {
+   "id": "obra/superpowers/receiving-code-review",
+   "name": "receiving-code-review",
+   "installs": 87723,
+   "source": "obra/superpowers"
+  },
+  {
+   "id": "larksuite/cli/lark-apps",
+   "name": "lark-apps",
+   "installs": 35642,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "kepano/obsidian-skills/obsidian-cli",
+   "name": "obsidian-cli",
+   "installs": 33819,
+   "source": "kepano/obsidian-skills"
+  },
+  {
+   "id": "googleworkspace/cli/gws-gmail",
+   "name": "gws-gmail",
+   "installs": 31916,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "degausai/wonda/wonda-cli",
+   "name": "wonda-cli",
+   "installs": 28495,
+   "source": "degausai/wonda"
+  },
+  {
+   "id": "googleworkspace/cli/gws-gmail-send",
+   "name": "gws-gmail-send",
+   "installs": 24925,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "googleworkspace/cli/gws-sheets-append",
+   "name": "gws-sheets-append",
+   "installs": 24520,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "googleworkspace/cli/gws-gmail-triage",
+   "name": "gws-gmail-triage",
+   "installs": 24012,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "googleworkspace/cli/gws-gmail-watch",
+   "name": "gws-gmail-watch",
+   "installs": 20320,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "googleworkspace/cli/gws-gmail-reply",
+   "name": "gws-gmail-reply",
+   "installs": 17511,
+   "source": "googleworkspace/cli"
+  },
+  {
+   "id": "mattpocock/skills/request-refactor-plan",
+   "name": "request-refactor-plan",
+   "installs": 17302,
+   "source": "mattpocock/skills"
+  }
+ ],
+ "Productivity & PM": [
+  {
+   "id": "larksuite/cli/lark-calendar",
+   "name": "lark-calendar",
+   "installs": 187082,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "wecomteam/wecom-cli/wecomcli-get-todo-detail",
+   "name": "wecomcli-get-todo-detail",
+   "installs": 2415,
+   "source": "wecomteam/wecom-cli"
+  },
+  {
+   "id": "refoundai/lenny-skills/running-effective-meetings",
+   "name": "running-effective-meetings",
+   "installs": 1262,
+   "source": "refoundai/lenny-skills"
+  },
+  {
+   "id": "alextangson/feishu_skills/feishu-calendar",
+   "name": "feishu-calendar",
+   "installs": 1181,
+   "source": "alextangson/feishu_skills"
+  },
+  {
+   "id": "phuryn/pm-skills/summarize-meeting",
+   "name": "summarize-meeting",
+   "installs": 1178,
+   "source": "phuryn/pm-skills"
+  },
+  {
+   "id": "am-will/codex-skills/parallel-task-spark",
+   "name": "parallel-task-spark",
+   "installs": 1149,
+   "source": "am-will/codex-skills"
+  },
+  {
+   "id": "cognitedata/builder-skills/integrate-todo-list",
+   "name": "integrate-todo-list",
+   "installs": 945,
+   "source": "cognitedata/builder-skills"
+  },
+  {
+   "id": "equinor/fusion-skills/fusion-issue-task-planning",
+   "name": "fusion-issue-task-planning",
+   "installs": 780,
+   "source": "equinor/fusion-skills"
+  },
+  {
+   "id": "customware-ai/skills/crm-builder",
+   "name": "crm-builder",
+   "installs": 597,
+   "source": "customware-ai/skills"
+  },
+  {
+   "id": "sickn33/antigravity-awesome-skills/slack-bot-builder",
+   "name": "slack-bot-builder",
+   "installs": 572,
+   "source": "sickn33/antigravity-awesome-skills"
+  },
+  {
+   "id": "giuseppe-trisciuoglio/developer-kit/task-quality-kpi",
+   "name": "task-quality-kpi",
+   "installs": 532,
+   "source": "giuseppe-trisciuoglio/developer-kit"
+  },
+  {
+   "id": "membranedev/application-skills/zoho-crm",
+   "name": "zoho-crm",
+   "installs": 522,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/dynamics-crm",
+   "name": "dynamics-crm",
+   "installs": 521,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/slack",
+   "name": "slack",
+   "installs": 508,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "cognitedata/dune-skills/integrate-todo-list",
+   "name": "integrate-todo-list",
+   "installs": 338,
+   "source": "cognitedata/dune-skills"
+  },
+  {
+   "id": "sundial-org/awesome-openclaw-skills/apple-calendar",
+   "name": "apple-calendar",
+   "installs": 320,
+   "source": "sundial-org/awesome-openclaw-skills"
+  },
+  {
+   "id": "membranedev/application-skills/jira",
+   "name": "jira",
+   "installs": 317,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/google-calendar",
+   "name": "google-calendar",
+   "installs": 271,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "nexu-io/open-design/meeting-notes",
+   "name": "meeting-notes",
+   "installs": 232,
+   "source": "nexu-io/open-design"
+  },
+  {
+   "id": "membranedev/application-skills/asana",
+   "name": "asana",
+   "installs": 208,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "composiohq/awesome-codex-skills/meeting-notes-and-actions",
+   "name": "meeting-notes-and-actions",
+   "installs": 199,
+   "source": "composiohq/awesome-codex-skills"
+  },
+  {
+   "id": "larksuite/openclaw-lark/feishu-calendar",
+   "name": "feishu-calendar",
+   "installs": 192,
+   "source": "larksuite/openclaw-lark"
+  },
+  {
+   "id": "membranedev/application-skills/sugarcrm",
+   "name": "sugarcrm",
+   "installs": 189,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/jira-service-desk",
+   "name": "jira-service-desk",
+   "installs": 181,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "davidkiss/smart-ai-skills/task-breakdown",
+   "name": "task-breakdown",
+   "installs": 176,
+   "source": "davidkiss/smart-ai-skills"
+  },
+  {
+   "id": "membranedev/application-skills/zoho-calendar",
+   "name": "zoho-calendar",
+   "installs": 163,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/capsule-crm",
+   "name": "capsule-crm",
+   "installs": 153,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/agile-crm",
+   "name": "agile-crm",
+   "installs": 149,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "membranedev/application-skills/linear",
+   "name": "linear",
+   "installs": 140,
+   "source": "membranedev/application-skills"
+  },
+  {
+   "id": "guia-matthieu/clawfu-skills/crm-hygiene",
+   "name": "crm-hygiene",
+   "installs": 134,
+   "source": "guia-matthieu/clawfu-skills"
+  }
+ ],
+ "Automation & Workflows": [
+  {
+   "id": "larksuite/cli/lark-workflow-meeting-summary",
+   "name": "lark-workflow-meeting-summary",
+   "installs": 185901,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "larksuite/cli/lark-workflow-standup-report",
+   "name": "lark-workflow-standup-report",
+   "installs": 185661,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "xixu-me/skills/use-my-browser",
+   "name": "use-my-browser",
+   "installs": 182086,
+   "source": "xixu-me/skills"
+  },
+  {
+   "id": "scrapegraphai/just-scrape/just-scrape",
+   "name": "just-scrape",
+   "installs": 103066,
+   "source": "scrapegraphai/just-scrape"
+  },
+  {
+   "id": "firecrawl/skills/firecrawl-build-search",
+   "name": "firecrawl-build-search",
+   "installs": 32384,
+   "source": "firecrawl/skills"
+  },
+  {
+   "id": "firecrawl/skills/firecrawl-build-scrape",
+   "name": "firecrawl-build-scrape",
+   "installs": 32375,
+   "source": "firecrawl/skills"
+  },
+  {
+   "id": "firecrawl/skills/firecrawl-build-interact",
+   "name": "firecrawl-build-interact",
+   "installs": 32311,
+   "source": "firecrawl/skills"
+  },
+  {
+   "id": "firecrawl/skills/firecrawl-build-onboarding",
+   "name": "firecrawl-build-onboarding",
+   "installs": 32297,
+   "source": "firecrawl/skills"
+  },
+  {
+   "id": "expo/skills/expo-cicd-workflows",
+   "name": "expo-cicd-workflows",
+   "installs": 31291,
+   "source": "expo/skills"
+  },
+  {
+   "id": "antibrow/anti-detect-browser-skills/anti-detect-browser",
+   "name": "anti-detect-browser",
+   "installs": 18150,
+   "source": "antibrow/anti-detect-browser-skills"
+  },
+  {
+   "id": "browser-act/skills/browser-act",
+   "name": "browser-act",
+   "installs": 13583,
+   "source": "browser-act/skills"
+  },
+  {
+   "id": "browser-act/skills/browser-act-skill-forge",
+   "name": "browser-act-skill-forge",
+   "installs": 10674,
+   "source": "browser-act/skills"
+  },
+  {
+   "id": "brightdata/skills/scrape",
+   "name": "scrape",
+   "installs": 10382,
+   "source": "brightdata/skills"
+  },
+  {
+   "id": "firecrawl/firecrawl-workflows/firecrawl-website-design-clone",
+   "name": "firecrawl-website-design-clone",
+   "installs": 8429,
+   "source": "firecrawl/firecrawl-workflows"
+  },
+  {
+   "id": "tavily-ai/skills/tavily-crawl",
+   "name": "tavily-crawl",
+   "installs": 7565,
+   "source": "tavily-ai/skills"
+  },
+  {
+   "id": "czlonkowski/n8n-skills/n8n-workflow-patterns",
+   "name": "n8n-workflow-patterns",
+   "installs": 6998,
+   "source": "czlonkowski/n8n-skills"
+  },
+  {
+   "id": "sickn33/antigravity-awesome-skills/browser-automation",
+   "name": "browser-automation",
+   "installs": 5097,
+   "source": "sickn33/antigravity-awesome-skills"
+  },
+  {
+   "id": "code.deepline.com/workflow-hello-world",
+   "name": "workflow-hello-world",
+   "installs": 4249,
+   "source": "code.deepline.com"
+  },
+  {
+   "id": "browserbase/skills/browser",
+   "name": "browser",
+   "installs": 4223,
+   "source": "browserbase/skills"
+  },
+  {
+   "id": "czlonkowski/n8n-skills/n8n-node-configuration",
+   "name": "n8n-node-configuration",
+   "installs": 4223,
+   "source": "czlonkowski/n8n-skills"
+  },
+  {
+   "id": "trailofbits/skills/secure-workflow-guide",
+   "name": "secure-workflow-guide",
+   "installs": 4119,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "czlonkowski/n8n-skills/n8n-code-javascript",
+   "name": "n8n-code-javascript",
+   "installs": 3862,
+   "source": "czlonkowski/n8n-skills"
+  },
+  {
+   "id": "czlonkowski/n8n-skills/n8n-validation-expert",
+   "name": "n8n-validation-expert",
+   "installs": 3621,
+   "source": "czlonkowski/n8n-skills"
+  },
+  {
+   "id": "tavily-ai/skills/crawl",
+   "name": "crawl",
+   "installs": 3559,
+   "source": "tavily-ai/skills"
+  },
+  {
+   "id": "web-infra-dev/midscene-skills/browser-automation",
+   "name": "browser-automation",
+   "installs": 3315,
+   "source": "web-infra-dev/midscene-skills"
+  },
+  {
+   "id": "texiaoyao/office-automation-skill/office-automation",
+   "name": "office-automation",
+   "installs": 2863,
+   "source": "texiaoyao/office-automation-skill"
+  },
+  {
+   "id": "web-infra-dev/midscene-skills/desktop-computer-automation",
+   "name": "desktop-computer-automation",
+   "installs": 2852,
+   "source": "web-infra-dev/midscene-skills"
+  },
+  {
+   "id": "czlonkowski/n8n-skills/n8n-code-python",
+   "name": "n8n-code-python",
+   "installs": 2461,
+   "source": "czlonkowski/n8n-skills"
+  },
+  {
+   "id": "trailofbits/skills/designing-workflow-skills",
+   "name": "designing-workflow-skills",
+   "installs": 2315,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "waynesutton/convexskills/convex-cron-jobs",
+   "name": "convex-cron-jobs",
+   "installs": 2189,
+   "source": "waynesutton/convexskills"
+  }
+ ],
+ "Backend & APIs": [
+  {
+   "id": "larksuite/cli/lark-openapi-explorer",
+   "name": "lark-openapi-explorer",
+   "installs": 185694,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "open.feishu.cn/lark-openapi-explorer",
+   "name": "lark-openapi-explorer",
+   "installs": 147107,
+   "source": "open.feishu.cn"
+  },
+  {
+   "id": "heygen-com/hyperframes/waapi",
+   "name": "waapi",
+   "installs": 52440,
+   "source": "heygen-com/hyperframes"
+  },
+  {
+   "id": "intellectronica/agent-skills/notion-api",
+   "name": "notion-api",
+   "installs": 37108,
+   "source": "intellectronica/agent-skills"
+  },
+  {
+   "id": "firebase/agent-skills/firebase-firestore-standard",
+   "name": "firebase-firestore-standard",
+   "installs": 36710,
+   "source": "firebase/agent-skills"
+  },
+  {
+   "id": "firebase/agent-skills/firebase-firestore-enterprise-native-mode",
+   "name": "firebase-firestore-enterprise-native-mode",
+   "installs": 35778,
+   "source": "firebase/agent-skills"
+  },
+  {
+   "id": "wshobson/agents/nodejs-backend-patterns",
+   "name": "nodejs-backend-patterns",
+   "installs": 34587,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "anthropics/skills/claude-api",
+   "name": "claude-api",
+   "installs": 33682,
+   "source": "anthropics/skills"
+  },
+  {
+   "id": "firebase/agent-skills/firebase-firestore",
+   "name": "firebase-firestore",
+   "installs": 31100,
+   "source": "firebase/agent-skills"
+  },
+  {
+   "id": "expo/skills/expo-api-routes",
+   "name": "expo-api-routes",
+   "installs": 29582,
+   "source": "expo/skills"
+  },
+  {
+   "id": "wshobson/agents/api-design-principles",
+   "name": "api-design-principles",
+   "installs": 22054,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "firebase/agent-skills/firestore-security-rules-auditor",
+   "name": "firestore-security-rules-auditor",
+   "installs": 20281,
+   "source": "firebase/agent-skills"
+  },
+  {
+   "id": "wshobson/agents/fastapi-templates",
+   "name": "fastapi-templates",
+   "installs": 18512,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "mattpocock/skills/git-guardrails-claude-code",
+   "name": "git-guardrails-claude-code",
+   "installs": 15215,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "wshobson/agents/dotnet-backend-patterns",
+   "name": "dotnet-backend-patterns",
+   "installs": 13537,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "google-gemini/gemini-skills/gemini-api-dev",
+   "name": "gemini-api-dev",
+   "installs": 13295,
+   "source": "google-gemini/gemini-skills"
+  },
+  {
+   "id": "hexiaochun/seedance2-api/seedance2-api",
+   "name": "seedance2-api",
+   "installs": 11488,
+   "source": "hexiaochun/seedance2-api"
+  },
+  {
+   "id": "wshobson/agents/openapi-spec-generation",
+   "name": "openapi-spec-generation",
+   "installs": 11434,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "apify/agent-skills/apify-ultimate-scraper",
+   "name": "apify-ultimate-scraper",
+   "installs": 11131,
+   "source": "apify/agent-skills"
+  },
+  {
+   "id": "apollographql/skills/rust-best-practices",
+   "name": "rust-best-practices",
+   "installs": 10991,
+   "source": "apollographql/skills"
+  },
+  {
+   "id": "github/awesome-copilot/typescript-mcp-server-generator",
+   "name": "typescript-mcp-server-generator",
+   "installs": 10406,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "prisma/skills/prisma-client-api",
+   "name": "prisma-client-api",
+   "installs": 10014,
+   "source": "prisma/skills"
+  },
+  {
+   "id": "clerk/skills/clerk-webhooks",
+   "name": "clerk-webhooks",
+   "installs": 9651,
+   "source": "clerk/skills"
+  },
+  {
+   "id": "github/awesome-copilot/python-mcp-server-generator",
+   "name": "python-mcp-server-generator",
+   "installs": 9558,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "mindrally/skills/fastapi-python",
+   "name": "fastapi-python",
+   "installs": 9546,
+   "source": "mindrally/skills"
+  },
+  {
+   "id": "clerk/skills/clerk-backend-api",
+   "name": "clerk-backend-api",
+   "installs": 8739,
+   "source": "clerk/skills"
+  },
+  {
+   "id": "github/awesome-copilot/openapi-to-application-code",
+   "name": "openapi-to-application-code",
+   "installs": 8702,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/aspnet-minimal-api-openapi",
+   "name": "aspnet-minimal-api-openapi",
+   "installs": 8680,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "wshobson/agents/microservices-patterns",
+   "name": "microservices-patterns",
+   "installs": 8677,
+   "source": "wshobson/agents"
+  },
+  {
+   "id": "github/awesome-copilot/typespec-api-operations",
+   "name": "typespec-api-operations",
+   "installs": 8470,
+   "source": "github/awesome-copilot"
+  }
+ ],
+ "Office & Files": [
+  {
+   "id": "larksuite/cli/lark-slides",
+   "name": "lark-slides",
+   "installs": 139627,
+   "source": "larksuite/cli"
+  },
+  {
+   "id": "antfu/skills/slidev",
+   "name": "slidev",
+   "installs": 9259,
+   "source": "antfu/skills"
+  },
+  {
+   "id": "pilioai/skills/remove-pdf-watermark",
+   "name": "remove-pdf-watermark",
+   "installs": 7235,
+   "source": "pilioai/skills"
+  },
+  {
+   "id": "slidevjs/slidev/slidev",
+   "name": "slidev",
+   "installs": 6702,
+   "source": "slidevjs/slidev"
+  },
+  {
+   "id": "calm-north/seojuice-skills/find-keywords",
+   "name": "find-keywords",
+   "installs": 6600,
+   "source": "calm-north/seojuice-skills"
+  },
+  {
+   "id": "dkyazzentwatwa/chatgpt-skills/ocr-document-processor",
+   "name": "ocr-document-processor",
+   "installs": 4286,
+   "source": "dkyazzentwatwa/chatgpt-skills"
+  },
+  {
+   "id": "igorwarzocha/opencode-workflows/powerpoint",
+   "name": "powerpoint",
+   "installs": 3844,
+   "source": "igorwarzocha/opencode-workflows"
+  },
+  {
+   "id": "minimax-ai/skills/pptx-generator",
+   "name": "pptx-generator",
+   "installs": 3600,
+   "source": "minimax-ai/skills"
+  },
+  {
+   "id": "aidenwu0209/paddleocr-skills/paddleocr-text-recognition",
+   "name": "paddleocr-text-recognition",
+   "installs": 3374,
+   "source": "aidenwu0209/paddleocr-skills"
+  },
+  {
+   "id": "lijigang/ljg-skills/ljg-word",
+   "name": "ljg-word",
+   "installs": 3162,
+   "source": "lijigang/ljg-skills"
+  },
+  {
+   "id": "minimax-ai/skills/minimax-docx",
+   "name": "minimax-docx",
+   "installs": 3114,
+   "source": "minimax-ai/skills"
+  },
+  {
+   "id": "lijigang/ljg-skills/ljg-word-flow",
+   "name": "ljg-word-flow",
+   "installs": 3046,
+   "source": "lijigang/ljg-skills"
+  },
+  {
+   "id": "minimax-ai/skills/minimax-pdf",
+   "name": "minimax-pdf",
+   "installs": 2619,
+   "source": "minimax-ai/skills"
+  },
+  {
+   "id": "minimax-ai/skills/minimax-xlsx",
+   "name": "minimax-xlsx",
+   "installs": 2530,
+   "source": "minimax-ai/skills"
+  },
+  {
+   "id": "eronred/aso-skills/keyword-research",
+   "name": "keyword-research",
+   "installs": 1740,
+   "source": "eronred/aso-skills"
+  },
+  {
+   "id": "wordflowlab/novel-writer-skills/novel-writer-workflow-guide",
+   "name": "novel-writer-workflow-guide",
+   "installs": 1584,
+   "source": "wordflowlab/novel-writer-skills"
+  },
+  {
+   "id": "yejinlei/pdf-ocr-skill/pdf-ocr-skill",
+   "name": "pdf-ocr-skill",
+   "installs": 1282,
+   "source": "yejinlei/pdf-ocr-skill"
+  },
+  {
+   "id": "aradotso/trending-skills/deepseek-ocr",
+   "name": "deepseek-ocr",
+   "installs": 1271,
+   "source": "aradotso/trending-skills"
+  },
+  {
+   "id": "appautomaton/document-skills/xlsx",
+   "name": "xlsx",
+   "installs": 1077,
+   "source": "appautomaton/document-skills"
+  },
+  {
+   "id": "appautomaton/document-skills/docx",
+   "name": "docx",
+   "installs": 1015,
+   "source": "appautomaton/document-skills"
+  },
+  {
+   "id": "serpdownloaders/skills/pdf-downloader",
+   "name": "pdf-downloader",
+   "installs": 978,
+   "source": "serpdownloaders/skills"
+  },
+  {
+   "id": "lc2panda/wps-skills/wps-excel",
+   "name": "wps-excel",
+   "installs": 956,
+   "source": "lc2panda/wps-skills"
+  },
+  {
+   "id": "kostja94/marketing-skills/keyword-research",
+   "name": "keyword-research",
+   "installs": 945,
+   "source": "kostja94/marketing-skills"
+  },
+  {
+   "id": "smithery.ai/pdf",
+   "name": "pdf",
+   "installs": 939,
+   "source": "smithery.ai"
+  },
+  {
+   "id": "lc2panda/wps-skills/wps-word",
+   "name": "wps-word",
+   "installs": 932,
+   "source": "lc2panda/wps-skills"
+  },
+  {
+   "id": "yaklang/hack-skills/csv-formula-injection",
+   "name": "csv-formula-injection",
+   "installs": 880,
+   "source": "yaklang/hack-skills"
+  },
+  {
+   "id": "wshuyi/translate-pdf-skill/translate-pdf",
+   "name": "translate-pdf",
+   "installs": 790,
+   "source": "wshuyi/translate-pdf-skill"
+  },
+  {
+   "id": "alchaincyf/huashu-skills/huashu-md-to-pdf",
+   "name": "huashu-md-to-pdf",
+   "installs": 714,
+   "source": "alchaincyf/huashu-skills"
+  },
+  {
+   "id": "smithery.ai/xlsx",
+   "name": "xlsx",
+   "installs": 701,
+   "source": "smithery.ai"
+  },
+  {
+   "id": "smithery.ai/pptx",
+   "name": "pptx",
+   "installs": 677,
+   "source": "smithery.ai"
+  }
+ ],
+ "Security": [
+  {
+   "id": "lllllllama/ai-paper-reproduction-skill/minimal-run-and-audit",
+   "name": "minimal-run-and-audit",
+   "installs": 139587,
+   "source": "lllllllama/ai-paper-reproduction-skill"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/seo-audit",
+   "name": "seo-audit",
+   "installs": 125407,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "better-auth/skills/better-auth-best-practices",
+   "name": "better-auth-best-practices",
+   "installs": 55907,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "squirrelscan/skills/audit-website",
+   "name": "audit-website",
+   "installs": 52576,
+   "source": "squirrelscan/skills"
+  },
+  {
+   "id": "better-auth/skills/create-auth-skill",
+   "name": "create-auth-skill",
+   "installs": 23750,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "better-auth/skills/email-and-password-best-practices",
+   "name": "email-and-password-best-practices",
+   "installs": 18786,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "useai-pro/openclaw-skills-security/skill-vetter",
+   "name": "skill-vetter",
+   "installs": 18711,
+   "source": "useai-pro/openclaw-skills-security"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/aso-audit",
+   "name": "aso-audit",
+   "installs": 17857,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "better-auth/skills/organization-best-practices",
+   "name": "organization-best-practices",
+   "installs": 17483,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "better-auth/skills/two-factor-authentication-best-practices",
+   "name": "two-factor-authentication-best-practices",
+   "installs": 16648,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "better-auth/skills/better-auth-security-best-practices",
+   "name": "better-auth-security-best-practices",
+   "installs": 14554,
+   "source": "better-auth/skills"
+  },
+  {
+   "id": "addyosmani/web-quality-skills/web-quality-audit",
+   "name": "web-quality-audit",
+   "installs": 7948,
+   "source": "addyosmani/web-quality-skills"
+  },
+  {
+   "id": "getsentry/skills/security-review",
+   "name": "security-review",
+   "installs": 6795,
+   "source": "getsentry/skills"
+  },
+  {
+   "id": "calm-north/seojuice-skills/audit",
+   "name": "audit",
+   "installs": 6235,
+   "source": "calm-north/seojuice-skills"
+  },
+  {
+   "id": "binance/binance-skills-hub/crypto-market-rank",
+   "name": "crypto-market-rank",
+   "installs": 6055,
+   "source": "binance/binance-skills-hub"
+  },
+  {
+   "id": "binance/binance-skills-hub/query-token-audit",
+   "name": "query-token-audit",
+   "installs": 4671,
+   "source": "binance/binance-skills-hub"
+  },
+  {
+   "id": "okx/onchainos-skills/okx-security",
+   "name": "okx-security",
+   "installs": 4512,
+   "source": "okx/onchainos-skills"
+  },
+  {
+   "id": "okx/onchainos-skills/okx-audit-log",
+   "name": "okx-audit-log",
+   "installs": 4434,
+   "source": "okx/onchainos-skills"
+  },
+  {
+   "id": "ljagiello/ctf-skills/ctf-crypto",
+   "name": "ctf-crypto",
+   "installs": 4258,
+   "source": "ljagiello/ctf-skills"
+  },
+  {
+   "id": "trailofbits/skills/supply-chain-risk-auditor",
+   "name": "supply-chain-risk-auditor",
+   "installs": 3697,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "samber/cc-skills-golang/golang-security",
+   "name": "golang-security",
+   "installs": 3654,
+   "source": "samber/cc-skills-golang"
+  },
+  {
+   "id": "trailofbits/skills/audit-context-building",
+   "name": "audit-context-building",
+   "installs": 3251,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/solana-vulnerability-scanner",
+   "name": "solana-vulnerability-scanner",
+   "installs": 3011,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/spec-to-code-compliance",
+   "name": "spec-to-code-compliance",
+   "installs": 2937,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/audit-prep-assistant",
+   "name": "audit-prep-assistant",
+   "installs": 2878,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/cosmos-vulnerability-scanner",
+   "name": "cosmos-vulnerability-scanner",
+   "installs": 2753,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/algorand-vulnerability-scanner",
+   "name": "algorand-vulnerability-scanner",
+   "installs": 2723,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/ton-vulnerability-scanner",
+   "name": "ton-vulnerability-scanner",
+   "installs": 2711,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/substrate-vulnerability-scanner",
+   "name": "substrate-vulnerability-scanner",
+   "installs": 2704,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/cairo-vulnerability-scanner",
+   "name": "cairo-vulnerability-scanner",
+   "installs": 2700,
+   "source": "trailofbits/skills"
+  }
+ ],
+ "Testing & QA": [
+  {
+   "id": "obra/superpowers/test-driven-development",
+   "name": "test-driven-development",
+   "installs": 107848,
+   "source": "obra/superpowers"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/ab-test-setup",
+   "name": "ab-test-setup",
+   "installs": 52323,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "currents-dev/playwright-best-practices-skill/playwright-best-practices",
+   "name": "playwright-best-practices",
+   "installs": 45300,
+   "source": "currents-dev/playwright-best-practices-skill"
+  },
+  {
+   "id": "antfu/skills/vitest",
+   "name": "vitest",
+   "installs": 21029,
+   "source": "antfu/skills"
+  },
+  {
+   "id": "momentic-ai/skills/momentic-test",
+   "name": "momentic-test",
+   "installs": 16056,
+   "source": "momentic-ai/skills"
+  },
+  {
+   "id": "mattpocock/skills/qa",
+   "name": "qa",
+   "installs": 13330,
+   "source": "mattpocock/skills"
+  },
+  {
+   "id": "github/awesome-copilot/playwright-generate-test",
+   "name": "playwright-generate-test",
+   "installs": 12856,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "flutter/skills/flutter-add-widget-test",
+   "name": "flutter-add-widget-test",
+   "installs": 12531,
+   "source": "flutter/skills"
+  },
+  {
+   "id": "flutter/skills/flutter-add-integration-test",
+   "name": "flutter-add-integration-test",
+   "installs": 12427,
+   "source": "flutter/skills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/ab-testing",
+   "name": "ab-testing",
+   "installs": 10908,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "github/awesome-copilot/javascript-typescript-jest",
+   "name": "javascript-typescript-jest",
+   "installs": 10832,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/playwright-explore-website",
+   "name": "playwright-explore-website",
+   "installs": 10799,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/webapp-testing",
+   "name": "webapp-testing",
+   "installs": 10773,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/pytest-coverage",
+   "name": "pytest-coverage",
+   "installs": 10685,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "clerk/skills/clerk-testing",
+   "name": "clerk-testing",
+   "installs": 9110,
+   "source": "clerk/skills"
+  },
+  {
+   "id": "github/awesome-copilot/scoutqa-test",
+   "name": "scoutqa-test",
+   "installs": 9074,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "flutter/skills/flutter-testing-apps",
+   "name": "flutter-testing-apps",
+   "installs": 8979,
+   "source": "flutter/skills"
+  },
+  {
+   "id": "github/awesome-copilot/breakdown-test",
+   "name": "breakdown-test",
+   "installs": 8743,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "github/awesome-copilot/legacy-circuit-mockups",
+   "name": "legacy-circuit-mockups",
+   "installs": 8599,
+   "source": "github/awesome-copilot"
+  },
+  {
+   "id": "dart-lang/skills/dart-add-unit-test",
+   "name": "dart-add-unit-test",
+   "installs": 4884,
+   "source": "dart-lang/skills"
+  },
+  {
+   "id": "dart-lang/skills/dart-collect-coverage",
+   "name": "dart-collect-coverage",
+   "installs": 4763,
+   "source": "dart-lang/skills"
+  },
+  {
+   "id": "dart-lang/skills/dart-generate-test-mocks",
+   "name": "dart-generate-test-mocks",
+   "installs": 4746,
+   "source": "dart-lang/skills"
+  },
+  {
+   "id": "samber/cc-skills-golang/golang-testing",
+   "name": "golang-testing",
+   "installs": 3695,
+   "source": "samber/cc-skills-golang"
+  },
+  {
+   "id": "testdino-hq/playwright-skill/playwright-skill",
+   "name": "playwright-skill",
+   "installs": 3419,
+   "source": "testdino-hq/playwright-skill"
+  },
+  {
+   "id": "samber/cc-skills-golang/golang-lint",
+   "name": "golang-lint",
+   "installs": 3401,
+   "source": "samber/cc-skills-golang"
+  },
+  {
+   "id": "samber/cc-skills-golang/golang-stretchr-testify",
+   "name": "golang-stretchr-testify",
+   "installs": 3301,
+   "source": "samber/cc-skills-golang"
+  },
+  {
+   "id": "sickn33/antigravity-awesome-skills/playwright-skill",
+   "name": "playwright-skill",
+   "installs": 3287,
+   "source": "sickn33/antigravity-awesome-skills"
+  },
+  {
+   "id": "trailofbits/skills/property-based-testing",
+   "name": "property-based-testing",
+   "installs": 3166,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/coverage-analysis",
+   "name": "coverage-analysis",
+   "installs": 2830,
+   "source": "trailofbits/skills"
+  },
+  {
+   "id": "trailofbits/skills/testing-handbook-generator",
+   "name": "testing-handbook-generator",
+   "installs": 2751,
+   "source": "trailofbits/skills"
+  }
+ ],
+ "Marketing & SEO": [
+  {
+   "id": "coreyhaines31/marketingskills/marketing-psychology",
+   "name": "marketing-psychology",
+   "installs": 84784,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/programmatic-seo",
+   "name": "programmatic-seo",
+   "installs": 77808,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/marketing-ideas",
+   "name": "marketing-ideas",
+   "installs": 75327,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/copy-editing",
+   "name": "copy-editing",
+   "installs": 70889,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/ai-seo",
+   "name": "ai-seo",
+   "installs": 64792,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/product-marketing-context",
+   "name": "product-marketing-context",
+   "installs": 61410,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/pricing-strategy",
+   "name": "pricing-strategy",
+   "installs": 61395,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/ad-creative",
+   "name": "ad-creative",
+   "installs": 58763,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/cold-email",
+   "name": "cold-email",
+   "installs": 58339,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/analytics-tracking",
+   "name": "analytics-tracking",
+   "installs": 58035,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/page-cro",
+   "name": "page-cro",
+   "installs": 57679,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/launch-strategy",
+   "name": "launch-strategy",
+   "installs": 56259,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/site-architecture",
+   "name": "site-architecture",
+   "installs": 55879,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/schema-markup",
+   "name": "schema-markup",
+   "installs": 55695,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/churn-prevention",
+   "name": "churn-prevention",
+   "installs": 55513,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/email-sequence",
+   "name": "email-sequence",
+   "installs": 55334,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/paid-ads",
+   "name": "paid-ads",
+   "installs": 54885,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/sales-enablement",
+   "name": "sales-enablement",
+   "installs": 54790,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/competitor-alternatives",
+   "name": "competitor-alternatives",
+   "installs": 54369,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/onboarding-cro",
+   "name": "onboarding-cro",
+   "installs": 53848,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/revops",
+   "name": "revops",
+   "installs": 52976,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/form-cro",
+   "name": "form-cro",
+   "installs": 52792,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/free-tool-strategy",
+   "name": "free-tool-strategy",
+   "installs": 52545,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/referral-program",
+   "name": "referral-program",
+   "installs": 52490,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/signup-flow-cro",
+   "name": "signup-flow-cro",
+   "installs": 52039,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/paywall-upgrade-cro",
+   "name": "paywall-upgrade-cro",
+   "installs": 51637,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/popup-cro",
+   "name": "popup-cro",
+   "installs": 51314,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/lead-magnets",
+   "name": "lead-magnets",
+   "installs": 47891,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "coreyhaines31/marketingskills/customer-research",
+   "name": "customer-research",
+   "installs": 41120,
+   "source": "coreyhaines31/marketingskills"
+  },
+  {
+   "id": "resciencelab/opc-skills/seo-geo",
+   "name": "seo-geo",
+   "installs": 28317,
+   "source": "resciencelab/opc-skills"
+  }
+ ],
+ "Finance & Business": [
+  {
+   "id": "molezzz/openclaw-stock-skill/akshare-stock",
+   "name": "akshare-stock",
+   "installs": 9253,
+   "source": "molezzz/openclaw-stock-skill"
+  },
+  {
+   "id": "stripe/ai/stripe-best-practices",
+   "name": "stripe-best-practices",
+   "installs": 8773,
+   "source": "stripe/ai"
+  },
+  {
+   "id": "binance/binance-skills-hub/trading-signal",
+   "name": "trading-signal",
+   "installs": 6368,
+   "source": "binance/binance-skills-hub"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-admin",
+   "name": "shopify-admin",
+   "installs": 6093,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-dev",
+   "name": "shopify-dev",
+   "installs": 5609,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-liquid",
+   "name": "shopify-liquid",
+   "installs": 5449,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-custom-data",
+   "name": "shopify-custom-data",
+   "installs": 4941,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-functions",
+   "name": "shopify-functions",
+   "installs": 4906,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-polaris-app-home",
+   "name": "shopify-polaris-app-home",
+   "installs": 4630,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-customer",
+   "name": "shopify-customer",
+   "installs": 4545,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-partner",
+   "name": "shopify-partner",
+   "installs": 4468,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-polaris-admin-extensions",
+   "name": "shopify-polaris-admin-extensions",
+   "installs": 4433,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-polaris-checkout-extensions",
+   "name": "shopify-polaris-checkout-extensions",
+   "installs": 4398,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-polaris-customer-account-extensions",
+   "name": "shopify-polaris-customer-account-extensions",
+   "installs": 4360,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-hydrogen",
+   "name": "shopify-hydrogen",
+   "installs": 4356,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-payments-apps",
+   "name": "shopify-payments-apps",
+   "installs": 4348,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "stripe/ai/upgrade-stripe",
+   "name": "upgrade-stripe",
+   "installs": 4259,
+   "source": "stripe/ai"
+  },
+  {
+   "id": "okx/onchainos-skills/okx-x402-payment",
+   "name": "okx-x402-payment",
+   "installs": 4041,
+   "source": "okx/onchainos-skills"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-onboarding-dev",
+   "name": "shopify-onboarding-dev",
+   "installs": 3698,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "sundial-org/awesome-openclaw-skills/stock-market-pro",
+   "name": "stock-market-pro",
+   "installs": 3635,
+   "source": "sundial-org/awesome-openclaw-skills"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-app-store-review",
+   "name": "shopify-app-store-review",
+   "installs": 3413,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "wind-information-co-ltd/wind-skills/wind-find-finance-skill",
+   "name": "wind-find-finance-skill",
+   "installs": 3187,
+   "source": "wind-information-co-ltd/wind-skills"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-use-shopify-cli",
+   "name": "shopify-use-shopify-cli",
+   "installs": 3127,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "shopify/shopify-ai-toolkit/shopify-onboarding-merchant",
+   "name": "shopify-onboarding-merchant",
+   "installs": 3013,
+   "source": "shopify/shopify-ai-toolkit"
+  },
+  {
+   "id": "clerk/skills/clerk-billing",
+   "name": "clerk-billing",
+   "installs": 2503,
+   "source": "clerk/skills"
+  },
+  {
+   "id": "benjaminsehl/liquid-skills/shopify-liquid-themes",
+   "name": "shopify-liquid-themes",
+   "installs": 2308,
+   "source": "benjaminsehl/liquid-skills"
+  },
+  {
+   "id": "sundial-org/awesome-openclaw-skills/finance-news",
+   "name": "finance-news",
+   "installs": 2263,
+   "source": "sundial-org/awesome-openclaw-skills"
+  },
+  {
+   "id": "binance/binance-skills-hub/derivatives-trading-usds-futures",
+   "name": "derivatives-trading-usds-futures",
+   "installs": 2260,
+   "source": "binance/binance-skills-hub"
+  },
+  {
+   "id": "nomadamas/k-skill/korean-stock-search",
+   "name": "korean-stock-search",
+   "installs": 2115,
+   "source": "nomadamas/k-skill"
+  },
+  {
+   "id": "wondelai/skills/predictable-revenue",
+   "name": "predictable-revenue",
+   "installs": 1986,
+   "source": "wondelai/skills"
+  }
+ ]
+}

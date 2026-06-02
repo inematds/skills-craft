@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3 — As Melhores para Começar | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+      <span class="text-emerald-400">Módulo 1.3</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⭐ As Melhores para Começar (Starter Pack)</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">As skills canônicas que todo mundo deveria conhecer e instalar primeiro. Oito nomes que ensinam o ecossistema mais rápido do que qualquer tutorial — e o kit mínimo para sair instalando hoje.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Curado</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🧭 Por que existe um "starter pack"</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Com <strong class="text-emerald-400">39.366 skills</strong> no catálogo, ninguém começa pela cauda longa. Você começa pelas skills que são, ao mesmo tempo, <strong class="text-emerald-400">muito instaladas</strong> (sinal de que funcionam), <strong class="text-emerald-400">bem escritas</strong> (servem de modelo) e <strong class="text-emerald-400">de fontes confiáveis</strong> (vercel-labs, anthropics, supabase). Instalar e ler essas skills é o atalho mais rápido para entender o que uma skill boa parece por dentro.
+      </p>
+
+      <svg viewBox="0 0 600 220" role="img" aria-label="Diagrama do starter pack: o comando npx skills add instala oito skills canônicas agrupadas em descoberta, frontend, agentes, dados e processo" class="w-full h-auto my-6">
+        <defs>
+          <filter id="g13"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <linearGradient id="grad13" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+        </defs>
+        <rect x="20" y="88" width="150" height="44" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1.5" filter="url(#g13)"/>
+        <text x="95" y="106" text-anchor="middle" fill="#10b981" font-size="11" font-family="monospace">npx skills add</text>
+        <text x="95" y="122" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="monospace">owner/repo</text>
+        <g stroke="url(#grad13)" stroke-width="1.5" stroke-opacity="0.7" filter="url(#g13)">
+          <line x1="170" y1="110" x2="240" y2="40"/>
+          <line x1="170" y1="110" x2="240" y2="90"/>
+          <line x1="170" y1="110" x2="240" y2="130"/>
+          <line x1="170" y1="110" x2="240" y2="180"/>
+        </g>
+        <g font-family="sans-serif" font-size="10">
+          <rect x="240" y="26" width="150" height="28" rx="6" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1"/>
+          <text x="252" y="44" fill="#38bdf8">Descoberta · find-skills</text>
+          <rect x="240" y="76" width="150" height="28" rx="6" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
+          <text x="252" y="94" fill="#10b981">Frontend · 3 skills</text>
+          <rect x="240" y="116" width="150" height="28" rx="6" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1"/>
+          <text x="252" y="134" fill="#38bdf8">Agentes · 2 skills</text>
+          <rect x="240" y="166" width="150" height="28" rx="6" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
+          <text x="252" y="184" fill="#10b981">Dados + Processo</text>
+        </g>
+        <circle cx="470" cy="110" r="46" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="1.5" filter="url(#g13)"/>
+        <text x="470" y="106" text-anchor="middle" fill="#10b981" font-size="16" font-weight="bold">8</text>
+        <text x="470" y="124" text-anchor="middle" fill="#38bdf8" font-size="9">skills base</text>
+        <g stroke="#10b981" stroke-width="1.2" stroke-opacity="0.6" filter="url(#g13)">
+          <line x1="390" y1="40" x2="426" y2="95"/>
+          <line x1="390" y1="90" x2="424" y2="105"/>
+          <line x1="390" y1="130" x2="424" y2="116"/>
+          <line x1="390" y1="180" x2="426" y2="128"/>
+        </g>
+      </svg>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ Começar errado</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sair instalando skills aleatórias da cauda longa</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Copiar uma skill com 3 installs como "modelo"</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tentar criar a sua antes de ler uma boa</span></li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Começar pelo pack</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Instalar 4-8 skills canônicas e ler o SKILL.md delas</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ver como players sérios escrevem description e corpo</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ganhar utilidade imediata enquanto aprende o formato</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Instalar é ler de graça</h3>
+        <p class="text-neutral-300 text-sm">Cada skill que você instala vira um arquivo SKILL.md no seu projeto, em <code class="bg-dark-700 px-1 rounded">skills/</code> ou <code class="bg-dark-700 px-1 rounded">.claude/skills/</code>. Abra esses arquivos: o starter pack é também a melhor coleção de exemplos comentados que você vai achar.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">🔎 A indispensável: find-skills</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Se você instalar só uma, instale esta. <strong class="text-emerald-400">find-skills</strong> (vercel-labs/skills) é a skill mais instalada do planeta — <strong class="text-emerald-400">1.802.925 installs</strong> — e faz uma coisa só, perfeitamente: ensina o agente a buscar, avaliar e instalar outras skills do catálogo sozinho. É a meta-skill que destrava todas as outras.
+      </p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-lg font-semibold text-emerald-400">find-skills</h3>
+          <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">1.802.925 installs</span>
+        </div>
+        <p class="text-neutral-300 text-sm mb-2"><strong class="text-white">O que faz:</strong> dá ao agente a habilidade de pesquisar o skills.sh por linguagem natural, comparar candidatas e instalar a melhor — sem você precisar abrir o site.</p>
+        <p class="text-neutral-300 text-sm"><strong class="text-white">Por que entra no pack:</strong> transforma o agente em curador do próprio ecossistema. Você pede "ache uma skill para X" e ele resolve. É o ponto de entrada de tudo.</p>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">instalar:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills add vercel-labs/skills</span></pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Por que 1,8M e não 488k?</h3>
+        <p class="text-neutral-300 text-sm">find-skills tem o dobro de installs da segunda colocada porque é instalada como pré-requisito de quase todo fluxo de descoberta. Vantagem de "chegou cedo e virou infraestrutura" — exatamente o viés de install count que a Trilha 1.5 vai dissecar.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🎨 O trio de frontend</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Web &amp; Frontend é o segundo maior grupo do catálogo, e três skills dominam: as duas referências de design da <strong class="text-emerald-400">vercel-labs</strong> e a <strong class="text-emerald-400">anthropics/skills</strong>. Mesmo que você não seja dev de front, ler elas mostra como escrever uma skill de "guideline" — instruções de estilo que o agente aplica sem você repetir.
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="font-semibold text-white">frontend-design <span class="text-neutral-500 text-sm font-mono">· anthropics/skills</span></h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">488.299</span>
+          </div>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">O que faz:</strong> gera interfaces polidas, com gosto, fugindo do visual genérico de IA. <strong class="text-white">No pack:</strong> é a skill da própria Anthropic — referência de como escrever uma skill de design e gatilho de qualidade visual imediata.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="font-semibold text-white">vercel-react-best-practices <span class="text-neutral-500 text-sm font-mono">· vercel-labs/agent-skills</span></h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">443.261</span>
+          </div>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">O que faz:</strong> codifica as boas práticas de React/Next que a Vercel recomenda — composição, server components, padrões de dados. <strong class="text-white">No pack:</strong> melhora qualquer código React que o agente escreva e mostra como condensar uma stack inteira num SKILL.md.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="font-semibold text-white">web-design-guidelines <span class="text-neutral-500 text-sm font-mono">· vercel-labs/agent-skills</span></h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">358.627</span>
+          </div>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">O que faz:</strong> diretrizes de layout, tipografia, espaçamento e acessibilidade aplicadas a qualquer UI. <strong class="text-white">No pack:</strong> par perfeito com frontend-design — uma cuida do "como construir", a outra do "como deve parecer".</p>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">instalar o trio:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills add anthropics/skills</span>
+$ <span class="text-emerald-400">npx skills add vercel-labs/agent-skills</span>   <span class="text-neutral-500"># traz react + design guidelines</span></pre>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">🤖 As duas de agentes: skill-creator e agent-browser</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Duas skills do grupo AI/Agents merecem entrar cedo porque mudam o que o seu agente <em>consegue fazer</em>. Uma ensina o agente a <strong class="text-emerald-400">criar novas skills</strong>; a outra dá a ele <strong class="text-emerald-400">um navegador</strong>.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-white">skill-creator</h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">246k</span>
+          </div>
+          <p class="text-neutral-300 text-sm mb-2"><span class="text-neutral-500 font-mono">anthropics/skills</span></p>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">Faz:</strong> guia o agente a escrever, revisar e otimizar SKILL.md. <strong class="text-white">No pack:</strong> é a fonte canônica de "como uma skill deve ser" — você vai usar ela na Trilha 1.4 para criar a sua.</p>
+        </div>
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-semibold text-white">agent-browser</h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">332k</span>
+          </div>
+          <p class="text-neutral-300 text-sm mb-2"><span class="text-neutral-500 font-mono">vercel-labs</span></p>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">Faz:</strong> automatiza navegação, preenche formulários, tira screenshots, extrai dados de páginas. <strong class="text-white">No pack:</strong> destrava casos de uso reais (testar UI, raspar dados) com uma instalação só.</p>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">instalar:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills add anthropics/skills</span>      <span class="text-neutral-500"># skill-creator</span>
+$ <span class="text-emerald-400">npx skills add vercel-labs/agent-skills</span>  <span class="text-neutral-500"># agent-browser</span></pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Skills do mesmo repo vêm juntas</h3>
+        <p class="text-neutral-300 text-sm">Vários nomes do pack moram no mesmo repositório (anthropics/skills traz frontend-design + skill-creator; vercel-labs traz várias). Um <code class="bg-dark-700 px-1 rounded">npx skills add owner/repo</code> pode instalar um pacote inteiro de uma vez.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🗄️ Dados e processo: supabase + TDD</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Para fechar o pack com algo além de front, duas skills de domínios diferentes mostram a amplitude do catálogo: uma de <strong class="text-emerald-400">dados</strong> (a líder do grupo Data) e uma de <strong class="text-emerald-400">processo de engenharia</strong> (a referência da comunidade superpowers).
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="font-semibold text-white">supabase-postgres-best-practices <span class="text-neutral-500 text-sm font-mono">· supabase</span></h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">203k</span>
+          </div>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">O que faz:</strong> ensina o agente a escrever SQL, RLS e schema Postgres do jeito que a Supabase recomenda. <strong class="text-white">No pack:</strong> é a skill mais instalada de Data &amp; Databases e um ótimo exemplo de skill de fornecedor (vendor) feita pelo próprio time do produto.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="font-semibold text-white">test-driven-development <span class="text-neutral-500 text-sm font-mono">· obra/superpowers</span></h4>
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full font-mono">107k</span>
+          </div>
+          <p class="text-neutral-300 text-sm"><strong class="text-white">O que faz:</strong> faz o agente escrever o teste antes do código, em loop red-green-refactor. <strong class="text-white">No pack:</strong> melhora a qualidade de QUALQUER tarefa de código e é o exemplo canônico de skill de "processo" — não dá ferramenta, muda o comportamento.</p>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">instalar:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills add supabase/supabase</span>
+$ <span class="text-emerald-400">npx skills add obra/superpowers</span></pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Três sabores de skill no pack</h3>
+        <p class="text-neutral-300 text-sm">Repare que o starter pack cobre os três tipos que você vai reencontrar no curso: <strong>meta</strong> (find-skills, skill-creator), <strong>guideline/vendor</strong> (frontend, react, supabase) e <strong>processo</strong> (TDD). Conhecer um de cada já te dá vocabulário para o resto.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">📦 O kit mínimo recomendado</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Não precisa instalar os oito de uma vez. Comece pelo <strong class="text-emerald-400">kit mínimo de 3</strong> — o essencial para qualquer pessoa — e expanda conforme seu trabalho. Aqui está a ordem recomendada, em passos.
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Kit mínimo (todo mundo): find-skills + skill-creator</h4>
+            <p class="text-neutral-300 text-sm">Com descoberta + criação você já consegue achar tudo o que existe e criar o que falta. É o par fundacional. Adicione <strong>test-driven-development</strong> se você escreve código.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Se faz front: + frontend-design + web-design-guidelines</h4>
+            <p class="text-neutral-300 text-sm">O par de design da Anthropic e da Vercel cobre "construir" e "parecer bom". Adicione vercel-react-best-practices se a stack for React/Next.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Por necessidade: agent-browser e supabase</h4>
+            <p class="text-neutral-300 text-sm">agent-browser quando precisar automatizar a web; supabase-postgres-best-practices quando o projeto tiver Postgres. Instale sob demanda — não acumule skills que você não usa.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">o kit mínimo em dois comandos:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills add vercel-labs/skills</span>   <span class="text-neutral-500"># find-skills</span>
+$ <span class="text-emerald-400">npx skills add anthropics/skills</span>    <span class="text-neutral-500"># skill-creator + frontend-design</span></pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Menos é mais</h3>
+        <p class="text-neutral-300 text-sm">Cada skill instalada gasta um pouco do contexto do agente (o name + description vive sempre carregado). Um pack enxuto e relevante funciona melhor do que 40 skills concorrendo pela atenção. Instale o que usa; remova o que não usa.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">O starter pack é um atalho</strong><span class="text-neutral-400"> — skills muito instaladas, bem escritas e de fontes confiáveis ensinam o formato mais rápido</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">find-skills é a indispensável</strong><span class="text-neutral-400"> — 1,8M installs; a meta-skill que faz o agente curar o próprio ecossistema</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Trio de frontend</strong><span class="text-neutral-400"> — frontend-design (488k), vercel-react (443k), web-design-guidelines (358k)</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Agentes</strong><span class="text-neutral-400"> — skill-creator (246k) cria skills; agent-browser (332k) dá um navegador</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Dados + processo</strong><span class="text-neutral-400"> — supabase-postgres (203k) e test-driven-development (107k)</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Kit mínimo</strong><span class="text-neutral-400"> — find-skills + skill-creator (+ TDD se codifica); expanda por necessidade, não por acúmulo</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-emerald-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">1.4 — 🛠️ Como Criar: Sua Primeira Skill em 10 Minutos. Agora que você leu skills boas, é hora de escrever a sua do zero ao funcionando.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 1</a>
+          <a href="modulo-1-4.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo: 1.4 Como Criar →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.5 — Lendo o Ecossistema como um Pro | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+      <span class="text-emerald-400">Módulo 1.5</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.5</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Dicas Avançadas: Lendo o Ecossistema como um Pro</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Install count mente um pouco. Aprenda a ler o catálogo criticamente: o viés de quem chegou cedo, como achar skills em ascensão e nichos vazios, avaliar a fonte, usar o CLI com proveito e — o mais raro — saber quando NÃO instalar.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Pro tips</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">📊 Install count tem viés</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Install count é o sinal mais visível do skills.sh — e o mais mal interpretado. Ele mede <strong class="text-emerald-400">adoção acumulada</strong>, não qualidade atual. É um número cumulativo que favorece quem <strong class="text-emerald-400">chegou cedo</strong>, tem <strong class="text-emerald-400">marca</strong> e virou pré-requisito de outras coisas. find-skills tem 1,8M não porque é "duas vezes melhor" que frontend-design (488k), mas porque é instalada como dependência de quase todo fluxo.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ O que install count NÃO diz</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Que a skill ainda está mantida e atualizada</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Que ela é melhor que uma recém-lançada</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Que as pessoas que instalaram realmente usam</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Que ela serve para o SEU caso específico</span></li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ O que ele realmente sinaliza</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Que muita gente apostou nela em algum momento</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Que provavelmente não é lixo óbvio</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Vantagem de quem chegou cedo (first-mover)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Força da marca da fonte por trás</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Trate como reputação, não como nota</h3>
+        <p class="text-neutral-300 text-sm">Install count é tipo seguidores no Twitter: alto número correlaciona com relevância, mas não prova qualidade do conteúdo de hoje. Use como filtro inicial ("vale olhar"), nunca como decisão final.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">📈 Achar skills em ascensão e nichos vazios</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A lei de potência é também um mapa de oportunidade. Lembre: <strong class="text-emerald-400">60,2%</strong> das skills têm &lt;100 installs, <strong class="text-emerald-400">30,8%</strong> entre 100-999, e só <strong class="text-emerald-400">131 skills</strong> passam de 100k. O topo está saturado e travado. As oportunidades — e as joias subvalorizadas — vivem na faixa do meio e nos grupos pequenos.
+      </p>
+
+      <svg viewBox="0 0 600 230" role="img" aria-label="Curva da lei de potência com a zona de oportunidade destacada na faixa do meio entre 100 e 10 mil installs" class="w-full h-auto my-6">
+        <defs>
+          <filter id="g15"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <linearGradient id="grad15" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+        </defs>
+        <line x1="50" y1="190" x2="580" y2="190" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5"/>
+        <line x1="50" y1="190" x2="50" y2="30" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5"/>
+        <path d="M55 50 C 130 60, 180 120, 280 150 C 380 175, 480 185, 575 188" fill="none" stroke="url(#grad15)" stroke-width="2.5" filter="url(#g15)"/>
+        <rect x="200" y="40" width="200" height="150" fill="#38bdf8" fill-opacity="0.08" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="300" y="32" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">zona de oportunidade</text>
+        <text x="300" y="120" text-anchor="middle" fill="#10b981" font-size="10">100 – 10k installs</text>
+        <text x="300" y="136" text-anchor="middle" fill="#38bdf8" font-size="9">menos saturada, dor real</text>
+        <text x="95" y="44" fill="#10b981" font-size="9" text-anchor="middle">topo travado</text>
+        <text x="95" y="56" fill="#38bdf8" font-size="8" text-anchor="middle">131 skills</text>
+        <text x="530" y="178" fill="#10b981" font-size="9" text-anchor="middle">cauda longa</text>
+        <text x="530" y="190" fill="#38bdf8" font-size="8" text-anchor="middle">60,2%</text>
+        <text x="40" y="40" fill="#38bdf8" font-size="9" text-anchor="end">installs</text>
+        <text x="575" y="206" fill="#38bdf8" font-size="9" text-anchor="end">ranking →</text>
+      </svg>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Caçar na faixa do meio</h4>
+            <p class="text-neutral-300 text-sm">Skills com 100-10k installs que estão crescendo costumam ser melhores apostas que as fossilizadas do topo. Olhe data de atualização recente + installs subindo = skill em ascensão.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Cruzar grupo vs install/skill</h4>
+            <p class="text-neutral-300 text-sm">Grupos com pouca oferta e demanda real são nichos vazios: Office, Finance &amp; Business, Productivity &amp; PM têm centenas de skills, não milhares. Buscar lá rende mais do que duelar em AI/Agents (12.693 lotadas).</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Procurar a ausência</h4>
+            <p class="text-neutral-300 text-sm">A melhor oportunidade é o que NÃO aparece na busca. Se você procura sua dor específica e não acha nada bom, esse é o nicho vazio — e o sinal para criar (volte à Trilha 1.4).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🏷️ Avaliar a fonte</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Antes do install count, olhe <strong class="text-emerald-400">quem publicou</strong>. A fonte conta muito porque você vai dar a uma skill a chance de mudar o comportamento do seu agente — e às vezes de rodar coisas. Há três perfis de fonte, e cada um pede um nível diferente de confiança.
+      </p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <div class="space-y-3">
+          <div class="flex items-start justify-between bg-dark-800/50 rounded-lg p-3"><div><span class="text-white font-semibold text-sm">Fornecedor oficial</span><p class="text-neutral-400 text-xs">supabase, stripe, microsoft, vercel-labs — o dono do produto</p></div><span class="text-emerald-400 font-bold text-sm flex-shrink-0">confiança alta</span></div>
+          <div class="flex items-start justify-between bg-dark-800/50 rounded-lg p-3"><div><span class="text-white font-semibold text-sm">Referência da plataforma</span><p class="text-neutral-400 text-xs">anthropics/skills — quem definiu o formato</p></div><span class="text-emerald-400 font-bold text-sm flex-shrink-0">confiança alta</span></div>
+          <div class="flex items-start justify-between bg-dark-800/50 rounded-lg p-3"><div><span class="text-white font-semibold text-sm">Comunidade reconhecida</span><p class="text-neutral-400 text-xs">obra/superpowers, coreyhaines31 — nome com histórico</p></div><span class="text-emerald-400 font-bold text-sm flex-shrink-0">confiança média</span></div>
+          <div class="flex items-start justify-between bg-dark-800/50 rounded-lg p-3"><div><span class="text-white font-semibold text-sm">Repo desconhecido</span><p class="text-neutral-400 text-xs">conta sem histórico, poucos installs, sem README</p></div><span class="text-amber-400 font-bold text-sm flex-shrink-0">leia o código</span></div>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Skill é instrução que você adota</h3>
+        <p class="text-neutral-300 text-sm">Uma skill de fonte duvidosa pode embutir instruções ruins (ou maliciosas) que o agente vai seguir. Abra o SKILL.md antes de instalar de fontes desconhecidas — é texto, leva 30 segundos. De fornecedor oficial, pode instalar com tranquilidade.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">⌨️ Usar o CLI com proveito</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Você não precisa abrir o site para nada. O <code class="bg-dark-700 px-1 rounded">npx skills</code> faz busca, instalação e manutenção pela linha de comando — e fica ainda melhor com a skill find-skills instalada, que deixa o próprio agente operar o CLI por você.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">os comandos que importam:</p>
+        <pre class="text-neutral-300 leading-relaxed">$ <span class="text-emerald-400">npx skills find</span> "postgres rls"   <span class="text-neutral-500"># buscar por termo</span>
+$ <span class="text-emerald-400">npx skills add</span> supabase/supabase  <span class="text-neutral-500"># instalar de um repo</span>
+$ <span class="text-emerald-400">npx skills add</span> ./skills/minha-skill <span class="text-neutral-500"># instalar local</span>
+$ <span class="text-emerald-400">npx skills list</span>                  <span class="text-neutral-500"># ver o que está instalado</span>
+$ <span class="text-emerald-400">npx skills update</span>               <span class="text-neutral-500"># atualizar tudo para a última versão</span></pre>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-3">find com proveito</h4>
+          <p class="text-neutral-300 text-sm">Busque pela <strong>dor</strong>, não pelo nome ("validar webhook stripe", não "stripe"). Compare 2-3 resultados pela description antes de instalar — a description já revela se a skill mira o seu caso.</p>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-3">deixe o agente operar</h4>
+          <p class="text-neutral-300 text-sm">Com find-skills instalada, peça em linguagem natural: "ache e instale a melhor skill para testes e2e". O agente roda <code class="bg-dark-700 px-1 rounded">find</code>, avalia e <code class="bg-dark-700 px-1 rounded">add</code> sozinho.</p>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> update não é grátis</h3>
+        <p class="text-neutral-300 text-sm"><code class="bg-dark-700 px-1 rounded">npx skills update</code> puxa a última versão — ótimo para correções, mas pode mudar comportamento que você dependia. Rode periodicamente e teste depois, especialmente em skills de processo (como TDD) que afetam todo o seu fluxo.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🛑 Quando NÃO instalar</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A habilidade mais avançada é a contenção. Cada skill instalada consome contexto (o name + description fica sempre carregado) e adiciona um possível gatilho indesejado. Mais skills nem sempre é melhor — às vezes o melhor movimento é <strong class="text-emerald-400">não instalar</strong>.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ Não instale quando...</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>É algo que você faz uma vez só — um prompt resolve</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Já tem uma skill parecida ativa (descriptions colidem)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>A fonte é desconhecida e você não leu o SKILL.md</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>É contexto fixo do projeto — vai melhor no CLAUDE.md</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você está acumulando "por garantia", sem caso de uso</span></li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Instale quando...</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>É um comportamento que você quer repetível e automático</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Resolve uma dor recorrente e específica sua</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A fonte é confiável ou você leu o conteúdo</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Não conflita com o que já está instalado</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você vai usar nas próximas semanas, não "um dia"</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">o teste de 3 perguntas antes de instalar:</p>
+        <pre class="text-neutral-300 leading-relaxed"><span class="text-emerald-400">[ ]</span> vou usar isto mais de uma vez?
+<span class="text-emerald-400">[ ]</span> confio na fonte (ou li o SKILL.md)?
+<span class="text-emerald-400">[ ]</span> não tenho nada que já faça isto?</pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Faça faxina periódica</h3>
+        <p class="text-neutral-300 text-sm">Rode <code class="bg-dark-700 px-1 rounded">npx skills list</code> de vez em quando e remova o que não usa há semanas. Um conjunto enxuto de skills relevantes dispara melhor e gasta menos contexto do que uma coleção inchada disputando atenção.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">🧠 A mentalidade pro: pro tips acionáveis</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Juntando tudo, ler o ecossistema "como um pro" é menos sobre números e mais sobre ceticismo aplicado. Seis hábitos que separam quem só olha o leaderboard de quem extrai valor real do catálogo.
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Leia a description, não o número</h4>
+            <p class="text-neutral-300 text-sm">A description revela mais sobre adequação ao seu caso do que qualquer install count. Se ela não diz claramente O QUE e QUANDO, desconfie da skill inteira.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Prefira recente + em alta a antigo + grande</h4>
+            <p class="text-neutral-300 text-sm">Uma skill com 5k installs atualizada semana passada tende a bater uma com 200k parada há um ano. Movimento &gt; tamanho.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Busque pela dor, instale o mínimo</h4>
+            <p class="text-neutral-300 text-sm">Procure o problema em linguagem natural; instale só o que passa no teste de 3 perguntas. Resista ao acúmulo.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Trate o catálogo como mapa de nichos</h4>
+            <p class="text-neutral-300 text-sm">Onde a busca pela sua dor volta vazia, está sua oportunidade de criar. O catálogo te diz tanto o que instalar quanto o que falta no mundo.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">5</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Atualize e revise em ciclo</h4>
+            <p class="text-neutral-300 text-sm">Rode <code class="bg-dark-700 px-1 rounded">update</code> e <code class="bg-dark-700 px-1 rounded">list</code> periodicamente; teste depois de atualizar; remova o morto. Manutenção é parte de usar bem.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">6</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Saiba quando não instalar</h4>
+            <p class="text-neutral-300 text-sm">A contenção é vantagem competitiva. Menos skills, mais relevantes, melhor afinadas — esse é o estado que faz o agente render de verdade.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Fim da Trilha 1 — você tem o mapa</h3>
+        <p class="text-neutral-300 text-sm">Você já sabe o que é uma skill, como é o mercado, o que instalar primeiro, como criar a sua e como ler tudo criticamente. A Trilha 2 aprofunda o que separa o topo da cauda: <strong>qualidade</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Install count tem viés</strong><span class="text-neutral-400"> — mede adoção acumulada e favorece quem chegou cedo; é reputação, não nota</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Oportunidade na faixa do meio</strong><span class="text-neutral-400"> — 60,2% &lt;100, só 131 com 100k+; joias e nichos vivem entre 100 e 10k</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Avalie a fonte</strong><span class="text-neutral-400"> — fornecedor/plataforma = confiança; repo desconhecido = leia o SKILL.md</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Use o CLI</strong><span class="text-neutral-400"> — find pela dor, add, list, update; deixe o agente operar com find-skills</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Saiba quando NÃO instalar</strong><span class="text-neutral-400"> — teste de 3 perguntas; contenção e faxina periódica</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Mentalidade pro</strong><span class="text-neutral-400"> — ceticismo aplicado: description &gt; número, movimento &gt; tamanho, mínimo &gt; acúmulo</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-emerald-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">Trilha 2 — 🎯 Qualidade &amp; As Melhores. O que separa as 131 skills do topo dos 60,2% da cauda — e como reconhecer (e escrever) uma skill de qualidade.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 1</a>
+          <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Trilha 2 →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

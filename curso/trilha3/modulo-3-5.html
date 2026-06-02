@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.5 — Dicas Avançadas: Multi-Arquivo e Roteamento | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-purple-400 bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-purple-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span>
+      <span class="text-purple-400">Módulo 3.5</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.5</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Dicas Avançadas: Multi-Arquivo e Roteamento</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Progressive disclosure de verdade: references/ por domínio que o agente lê seletivamente, scripts/ que executam sem contexto, índices em arquivos longos, SKILL.md abaixo de 500 linhas e assets/ bem usados.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Avanç.</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Pro</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🪜 Progressive disclosure de verdade</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Você já viu os 3 níveis no 3.2. Aqui colocamos em prática: o objetivo é que o agente <strong class="text-purple-400">carregue só o que precisa, quando precisa</strong>. Uma skill avançada é como um menu — o SKILL.md mostra as opções, e cada arquivo só entra no contexto quando aquela rota é escolhida.
+      </p>
+      <svg viewBox="0 0 600 220" role="img" aria-label="Diagrama de roteamento: SKILL.md aponta para references por domínio, agente lê só o relevante" class="w-full h-auto my-6">
+        <defs>
+          <filter id="g51"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect x="220" y="20" width="160" height="46" rx="10" fill="#a855f7" opacity="0.18" stroke="#a855f7" stroke-width="2" filter="url(#g51)"/>
+        <text x="300" y="40" fill="#a855f7" font-family="monospace" font-size="13" text-anchor="middle">SKILL.md</text>
+        <text x="300" y="56" fill="#94a3b8" font-family="Inter" font-size="10" text-anchor="middle">roteador (sempre lido)</text>
+        <g font-family="monospace" font-size="11" text-anchor="middle">
+          <line x1="300" y1="66" x2="110" y2="150" stroke="#38bdf8" stroke-width="1.5" filter="url(#g51)"/>
+          <line x1="300" y1="66" x2="300" y2="150" stroke="#38bdf8" stroke-width="1.5" filter="url(#g51)"/>
+          <line x1="300" y1="66" x2="490" y2="150" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/>
+          <rect x="40" y="150" width="140" height="44" rx="8" fill="#38bdf8" opacity="0.15" stroke="#38bdf8" stroke-width="2" filter="url(#g51)"/>
+          <text x="110" y="170" fill="#38bdf8">references/aws.md</text>
+          <text x="110" y="185" fill="#22c55e" font-family="Inter" font-size="9">✓ lido (tarefa AWS)</text>
+          <rect x="230" y="150" width="140" height="44" rx="8" fill="#38bdf8" opacity="0.15" stroke="#38bdf8" stroke-width="2" filter="url(#g51)"/>
+          <text x="300" y="170" fill="#38bdf8">references/gcp.md</text>
+          <text x="300" y="185" fill="#22c55e" font-family="Inter" font-size="9">✓ lido (tarefa GCP)</text>
+          <rect x="420" y="150" width="140" height="44" rx="8" fill="#4b5563" opacity="0.25" stroke="#4b5563" stroke-width="1.5"/>
+          <text x="490" y="170" fill="#6b7280">references/azure.md</text>
+          <text x="490" y="185" fill="#6b7280" font-family="Inter" font-size="9">✗ NÃO carregado</text>
+        </g>
+      </svg>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">A meta</h3>
+        <p class="text-neutral-300 text-sm">Numa tarefa AWS, o agente lê aws.md e ignora gcp.md e azure.md. O contexto carrega um terço do conteúdo. É assim que skills como azure-ai (358k) cobrem dezenas de serviços sem estourar o contexto.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">🗂️ references/ por domínio</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O padrão canônico do skill-creator: quando uma skill cobre vários domínios, <strong class="text-purple-400">organize por variante</strong> e deixe o SKILL.md fazer a seleção. O agente lê apenas o arquivo de referência relevante.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">estrutura de domain organization (do skill-creator):</p>
+        <pre class="text-neutral-300 leading-relaxed">cloud-deploy/
+├── SKILL.md          # workflow + seleção
+└── references/
+    ├── aws.md         # lido só em tarefas AWS
+    ├── gcp.md         # lido só em tarefas GCP
+    └── azure.md       # lido só em tarefas Azure</pre>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        No corpo, o roteamento é explícito — uma tabela "se o domínio é X, leia Y":
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">roteamento no corpo do SKILL.md:</p>
+        <pre class="text-neutral-300 leading-relaxed">## Selecione o provedor
+
+| Provedor | Leia                |
+|----------|---------------------|
+| AWS      | references/aws.md   |
+| GCP      | references/gcp.md   |
+| Azure    | references/azure.md |
+
+Read ONLY the file for the user's provider.</pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Pro tip</h3>
+        <p class="text-neutral-300 text-sm">Um arquivo único de 900 linhas força o agente a carregar tudo. Três de 300 deixam ele pegar só um — economia de 66% de contexto. E manutenção fica trivial: você edita azure.md sem tocar no resto.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">⚙️ scripts/ que executam sem contexto</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A jogada mais poderosa do Nível 3: um script <strong class="text-purple-400">executa e o agente só recebe o resultado</strong> — o código nunca entra no contexto. Para tarefas determinísticas (mesma entrada → mesma saída), isso é mais confiável e mais barato do que instruir o agente a "raciocinar" o passo a passo.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-3">✗ Instrução no corpo</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Faça parse do CSV, some a coluna 3, formate..."</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>O agente pode errar a aritmética</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Gasta tokens raciocinando o óbvio</span></li>
+          </ul>
+        </div>
+        <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+          <h4 class="font-bold text-purple-400 mb-3">✓ Script no Nível 3</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>"Run <code class="bg-dark-700 px-1 rounded">python scripts/sum.py</code>"</span></li>
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Resultado exato, sempre</span></li>
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Código não ocupa contexto</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">no corpo: aponte e execute, não cole o código:</p>
+        <pre class="text-neutral-300 leading-relaxed">## Steps
+1. Run `python scripts/package_skill.py &lt;path&gt;`
+   to bundle the skill into a .skill file.
+2. The script prints the output path — return it.
+
+# o conteúdo de package_skill.py NUNCA entra
+# no contexto; só a saída do comando.</pre>
+      </div>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Sinal de extração</h3>
+        <p class="text-neutral-300 text-sm">Se você nota o agente reescrevendo o mesmo helper em toda execução, esse é o sinal: escreva uma vez, ponha em <code class="bg-dark-700 px-1 rounded">scripts/</code>, e mande a skill usá-lo. É exatamente o que o skill-creator recomenda no loop de iteração.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">📑 Table-of-contents em arquivos &gt;300 linhas</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Regra do skill-creator: qualquer arquivo de referência com mais de <strong class="text-purple-400">300 linhas</strong> ganha uma tabela de conteúdo no topo. Assim o agente navega direto à seção certa sem reler o arquivo inteiro.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">índice no topo de um reference longo:</p>
+        <pre class="text-neutral-300 leading-relaxed"># Guia AWS
+
+## Índice
+- [IAM &amp; permissões](#iam)
+- [S3 &amp; storage](#s3)
+- [Lambda &amp; serverless](#lambda)
+- [Networking (VPC)](#vpc)
+
+## IAM
+...</pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Pro tip</h3>
+        <p class="text-neutral-300 text-sm">Se um reference passa de ~300 linhas com a TOC e ainda assim parece grande demais, é sinal de quebrá-lo em dois arquivos por subtema. TOC é o primeiro remédio; partição é o segundo.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">📏 SKILL.md &lt;500 linhas + hierarquia com pointers</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A regra de ouro: <strong class="text-purple-400">mantenha o corpo abaixo de 500 linhas</strong>. Ao se aproximar do limite, não corte conteúdo — <strong class="text-purple-400">adicione uma camada de hierarquia</strong> com ponteiros claros sobre para onde o agente deve ir em seguida.
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Identifique o que é detalhe</h4>
+            <p class="text-neutral-300 text-sm">Edge cases, tabelas grandes e exemplos longos raramente precisam estar no corpo.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Mova para references/</h4>
+            <p class="text-neutral-300 text-sm">Tire do corpo e ponha num arquivo de referência dedicado por subtema.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Deixe um pointer no corpo</h4>
+            <p class="text-neutral-300 text-sm">"See <code class="bg-dark-700 px-1 rounded">references/schemas.md</code> for the full schema" — diga quando ler.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">pointers reais (estilo skill-creator):</p>
+        <pre class="text-neutral-300 leading-relaxed">See `references/schemas.md` for the full schema
+(including the `assertions` field).
+
+The references/ directory has more docs:
+- `references/schemas.md` — JSON structures
+- `references/eval-format.md` — eval layout</pre>
+      </div>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Por que o limite importa</h3>
+        <p class="text-neutral-300 text-sm">O corpo entra inteiro no contexto a cada disparo. Corpos longos diluem a atenção do agente e custam tokens toda vez. Hierarquia com pointers paga o custo só quando o detalhe é realmente necessário.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">🎨 assets/ e o checklist final</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A pasta <code class="bg-dark-700 px-1 rounded">assets/</code> guarda arquivos <strong class="text-purple-400">usados no output</strong>: templates HTML, fontes, ícones, boilerplate. Diferente de references/ (que o agente lê para aprender), assets são preenchidos ou copiados para o resultado final — como o <code class="bg-dark-700 px-1 rounded">assets/eval_review.html</code> que o skill-creator preenche com dados.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">os três diretórios, papéis distintos:</p>
+        <pre class="text-neutral-300 leading-relaxed">scripts/    → executado   (resultado no contexto)
+references/ → lido         (aprende sob demanda)
+assets/     → preenchido   (vai pro output final)</pre>
+      </div>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Checklist da skill multi-arquivo afiada</h3>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>SKILL.md abaixo de 500 linhas, com pointers claros</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>references/ fatiado por domínio; agente lê só o relevante</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>TOC em todo reference acima de 300 linhas</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Tarefas determinísticas viraram scripts/ que rodam sem contexto</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>assets/ só com arquivos que vão para a saída</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Cada arquivo tem um ponteiro correspondente no corpo</span></li>
+        </ul>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Dica final</h3>
+        <p class="text-neutral-300 text-sm">Multi-arquivo bem feito é o que separa uma skill brinquedo de uma como azure-ai ou supabase. Com a anatomia dominada, a próxima fronteira é o loop de criação — testar, avaliar e otimizar a description — que é exatamente o tema da Trilha 4.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Progressive disclosure real</strong><span class="text-neutral-400"> — SKILL.md roteia, cada arquivo entra só quando preciso.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">references/ por domínio</strong><span class="text-neutral-400"> — aws/gcp/azure separados; o agente lê só o relevante.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">scripts/ sem contexto</strong><span class="text-neutral-400"> — determinístico executa e devolve só o resultado.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">TOC em &gt;300 linhas</strong><span class="text-neutral-400"> — navegação direta; partição quando ainda for grande.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">&lt;500 linhas + pointers</strong><span class="text-neutral-400"> — adicione hierarquia em vez de cortar conteúdo.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">assets/ para output</strong><span class="text-neutral-400"> — templates e fontes preenchidos no resultado final.</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-purple-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">Trilha 4 — ⚙️ Como Criar (o loop): capturar intent, draft, testar com prompts realistas, avaliar e otimizar a description até a skill ficar afiada.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 3</a>
+          <a href="../trilha4/index.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">Próximo →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

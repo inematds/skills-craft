@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.4 — Como Criar: Montando um SKILL.md do Zero | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-purple-400 bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-purple-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span>
+      <span class="text-purple-400">Módulo 3.4</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.4</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ Como Criar: Montando um SKILL.md do Zero</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Da pasta vazia ao SKILL.md completo: frontmatter (name + description gatilho), corpo imperativo com When to Use e Steps, e quando criar scripts/ references/ assets/. Com template pronto para copiar.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🧭 O caminho do zero ao SKILL.md</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Criar uma skill é um trajeto de seis paradas: <strong class="text-purple-400">capturar intent → frontmatter → corpo → pastas → empacotar → iterar</strong>. Neste módulo você percorre da pasta vazia até o arquivo pronto. A iteração (testar e otimizar a description) é o tema da Trilha 4 — aqui o foco é a montagem.
+      </p>
+      <svg viewBox="0 0 600 130" role="img" aria-label="Linha do tempo da criação de uma skill em seis etapas" class="w-full h-auto my-6">
+        <defs>
+          <filter id="g41"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <line x1="50" y1="65" x2="550" y2="65" stroke="#a855f7" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+        <g font-family="Inter" font-size="10" text-anchor="middle">
+          <circle cx="60" cy="65" r="16" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="2" filter="url(#g41)"/><text x="60" y="69" fill="#a855f7" font-weight="700">1</text><text x="60" y="100" fill="#94a3b8">intent</text>
+          <circle cx="158" cy="65" r="16" fill="#38bdf8" opacity="0.2" stroke="#38bdf8" stroke-width="2" filter="url(#g41)"/><text x="158" y="69" fill="#38bdf8" font-weight="700">2</text><text x="158" y="100" fill="#94a3b8">frontmatter</text>
+          <circle cx="256" cy="65" r="16" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="2" filter="url(#g41)"/><text x="256" y="69" fill="#a855f7" font-weight="700">3</text><text x="256" y="100" fill="#94a3b8">corpo</text>
+          <circle cx="354" cy="65" r="16" fill="#38bdf8" opacity="0.2" stroke="#38bdf8" stroke-width="2" filter="url(#g41)"/><text x="354" y="69" fill="#38bdf8" font-weight="700">4</text><text x="354" y="100" fill="#94a3b8">pastas</text>
+          <circle cx="452" cy="65" r="16" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="2" filter="url(#g41)"/><text x="452" y="69" fill="#a855f7" font-weight="700">5</text><text x="452" y="100" fill="#94a3b8">empacotar</text>
+          <circle cx="540" cy="65" r="16" fill="#38bdf8" opacity="0.2" stroke="#38bdf8" stroke-width="2" filter="url(#g41)"/><text x="540" y="69" fill="#38bdf8" font-weight="700">6</text><text x="540" y="100" fill="#94a3b8">iterar</text>
+        </g>
+        <text x="300" y="25" fill="#a855f7" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle">Do zero ao SKILL.md</text>
+      </svg>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Comece minúsculo</h3>
+        <p class="text-neutral-300 text-sm">Um SKILL.md válido tem só duas partes: frontmatter com name + description, e um corpo Markdown. Pastas são opcionais — só crie quando o conteúdo pedir. Não monte scripts/ no dia um.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">🏷️ Passo 1 — frontmatter: name kebab-case</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O <code class="bg-dark-700 px-1 rounded">name</code> é o identificador. Regra única e inegociável: <strong class="text-purple-400">kebab-case minúsculo</strong>, igual ao nome da pasta. Sem espaços, sem maiúsculas, sem underscores.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-3">✗ Names quebrados</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm font-mono">
+            <li><span class="text-red-400">✗</span> PDF Extractor</li>
+            <li><span class="text-red-400">✗</span> pdf_extractor</li>
+            <li><span class="text-red-400">✗</span> PdfExtractor</li>
+            <li><span class="text-red-400">✗</span> minha-skill-v2-final</li>
+          </ul>
+        </div>
+        <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+          <h4 class="font-bold text-purple-400 mb-3">✓ Names corretos</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm font-mono">
+            <li><span class="text-purple-400">✓</span> pdf-extractor</li>
+            <li><span class="text-purple-400">✓</span> frontend-design</li>
+            <li><span class="text-purple-400">✓</span> skill-creator</li>
+            <li><span class="text-purple-400">✓</span> supabase</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Dica</h3>
+        <p class="text-neutral-300 text-sm">O nome da pasta DEVE bater com o <code class="bg-dark-600 px-1 rounded">name</code>. Se a pasta é <code class="bg-dark-600 px-1 rounded">pdf-extractor/</code>, o frontmatter é <code class="bg-dark-600 px-1 rounded">name: pdf-extractor</code>. Divergência quebra o carregamento.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🎣 Passo 2 — description: o gatilho</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A <code class="bg-dark-700 px-1 rounded">description</code> é o único texto sempre carregado e o que faz a skill disparar. Siga a fórmula: <strong class="text-purple-400">[O QUE faz] + [QUANDO usar] + [GATILHOS concretos]</strong>. Seja pushy — Claude subdispara por padrão.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">a fórmula aplicada (exemplo de uma skill nova):</p>
+        <pre class="text-neutral-300 leading-relaxed">description: Extract structured data from PDF
+  invoices and receipts into JSON. Use this skill
+  whenever the user uploads a PDF invoice/receipt,
+  asks to "parse", "extract fields", or "read"
+  a financial document, or mentions OCR on a
+  scanned bill.</pre>
+      </div>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">A</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">O QUE faz</h4>
+            <p class="text-neutral-300 text-sm">"Extract structured data from PDF invoices..." — começa com verbo e diz o resultado.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">B</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">QUANDO usar</h4>
+            <p class="text-neutral-300 text-sm">"Use this skill whenever the user uploads a PDF invoice..." — a condição de disparo.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">C</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">GATILHOS concretos</h4>
+            <p class="text-neutral-300 text-sm">"parse", "extract fields", "read", "OCR" — palavras-chave que o usuário realmente digita.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">~100 palavras é o teto</h3>
+        <p class="text-neutral-300 text-sm">A metadata (name + description) é o Nível 1 do progressive disclosure e fica SEMPRE no contexto. Mantenha em torno de 100 palavras: assertiva o bastante para disparar, enxuta o bastante para não pesar em cada conversa.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">📝 Passo 3 — o corpo: imperativo, When to Use, Steps</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O corpo é Markdown em modo <strong class="text-purple-400">imperativo</strong> ("Read the file", "Run the script"), explicando o <strong class="text-purple-400">porquê</strong> em vez de gritar MUSTs em maiúscula. Uma estrutura que funciona: título, uma linha do que a skill faz, <strong class="text-purple-400">When to Use</strong>, <strong class="text-purple-400">Steps</strong> numerados e exemplos de output.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">esqueleto do corpo:</p>
+        <pre class="text-neutral-300 leading-relaxed"># PDF Invoice Extractor
+
+Extracts fields from PDF invoices into clean JSON.
+
+## When to Use
+Use when the user provides a PDF invoice and asks
+to extract fields, parse, or read it.
+
+## Steps
+1. Run `python scripts/extract.py &lt;file.pdf&gt;`.
+2. Validate the JSON against the schema below.
+3. Return the JSON; flag any missing field.
+
+## Output Format
+{ "vendor": str, "total": number, "date": str }</pre>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-3">✗ Corpo ruim</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"YOU MUST ALWAYS..." gritado em caps</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Parágrafos longos sem passos</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem dizer quando usar</span></li>
+          </ul>
+        </div>
+        <div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+          <h4 class="font-bold text-purple-400 mb-3">✓ Corpo bom</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Imperativo claro + o porquê</span></li>
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Steps numerados, acionáveis</span></li>
+            <li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>When to Use + Output Format explícitos</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">📁 Passo 4 — quando criar cada pasta</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        As pastas são opcionais e nascem da necessidade, não da estética. Crie <strong class="text-purple-400">só quando o gatilho abaixo aparecer</strong>:
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">⚙️</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2"><code class="bg-dark-700 px-1 rounded">scripts/</code> — código determinístico</h4>
+            <p class="text-neutral-300 text-sm">Crie quando uma tarefa tem mesma entrada → mesma saída (converter arquivo, validar schema). Mais confiável que instruções e executa sem carregar o código no contexto.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">📚</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2"><code class="bg-dark-700 px-1 rounded">references/</code> — docs sob demanda</h4>
+            <p class="text-neutral-300 text-sm">Crie quando o corpo cresceria além de 500 linhas com detalhes que só importam em casos específicos. O agente lê só o arquivo relevante.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold text-sm">🎨</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2"><code class="bg-dark-700 px-1 rounded">assets/</code> — arquivos de saída</h4>
+            <p class="text-neutral-300 text-sm">Crie quando a skill produz algo a partir de um template (HTML, fonte, ícone, boilerplate). São arquivos usados <em>no</em> output, não lidos como instrução.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">a árvore final da skill de exemplo:</p>
+        <pre class="text-neutral-300 leading-relaxed">pdf-extractor/
+├── SKILL.md            # frontmatter + corpo
+├── scripts/
+│   └── extract.py      # roda sem ir pro contexto
+├── references/
+│   └── field-map.md    # lido só em casos raros
+└── assets/
+    └── report.html     # template de saída</pre>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Dica</h3>
+        <p class="text-neutral-300 text-sm">Não crie pastas vazias "para o futuro". Cada arquivo deve ter um ponteiro correspondente no corpo do SKILL.md dizendo quando lê-lo ou executá-lo.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">📄 Passo 5 — template completo para copiar</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Junte tudo. Este é um SKILL.md inteiro, pronto para colar num arquivo, trocar os nomes e começar. Cobre frontmatter, When to Use, Steps, Output Format e ponteiros para as pastas.
+      </p>
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">SKILL.md — template completo:</p>
+        <pre class="text-neutral-300 leading-relaxed">---
+name: pdf-extractor
+description: Extract structured data from PDF
+  invoices and receipts into JSON. Use this skill
+  whenever the user uploads a PDF invoice/receipt,
+  asks to "parse", "extract fields", or "read" a
+  financial document, or mentions OCR on a bill.
+metadata:
+  author: seu-usuario
+  version: "0.1.0"
+---
+
+# PDF Invoice Extractor
+
+Extracts fields from PDF invoices into clean,
+validated JSON. Built for accounts-payable flows.
+
+## When to Use
+Use when the user provides a PDF invoice or
+receipt and asks to extract, parse, or read its
+fields. Do NOT use for plain-text data or images
+without a document layout.
+
+## Steps
+1. Run `python scripts/extract.py &lt;file.pdf&gt;` to
+   pull raw fields. The script handles OCR.
+2. Validate the result against the schema in
+   `references/field-map.md` — read it only if a
+   field is missing or ambiguous.
+3. If the user wants a report, fill the template
+   `assets/report.html` with the JSON.
+4. Return the JSON and flag any field you could
+   not extract. Never invent values.
+
+## Output Format
+```json
+{ "vendor": "string", "total": 0.00,
+  "date": "YYYY-MM-DD", "line_items": [] }
+```
+
+## Notes
+Explain to the user which fields were uncertain so
+they can verify — accuracy matters more here than
+speed.</pre>
+      </div>
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Pronto — agora teste</h3>
+        <p class="text-neutral-300 text-sm">Salve como <code class="bg-dark-700 px-1 rounded">pdf-extractor/SKILL.md</code>, crie as pastas citadas e você tem uma skill instalável. O passo 6 — testar, avaliar e otimizar a description num loop — é exatamente o tema da Trilha 4. O 3.5, a seguir, mostra como deixar a estrutura multi-arquivo realmente afiada.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Comece minúsculo</strong><span class="text-neutral-400"> — só frontmatter + corpo; pastas vêm da necessidade.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">name kebab-case</strong><span class="text-neutral-400"> — minúsculo, sem espaços, igual ao nome da pasta.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">description = gatilho</strong><span class="text-neutral-400"> — O QUE + QUANDO + GATILHOS, ~100 palavras, pushy.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">corpo imperativo</strong><span class="text-neutral-400"> — When to Use, Steps numerados, Output Format, o porquê.</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">pastas sob demanda</strong><span class="text-neutral-400"> — scripts/ (determinístico), references/ (docs), assets/ (saída).</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">template completo</strong><span class="text-neutral-400"> — copie, troque os nomes e instale.</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-purple-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">Módulo 3.5 — 🚀 Dicas avançadas: progressive disclosure de verdade, roteamento por domínio, scripts que rodam sem contexto e como manter o SKILL.md abaixo de 500 linhas.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 3</a>
+          <a href="modulo-3-5.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Próximo →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

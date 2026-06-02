@@ -10,7 +10,7 @@ Em vez de teoria solta, parte de uma **análise real de 39.366 skills** coletada
 | Caminho | O que é |
 |---|---|
 | `index.html` | Landing do curso |
-| `curso/trilha1..5/` | 5 trilhas × (índice + 2 módulos) = 16 páginas |
+| `curso/trilha1..5/` | 5 trilhas × (índice + 5 módulos) = 30 páginas. Cada trilha fecha com ⭐ As Melhores · 🛠️ Como Criar · 🚀 Dicas Avançadas |
 | `data/` | Dataset coletado do skills.sh (metadados das 39k skills, grupos, stats) |
 | `corpus/examples/` | 25 arquivos `SKILL.md` reais das melhores skills (1 a 2 por grupo) |
 | `BUILD-SPEC.md` | Spec de design usado para gerar as páginas no padrão INEMA |

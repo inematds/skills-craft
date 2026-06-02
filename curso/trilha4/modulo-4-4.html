@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4.4 — Walkthrough Completo com Evals | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-amber-400 bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-amber-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-amber-400">Trilha 4</a><span>/</span>
+      <span class="text-amber-400">Módulo 4.4</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.4</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ Como Criar: Walkthrough Completo com Evals</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Um exemplo trabalhado de ponta a ponta: do intent (4 perguntas) ao SKILL.md, test prompts realistas, evals.json com assertions verificáveis, rodar com-skill vs baseline e iterar. Templates JSON prontos para copiar.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-amber-400">6</div>
+          <div class="text-xs text-neutral-400">Tópicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-amber-400">50</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-amber-400">Prático</div>
+          <div class="text-xs text-neutral-400">Nível</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-amber-400">Hands-on</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- SVG: pipeline ponta a ponta -->
+    <svg viewBox="0 0 660 200" role="img" aria-label="Pipeline de criação: intent, draft, test prompts, evals.json, rodar, iterar" class="w-full h-auto my-2 max-w-3xl mx-auto">
+      <defs>
+        <filter id="g44"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <marker id="ah44" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#38bdf8"/></marker>
+      </defs>
+      <g filter="url(#g44)">
+        <circle cx="60" cy="100" r="30" fill="#f59e0b" fill-opacity="0.13" stroke="#f59e0b" stroke-width="1.8"/>
+        <circle cx="180" cy="100" r="30" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1.8"/>
+        <circle cx="300" cy="100" r="30" fill="#f59e0b" fill-opacity="0.13" stroke="#f59e0b" stroke-width="1.8"/>
+        <circle cx="420" cy="100" r="30" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1.8"/>
+        <circle cx="540" cy="100" r="30" fill="#f59e0b" fill-opacity="0.13" stroke="#f59e0b" stroke-width="1.8"/>
+      </g>
+      <text x="60" y="104" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600" font-family="Inter">intent</text>
+      <text x="180" y="104" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="600" font-family="Inter">draft</text>
+      <text x="300" y="104" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600" font-family="Inter">evals</text>
+      <text x="420" y="104" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="600" font-family="Inter">rodar</text>
+      <text x="540" y="104" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600" font-family="Inter">iterar</text>
+      <g stroke="#38bdf8" stroke-width="2" fill="none" filter="url(#g44)" opacity="0.85">
+        <path d="M90 100 L148 100" marker-end="url(#ah44)"/>
+        <path d="M210 100 L268 100" marker-end="url(#ah44)"/>
+        <path d="M330 100 L388 100" marker-end="url(#ah44)"/>
+        <path d="M450 100 L508 100" marker-end="url(#ah44)"/>
+      </g>
+      <path d="M540 130 Q300 185 60 130" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="5 6" fill="none" opacity="0.55" marker-end="url(#ah44)"/>
+      <text x="300" y="178" text-anchor="middle" fill="#f59e0b" font-size="10" font-family="Inter" opacity="0.7">repetir até satisfazer</text>
+    </svg>
+
+    <p class="text-neutral-300 mb-10 leading-relaxed text-center max-w-3xl mx-auto">
+      Vamos construir uma skill de verdade do começo ao fim: <strong class="text-amber-400">"margem-xlsx"</strong> — recebe uma planilha de vendas e adiciona uma coluna de margem de lucro em %. Acompanhe cada estágio.
+    </p>
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🎯 Estágio 1 — Capturar o intent (4 perguntas)</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Antes de escrever uma linha, o skill-creator faz <strong class="text-amber-400">4 perguntas</strong>. Se a conversa já tem o workflow, extraia das mensagens e só pergunte o que falta. Confirme antes de seguir.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">as 4 perguntas → respostas do nosso caso:</p>
+        <pre class="text-neutral-300 leading-relaxed">1. O que habilita?  → adicionar coluna de margem (%) num xlsx de vendas
+2. Quando dispara?  → usuário menciona planilha, margem, lucro, vendas
+3. Formato saída?   → mesmo xlsx + nova coluna formatada como %
+4. Vale testar?     → SIM (saída objetivamente verificável)</pre>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Saída verificável → vale testar</h3>
+        <p class="text-neutral-300 text-sm">A pergunta 4 decide o resto do walkthrough. Transformações de arquivo, extração de dados e geração de código têm saída objetiva — merecem evals. Skills de estilo/arte se avaliam só qualitativamente. Como o nosso caso é uma transformação de planilha, vamos full evals.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">📝 Estágio 2 — Draft do SKILL.md</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Com o intent fechado, escreva o draft: <strong class="text-amber-400">name</strong>, <strong class="text-amber-400">description</strong> (o gatilho — pushy, com o que faz E quando usar) e o corpo no imperativo, explicando o porquê.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">SKILL.md — draft inicial:</p>
+        <pre class="text-neutral-300 leading-relaxed">---
+name: margem-xlsx
+description: Adiciona uma coluna de margem de lucro (%) a planilhas
+  de vendas .xlsx. Use sempre que o usuário enviar uma planilha e
+  mencionar margem, lucro, rentabilidade ou comparar receita e
+  custos — mesmo sem pedir "coluna" explicitamente.
+---
+
+# Margem XLSX
+
+Calcule a margem como (receita - custo) / receita e grave numa
+nova coluna formatada como porcentagem.
+
+## Passos
+1. Abra o .xlsx e identifique as colunas de receita e custo
+   (pergunte se ambíguo — não chute).
+2. Crie a coluna "Margem" à direita, formatada como %.
+3. Preserve abas, fórmulas e formatação existentes.
+4. Salve mantendo o nome original com sufixo "-margem".</pre>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ description fraca</h4>
+          <p class="text-neutral-300 text-sm">"Mexe em planilhas de vendas."</p>
+          <p class="text-neutral-400 text-xs mt-3">Vaga, não diz quando disparar, vai subdisparar.</p>
+        </div>
+        <div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+          <h4 class="font-bold text-amber-400 mb-4">✓ description pushy</h4>
+          <p class="text-neutral-300 text-sm">Lista verbos + contextos: "margem, lucro, rentabilidade... mesmo sem pedir coluna".</p>
+          <p class="text-neutral-400 text-xs mt-3">O que faz E quando usar, com near-triggers cobertos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🧪 Estágio 3 — 2-3 test prompts realistas</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Crie de 2 a 3 prompts como um usuário real escreveria — com backstory, paths e detalhes. Mostre ao usuário, salve em <code>evals/evals.json</code> <strong class="text-amber-400">sem assertions ainda</strong>.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">evals/evals.json — TEMPLATE pronto (só prompts):</p>
+        <pre class="text-neutral-300 leading-relaxed">{
+  "skill_name": "margem-xlsx",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "minha chefe mandou 'Q4 sales final FINAL v2.xlsx' (tá em Downloads) e quer margem de lucro em %. receita na col C, custo na D acho",
+      "expected_output": "xlsx com coluna Margem em % à direita",
+      "files": ["Q4 sales final FINAL v2.xlsx"]
+    },
+    {
+      "id": 2,
+      "prompt": "tenho esse relatorio de vendas mensal, da pra ver quanto a gente lucra de verdade em cada produto? planilha anexa",
+      "expected_output": "coluna de rentabilidade por linha em %",
+      "files": ["vendas_mensal.xlsx"]
+    },
+    {
+      "id": 3,
+      "prompt": "preciso comparar receita vs custo por SKU nessa planilha e ver a margem",
+      "expected_output": "coluna Margem = (receita-custo)/receita",
+      "files": ["skus.xlsx"]
+    }
+  ]
+}</pre>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Valide antes de rodar</h3>
+        <p class="text-neutral-300 text-sm">Diga ao usuário: "Aqui estão os casos de teste que quero tentar. Estão certos ou quer adicionar mais?". Prompts ruins geram avaliação enganosa — esta confirmação é barata e evita rodar tudo à toa.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">📊 Estágio 4 — Assertions verificáveis</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Enquanto as runs rodam (não fique parado), escreva as <strong class="text-amber-400">assertions</strong>: objetivamente verificáveis, com nomes descritivos, de preferência checadas por script. Cada test case ganha um <code>eval_metadata.json</code>.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">eval_metadata.json — TEMPLATE pronto (com assertions):</p>
+        <pre class="text-neutral-300 leading-relaxed">{
+  "eval_id": 0,
+  "eval_name": "margem-q4-receita-custo",
+  "prompt": "...margem de lucro em %. receita col C, custo D...",
+  "assertions": [
+    "Arquivo .xlsx de saída existe com sufixo -margem",
+    "Coluna 'Margem' presente à direita das demais",
+    "Coluna Margem formatada como porcentagem (%)",
+    "Valores batem com (C - D) / C por linha",
+    "Abas e formatação originais preservadas"
+  ]
+}</pre>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ assertion ruim</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"a planilha ficou boa" (subjetivo)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"check_1" (nome opaco no viewer)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"arquivo existe" (passa com ou sem skill)</span></li>
+          </ul>
+        </div>
+        <div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+          <h4 class="font-bold text-amber-400 mb-4">✓ assertion boa</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>"Valores batem com (C-D)/C" (script confere)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Nome legível: "coluna formatada como %"</span></li>
+            <li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Discrimina with_skill de baseline</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">⚖️ Estágio 5 — Rodar com-skill vs baseline</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Para cada test case, dispare dois subagents <strong class="text-amber-400">no mesmo turno</strong>: um com a skill, um sem (baseline = sem skill, pois é skill nova). Organize a saída por iteração e por eval. Capture <code>total_tokens</code> e <code>duration_ms</code> da notificação assim que cada run terminar.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">estrutura do workspace + timing.json:</p>
+        <pre class="text-neutral-300 leading-relaxed">margem-xlsx-workspace/
+└── iteration-1/
+    ├── margem-q4-receita-custo/
+    │   ├── with_skill/outputs/   ← saída com a skill
+    │   ├── without_skill/outputs/ ← baseline
+    │   └── timing.json
+    └── benchmark.json            ← gerado pela agregação
+
+# timing.json
+{ "total_tokens": 84852, "duration_ms": 23332,
+  "total_duration_seconds": 23.3 }</pre>
+      </div>
+
+      <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+        <h3 class="text-lg font-semibold text-amber-400 mb-3">Por que no mesmo turno</h3>
+        <p class="text-neutral-300 text-sm">Lance with_skill e without_skill juntos para terminarem por volta do mesmo tempo. Não rode os com-skill primeiro e volte depois para os baselines — isso introduz viés e dificulta comparar. O timing.json só pode ser capturado quando a notificação chega; processe cada uma na hora.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">🔁 Estágio 6 — Avaliar e iterar (timeline)</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Com tudo rodado, feche o loop. A timeline numerada abaixo é o ciclo do skill-creator, do grading até a próxima iteração.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Grade cada run</h4><p class="text-neutral-300 text-sm">Um grader avalia cada assertion → <code>grading.json</code> com campos <code>text</code>, <code>passed</code>, <code>evidence</code>. Para checagens programáticas, rode um script em vez de olhar no olho.</p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Agregue o benchmark</h4><p class="text-neutral-300 text-sm"><code>python -m scripts.aggregate_benchmark iteration-1 --skill-name margem-xlsx</code> → pass_rate, tempo e tokens por config, com média ± desvio e delta.</p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Abra o viewer ANTES de você julgar</h4><p class="text-neutral-300 text-sm"><code>generate_review.py</code> com <code>--benchmark</code>. Ponha os outputs na frente do humano primeiro. Não escreva HTML próprio.</p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">4</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Leia o feedback e generalize</h4><p class="text-neutral-300 text-sm">Feedback vazio = ok. Onde há reclamação, generalize a correção (não overfit), mantenha enxuto, explique o porquê. Script repetido nas 3 runs → bundle em <code>scripts/</code>.</p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">5</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Rerode em iteration-2 e repita</h4><p class="text-neutral-300 text-sm">Nova iteração com baselines, reviewer com <code>--previous-workspace</code>. Pare quando o usuário estiver feliz, o feedback vazio ou sem progresso.</p></div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> O que aconteceu no nosso caso</h3>
+        <p class="text-neutral-300 text-sm">As 3 runs com-skill escreveram um <code>calc_margem.py</code> quase idêntico — sinal forte de bundlar. Na iteração 2, o script foi para <code>scripts/</code> e o SKILL.md passou a apontá-lo. Resultado: pass_rate subiu e os tokens por run caíram, porque cada invocação parou de reinventar a roda.</p>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Intent em 4 perguntas</strong><span class="text-neutral-400"> — habilita o quê, quando dispara, formato, vale testar (saída verificável → sim)</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Draft com description pushy</strong><span class="text-neutral-400"> — o que faz E quando usar, corpo imperativo com o porquê</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">evals.json sem assertions, depois eval_metadata.json com</strong><span class="text-neutral-400"> — templates JSON prontos para copiar</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Rodar com-skill vs baseline no mesmo turno</strong><span class="text-neutral-400"> — workspace por iteração e eval, capturar timing.json na hora</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Grade → agregue → viewer → feedback → itere</strong><span class="text-neutral-400"> — script repetido vira bundle, e o loop fecha</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-amber-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">Módulo 4.5 — 🚀 Dicas Avançadas: Otimização de Description e Benchmark — split 60/40, near-misses, blind comparison e como ler o benchmark sem se enganar.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 4</a>
+          <a href="modulo-4-5.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">Próximo →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

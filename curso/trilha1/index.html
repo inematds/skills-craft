@@ -110,9 +110,9 @@
       </svg>
 
       <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">12</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~80</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">5</div><div class="text-xs text-neutral-400">Módulos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~3h30</div><div class="text-xs text-neutral-400">Duração</div></div>
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
       </div>
     </div>
@@ -308,6 +308,288 @@
       </div>
     </div>
 
+    <!-- ===== MÓDULO 1.3 ===== -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.3</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">⭐ As Melhores para Começar (Starter Pack)</h3>
+        <p class="text-neutral-400 text-sm">As skills canônicas que todo mundo deveria conhecer e instalar primeiro — oito nomes que ensinam o ecossistema mais rápido que qualquer tutorial, mais o kit mínimo recomendado.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🧭</span>
+            <div><span class="font-medium">Por que existe um starter pack</span><span class="text-neutral-500 text-sm ml-2">- entre 39 mil, comece pelas canônicas</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um conjunto pequeno de skills muito instaladas, bem escritas e de fontes confiáveis (vercel-labs, anthropics, supabase) que você instala e lê primeiro.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Instalar essas skills é o atalho mais rápido para entender o que uma skill boa parece por dentro — cada uma vira um exemplo comentado.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">curadoria · fonte confiável · instalar é ler · 4-8 skills base</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🔎</span>
+            <div><span class="font-medium">A indispensável: find-skills</span><span class="text-neutral-500 text-sm ml-2">- 1.802.925 installs, a meta-skill</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">find-skills (vercel-labs/skills, 1.802.925 installs) ensina o agente a buscar, avaliar e instalar outras skills do catálogo sozinho. <code class="bg-dark-700 px-1 rounded">npx skills add vercel-labs/skills</code>.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a skill mais instalada do planeta e o ponto de entrada de tudo — transforma o agente em curador do próprio ecossistema.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">find-skills · meta-skill · 1,8M installs · vercel-labs/skills</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🎨</span>
+            <div><span class="font-medium">O trio de frontend</span><span class="text-neutral-500 text-sm ml-2">- frontend-design, vercel-react, web-design-guidelines</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">frontend-design (488k, anthropics), vercel-react-best-practices (443k) e web-design-guidelines (358k, vercel-labs) — as três referências de design e código de UI. <code class="bg-dark-700 px-1 rounded">npx skills add anthropics/skills</code> e <code class="bg-dark-700 px-1 rounded">vercel-labs/agent-skills</code>.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostram como escrever uma skill de "guideline" — instruções de estilo que o agente aplica sem você repetir, mesmo que não seja dev de front.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">frontend-design 488k · vercel-react 443k · web-design-guidelines 358k · skill de guideline</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">🤖</span>
+            <div><span class="font-medium">As de agentes: skill-creator e agent-browser</span><span class="text-neutral-500 text-sm ml-2">- criar skills e dar um navegador</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">skill-creator (246k, anthropics) guia o agente a escrever e otimizar SKILL.md; agent-browser (332k, vercel-labs) dá ao agente um navegador para automação e raspagem.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mudam o que o agente consegue fazer: uma cria novas skills (você vai usar na 1.4), a outra destrava casos de uso reais na web.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">skill-creator 246k · agent-browser 332k · meta + ferramenta</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🗄️</span>
+            <div><span class="font-medium">Dados e processo: supabase + TDD</span><span class="text-neutral-500 text-sm ml-2">- a líder de Data e a referência de processo</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">supabase-postgres-best-practices (203k, supabase) ensina SQL/RLS/schema; test-driven-development (107k, obra/superpowers) faz o agente escrever o teste antes do código.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostram skill de vendor (feita pelo time do produto) e skill de processo (muda comportamento, não dá ferramenta) — dois sabores além do front.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">supabase 203k · TDD 107k · vendor · processo</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">📦</span>
+            <div><span class="font-medium">O kit mínimo recomendado</span><span class="text-neutral-500 text-sm ml-2">- comece com 3, expanda por necessidade</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O kit mínimo é find-skills + skill-creator (+ TDD se você codifica). Front adiciona frontend-design + web-design-guidelines; o resto entra por necessidade.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Cada skill gasta contexto: um pack enxuto e relevante funciona melhor que 40 skills concorrendo pela atenção. Instale o que usa.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">kit mínimo · find-skills + skill-creator · expandir sob demanda · menos é mais</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-3')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-3.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- ===== MÓDULO 1.4 ===== -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.4</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🛠️ Como Criar: Sua Primeira Skill em 10 Minutos</h3>
+        <p class="text-neutral-400 text-sm">Hands-on do zero ao funcionando: escolher um caso real (padrão de commits), escrever o SKILL.md mínimo, instalar local e ver disparar — com o arquivo pronto para copiar.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🎯</span>
+            <div><span class="font-medium">Escolha um caso pequeno e real</span><span class="text-neutral-500 text-sm ml-2">- chato e útil, não ambicioso</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma convenção que você repete e detesta repetir — o caso ideal de estreia. Nosso exemplo: o padrão de mensagens de commit (Conventional Commits).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Casos pequenos, concretos e testáveis em 1 minuto ensinam o formato; casos grandes ("deploy completo") frustram e não disparam.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">caso real · testável · conventional-commits · pequeno por design</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🧬</span>
+            <div><span class="font-medium">A anatomia mínima de um SKILL.md</span><span class="text-neutral-500 text-sm ml-2">- frontmatter + corpo, só isso</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um arquivo: frontmatter YAML com <code class="bg-dark-700 px-1 rounded">name</code> + <code class="bg-dark-700 px-1 rounded">description</code> obrigatórios, e um corpo Markdown imperativo embaixo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">name é o identificador; description é o gatilho (diz O QUE e QUANDO); corpo são as instruções. Saber os três é saber escrever qualquer skill.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">frontmatter YAML · name · description = gatilho · corpo imperativo</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">✍️</span>
+            <div><span class="font-medium">Escreva o SKILL.md (copie isto)</span><span class="text-neutral-500 text-sm ml-2">- a skill inteira, pronta pra colar</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A skill conventional-commits completa, para salvar em <code class="bg-dark-700 px-1 rounded">skills/conventional-commits/SKILL.md</code>: frontmatter, description com gatilhos, corpo curto com tipos e regras.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Ver um SKILL.md real e enxuto desmistifica o formato — a description carrega o peso com um "Use SEMPRE que..." e gatilhos concretos.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">SKILL.md pronto · gatilhos concretos · corpo curto · exemplo bom/ruim</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">📥</span>
+            <div><span class="font-medium">Instale local e veja funcionar</span><span class="text-neutral-500 text-sm ml-2">- npx skills add ./... e dispara</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Quatro passos: criar a pasta/arquivo, instalar com <code class="bg-dark-700 px-1 rounded">npx skills add ./skills/conventional-commits</code>, disparar com um pedido real e confirmar o formato na saída.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Você não precisa publicar para usar — instala de caminho local. Sem build, sem deploy, sem dependência. Dez minutos de verdade.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">npx skills add ./ · instalação local · dispara por contexto · confirmar</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🚫</span>
+            <div><span class="font-medium">Erros comuns de iniciante</span><span class="text-neutral-500 text-sm ml-2">- quase sempre é a description</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Os baldes de erro: description vaga, sem QUANDO usar, corpo gigante, frontmatter quebrado, regras em MAIÚSCULA gritada sem porquê.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Se a skill existe mas o agente ignora, 9 em 10 vezes é a description fraca, não o corpo. Saber isso poupa horas.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">description vaga · sem QUANDO · corpo inflado · YAML quebrado</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🌱</span>
+            <div><span class="font-medium">Evolua a partir do mínimo</span><span class="text-neutral-500 text-sm ml-2">- pequeno e vivo &gt; grande e morto</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Evolução incremental: afinar a description com base no que falhou, adicionar exemplos sob demanda, versionar o SKILL.md junto com o repo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma skill de 30 linhas usada e ajustada toda semana vale mais que uma de 500 escrita "completa" e nunca testada. Deixe o uso podar e crescer.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">afinar description · exemplos sob demanda · versionar no git · incremental</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-4')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-4.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- ===== MÓDULO 1.5 ===== -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.5</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🚀 Dicas Avançadas: Lendo o Ecossistema como um Pro</h3>
+        <p class="text-neutral-400 text-sm">Install count mente um pouco. Aprenda a ler o catálogo criticamente: viés de quem chegou cedo, achar skills em ascensão e nichos vazios, avaliar a fonte, usar o CLI e saber quando NÃO instalar.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">📊</span>
+            <div><span class="font-medium">Install count tem viés</span><span class="text-neutral-500 text-sm ml-2">- mede adoção acumulada, não qualidade</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Install count é cumulativo: favorece quem chegou cedo, tem marca e virou pré-requisito. find-skills (1,8M) lidera por ser dependência de quase todo fluxo, não por ser "melhor".</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É reputação, não nota. Use como filtro inicial ("vale olhar"), nunca como decisão final — ele não diz se a skill é mantida ou serve ao seu caso.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">viés cumulativo · first-mover · marca · reputação ≠ nota</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">📈</span>
+            <div><span class="font-medium">Skills em ascensão e nichos vazios</span><span class="text-neutral-500 text-sm ml-2">- a oportunidade vive na faixa do meio</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">60,2% das skills têm &lt;100 installs e só 131 passam de 100k. As joias subvalorizadas vivem entre 100 e 10k installs e nos grupos pequenos (Office, Finance, Productivity).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O topo está travado. Caçar recente + em alta na faixa do meio, e procurar a ausência (busca que volta vazia = nicho), rende mais que duelar com líderes.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">faixa do meio · em ascensão · nicho vazio · grupos pequenos</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🏷️</span>
+            <div><span class="font-medium">Avaliar a fonte</span><span class="text-neutral-500 text-sm ml-2">- vendor, plataforma, comunidade ou desconhecido</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Quatro perfis: fornecedor oficial (supabase, stripe) e plataforma (anthropics) = confiança alta; comunidade reconhecida = média; repo desconhecido = leia o SKILL.md antes.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill é instrução que o agente adota e às vezes executa. Uma fonte duvidosa pode embutir instruções ruins — e o SKILL.md é texto, leva 30 segundos para ler.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">vendor oficial · plataforma · comunidade · ler o SKILL.md</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">⌨️</span>
+            <div><span class="font-medium">Usar o CLI com proveito</span><span class="text-neutral-500 text-sm ml-2">- find, add, list, update</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><code class="bg-dark-700 px-1 rounded">npx skills find</code> busca, <code class="bg-dark-700 px-1 rounded">add</code> instala, <code class="bg-dark-700 px-1 rounded">list</code> mostra o instalado, <code class="bg-dark-700 px-1 rounded">update</code> atualiza. Com find-skills, o agente opera tudo por você.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Busque pela dor (não pelo nome) e compare descriptions antes de instalar. Mas update não é grátis — pode mudar comportamento; teste depois.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">npx skills find/add/list/update · buscar pela dor · agente opera o CLI</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🛑</span>
+            <div><span class="font-medium">Quando NÃO instalar</span><span class="text-neutral-500 text-sm ml-2">- a contenção é vantagem</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Não instale para algo de uso único (prompt resolve), quando já tem skill parecida, de fonte desconhecida não lida, para contexto fixo (vai no CLAUDE.md) ou "por garantia".</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Cada skill gasta contexto e adiciona gatilho indesejado. O teste de 3 perguntas (uso recorrente? confio na fonte? não tenho nada igual?) evita inchaço.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">teste de 3 perguntas · contexto custa · faxina periódica · CLAUDE.md vs skill</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🧠</span>
+            <div><span class="font-medium">A mentalidade pro</span><span class="text-neutral-500 text-sm ml-2">- ceticismo aplicado em 6 hábitos</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Seis hábitos: ler a description não o número; preferir recente+em alta a antigo+grande; buscar pela dor e instalar o mínimo; tratar o catálogo como mapa de nichos; atualizar/revisar em ciclo; saber não instalar.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Esses hábitos separam quem só olha o leaderboard de quem extrai valor real — e fecham a Trilha 1 com o mapa completo para a Trilha 2 (qualidade).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">description &gt; número · movimento &gt; tamanho · mínimo &gt; acúmulo · mapa de nichos</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-5')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-5.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
     <!-- ===== MAPA DA TRILHA ===== -->
     <h2 class="text-2xl font-bold mb-6 mt-12">Mapa da trilha</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -320,6 +602,21 @@
         <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.2</span><span class="text-xs text-neutral-500">~40 min</span></div>
         <div class="font-semibold mb-1">🗺️ O mapa do skills.sh: 39k skills, a lei de potência, os 16 grupos</div>
         <p class="text-neutral-400 text-sm">39 mil skills, uma curva brutal, e 100 nomes levando 43,7% de tudo.</p>
+      </a>
+      <a href="modulo-1-3.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-emerald-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.3</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <div class="font-semibold mb-1">⭐ As Melhores para Começar (Starter Pack)</div>
+        <p class="text-neutral-400 text-sm">Oito skills canônicas e o kit mínimo: o atalho para entender o ecossistema.</p>
+      </a>
+      <a href="modulo-1-4.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-emerald-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.4</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <div class="font-semibold mb-1">🛠️ Como Criar: Sua Primeira Skill em 10 Minutos</div>
+        <p class="text-neutral-400 text-sm">Do zero ao funcionando: um SKILL.md real, copiável, instalado e disparando.</p>
+      </a>
+      <a href="modulo-1-5.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-emerald-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.5</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <div class="font-semibold mb-1">🚀 Dicas Avançadas: Lendo o Ecossistema como um Pro</div>
+        <p class="text-neutral-400 text-sm">Install count mente: ache nichos, avalie a fonte e saiba quando NÃO instalar.</p>
       </a>
     </div>
 
@@ -349,6 +646,36 @@
         <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
       </div>
       <iframe src="modulo-1-2.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-1-3" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.3</span><span class="font-semibold">As Melhores para Começar (Starter Pack)</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-1-3.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-1-4" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.4</span><span class="font-semibold">Como Criar: Sua Primeira Skill em 10 Minutos</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-1-4.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-1-5" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.5</span><span class="font-semibold">Dicas Avançadas: Lendo o Ecossistema como um Pro</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-1-5.html" class="flex-1 w-full rounded-b-xl"></iframe>
     </div>
   </div>
 

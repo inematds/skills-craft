@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5.4 — Como Criar: Da Decisão ao Publish | Criando Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+          <a href="index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-teal-400 bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-teal-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-teal-400">Trilha 5</a><span>/</span>
+      <span class="text-teal-400">Módulo 5.4</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.4</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ Como Criar: Da Decisão ao Publish</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">O caminho concreto: o checklist de decisão ANTES de criar, como estruturar o repo, versionar via git e os comandos exatos — <code>npx skills add</code> e <code>update</code> — pra ir ao ar e aparecer no skills.sh.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">44</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Avançado</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Tópico 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🧭 O checklist de decisão</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Antes de abrir um editor, responda quatro perguntas. Se a maioria for "não", você não precisa de uma skill — precisa de outra ferramenta, ou de nada. Este é o filtro que separa skill útil de poluição de catálogo.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+        <h4 class="font-semibold text-teal-400 mb-4">Vale a pena criar?</h4>
+        <ul class="space-y-3 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-3"><span class="text-teal-400 font-bold">1.</span><span>É um <strong class="text-white">workflow repetível</strong>, não um one-off?</span></li>
+          <li class="flex items-start space-x-3"><span class="text-teal-400 font-bold">2.</span><span>Carrega <strong class="text-white">conhecimento de contexto</strong> que o modelo não tem por default?</span></li>
+          <li class="flex items-start space-x-3"><span class="text-teal-400 font-bold">3.</span><span>O output é <strong class="text-white">verificável</strong> (dá pra dizer se ficou certo)?</span></li>
+          <li class="flex items-start space-x-3"><span class="text-teal-400 font-bold">4.</span><span>É uma tarefa <strong class="text-white">multi-step</strong>, não uma query de 1 passo?</span></li>
+        </ul>
+        <p class="text-neutral-400 text-xs mt-4">≥2 sins → vale empacotar. 0–1 sim → provavelmente over-engineering.</p>
+      </div>
+
+      <svg viewBox="0 0 640 220" role="img" aria-label="Árvore de decisão entre skill, CLAUDE.md, MCP e subagente" class="w-full h-auto my-6">
+        <defs>
+          <filter id="g54a"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <marker id="arr54" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#38bdf8"/></marker>
+        </defs>
+        <g filter="url(#g54a)" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arr54)">
+          <line x1="320" y1="48" x2="120" y2="120"/>
+          <line x1="320" y1="48" x2="253" y2="120"/>
+          <line x1="320" y1="48" x2="387" y2="120"/>
+          <line x1="320" y1="48" x2="520" y2="120"/>
+        </g>
+        <g filter="url(#g54a)">
+          <rect x="240" y="18" width="160" height="34" rx="8" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/>
+          <rect x="60" y="130" width="120" height="60" rx="8" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="195" y="130" width="120" height="60" rx="8" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/>
+          <rect x="330" y="130" width="120" height="60" rx="8" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="465" y="130" width="120" height="60" rx="8" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="2"/>
+        </g>
+        <text x="320" y="40" text-anchor="middle" font-size="14" fill="#5eead4">Qual a necessidade?</text>
+        <text x="120" y="155" text-anchor="middle" font-size="13" fill="#7dd3fc">Regra sempre-ativa</text>
+        <text x="120" y="175" text-anchor="middle" font-size="12" fill="#9ca3af">CLAUDE.md</text>
+        <text x="255" y="155" text-anchor="middle" font-size="13" fill="#5eead4">Conhecer serviço</text>
+        <text x="255" y="175" text-anchor="middle" font-size="12" fill="#9ca3af">MCP</text>
+        <text x="390" y="155" text-anchor="middle" font-size="13" fill="#7dd3fc">Trabalho isolado</text>
+        <text x="390" y="175" text-anchor="middle" font-size="12" fill="#9ca3af">Subagente</text>
+        <text x="525" y="155" text-anchor="middle" font-size="13" fill="#5eead4">Saber sob demanda</text>
+        <text x="525" y="175" text-anchor="middle" font-size="12" fill="#9ca3af">Skill ✦</text>
+      </svg>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><h4 class="font-semibold text-white mb-1">CLAUDE.md</h4><p class="text-neutral-400 text-sm">Regra/preferência que vale SEMPRE no projeto. Custa contexto sempre.</p></div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><h4 class="font-semibold text-white mb-1">MCP</h4><p class="text-neutral-400 text-sm">Conectar a um serviço externo (API, DB, browser). É conexão, não conhecimento.</p></div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-5"><h4 class="font-semibold text-white mb-1">Subagente</h4><p class="text-neutral-400 text-sm">Trabalho isolado/paralelo com contexto próprio. É delegação.</p></div>
+        <div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-5"><h4 class="font-semibold text-teal-400 mb-1">Skill ✦</h4><p class="text-neutral-400 text-sm">Conhecimento/processo que dispara SOB DEMANDA pelo gatilho. É o nosso caso.</p></div>
+      </div>
+    </section>
+
+    <!-- Tópico 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">📁 Estruturar o repo</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Decidiu que é skill. Agora o repo precisa seguir a convenção que o CLI e o skills.sh entendem: uma pasta <code class="text-teal-400">skills/</code> na raiz, e cada skill com seu <strong class="text-teal-400">SKILL.md</strong> mais resources opcionais. Um repo pode hospedar várias skills atômicas.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">template de estrutura de repo:</p>
+        <pre class="text-neutral-300 leading-relaxed">meu-repo-de-skills/
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+└── skills/
+    └── minha-primeira-skill/
+        ├── SKILL.md          # frontmatter YAML + corpo (&lt;500 linhas)
+        ├── scripts/          # executáveis sob demanda
+        │   └── run.sh
+        ├── references/       # docs longas, lidas só quando preciso
+        │   └── deep-dive.md
+        └── assets/           # templates, imagens
+            └── template.tpl</pre>
+      </div>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">SKILL.md — o frontmatter é o gatilho:</p>
+        <pre class="text-neutral-300 leading-relaxed">---
+name: minha-primeira-skill
+description: O QUE faz E QUANDO usar. Acione quando o usuário
+  pedir X, mencionar Y, ou precisar de Z. Seja um pouco pushy —
+  o modelo tende a subdisparar.
+---
+
+# Minha Primeira Skill
+
+Corpo em Markdown. Explique o PORQUÊ, não só os passos.
+Aponte para references/ e scripts/ quando precisar de detalhe.</pre>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> O frontmatter mínimo</h3>
+        <p class="text-neutral-300 text-sm">Só <code>name</code> e <code>description</code> são obrigatórios. A <code>description</code> (~100 palavras) fica sempre no contexto — é o único nível que o modelo sempre vê, então é onde mora o gatilho. Diga o que faz E quando usar.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🔀 Versionar via git</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Git é a fonte da verdade da skill. Skills são instaladas como <strong class="text-teal-400">symlinks</strong> para o repo clonado — não cópias congeladas. Um <code>git push</code> seu, mais um <code>npx skills update</code> de quem instalou, propaga sua nova versão para todos. Trate a <code>main</code> como produção.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">o fluxo git de uma release:</p>
+        <pre class="text-neutral-300 leading-relaxed">git checkout -b ajuste-gatilho
+# edita skills/minha-primeira-skill/SKILL.md
+git add skills/minha-primeira-skill/SKILL.md CHANGELOG.md
+git commit -m "fix(trigger): cobre o near-miss de refactor"
+git push origin ajuste-gatilho
+# abre PR, roda evals de gatilho, merge na main → publicado</pre>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ Descuidado</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Push direto na main sem testar o gatilho</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Mudar a description e quebrar quem dependia</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem CHANGELOG — ninguém sabe o que mudou</span></li>
+          </ul>
+        </div>
+        <div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+          <h4 class="font-bold text-teal-400 mb-4">✓ Responsável</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Branch + PR + evals antes do merge</span></li>
+            <li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Mudanças de gatilho documentadas</span></li>
+            <li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>CHANGELOG.md com cada release</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópico 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">📟 npx skills add / update</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Os comandos que fazem a skill existir na máquina. Para testar localmente antes de publicar, você instala a partir do caminho do diretório; depois de no GitHub, instala por <code>owner/repo</code>. E <code>update</code> puxa as últimas versões.
+      </p>
+
+      <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+        <p class="text-neutral-500 mb-3">comandos essenciais:</p>
+        <pre class="text-neutral-300 leading-relaxed"># instalar do diretório local (teste antes de publicar)
+npx skills add ./skills/minha-primeira-skill
+
+# instalar de um repo público no GitHub
+npx skills add owner/meu-repo-de-skills
+
+# puxar a última versão de tudo que está instalado
+npx skills update</pre>
+      </div>
+
+      <div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-teal-400 mb-3">O loop local de teste</h3>
+        <p class="text-neutral-300 text-sm">Antes de publicar: rode <code>npx skills add ./...</code>, abra uma sessão com 2-3 prompts realistas, compare o comportamento com-skill vs baseline (sem skill). Ajustou o SKILL.md? Roda <code>npx skills update</code> e testa de novo. Só publica quando o gatilho e o output convencerem.</p>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Symlink = iteração grátis</h3>
+        <p class="text-neutral-300 text-sm">Como a instalação é um symlink para a pasta, editar o SKILL.md no local já reflete na próxima sessão — sem reinstalar. Isso torna o loop de afinação rápido. O mesmo symlink, depois de publicado, é por que um push ruim afeta todo mundo na hora.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🌐 Ir ao ar e aparecer no skills.sh</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Publicar é deixar o repo público no GitHub com a pasta <code>skills/</code> na convenção certa. O skills.sh indexa repos públicos e expõe o <strong class="text-teal-400">install count</strong>. A timeline do zero ao ar:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Crie o repo público no GitHub</h4>
+            <p class="text-neutral-300 text-sm">Com README, LICENSE e a pasta <code>skills/</code> na raiz. Nome do repo claro — ele vira parte do <code>owner/repo</code> que as pessoas instalam.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Push da v1 testada</h4>
+            <p class="text-neutral-300 text-sm">SKILL.md com frontmatter validado, resources no lugar, evals de gatilho passando. <code>git push</code> na main.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Indexação no skills.sh</h4>
+            <p class="text-neutral-300 text-sm">O diretório varre repos públicos e sua skill aparece na busca. <code>name</code> e <code>description</code> são o que as pessoas leem na vitrine.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">4</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Instalações começam a contar</h4>
+            <p class="text-neutral-300 text-sm">Cada <code>npx skills add owner/repo</code> incrementa o install count — seu sinal social de descoberta. Lembre da lei de potência: só 0,3% passam de 100k.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+        <h3 class="text-lg font-semibold text-teal-400 mb-3">Naming e description vendem</h3>
+        <p class="text-neutral-300 text-sm">Na vitrine do skills.sh, a pessoa decide instalar lendo só <code>name</code> + <code>description</code>. Um nome específico (<code>git-commit-conventional</code>) e uma description que diz o que faz e quando vence um nome genérico (<code>git-helper</code>) sempre. É o mesmo texto que serve de gatilho — dois pássaros.</p>
+      </div>
+    </section>
+
+    <!-- Tópico 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">⏱️ A timeline completa, do zero ao publish</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Juntando tudo numa sequência única que você pode seguir hoje. Sete passos, da decisão ao install count rodando:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Decidir</strong> — passe pelo checklist de 4 perguntas e pela árvore skill/CLAUDE.md/MCP/subagente.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Estruturar</strong> — crie <code>skills/nome/SKILL.md</code> com frontmatter + corpo enxuto.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Testar local</strong> — <code>npx skills add ./...</code> e compare com-skill vs baseline em prompts reais.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">4</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Afinar o gatilho</strong> — rode evals should-trigger / should-not-trigger, ajuste a description.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">5</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Versionar</strong> — commit, CHANGELOG, branch + PR. <code>git push</code> na main = publicado.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">6</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Ir ao ar</strong> — repo público, indexação no skills.sh, aparece na busca.</p></div></div>
+        <div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">7</span></div><div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><p class="text-neutral-300 text-sm"><strong class="text-white">Medir</strong> — install count e feedback começam a fluir. Entra o ciclo de vida (próximo módulo).</p></div></div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Ponte pro 5.5</h3>
+        <p class="text-neutral-300 text-sm">Publicar a primeira skill é o passo 6. O 5.5 fecha o curso com o que vem depois em escala: skills internas, segurança, rollout em time e como manter skills vivas sem virar caos.</p>
+      </div>
+    </section>
+
+    <!-- Resumo + nav -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Checklist de decisão</strong><span class="text-neutral-400"> — 4 perguntas + árvore skill / CLAUDE.md / MCP / subagente antes de criar</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Estrutura de repo</strong><span class="text-neutral-400"> — pasta skills/ + SKILL.md (frontmatter name/description) + scripts/ references/ assets/</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Versionar via git</strong><span class="text-neutral-400"> — branch + PR + CHANGELOG; symlink propaga; main é produção</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">npx skills add / update</strong><span class="text-neutral-400"> — add ./local pra testar, add owner/repo pra produção, update puxa últimas versões</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Ir ao ar no skills.sh</strong><span class="text-neutral-400"> — repo público → indexação → install count; naming + description vendem na vitrine</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Timeline de 7 passos</strong><span class="text-neutral-400"> — decidir → estruturar → testar → afinar → versionar → publicar → medir</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-teal-400 mb-2">Próximo:</h3>
+          <p class="text-neutral-300">Módulo 5.5 — 🚀 Dicas Avançadas: Governança, Segurança e Escala. Skills internas, não-surpresa, rollout em time e medir adoção. Fecha o curso.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 5</a>
+          <a href="modulo-5-5.html" class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors">Próximo → 5.5</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

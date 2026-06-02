@@ -105,16 +105,16 @@
 
       <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">2</div>
+          <div class="text-xl font-bold text-amber-400">5</div>
           <div class="text-xs text-neutral-400">Módulos</div>
         </div>
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">12</div>
+          <div class="text-xl font-bold text-amber-400">30</div>
           <div class="text-xs text-neutral-400">Tópicos</div>
         </div>
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-amber-400">95</div>
-          <div class="text-xs text-neutral-400">Minutos</div>
+          <div class="text-xl font-bold text-amber-400">~3h30</div>
+          <div class="text-xs text-neutral-400">Duração</div>
         </div>
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
           <div class="text-xl font-bold text-amber-400">Prático</div>
@@ -314,6 +314,288 @@
       </div>
     </div>
 
+    <!-- MÓDULO 4.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold">4.3</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">⭐ As Melhores Meta-Skills (para criar skills)</h3>
+        <p class="text-neutral-400 text-sm">As ferramentas de quem CRIA skills: skill-creator (246k), find-skills (1,8M) e o padrão de scaffolding. O que cada uma faz, quando usar e onde entra no fluxo.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🧰</span>
+            <div><span class="font-medium">O que é uma meta-skill</span><span class="text-neutral-500 text-sm ml-2">- a oficina das skills</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skill cujo trabalho é ajudar você a trabalhar com outras skills — descobrir, criar, testar, otimizar e empacotar. Atua um nível acima da skill comum.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Muita gente cria sem conferir se já existe algo melhor e sem o loop de evals. As meta-skills resolvem isso: descobrir antes, criar com método, validar com dados.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">meta-skill · descobrir · criar · testar · otimizar · empacotar</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">⭐</span>
+            <div><span class="font-medium">skill-creator</span><span class="text-neutral-500 text-sm ml-2">- a oficina canônica (246k)</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A meta-skill da Anthropic que orquestra o ciclo inteiro — draft → eval → iterate — e traz um otimizador de description separado.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o eixo central do fluxo de criação. Tudo dos módulos 4.1 e 4.2 sai dela; não improvise um processo paralelo.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">draft → eval → iterate · scripts · aggregate_benchmark · run_loop · package_skill</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🔭</span>
+            <div><span class="font-medium">find-skills</span><span class="text-neutral-500 text-sm ml-2">- descobrir antes (1,8M)</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A skill mais instalada do catálogo (1.802.925, vercel-labs). Descobre skills relevantes para uma tarefa antes de você criar do zero.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Evita o erro mais caro de quem cria: gastar horas escrevendo algo que já existe melhor. É a etapa zero do fluxo.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">discovery · usar / estender / criar · etapa zero · catálogo de 39.366 skills</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">🏗️</span>
+            <div><span class="font-medium">Scaffolding e templates</span><span class="text-neutral-500 text-sm ml-2">- o esqueleto inicial</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Padrão de gerar o esqueleto inicial — SKILL.md com frontmatter e pastas scripts/, references/, assets/ — em vez de digitar tudo na mão.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Acelera o começo e tira a folha em branco. Mas crie só as pastas que vai usar — pastas vazias confundem o modelo e violam o "manter enxuto".</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">esqueleto · frontmatter pré-preenchido · não criar tudo upfront · podar boilerplate</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🔗</span>
+            <div><span class="font-medium">Onde cada uma entra no fluxo</span><span class="text-neutral-500 text-sm ml-2">- a ordem importa</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A sequência que evita retrabalho: find-skills (descobrir) → scaffolding (gerar base) → skill-creator (criar e iterar) → otimizador de description (afinar disparo).</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">As três não competem, se encadeiam. Usá-las fora de ordem é onde nascem as skills de menos de 100 installs.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">descobrir → base → criar/iterar → otimizar → empacotar · regra de ouro</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">📋</span>
+            <div><span class="font-medium">Tabela de bolso</span><span class="text-neutral-500 text-sm ml-2">- qual meta-skill usar</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um resumo situação → ferramenta: "preciso de uma skill pra X" → find-skills; "vou criar" → skill-creator; "não dispara quando devia" → otimizador de description.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Decisão rápida na hora certa. Instale as três e, como o Claude tende a subdisparar, mencione-as explicitamente nas primeiras vezes até virar reflexo.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">situação → meta-skill · instalar as três · pro tip de disparo · package_skill</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-4-3')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-4-3.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MÓDULO 4.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold">4.4</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🛠️ Como Criar: Walkthrough Completo com Evals</h3>
+        <p class="text-neutral-400 text-sm">Um exemplo trabalhado de ponta a ponta: intent (4 perguntas) → draft → test prompts → evals.json com assertions verificáveis → rodar com-skill vs baseline → iterar. Templates JSON prontos.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🎯</span>
+            <div><span class="font-medium">Estágio 1 — capturar o intent</span><span class="text-neutral-500 text-sm ml-2">- as 4 perguntas</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">As 4 perguntas aplicadas ao caso "margem-xlsx": habilita o quê, quando dispara, formato de saída e se vale testar. Saída verificável → vale testar.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A pergunta 4 decide o resto do walkthrough. Transformações de arquivo e geração de código merecem evals; estilo/arte, não.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">habilita · quando dispara · formato · vale testar · extrair da conversa · confirmar</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">📝</span>
+            <div><span class="font-medium">Estágio 2 — draft do SKILL.md</span><span class="text-neutral-500 text-sm ml-2">- name, description, corpo</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Escrever o draft completo: name, description pushy (o que faz E quando usar) e corpo no imperativo explicando o porquê.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A description é o gatilho. "Mexe em planilhas" subdispara; listar verbos + contextos ("margem, lucro... mesmo sem pedir coluna") cobre os near-triggers.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">name · description pushy · corpo imperativo · explicar o porquê · não chutar colunas</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🧪</span>
+            <div><span class="font-medium">Estágio 3 — test prompts realistas</span><span class="text-neutral-500 text-sm ml-2">- evals.json sem assertions</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">2-3 prompts como um usuário real escreveria — com backstory, paths e detalhes — salvos em evals/evals.json sem assertions ainda. Template JSON pronto.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Prompts artificiais geram avaliação enganosa. Valide com o usuário antes de rodar — é barato e evita rodar tudo à toa.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">2-3 prompts · linguagem real · paths e backstory · evals.json · validar antes</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">📊</span>
+            <div><span class="font-medium">Estágio 4 — assertions verificáveis</span><span class="text-neutral-500 text-sm ml-2">- eval_metadata.json</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Enquanto as runs rodam, escrever assertions objetivas e com nomes descritivos no eval_metadata.json — checadas por script de preferência. Template pronto.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"a planilha ficou boa" é subjetivo; "valores batem com (C-D)/C" é verificável e discrimina with_skill de baseline.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">assertions verificáveis · nome descritivo · checada por script · discrimina · não subjetivo</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">⚖️</span>
+            <div><span class="font-medium">Estágio 5 — rodar com-skill vs baseline</span><span class="text-neutral-500 text-sm ml-2">- mesmo turno + timing</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Dois subagents no mesmo turno por test case (com skill / sem skill = baseline), saída organizada por iteração e eval, com total_tokens e duration_ms no timing.json.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Lançar juntos evita viés. O timing só pode ser capturado quando a notificação chega — processe cada uma na hora.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">with_skill / without_skill · mesmo turno · workspace por iteração · timing.json</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🔁</span>
+            <div><span class="font-medium">Estágio 6 — avaliar e iterar</span><span class="text-neutral-500 text-sm ml-2">- timeline do loop</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Timeline numerada: grade cada run → agregue o benchmark → abra o viewer antes de você julgar → leia o feedback e generalize → rerode em iteration-2.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">No caso, as 3 runs escreveram um calc_margem.py quase igual — sinal de bundlar. Na iteração 2 o pass_rate subiu e os tokens caíram.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">grading.json · aggregate_benchmark · generate_review · feedback · bundle de script repetido</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-4-4')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-4-4.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MÓDULO 4.5 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold">4.5</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🚀 Dicas Avançadas: Otimização de Description e Benchmark</h3>
+        <p class="text-neutral-400 text-sm">O loop de otimização (split 60/40, near-misses, best_description pelo test score), como o triggering funciona de verdade, blind comparison e como ler o benchmark sem se enganar.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🎚️</span>
+            <div><span class="font-medium">O loop de otimização</span><span class="text-neutral-500 text-sm ml-2">- split 60/40, 5 iterações</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">run_loop.py divide o eval set em 60% train / 40% test, avalia a description (3 runs por query), propõe melhorias com base no que falhou e reavalia, até 5x.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O disparo é estocástico; 3 runs dão um trigger rate estável. Use o model ID da sessão para o teste bater com o que o usuário experimenta.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">run_loop · 60/40 · 3 runs/query · propor → reavaliar · model ID da sessão · background</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🎯</span>
+            <div><span class="font-medium">Queries e near-misses</span><span class="text-neutral-500 text-sm ml-2">- should-trigger / should-not</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">~20 queries realistas, metade should-trigger e metade should-not. O ouro está nos near-misses — frases que compartilham palavras mas precisam de outra coisa.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Margem de erro de uma pesquisa" usa "margem" mas não é lucro em planilha — força a description a discriminar. Negativos óbvios não ensinam nada.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">should-trigger 8-10 · should-not 8-10 · near-misses · evitar óbvios · trigger-eval.json</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🧲</span>
+            <div><span class="font-medium">Como o triggering funciona</span><span class="text-neutral-500 text-sm ml-2">- só tarefas não-triviais</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills aparecem em available_skills com name + description e o Claude decide consultar — mas só consulta para tarefas que não resolve fácil sozinho.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Leia este PDF" pode não disparar nem com description perfeita. Suas queries de teste precisam ser substantivas (multi-step, especializadas).</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">available_skills · só tarefas não-triviais · queries substantivas · subdisparo · pushy</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">⚖️</span>
+            <div><span class="font-medium">Blind comparison</span><span class="text-neutral-500 text-sm ml-2">- o novo é mesmo melhor?</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Dar dois outputs a um agente independente sem dizer qual é qual, deixá-lo julgar a qualidade e depois analisar por que o vencedor venceu.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Por ser cego, não favorece "o novo" só por ser novo. É opcional e exige subagents — guarde para quando a dúvida for cara.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">anonimizar · julgar qualidade · por que venceu · opcional · subagents · review humano basta</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">📈</span>
+            <div><span class="font-medium">Ler o benchmark sem se enganar</span><span class="text-neutral-500 text-sm ml-2">- assertions não-discriminantes</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O benchmark traz pass_rate, tokens e tempo por config, com média ± desvio e delta. A passada de analista revela o que a média esconde.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Assertion que passa com E sem skill não mede nada e infla o pass_rate; desvio alto pode ser flaky; pass_rate alto pode esconder explosão de tokens.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">pass_rate · delta · não-discriminante · variância/flaky · tradeoff de tokens/tempo</p></div>
+          </div></div>
+        </div>
+
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🏆</span>
+            <div><span class="font-medium">Aplicar best_description e empacotar</span><span class="text-neutral-500 text-sm ml-2">- pelo test score</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-amber-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pegar o best_description (escolhido pelo test score, não pelo train), aplicar no frontmatter, mostrar antes/depois e empacotar com package_skill.</p></div>
+            <div><span class="text-amber-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escolher pelo train premiaria a description que decorou os exemplos. O held-out test simula o mundo real — é o que separa generalizar de brilhar só no laboratório.</p></div>
+            <div><span class="text-amber-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">best_description · test score &gt; train · otimizar só depois de pronta · revisar eval set · package_skill</p></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-4-5')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-4-5.html" class="px-4 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
     <!-- MAPA DA TRILHA -->
     <h2 class="text-2xl font-bold mb-6 mt-12">Mapa da trilha</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -326,6 +608,21 @@
         <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold text-sm">4.2</span><span class="text-xs text-neutral-500">~50 min</span></div>
         <div class="font-semibold mb-1">🔁 Testar, avaliar e iterar</div>
         <p class="text-neutral-400 text-sm">Roda, mede, generaliza. O loop que transforma um draft numa skill que funciona um milhão de vezes.</p>
+      </a>
+      <a href="modulo-4-3.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-amber-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold text-sm">4.3</span><span class="text-xs text-neutral-500">~45 min</span></div>
+        <div class="font-semibold mb-1">⭐ As Melhores Meta-Skills</div>
+        <p class="text-neutral-400 text-sm">find-skills descobre, skill-creator cria, scaffolding gera a base. As ferramentas de quem cria skills.</p>
+      </a>
+      <a href="modulo-4-4.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-amber-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold text-sm">4.4</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <div class="font-semibold mb-1">🛠️ Walkthrough Completo com Evals</div>
+        <p class="text-neutral-400 text-sm">Do intent ao evals.json com assertions. Um exemplo trabalhado de ponta a ponta, JSON pronto pra copiar.</p>
+      </a>
+      <a href="modulo-4-5.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-amber-400 transition-colors">
+        <div class="flex items-center justify-between mb-2"><span class="text-amber-400 font-bold text-sm">4.5</span><span class="text-xs text-neutral-500">~50 min</span></div>
+        <div class="font-semibold mb-1">🚀 Otimização de Description e Benchmark</div>
+        <p class="text-neutral-400 text-sm">Split 60/40, near-misses, best_description pelo test. Afina o disparo e lê o benchmark sem se enganar.</p>
       </a>
     </div>
 
@@ -355,6 +652,36 @@
         <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
       </div>
       <iframe src="modulo-4-2.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-4-3" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">4.3</span><span class="font-semibold">As Melhores Meta-Skills</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-4-3.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-4-4" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">4.4</span><span class="font-semibold">Walkthrough Completo com Evals</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-4-4.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-4-5" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+        <div class="flex items-center space-x-3"><span class="text-amber-400 font-bold">4.5</span><span class="font-semibold">Otimização de Description e Benchmark</span></div>
+        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
+      </div>
+      <iframe src="modulo-4-5.html" class="flex-1 w-full rounded-b-xl"></iframe>
     </div>
   </div>
 

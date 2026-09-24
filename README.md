@@ -41,3 +41,11 @@ Em vez de teoria solta, parte de uma **análise real de 39.366 skills** coletada
 ---
 
 Feito para o portal [INEMA.CLUB](https://inema.club) · 2026
+
+<!-- inema-backlink:v1 -->
+## Mais no INEMA.CLUB
+
+- [Ficha completa deste curso](https://www.inema.club/cursos/132-criando-agent-skills-do-catalogo-a-sua-primeira-skill/)
+- [Guia: como aprender inteligência artificial](https://www.inema.club/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.inema.club/cursos/)
+<!-- /inema-backlink:v1 -->

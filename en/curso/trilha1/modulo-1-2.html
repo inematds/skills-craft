@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.2 — The skills.sh Map | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Track 1</a><span>/</span>
+<span class="text-emerald-400">Module 1.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🗺️ The skills.sh Map: 39k Skills, the Power Law, and the 16 Groups</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The catalog’s actual size, the brutal install curve, and the 16 topic groups — and what this map teaches you before you create your first skill.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Basic</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Data</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📊 Catalog size</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Before creating a skill, it helps to look at the size of the territory. In the skills.sh harvest, the catalog has <strong class="text-emerald-400">39.366 skills</strong>, from <strong class="text-emerald-400">5.075 source repos</strong>, totaling <strong class="text-emerald-400">53.9 million installs</strong>, organized into <strong class="text-emerald-400">16 topic groups</strong>. It’s large enough to already have almost everything — and specific enough to still have gaps.
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">39.366</div>
+<div class="text-sm text-neutral-400">skills in the catalog</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">5.075</div>
+<div class="text-sm text-neutral-400">source repos</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">53,9M</div>
+<div class="text-sm text-neutral-400">combined installs</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Averages are misleading</h3>
+<p class="text-neutral-300 text-sm">53.9M ÷ 39.366 would be ~1.370 installs per skill “on average.” But average is the worst measure here—the distribution is so skewed that almost no skill is close to it. That’s exactly what the next topic shows.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📉 The power law</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The distribution of installs follows a <strong class="text-emerald-400">power law</strong>: many at the bottom, very few at the top. The vast majority of skills live in the long tail, with almost no installs, while a tiny handful attract a huge audience.
+      </p>
+<svg aria-label="Power-law bar chart: 60,2% of skills have fewer than 100 installs, falling to 0,3% with more than 100 thousand" class="w-full h-auto my-6" role="img" viewbox="0 0 600 240">
+<defs>
+<filter id="g12"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="bar12" x1="0" x2="0" y1="1" y2="0"><stop offset="0%" stop-color="#10b981"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<line stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1" x1="50" x2="580" y1="200" y2="200"></line>
+<g filter="url(#g12)">
+<rect fill="url(#bar12)" fill-opacity="0.85" height="180" rx="4" width="80" x="60" y="20"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.7" height="92" rx="4" width="80" x="160" y="108"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.55" height="23" rx="4" width="80" x="260" y="177"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.5" height="3" rx="2" width="80" x="360" y="197"></rect>
+<rect fill="#38bdf8" height="2" rx="2" width="80" x="460" y="199"></rect>
+</g>
+<g fill="#10b981" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">
+<text x="100" y="14">60,2%</text>
+<text x="200" y="102">30,8%</text>
+<text x="300" y="171">7,7%</text>
+<text x="400" y="191">1,1%</text>
+<text x="500" y="193">0,3%</text>
+</g>
+<g fill="#38bdf8" font-family="sans-serif" font-size="9" text-anchor="middle">
+<text x="100" y="216">&lt;100</text>
+<text x="200" y="216">100–999</text>
+<text x="300" y="216">1k–9,9k</text>
+<text x="400" y="216">10k–99k</text>
+<text x="500" y="216">100k+</text>
+</g>
+<text fill="#10b981" font-family="sans-serif" font-size="9" text-anchor="middle" x="500" y="228">131 skills</text>
+</svg>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ The long tail (most)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>60,2%</strong> have fewer than 100 installs</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>30,8%</strong> range from 100 to 999</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>91% of the catalog has never exceeded 1,000</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Publishing isn’t the same as being used</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ The top (the exception)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>7,7%</strong> between 1k and 9.9k installs</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>1,1%</strong> between 10k and 99k</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Only <strong>0.3% (131 skills)</strong> exceed 100k</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Getting there requires solving a real pain point</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Honest reading</h3>
+<p class="text-neutral-300 text-sm">This isn't discouraging—it provides direction. Being in the long tail is the default state. The right question isn't "how do I reach the top 0.3%" but "what specific pain point does my skill solve better than any existing alternative?"</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🎯 Focus</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The power law has a dramatic consequence at the edge: the <strong class="text-emerald-400">The 100 most installed skills account for 43,7% of all installs</strong>. Almost half of 53.9 million are in 100 names — out of nearly 40 thousand. It’s a “winner takes almost all” effect.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4">The absolute top of the catalog</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">find-skills <span class="text-neutral-500">· vercel-labs/skills</span></span><span class="text-emerald-400 font-bold text-sm">1.802.925</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">frontend-design <span class="text-neutral-500">· anthropics/skills</span></span><span class="text-emerald-400 font-bold text-sm">488.299</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">vercel-react-best-practices <span class="text-neutral-500">· vercel-labs</span></span><span class="text-emerald-400 font-bold text-sm">443.261</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">microsoft-foundry <span class="text-neutral-500">· microsoft</span></span><span class="text-emerald-400 font-bold text-sm">360.755</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">azure-ai <span class="text-neutral-500">· microsoft</span></span><span class="text-emerald-400 font-bold text-sm">358.744</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">web-design-guidelines <span class="text-neutral-500">· vercel-labs</span></span><span class="text-emerald-400 font-bold text-sm">358.627</span></div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">the focus in one line:</p>
+<pre class="text-neutral-300 leading-relaxed">  100 skills (0,25% do catálogo)  =  <span class="text-emerald-400">43,7%</span> dos installs
+~39.266 skills (99,75%)          =  56,3% restantes</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> What to take away</h3>
+<p class="text-neutral-300 text-sm">Competing head-on with find-skills or frontend-design is nearly impossible—they have brand recognition, distribution, and momentum. The smart move is not to duel at the top, but to find where the top hasn’t reached.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🗂️ The 16 Topic Groups</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The catalog is divided into 16 groups. Comparing <strong class="text-emerald-400">skills count</strong> with <strong class="text-emerald-400">installs</strong> reveals what matters: some groups have many offerings; others have few skills capturing a lot of demand. See the main ones.
+      </p>
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border border-dark-600 rounded-xl overflow-hidden">
+<thead class="bg-dark-700/50 text-neutral-300">
+<tr><th class="text-left p-3">Group</th><th class="text-right p-3">Skills</th><th class="text-right p-3">Installs</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🤖 AI/LLM/Agents</td><td class="p-3 text-right text-emerald-400 font-semibold">12.693</td><td class="p-3 text-right text-neutral-300">12,9M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🎨 Web &amp; Frontend</td><td class="p-3 text-right text-emerald-400 font-semibold">4.694</td><td class="p-3 text-right text-neutral-300">4,5M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">☁️ DevOps &amp; Cloud</td><td class="p-3 text-right text-emerald-400 font-semibold">907</td><td class="p-3 text-right text-neutral-300">8,3M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🛠️ Dev Tooling &amp; Code</td><td class="p-3 text-right text-emerald-400 font-semibold">796</td><td class="p-3 text-right text-neutral-300">4,4M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">📈 Marketing &amp; SEO</td><td class="p-3 text-right text-emerald-400 font-semibold">582</td><td class="p-3 text-right text-neutral-300">2,3M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🎬 Media &amp; Creative</td><td class="p-3 text-right text-emerald-400 font-semibold">550</td><td class="p-3 text-right text-neutral-300">1,85M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🔌 Backend &amp; APIs</td><td class="p-3 text-right text-emerald-400 font-semibold">2.685</td><td class="p-3 text-right text-neutral-300">1,38M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🗄️ Data &amp; Databases</td><td class="p-3 text-right text-emerald-400 font-semibold">1.385</td><td class="p-3 text-right text-neutral-300">0,79M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🧪 Testing &amp; QA</td><td class="p-3 text-right text-emerald-400 font-semibold">1.339</td><td class="p-3 text-right text-neutral-300">0,60M</td></tr>
+</tbody>
+</table>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">📈 High demand for a skill</h4>
+<p class="text-neutral-300 text-sm mb-2"><strong>DevOps &amp; Cloud</strong>: only 907 skills, but 8.3M installs — ~9.150 per skill. A few names (the microsoft azure family) capture almost everything.</p>
+<p class="text-neutral-300 text-sm"><strong>Marketing &amp; SEO</strong> e <strong>Dev Tooling</strong> also have a good install-to-skill ratio.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">📉 High supply, fierce competition</h4>
+<p class="text-neutral-300 text-sm mb-2"><strong>AI/LLM/Agents</strong>: 12.693 skills competing for 12.9M — ~1.016 per skill. It’s the most crowded group in the catalog.</p>
+<p class="text-neutral-300 text-sm"><strong>Backend &amp; APIs</strong> has 2.685 skills for just 1,38M installs — lots of people, not much pie.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Don’t look only at size</h3>
+<p class="text-neutral-300 text-sm">The volume of skills in a group measures its <strong>competition</strong>; installs per skill measure <strong>need met</strong>. The less obvious groups (Office, Finance, Productivity) have few offerings — an opportunity for anyone who does it well.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🏢 Source concentration</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Skills aren’t the only thing that concentrates— <strong class="text-emerald-400">source too</strong>. Despite the 5.075 repos, a few account for a disproportionate share of installations. The same names keep appearing at the top of almost every group.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">vercel-labs — dominates Web &amp; Agents</h4>
+<p class="text-neutral-300 text-sm">find-skills (1.8M), vercel-react-best-practices (443k), web-design-guidelines (358k), agent-browser (332k), vercel-composition-patterns (195k). It leads two of the largest groups on its own.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">microsoft — owner of DevOps/Cloud</h4>
+<p class="text-neutral-300 text-sm">The azure-skills family (microsoft-foundry, azure-ai, azure-deploy, azure-diagnostics, azure-prepare) gets ~358–360k each. That's why DevOps has such a high install/skill ratio.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">anthropics &amp; larksuite — reference and strong niches</h4>
+<p class="text-neutral-300 text-sm">anthropics: frontend-design (488k), skill-creator (246k). larksuite/cli: lark-slides (139k) dominates Office. Each rules its own territory.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Brand + distribution matter</h3>
+<p class="text-neutral-300 text-sm">A great skill in an unfamiliar repo starts at a disadvantage compared with a familiar name. That reinforces the lesson: for the community, the path is <strong>niche</strong>, not direct competition with vercel-labs or microsoft.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧭 What the map teaches</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Bringing it all together, the skills.sh landscape offers three practical lessons that guide the rest of the course. They’re not opinions—they come straight from the numbers.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Discover what already exists before creating</h4>
+<p class="text-neutral-300 text-sm">With 39,366 skills, there’s a good chance your idea already exists. Search skills.sh first (<code class="bg-dark-700 px-1 rounded">npx skills find ...</code>). If there’s already a good one, install it. Reinventing the wheel only fattens the long tail.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Target empty niches</h4>
+<p class="text-neutral-300 text-sm">Don’t compete in AI/Agents (12.693 crowded skills) or with find-skills. Look for something specific: your domain, your tool, your team convention—where the big names haven’t reached.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Play on the right side of the curve</h4>
+<p class="text-neutral-300 text-sm">The right goal isn’t “having lots of installs” — it’s solving a real pain point better than the alternatives. Do that and the install count will follow. The quality that sets the top apart from the 60.2% is the subject of Track 2.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">mental checklist before creating:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-emerald-400">[ ]</span> busquei no skills.sh? já existe algo bom?
+<span class="text-emerald-400">[ ]</span> meu grupo é lotado (muita oferta) ou vazio?
+<span class="text-emerald-400">[ ]</span> que dor específica eu resolvo melhor?
+<span class="text-emerald-400">[ ]</span> minha description deixa claro o QUE e o QUANDO?</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> The bridge to the rest of the course</h3>
+<p class="text-neutral-300 text-sm">Trail 1 gave you the lay of the land: what a skill is and how the market works. From here, the course gets hands-on — quality (T2), anatomy (T3), the creation loop (T4), and what to consider when publishing (T5).</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">The catalog is large</strong><span class="text-neutral-400"> — 39.366 skills, 5.075 repos, 53,9M installs, 16 groups</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">The distribution follows a power law</strong><span class="text-neutral-400"> — 60,2% have &lt;100 installs; only 0,3% (131) exceed 100k</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">The top has it all</strong><span class="text-neutral-400"> — the 100 most installed account for 43,7% of all installs</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">16 groups, different profiles</strong><span class="text-neutral-400"> — AI/Agents is the most crowded (12.693); DevOps has the most installs per skill (8,3M/907)</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">A few sources dominate</strong><span class="text-neutral-400"> — vercel-labs, anthropics, microsoft, and larksuite dominate the top spots</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">The map guides creation</strong><span class="text-neutral-400"> — research first, target empty niches, play on the right side of the curve</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Next:</h3>
+<p class="text-neutral-300">1.3 — ⭐ The Best Ones to Start With (Starter Pack). The canonical skills everyone should install first — and the recommended minimum kit.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-3.html">Next: 1.3 The Best →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

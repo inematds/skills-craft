@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3.1 — El interior de SKILL.md | Crear Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-purple-400 bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Trilha 3</a><span>/</span>
+<span class="text-purple-400">Módulo 3.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📄 El interior de SKILL.md</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Analiza el archivo que define una skill: frontmatter YAML, los campos name y description, el cuerpo en Markdown y la estructura de carpetas. Termina viendo el frontmatter real de frontend-design de Anthropic.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Anatomía</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🧱 Estructura general</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Un SKILL.md tiene exactamente dos partes. En la parte superior, un bloque de <strong class="text-purple-400">frontmatter YAML</strong> entre dos delimitadores <code class="bg-dark-700 px-1 rounded">---</code>. Justo debajo, el <strong class="text-purple-400">cuerpo en Markdown</strong> con las instrucciones de comportamiento. Esa separación es lo que todo agente compatible espera encontrar.
+      </p>
+<svg aria-label="Anatomía de un archivo SKILL.md dividido en frontmatter YAML y cuerpo Markdown" class="w-full h-auto my-6" role="img" viewbox="0 0 600 200">
+<defs><filter id="g31"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<rect fill="#a855f7" fill-opacity="0.12" filter="url(#g31)" height="70" rx="10" stroke="#a855f7" stroke-width="1.5" width="520" x="40" y="20"></rect>
+<text fill="#a855f7" font-family="monospace" font-size="12" x="56" y="44">---</text>
+<text fill="#38bdf8" font-family="monospace" font-size="12" x="56" y="62">name: minha-skill</text>
+<text fill="#38bdf8" font-family="monospace" font-size="12" x="56" y="80">description: ...</text>
+<text fill="#a855f7" font-family="Inter" font-size="13" font-weight="700" x="380" y="58">FRONTMATTER YAML</text>
+<rect fill="#38bdf8" fill-opacity="0.1" filter="url(#g31)" height="70" rx="10" stroke="#38bdf8" stroke-width="1.5" width="520" x="40" y="110"></rect>
+<text fill="#38bdf8" font-family="monospace" font-size="12" x="56" y="134"># Título</text>
+<rect fill="#a855f7" height="7" opacity="0.4" rx="3" width="260" x="56" y="146"></rect>
+<rect fill="#a855f7" height="7" opacity="0.3" rx="3" width="180" x="56" y="160"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="13" font-weight="700" x="380" y="148">CUERPO MARKDOWN</text>
+</svg>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Esqueleto de un SKILL.md:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: nome-da-skill
+description: Lo que hace y cuándo usarla.
+---
+
+# Título de la Skill
+
+Instrucciones en Markdown que el agente sigue
+cuando se activa la skill.</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">El frontmatter tiene solo dos campos obligatorios: <code class="bg-dark-700 px-1 rounded">name</code> e <code class="bg-dark-700 px-1 rounded">description</code>. Todo lo demás (license, allowed-tools, etc.) es opcional. Empieza siempre por estos dos.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🏷️ Campo name</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        O <code class="bg-dark-700 px-1 rounded">name</code> es el identificador único de la skill. Convención fija: <strong class="text-purple-400">kebab-case</strong> (palabras separadas por guiones), todo en <strong class="text-purple-400">minúsculas</strong>, y normalmente igual al nombre de la carpeta que contiene el SKILL.md.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ name mal formado</h4>
+<ul class="space-y-3 text-neutral-300 text-sm font-mono">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Frontend_Design</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>mi skill</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>ReactBestPractices</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>skill (demasiado genérica)</span></li>
+</ul>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">✓ nombre correcto</h4>
+<ul class="space-y-3 text-neutral-300 text-sm font-mono">
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>frontend-design</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>react-best-practices</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>skill-creator</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>supabase-postgres-best-practices</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Por qué importa kebab-case</h3>
+<p class="text-neutral-300 text-sm">El name se usa en comandos, logs y como clave única en el agente. Los espacios y las mayúsculas rompen la referencia, y los nombres genéricos como <code class="bg-dark-700 px-1 rounded">skill</code> entran en conflicto con otras instalaciones. Las skills más instaladas de skills.sh — <code class="bg-dark-700 px-1 rounded">find-skills</code> (1,8M), <code class="bg-dark-700 px-1 rounded">frontend-design</code> (488k) — todas siguen el patrón.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🎣 Campo description: el disparador</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A <code class="bg-dark-700 px-1 rounded">description</code> es el campo más importante del archivo. Es la frase que el agente lee para decidir si activa la skill. Una buena description dice dos cosas: <strong class="text-purple-400">QUÉ</strong> la skill hace y <strong class="text-purple-400">CUÁNDO</strong> usarla — de preferencia con ejemplos concretos de situaciones.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Descripción vaga</h4>
+<p class="text-neutral-300 text-sm font-mono mb-3">"Ayuda con frontend."</p>
+<p class="text-neutral-400 text-sm">No indica cuándo activarla. El agente casi nunca la activará.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">✓ Descripción con gatillo</h4>
+<p class="text-neutral-300 text-sm font-mono mb-3">"Crea interfaces frontend. Úsalo cuando el usuario pida construir componentes web, páginas, landing pages..."</p>
+<p class="text-neutral-400 text-sm">Dice qué hace Y enumera situaciones de uso.</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Patrón recomendado:</p>
+<pre class="text-neutral-300 leading-relaxed">description: &lt;O QUE faz&gt;. Use this skill when
+  &lt;QUANDO usar&gt; (examples include &lt;gatilhos
+  concretos&gt;).</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">La description siempre permanece cargada en el contexto (Nivel 1 de progressive disclosure — consulta el módulo 3.2). Por eso conviene ser específico e incluso un poco insistente: Claude tiende a activar poco las skills.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📝 El cuerpo en Markdown</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Debajo del frontmatter viene el cuerpo: las instrucciones de verdad. Escribe en <strong class="text-purple-400">modo imperativo</strong> ("Crea", "Usa", "Prefiere"), explica el <strong class="text-purple-400">PORQUÉ</strong> en vez de gritar MUSTs en mayúsculas, y muestra <strong class="text-purple-400">patrones de output y ejemplos</strong> de cómo debería verse el resultado.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Cuerpo débil</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Lista de MUSTs en MAYÚSCULAS sin contexto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Reglas sin explicar por qué</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ningún ejemplo del resultado esperado</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Párrafos largos y genéricos</span></li>
+</ul>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">✓ Contenido eficaz</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Instrucciones imperativas y directas</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Explica el motivo de cada elección</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Muestra ejemplos de buen y mal output</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Secciones cortas con headings claros</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Fragmento real del cuerpo de frontend-design:</p>
+<pre class="text-neutral-300 leading-relaxed">## Frontend Aesthetics Guidelines
+
+Focus on:
+- **Typography**: Choose fonts that are
+  beautiful, unique... Avoid generic fonts
+  like Arial and Inter.
+- **Color &amp; Theme**: Commit to a cohesive
+  aesthetic. Use CSS variables...</pre>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Imperativo + porqué</h3>
+<p class="text-neutral-300 text-sm">Fíjate en el ejemplo anterior: cada directriz es un comando ("Focus on", "Choose", "Commit to") seguido del razonamiento. Esto es mucho más eficaz que "TÚ DEBES SIEMPRE...": el agente asimila mejor cuando entiende la intención.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📁 Estructura de carpetas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una skill profesional no es solo el SKILL.md. A su alrededor, tres carpetas convencionales organizan los recursos, y cada una tiene un propósito claro.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2"><code class="text-purple-400">scripts/</code> — código determinista</h4>
+<p class="text-neutral-300 text-sm">Scripts que ejecutan tareas repetibles sin depender del criterio del agente. Se ejecutan sin cargar el código en el contexto: el agente solo los llama y recibe el resultado.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2"><code class="text-purple-400">references/</code> — docs bajo demanda</h4>
+<p class="text-neutral-300 text-sm">Documentación extensa que el agente lee solo cuando hace falta. Mantiene breve el SKILL.md y ofrece profundidad cuando se necesita.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2"><code class="text-purple-400">assets/</code> — templates</h4>
+<p class="text-neutral-300 text-sm">Archivos de apoyo: plantillas, boilerplates, imágenes y configuraciones que la skill usa o copia al proyecto del usuario.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Estructura típica de una skill:</p>
+<pre class="text-neutral-300 leading-relaxed">minha-skill/
+├── SKILL.md
+├── scripts/
+│   └── gerar.py
+├── references/
+│   └── guia-completo.md
+└── assets/
+    └── template.html</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">No crees carpetas vacías por anticipado. Empieza solo con el SKILL.md y agrega <code class="bg-dark-700 px-1 rounded">scripts/</code> o <code class="bg-dark-700 px-1 rounded">references/</code> cuando el contenido realmente lo justifique: cada carpeta corresponde al Nivel 3 de la divulgación progresiva.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔬 Ejemplo mínimo vs. real</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Para terminar, compara los extremos. Un SKILL.md mínimo cabe en 5 líneas. En cambio, una skill de producción —como la <strong class="text-purple-400">frontend-design</strong> de Anthropic (488.299 instalaciones): incluye en el frontmatter una description con abundantes desencadenantes.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Mínimo:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: git-commit-style
+description: Formata mensagens de commit no
+  padrão Conventional Commits.
+---
+
+Sempre escreva commits no formato
+tipo(escopo): descrição.</pre>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Real — frontmatter de anthropics/skills/frontend-design:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: frontend-design
+description: Create distinctive, production-grade
+  frontend interfaces with high design quality.
+  Use this skill when the user asks to build web
+  components, pages, artifacts, posters, or
+  applications (examples include websites, landing
+  pages, dashboards, React components, HTML/CSS
+  layouts, or when styling/beautifying any web UI).
+  Generates creative, polished code and UI design
+  that avoids generic AI aesthetics.
+license: Complete terms in LICENSE.txt
+---</pre>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Qué enseña el ejemplo real</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Empieza con <strong>QUÉ</strong> hace: «Create distinctive, production-grade frontend interfaces».</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Continúa con <strong>CUÁNDO</strong>: "Usa esta skill cuando el usuario pida crear...".</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Lista <strong>activadores concretos</strong> entre paréntesis: sitios web, páginas de destino, paneles, React.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Cierra con el <strong>diferencial</strong>: "evita la estética genérica de la IA".</span></li>
+</ul>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Estructura general</strong><span class="text-neutral-400"> — frontmatter YAML entre --- en la parte superior, cuerpo Markdown debajo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Campo name</strong><span class="text-neutral-400"> — kebab-case, en minúsculas, único y generalmente igual al nombre de la carpeta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Campo description</strong><span class="text-neutral-400"> — el activador: dice QUÉ hace Y CUÁNDO usarlo, con ejemplos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Cuerpo en Markdown</strong><span class="text-neutral-400"> — imperativo, explica por qué, muestra patrones de output.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Estructura de carpetas</strong><span class="text-neutral-400"> — scripts/ (código), references/ (docs), assets/ (templates).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Mínimo vs. real</strong><span class="text-neutral-400"> — el frontmatter de frontend-design muestra una description ganadora.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">3.2 — 🎚️ Progressive disclosure y la description que se activa: los 3 niveles de carga y cómo escribir el disparador perfecto.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-2.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

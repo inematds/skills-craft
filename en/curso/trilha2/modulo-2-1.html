@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2.1 — Reading Quality Signals | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-blue-400 bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a><span>/</span>
+<span class="text-blue-400">Module 2.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔎 Reading Quality Signals</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Install count, source, description, scope, and maintenance. The signals that distinguish a mature skill from an abandoned repo—and a 2-minute checklist to decide before installing.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">40</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Inter.</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Practice</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📊 Install count as a signal (and its pitfalls)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The most visible number on skills.sh is the install count. It’s tempting to treat it as a quality score — after all, <strong class="text-blue-400">find-skills</strong> has 1.802.925 and <strong class="text-blue-400">frontend-design</strong> has 488.299. But the catalog follows a brutal power law, and high install counts hide pitfalls.
+      </p>
+<svg aria-label="Bar chart of the power-law distribution of installs" class="w-full h-auto my-6" role="img" viewbox="0 0 600 220">
+<defs><filter id="g11"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<line filter="url(#g11)" stroke="#38bdf8" stroke-width="1.5" x1="50" x2="580" y1="180" y2="180"></line>
+<line filter="url(#g11)" stroke="#38bdf8" stroke-width="1.5" x1="50" x2="50" y1="20" y2="180"></line>
+<rect fill="#3b82f6" fill-opacity="0.25" height="140" rx="4" stroke="#3b82f6" stroke-width="1.5" width="80" x="70" y="40"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="11" text-anchor="middle" x="110" y="200">&lt;100</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="110" y="33">60,2%</text>
+<rect fill="#3b82f6" fill-opacity="0.25" height="70" rx="4" stroke="#3b82f6" stroke-width="1.5" width="80" x="170" y="110"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="11" text-anchor="middle" x="210" y="200">100-999</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="210" y="103">30,8%</text>
+<rect fill="#3b82f6" fill-opacity="0.25" height="20" rx="4" stroke="#3b82f6" stroke-width="1.5" width="80" x="270" y="160"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="11" text-anchor="middle" x="310" y="200">1k-9,9k</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="310" y="153">7,7%</text>
+<rect fill="#38bdf8" fill-opacity="0.4" height="7" rx="3" stroke="#38bdf8" stroke-width="1.5" width="80" x="370" y="173"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="11" text-anchor="middle" x="410" y="200">10k-99k</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="410" y="166">1,1%</text>
+<rect fill="#38bdf8" fill-opacity="0.6" height="4" rx="2" stroke="#38bdf8" stroke-width="1.5" width="80" x="470" y="176"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="11" text-anchor="middle" x="510" y="200">100k+</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="510" y="169">0,3%</text>
+</svg>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">The reality behind the numbers</h3>
+<p class="text-neutral-300 text-sm mb-3">From <strong>39.366 skills</strong> in the catalog, 60.2% have fewer than 100 installs, and only <strong>0.3% (131 skills)</strong> exceed 100k. The top 100 alone account for <strong>43,7%</strong> of all installs.</p>
+<p class="text-neutral-300 text-sm">Translation: install count is great for identifying the top of the pyramid, but terrible for comparing mid-tier skills — almost all of them are clustered near zero.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚠️</span> The three pitfalls of install counts</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-primary mt-0.5">1.</span><span><strong>Bias from those who arrived early:</strong> a skill published at the launch of skills.sh accumulated installs for months before competition existed. A high number may just reflect age, not merit.</span></li>
+<li class="flex items-start space-x-2"><span class="text-primary mt-0.5">2.</span><span><strong>Brand effect:</strong> a mediocre skill from a famous vendor gets more installs than an excellent one from an unknown author. People click the name they recognize.</span></li>
+<li class="flex items-start space-x-2"><span class="text-primary mt-0.5">3.</span><span><strong>Installs ≠ active use:</strong> installing takes one click. Lots of people install, try it once, and forget about it. The counter never goes back down.</span></li>
+</ul>
+</div>
+<p class="text-neutral-300 leading-relaxed">Use installs like <strong class="text-blue-400">coarse filter</strong> (discard what has zero traction), never as the final decision. That’s what the other five signals are for.</p>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🏛️ The source matters</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Every skill lives in a repository <code class="bg-dark-700 px-1 rounded">owner/repo</code>. That owner is a strong signal that's easy to assess: skills from <strong class="text-blue-400">vercel-labs</strong>, <strong class="text-blue-400">anthropics</strong> e <strong class="text-blue-400">microsoft</strong> carry institutional reputation, a review process, and a maintenance commitment. A random three-star repo does not.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Random repo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Author with no history or contact</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No guarantee of code review</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>It can disappear at any time</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Risk of incorrect or malicious instructions</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No one to respond to issues</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Vendor-backed source</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Institutional reputation at stake</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Review and CI process</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Commitment to ongoing maintenance</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Follows the official spec at agentskills.io</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Answered issues, tagged releases</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Reference sources you recognize on skills.sh:</p>
+<pre class="text-neutral-300 leading-relaxed">anthropics/skills          → frontend-design, skill-creator
+vercel-labs/agent-skills   → vercel-react-best-practices, web-design-guidelines
+vercel-labs/skills         → find-skills, agent-browser
+microsoft/azure-skills     → azure-ai, azure-deploy, microsoft-foundry
+supabase/...               → supabase-postgres-best-practices
+stripe/ai                  → stripe-best-practices</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical rule</h3>
+<p class="text-neutral-300 text-sm">For a critical area (database, deploy, payments), prefer the vendor’s own skill—the people who build the tool write its best practices. For general areas, the source matters less than the description.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">✍️ The description as the #1 signal</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        If you could look at only one field before installing, it would be the <strong class="text-blue-400">description</strong> in the frontmatter. It’s not decoration—it’s the trigger the agent reads to decide whether the skill activates. A good description says <strong class="text-blue-400">WHAT</strong> the skill does AND <strong class="text-blue-400">WHEN</strong> use it. A clear description reveals an author who understood the problem.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Vague description</h4>
+<div class="font-mono text-xs bg-dark-900/50 rounded-lg p-3 mb-3 text-red-300">description: Helps with React stuff and other things</div>
+<p class="text-neutral-300 text-sm">Doesn’t say when to trigger. The agent will either under-trigger (never activate) or trigger at the wrong time. A sign of a poorly designed skill.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">✓ Clear description</h4>
+<div class="font-mono text-xs bg-dark-900/50 rounded-lg p-3 mb-3 text-blue-300">description: Applies React best practices when generating or reviewing components. Use when creating components or hooks, or refactoring JSX.</div>
+<p class="text-neutral-300 text-sm">Says WHAT (React best practices) and WHEN (to generate/review/refactor). Triggers at the right time.</p>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Why the description is the best predictor</h3>
+<p class="text-neutral-300 text-sm mb-3">In the progressive disclosure model, the description (along with the name) is the only thing that always stays in the agent’s context—about 100 words loaded all the time. If it’s well written, the rest of the skill tends to be, too.</p>
+<p class="text-neutral-300 text-sm">It’s also where the most common problem lies: agents tend to <strong>sub-trigger</strong>, so good descriptions are a little "pushy," making it explicit when to activate.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> 10-second test</h3>
+<p class="text-neutral-300 text-sm">Read only the description. Can you tell the exact situation in which the agent should use this skill? If so, that’s a good sign. If you need to open the SKILL.md body to understand it, the author failed at the most important field.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🎯 Scope and size</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The best skill does <strong class="text-blue-400">one very</strong>. Atomic skills — with one clear responsibility — fit better into context, trigger more precisely, and compose with others. An “everything-about-X” skill tries to cover ten problems and solves none of them well. The ideal SKILL.md body is under 500 lines.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ "everything-about-X"</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>react-everything: components + tests + deploy + SEO</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>1,200-line body; the agent gets lost</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Triggers in too many contexts and gets in the way</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hard to maintain and test</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Focused / atomic</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>react-best-practices: components/hooks only</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Lean body, instructions the agent absorbs</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Triggers only when relevant</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Compose: react + typescript + a11y together</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Composition &gt; monolith — install several focused skills:</p>
+<pre class="text-neutral-300 leading-relaxed">npx skills add anthropics/skills            # frontend-design
+npx skills add vercel-labs/agent-skills     # vercel-react-best-practices
+# resultado: agente frontend completo, cada skill testável em separado</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Discipline signal</h3>
+<p class="text-neutral-300 text-sm">A repo with several small, well-named skills suggests an author who understands composition. A repo with one huge skill that promises everything is a red flag—it probably has never been seriously tested.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔄 Maintenance and Updates</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A skill is living code. Frameworks change, and the spec itself evolves—and an abandoned skill starts giving the agent incorrect instructions. Since skills install by <strong class="text-blue-400">symlink</strong> (not a copy), the command <code class="bg-dark-700 px-1 rounded">npx skills update</code> pulls improvements from the source automatically. But that only helps if the source is active.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Check the latest commit</h4>
+<p class="text-neutral-300 text-sm">A repo touched in recent weeks/months = alive. No commits for over a year in a fast-moving area (React, cloud) = a warning sign.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Look at the issues</h4>
+<p class="text-neutral-300 text-sm">Recent answered issues show an active maintainer. Dozens left open and ignored show a project adrift.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Keep everything to one command</h4>
+<p class="text-neutral-300 text-sm">Because the symlink points to the source, running <code class="bg-dark-700 px-1 rounded">npx skills update</code> update all your skills at once. Make it a habit.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Keeping skills alive:</p>
+<pre class="text-neutral-300 leading-relaxed">npx skills list      # ver o que está instalado e de onde
+npx skills update    # puxar melhorias de todas as fontes (symlink)</pre>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Active vs. abandoned — the summary</h3>
+<p class="text-neutral-300 text-sm">A maintained skill: recent commits, answered issues, tagged releases, a trusted source. An abandoned skill: last touched a long time ago, ignored issues, no clear owner. The first improves on its own through updates; the second grows stale along with you.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">✅ Practical checklist before installing</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Bring all the signals together in a seven-question plan. In less than two minutes, you can replace a hype-based decision with an evidence-based one.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">The 7 checks (2 minutes)</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</span><span><strong>Description:</strong> say WHAT and WHEN in a 10-second read?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</span><span><strong>Source:</strong> vendor-backed or an author with a track record, not a ghost repo?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</span><span><strong>Installs:</strong> does it have real traction, or is it at absolute zero?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</span><span><strong>Scope:</strong> focused and atomic, or "everything-about-X"?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">5</span><span><strong>Maintenance:</strong> recent commits and answered issues?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">6</span><span><strong>Content:</strong> Did you open SKILL.md, and does the body make sense (under 500 lines, of course)?</span></li>
+<li class="flex items-start space-x-3"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">7</span><span><strong>Fit:</strong> does it fit YOUR stack and conventions, rather than a generic one?</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-5">
+<h4 class="font-semibold text-blue-400 mb-2">✓ 5+ yeses</h4>
+<p class="text-neutral-300 text-sm">Install with confidence. Run <code class="bg-dark-700 px-1 rounded">npx skills add owner/repo</code> and test it on a real task.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5">
+<h4 class="font-semibold text-red-400 mb-2">✗ 3 or fewer</h4>
+<p class="text-neutral-300 text-sm">Skip it. Look for an alternative from a trusted source—there’s almost always a better one in the same group.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> The check that saves the most time</h3>
+<p class="text-neutral-300 text-sm">Always read the description first. It eliminates 80% of candidates in seconds. Spend the other checks only on those that pass this filter.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Install count is a blunt filter</strong><span class="text-neutral-400"> — good for finding the top, bad for comparing; watch out for early-mover bias and brand effect</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">The source carries a reputation</strong><span class="text-neutral-400"> — vendor-backed (anthropics, vercel-labs, microsoft) &gt; random repo</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Description is the #1 signal</strong><span class="text-neutral-400"> — clear, stating WHAT + WHEN, is the best predictor of quality</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Focused beats "everything-about-X"</strong><span class="text-neutral-400"> — atomic, &lt;500 lines, composable with other skills</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">A maintained skill &gt; an abandoned one</strong><span class="text-neutral-400"> — recent commits and issues; npx skills update keeps everything in sync via symlink</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">7-question checklist</strong><span class="text-neutral-400"> — 2 minutes that replace hype with evidence before installing</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Next:</h3>
+<p class="text-neutral-300">2.2 — 🏆 Showcase: The Best by Group — we applied these signals to six catalog groups and highlighted reference skills with real install counts and sources.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-2.html">Next →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2.5 — Advanced Tips: Expert Signals | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha2/modulo-2-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha2/modulo-2-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha2/modulo-2-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-blue-400 bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a><span>/</span>
+<span class="text-blue-400">Module 2.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Advanced Tips: Signals Only Experts See</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The signals you won’t see on the storefront: triggering precision, context efficiency, reading transcripts, eval pass rate, variance—and why a skill with 100k+ installs can still be bad for you.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">43</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Adv.</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Pro</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<svg aria-label="Triggering precision: fires in the right cases and not on near-misses" class="w-full h-auto mb-12" role="img" viewbox="0 0 640 200">
+<defs>
+<filter id="g25"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="l25" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#3b82f6"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<circle cx="320" cy="100" fill="#3b82f6" fill-opacity="0.08" filter="url(#g25)" r="58" stroke="#38bdf8" stroke-width="2"></circle>
+<text fill="#38bdf8" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="320" y="96">area of</text>
+<text fill="#38bdf8" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="320" y="112">correct trigger</text>
+<g font-family="Inter" font-size="10">
+<circle cx="180" cy="55" fill="#3b82f6" filter="url(#g25)" r="6"></circle><text fill="#3b82f6" text-anchor="middle" x="180" y="40">should-trigger</text>
+<circle cx="170" cy="135" fill="#3b82f6" filter="url(#g25)" r="6"></circle><text fill="#3b82f6" text-anchor="middle" x="170" y="158">should-trigger</text>
+<circle cx="265" cy="100" fill="#3b82f6" filter="url(#g25)" r="6"></circle>
+<line stroke="#3b82f6" stroke-dasharray="3 3" stroke-width="1" x1="186" x2="262" y1="55" y2="98"></line>
+<line stroke="#3b82f6" stroke-dasharray="3 3" stroke-width="1" x1="176" x2="262" y1="135" y2="102"></line>
+<g stroke="#f87171" stroke-width="1.8">
+<line x1="470" x2="482" y1="45" y2="57"></line><line x1="482" x2="470" y1="45" y2="57"></line>
+<line x1="500" x2="512" y1="100" y2="112"></line><line x1="512" x2="500" y1="100" y2="112"></line>
+<line x1="470" x2="482" y1="150" y2="162"></line><line x1="482" x2="470" y1="150" y2="162"></line>
+</g>
+<text fill="#f87171" text-anchor="middle" x="490" y="34">near-miss</text>
+<text fill="#f87171" text-anchor="middle" x="540" y="106">Does NOT trigger</text>
+<text fill="#f87171" text-anchor="middle" x="490" y="178">near-miss</text>
+</g>
+</svg>
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Triggering precision: the invisible signal</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Beginners check whether the skill triggers. Experts check whether it triggers <strong class="text-blue-400">in the right cases and not in near-misses</strong>. A skill that triggers for a similar-but-wrong task injects irrelevant context and degrades the response — worse than not triggering.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Precise triggering</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Triggers on should-trigger prompts (high coverage)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Stays quiet on near-misses (high precision)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>postgres-skill does NOT trigger on "mongo query"</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Imprecise triggering</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Triggers whenever "database" is mentioned</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>False positive wastes context and causes confusion</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>False negative: never appears when needed</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Pro tip</h3>
+<p class="text-neutral-300 text-sm">Build a set of should-trigger and should-NOT-trigger examples (the near-misses). A description is only good when it gets both right. Optimize against the near-misses, not just the obvious matches.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🪙 Saving tokens and context</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The description stays <strong class="text-blue-400">always</strong> in context (level 1). The body is loaded when triggered (level 2). Bundled resources are loaded on demand only (level 3). A token-expensive skill takes space away from all the others — experts measure this.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl overflow-hidden mb-6">
+<table class="w-full text-sm">
+<thead class="bg-dark-700/50 text-neutral-400">
+<tr><th class="text-left px-4 py-3 font-semibold">Level</th><th class="text-left px-4 py-3 font-semibold">What carries over</th><th class="text-left px-4 py-3 font-semibold">When</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="px-4 py-3 text-blue-400 font-bold">1</td><td class="px-4 py-3 text-white">name + description (~100 words)</td><td class="px-4 py-3 text-neutral-400">always in the context</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-bold">2</td><td class="px-4 py-3 text-white">SKILL.md body (&lt;500 lines)</td><td class="px-4 py-3 text-neutral-400">when it triggers</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-bold">3</td><td class="px-4 py-3 text-white">scripts / references / assets</td><td class="px-4 py-3 text-neutral-400">on demand</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-2">The hidden cost of always-active skills</h3>
+<p class="text-neutral-300 text-sm">Each installed description consumes context all the time. 30 skills with bloated descriptions = thousands of tokens spent before any task. That's why a dense, short description isn't an aesthetic choice: it's a budget.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Pro tip</h3>
+<p class="text-neutral-300 text-sm">Move everything that isn't a trigger to level 3 (bundled). If a detail isn't read on every invocation, it doesn't belong in the main body—it becomes a file loaded on demand.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📜 Read transcripts to find wasted work</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The signal no one sees on skills.sh is in the <strong class="text-blue-400">your own transcript</strong>. Reread a real session: where did the agent redo the same thing, ask for unnecessary confirmation, or ignore the skill it should have used? That’s where the wasted work is.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Look for repetition</h4><p class="text-neutral-300 text-sm">The agent rewrote the same boilerplate three times? Turn it into a bundled skill script.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Look for failure to trigger</h4><p class="text-neutral-300 text-sm">The right skill existed but didn’t activate? The description is weak on WHEN—refine the trigger.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Look for incorrect triggering</h4><p class="text-neutral-300 text-sm">Did a skill show up when it wasn’t needed? That’s a near miss—tighten the description to rule it out.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Pro tip</h3>
+<p class="text-neutral-300 text-sm">Transcript is the best free eval there is. Before installing more skills, read a session and ask: What came up repeatedly? What failed silently? Each pattern is an opportunity to adjust a skill.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📊 Eval pass rates and non-discriminating assertions</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        An eval that always passes doesn’t measure anything. The expert signal is the <strong class="text-blue-400">discriminating assertion</strong>: one that <em>failure</em> without the skill and <em>passes</em> with it. If the baseline already passes, the assertion isn't measuring the skill's contribution.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Non-discriminating assertion</h4>
+<div class="bg-dark-900/60 rounded-lg p-4 font-mono text-xs mb-3"><pre class="text-neutral-400 leading-relaxed whitespace-pre-wrap">assert output.contains("function")
+# passa com OU sem a skill → inútil</pre></div>
+<p class="text-neutral-300 text-sm">A 100% pass rate that doesn’t distinguish the baseline from the with-skill results is false reassurance.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">✓ Discriminating assertion</h4>
+<div class="bg-dark-900/60 rounded-lg p-4 font-mono text-xs mb-3"><pre class="text-neutral-300 leading-relaxed whitespace-pre-wrap">assert migration.has_down_step()
+# falha sem a skill, passa com ela ✓</pre></div>
+<p class="text-neutral-300 text-sm">Measures exactly the behavior the skill is supposed to add.</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">the honest eval test:</p>
+<pre class="text-neutral-300 leading-relaxed">baseline (sem skill)  → pass-rate 30%
+com a skill           → pass-rate 90%
+delta = 60pp  → a skill comprovadamente ajuda
+
+baseline 95% / com-skill 96%  → assertion não discrimina</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Pro tip</h3>
+<p class="text-neutral-300 text-sm">Always run the baseline. A high pass rate matters only if the baseline is low. The number that counts is the <strong>delta</strong> with-skill vs. without-skill.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🎲 Variance and flakiness</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        One eval run isn’t enough. The model is stochastic: the same skill can pass in one run and fail in the next. Experts run the eval <strong class="text-blue-400">several times</strong> and look at the variance—a 90% pass rate with high flakiness is less reliable than a stable 80%.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">same skill, 5 executions:</p>
+<pre class="text-neutral-300 leading-relaxed">skill A: 90 88 91 89 90  → média 89,6  σ baixo  → confiável
+skill B: 100 60 95 55 90  → média 80,0  σ alto   → flaky</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ How to reduce flakiness</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Imperative, unambiguous instructions</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Explain why (the agent generalizes more consistently)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Run N times and report the mean + standard deviation</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Signs of flakiness</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Result varies a lot between runs</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ambiguous or contradictory instructions</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Evaluate in a single round</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Pro tip</h3>
+<p class="text-neutral-300 text-sm">Always report the mean ± standard deviation, never a standalone number. Stability is quality: prefer the consistent skill over one that sometimes shines and sometimes plummets.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">⚠️ When a popular skill is still bad</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        High install counts aren't proof. Remember the power law: the <strong class="text-blue-400">top 100 = 43.7%</strong> of all installs and only <strong class="text-blue-400">0.3% (131 skills)</strong> exceed 100k — there’s early-mover bias and a brand effect. A popular skill can be bad <em>for you</em>.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Popular but problematic</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>100k installs but no commit in a year (abandoned)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Bloated scope that triggers in the wrong workflow</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>For another stack—popular in React, useless in your Vue project</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Early-mover hype, not sustained quality</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ What to check beyond the install</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Recent last commit, answered issues</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Fit with YOUR stack and workflow</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Precise triggering for your real-world use case</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Eval delta in your transcript, not the hype</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-2">The expert’s lightbulb moment</h3>
+<p class="text-neutral-300 text-sm">Beginners install based on the big number. Experts install based on evidence in their own workflow: precise triggering, low context cost, a real eval delta, active maintenance, and fit with the stack. Install count is where you <em>starts</em> to investigate—never where it ends.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Triggering precision</strong><span class="text-neutral-400"> — triggers on should-trigger cases and stays quiet on near-misses; optimize for both.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Context efficiency</strong><span class="text-neutral-400"> — a dense, concise description is a budget; move details to bundled (level 3).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Reading transcripts</strong><span class="text-neutral-400"> — repetition, failure to trigger, and incorrect triggering reveal wasted work.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Honest evals</strong><span class="text-neutral-400"> — discriminating assertion + delta vs baseline; a high pass rate alone is misleading.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Variance and popularity</strong><span class="text-neutral-400"> — run N times (mean ± σ); high installs aren't proof — check fit, maintenance, and actual delta.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Next:</h3>
+<p class="text-neutral-300">Track 3 — 🧬 Anatomy of a Skill. You already know how to judge, create, and spot the subtle signals; now let’s open up SKILL.md: frontmatter, body, and progressive disclosure.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Next →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

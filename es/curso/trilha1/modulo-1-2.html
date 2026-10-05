@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.2 — El mapa de skills.sh | Creando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🗺️ El mapa de skills.sh: 39k skills, la ley de potencias y los 16 grupos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">El tamaño real del catálogo, la curva brutal de instalaciones y los 16 grupos temáticos, y lo que este mapa te enseña antes de crear tu primera skill.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Datos</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📊 El tamaño del catálogo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Antes de crear una skill, conviene ver la dimensión del territorio. En el harvest de skills.sh, el catálogo tiene <strong class="text-emerald-400">39.366 skills</strong>, provenientes de <strong class="text-emerald-400">5.075 repos fuente</strong>, sumando <strong class="text-emerald-400">53,9 millones de instalaciones</strong>, organizadas en <strong class="text-emerald-400">16 grupos temáticos</strong>. Es lo bastante grande como para tener ya casi todo y lo bastante específico como para que todavía haya vacíos.
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">39.366</div>
+<div class="text-sm text-neutral-400">skills en el catálogo</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">5.075</div>
+<div class="text-sm text-neutral-400">repos fuente</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 text-center">
+<div class="text-3xl font-bold text-emerald-400 mb-1">53,9M</div>
+<div class="text-sm text-neutral-400">instalaciones sumadas</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> El promedio engaña</h3>
+<p class="text-neutral-300 text-sm">53,9M ÷ 39.366 daría ~1.370 installs por skill "en promedio". Pero el promedio es la peor medida en este caso: la distribución está tan sesgada que casi ninguna skill se acerca a esa cifra. Eso es exactamente lo que muestra el siguiente tema.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📉 La ley de potencia</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La distribución de instalaciones sigue una <strong class="text-emerald-400">ley de potencia</strong>: muchos en la base, muy pocos en la cima. La gran mayoría de las skills vive en la cola larga, casi sin installs, mientras que un puñado diminuto concentra una audiencia enorme.
+      </p>
+<svg aria-label="Gráfico de barras de la ley de potencia: el 60,2% de las skills tiene menos de 100 instalaciones; la proporción baja hasta el 0,3% para más de 100 mil" class="w-full h-auto my-6" role="img" viewbox="0 0 600 240">
+<defs>
+<filter id="g12"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="bar12" x1="0" x2="0" y1="1" y2="0"><stop offset="0%" stop-color="#10b981"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<line stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1" x1="50" x2="580" y1="200" y2="200"></line>
+<g filter="url(#g12)">
+<rect fill="url(#bar12)" fill-opacity="0.85" height="180" rx="4" width="80" x="60" y="20"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.7" height="92" rx="4" width="80" x="160" y="108"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.55" height="23" rx="4" width="80" x="260" y="177"></rect>
+<rect fill="url(#bar12)" fill-opacity="0.5" height="3" rx="2" width="80" x="360" y="197"></rect>
+<rect fill="#38bdf8" height="2" rx="2" width="80" x="460" y="199"></rect>
+</g>
+<g fill="#10b981" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">
+<text x="100" y="14">60,2%</text>
+<text x="200" y="102">30,8%</text>
+<text x="300" y="171">7,7%</text>
+<text x="400" y="191">1,1%</text>
+<text x="500" y="193">0,3%</text>
+</g>
+<g fill="#38bdf8" font-family="sans-serif" font-size="9" text-anchor="middle">
+<text x="100" y="216">&lt;100</text>
+<text x="200" y="216">100–999</text>
+<text x="300" y="216">1k–9,9k</text>
+<text x="400" y="216">10k–99k</text>
+<text x="500" y="216">100k+</text>
+</g>
+<text fill="#10b981" font-family="sans-serif" font-size="9" text-anchor="middle" x="500" y="228">131 skills</text>
+</svg>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ La cola larga (la mayoría)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>60,2%</strong> tienen menos de 100 instalaciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>30,8%</strong> están entre 100 y 999</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El 91% del catálogo nunca superó 1.000</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Publicar no es lo mismo que usar</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ La cima (la excepción)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>7,7%</strong> entre 1k y 9,9k instalaciones</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>1,1%</strong> entre 10k y 99k</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Solo <strong>0,3% (131 skills)</strong> superan los 100k</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Para llegar ahí, hay que resolver un problema real</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Lectura honesta</h3>
+<p class="text-neutral-300 text-sm">Esto no desanima: orienta. Estar en la cola larga es lo normal. La pregunta correcta no es «¿cómo llego al 0,3% superior?», sino «¿qué problema específico resuelve mi skill mejor que cualquier alternativa existente?».</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🎯 Concentración</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La ley de potencia tiene una consecuencia dramática en el extremo: las <strong class="text-emerald-400">Las 100 skills más instaladas concentran el 43,7% de todas las instalaciones</strong>. Casi la mitad de 53,9 millones está concentrada en 100 nombres, entre casi 40 mil. Es el efecto de que «el ganador se lleva casi todo».
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4">La cima absoluta del catálogo</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">find-skills <span class="text-neutral-500">· vercel-labs/skills</span></span><span class="text-emerald-400 font-bold text-sm">1.802.925</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">frontend-design <span class="text-neutral-500">· anthropics/skills</span></span><span class="text-emerald-400 font-bold text-sm">488.299</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">vercel-react-best-practices <span class="text-neutral-500">· vercel-labs</span></span><span class="text-emerald-400 font-bold text-sm">443.261</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">microsoft-foundry <span class="text-neutral-500">· microsoft</span></span><span class="text-emerald-400 font-bold text-sm">360.755</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">azure-ai <span class="text-neutral-500">· microsoft</span></span><span class="text-emerald-400 font-bold text-sm">358.744</span></div>
+<div class="flex items-center justify-between bg-dark-800/50 rounded-lg p-3"><span class="text-neutral-300 text-sm font-mono">web-design-guidelines <span class="text-neutral-500">· vercel-labs</span></span><span class="text-emerald-400 font-bold text-sm">358.627</span></div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">la concentración en una línea:</p>
+<pre class="text-neutral-300 leading-relaxed">  100 skills (0,25% do catálogo)  =  <span class="text-emerald-400">43,7%</span> dos installs
+~39.266 skills (99,75%)          =  56,3% restantes</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Qué sacar de aquí</h3>
+<p class="text-neutral-300 text-sm">Competir directamente con find-skills o frontend-design es casi inviable: tienen marca, distribución e inercia. La jugada inteligente es no enfrentarse a las líderes, sino encontrar dónde todavía no han llegado.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🗂️ Los 16 grupos temáticos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El catálogo se divide en 16 grupos. Comparar <strong class="text-emerald-400">recuento de skills</strong> con <strong class="text-emerald-400">instalaciones</strong> revela lo que importa: algunos grupos tienen mucha oferta; otros, pocas skills que capturan mucha demanda. Mira los principales.
+      </p>
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border border-dark-600 rounded-xl overflow-hidden">
+<thead class="bg-dark-700/50 text-neutral-300">
+<tr><th class="text-left p-3">Grupo</th><th class="text-right p-3">Skills</th><th class="text-right p-3">Instalaciones</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🤖 AI/LLM/Agents</td><td class="p-3 text-right text-emerald-400 font-semibold">12.693</td><td class="p-3 text-right text-neutral-300">12,9M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🎨 Web y frontend</td><td class="p-3 text-right text-emerald-400 font-semibold">4.694</td><td class="p-3 text-right text-neutral-300">4,5M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">☁️ DevOps y Cloud</td><td class="p-3 text-right text-emerald-400 font-semibold">907</td><td class="p-3 text-right text-neutral-300">8,3M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🛠️ Herramientas de desarrollo y código</td><td class="p-3 text-right text-emerald-400 font-semibold">796</td><td class="p-3 text-right text-neutral-300">4,4M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">📈 Marketing y SEO</td><td class="p-3 text-right text-emerald-400 font-semibold">582</td><td class="p-3 text-right text-neutral-300">2,3M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🎬 Medios y creatividad</td><td class="p-3 text-right text-emerald-400 font-semibold">550</td><td class="p-3 text-right text-neutral-300">1,85M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🔌 Backend &amp; APIs</td><td class="p-3 text-right text-emerald-400 font-semibold">2.685</td><td class="p-3 text-right text-neutral-300">1,38M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🗄️ Datos y bases de datos</td><td class="p-3 text-right text-emerald-400 font-semibold">1.385</td><td class="p-3 text-right text-neutral-300">0,79M</td></tr>
+<tr class="bg-dark-800"><td class="p-3 text-neutral-300">🧪 Pruebas y QA</td><td class="p-3 text-right text-emerald-400 font-semibold">1.339</td><td class="p-3 text-right text-neutral-300">0,60M</td></tr>
+</tbody>
+</table>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">📈 Mucha demanda de skills</h4>
+<p class="text-neutral-300 text-sm mb-2"><strong>DevOps &amp; Cloud</strong>: solo 907 skills, pero 8,3M installs — ~9.150 por skill. Pocos nombres (la familia azure de microsoft) capturan casi todo.</p>
+<p class="text-neutral-300 text-sm"><strong>Marketing y SEO</strong> e <strong>Dev Tooling</strong> también tienen una buena proporción de installs por skill.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">📉 Mucha oferta, competencia intensa</h4>
+<p class="text-neutral-300 text-sm mb-2"><strong>AI/LLM/Agents</strong>: 12.693 skills compitiendo por 12,9M — ~1.016 por skill. Es el grupo más saturado del catálogo.</p>
+<p class="text-neutral-300 text-sm"><strong>Backend y APIs</strong> tiene 2.685 skills para solo 1,38M installs — mucha gente, poco pastel.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> No mires solo el tamaño</h3>
+<p class="text-neutral-300 text-sm">El volumen de skills de un grupo mide la <strong>competencia</strong>; las instalaciones por skill miden la <strong>demanda atendida</strong>. Los grupos menos obvios (Office, Finance, Productivity) tienen poca oferta: una oportunidad para quien llega con algo bien hecho.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🏢 Concentración de fuentes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        No solo las skills se concentran: <strong class="text-emerald-400">también es una fuente</strong>. A pesar de los 5.075 repos, unos pocos representan una parte desproporcionada de las instalaciones. Los mismos nombres se repiten en la cima de casi todos los grupos.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">vercel-labs — domina Web &amp; Agentes</h4>
+<p class="text-neutral-300 text-sm">find-skills (1,8M), vercel-react-best-practices (443k), web-design-guidelines (358k), agent-browser (332k), vercel-composition-patterns (195k). Por sí sola lidera dos de los grupos más grandes.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">microsoft — propietaria de DevOps/Cloud</h4>
+<p class="text-neutral-300 text-sm">La familia azure-skills (microsoft-foundry, azure-ai, azure-deploy, azure-diagnostics, azure-prepare) ronda los ~358–360k cada una. Es la razón por la que DevOps tiene un install/skill tan alto.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">anthropics &amp; larksuite: referencia y nichos fuertes</h4>
+<p class="text-neutral-300 text-sm">anthropics: frontend-design (488k), skill-creator (246k). larksuite/cli: lark-slides (139k) domina Office. Cada una reina en su territorio.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> La marca y la distribución cuentan</h3>
+<p class="text-neutral-300 text-sm">Una skill excelente en un repo desconocido parte en desventaja frente a un nombre conocido. Esto refuerza la lección: para la comunidad, el camino es el <strong>nicho</strong>, no la confrontación directa con vercel-labs o microsoft.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧭 Qué enseña el mapa</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        En conjunto, el mapa de skills.sh ofrece tres lecciones prácticas que orientan el resto del curso. No son opiniones: se desprenden directamente de los números.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Descubre qué existe antes de crear</h4>
+<p class="text-neutral-300 text-sm">Con 39.366 skills, es muy probable que tu idea ya exista. Busca primero en skills.sh (<code class="bg-dark-700 px-1 rounded">npx skills find ...</code>). Si ya hay una buena, instálala. Reinventar la rueda solo engrosa la cola larga.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Apunta a nichos vacíos</h4>
+<p class="text-neutral-300 text-sm">No compitas en AI/Agents (12.693 skills saturadas) ni con find-skills. Busca algo específico: tu dominio, tu herramienta, la convención de tu equipo, donde los grandes nombres aún no han llegado.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Juega del lado correcto de la curva</h4>
+<p class="text-neutral-300 text-sm">Lo importante no es «tener muchas instalaciones», sino resolver un problema real mejor que las alternativas. Hazlo y las instalaciones llegarán. La calidad que distingue a las mejores del 60,2% es el tema de la Trilha 2.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">lista mental antes de crear:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-emerald-400">[ ]</span> busquei no skills.sh? já existe algo bom?
+<span class="text-emerald-400">[ ]</span> meu grupo é lotado (muita oferta) ou vazio?
+<span class="text-emerald-400">[ ]</span> que dor específica eu resolvo melhor?
+<span class="text-emerald-400">[ ]</span> minha description deixa claro o QUE e o QUANDO?</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> El puente al resto del curso</h3>
+<p class="text-neutral-300 text-sm">La Trilha 1 te dio el terreno: qué es una skill y cómo es el mercado. A partir de aquí, el curso pasa a la práctica — calidad (T2), anatomía (T3), el ciclo de creación (T4) y qué tener en cuenta al publicar (T5).</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">El catálogo es grande</strong><span class="text-neutral-400"> — 39.366 skills, 5.075 repositorios, 53,9M instalaciones, 16 grupos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">La distribución sigue una ley de potencia</strong><span class="text-neutral-400"> — 60,2% tienen &lt;100 instalaciones; solo el 0,3% (131) supera las 100k</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">La cima lo concentra todo</strong><span class="text-neutral-400"> — las 100 con más instalaciones = 43,7% de todas las instalaciones</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">16 grupos, perfiles diferentes</strong><span class="text-neutral-400"> — AI/Agents es el grupo más saturado (12.693); DevOps tiene más instalaciones por skill (8,3M/907)</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Pocas fuentes dominan</strong><span class="text-neutral-400"> — vercel-labs, anthropics, microsoft y larksuite dominan los primeros puestos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">El mapa guía la creación</strong><span class="text-neutral-400"> — investiga antes, apunta a nichos vacíos, juega del lado correcto de la curva</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">1.3 — ⭐ Las mejores para empezar (Starter Pack). Las skills canónicas que todos deberían instalar primero y el kit mínimo recomendado.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-3.html">Próximo: 1.3 Las mejores →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

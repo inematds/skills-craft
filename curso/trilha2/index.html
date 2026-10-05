@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trilha 2 — Qualidade & As Melhores | Criando Skills</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trilha 2 — Qualidade &amp; As Melhores | Criando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     .topic-explanation { display: none; }
@@ -49,646 +50,591 @@
     .dark .border-dark-600 { border-color: #374151; }
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
-          </a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
-          <a href="../trilha2/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-blue-400 bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
-          <a href="../trilha3/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
-          <a href="../trilha4/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
-          <a href="../trilha5/index.html" class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRILHA 2</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⭐ Qualidade & As Melhores</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Como ler sinais de qualidade — installs, fonte, descrição — e uma vitrine das melhores skills por grupo, com exemplos reais do catálogo.</p>
-
-      <svg viewBox="0 0 640 200" role="img" aria-label="Sinais de qualidade de uma skill convergindo em um selo de aprovação" class="w-full h-auto max-w-2xl my-6">
-        <defs>
-          <filter id="heroglow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
-        </defs>
-        <rect x="20" y="30" width="150" height="30" rx="6" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
-        <text x="95" y="50" font-size="13" fill="#38bdf8" text-anchor="middle" font-family="Inter">installs</text>
-        <rect x="20" y="85" width="150" height="30" rx="6" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
-        <text x="95" y="105" font-size="13" fill="#38bdf8" text-anchor="middle" font-family="Inter">fonte</text>
-        <rect x="20" y="140" width="150" height="30" rx="6" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
-        <text x="95" y="160" font-size="13" fill="#38bdf8" text-anchor="middle" font-family="Inter">description</text>
-        <path d="M170 45 C 260 45, 280 100, 360 100" stroke="url(#heroLine)" stroke-width="2" fill="none" filter="url(#heroglow)"/>
-        <path d="M170 100 L 360 100" stroke="url(#heroLine)" stroke-width="2" fill="none" filter="url(#heroglow)"/>
-        <path d="M170 155 C 260 155, 280 100, 360 100" stroke="url(#heroLine)" stroke-width="2" fill="none" filter="url(#heroglow)"/>
-        <circle cx="470" cy="100" r="55" fill="#3b82f6" fill-opacity="0.1" stroke="#38bdf8" stroke-width="2.5" filter="url(#heroglow)"/>
-        <path d="M445 100 l 18 18 l 34 -38" stroke="#38bdf8" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#heroglow)"/>
-        <text x="470" y="178" font-size="13" fill="#3b82f6" text-anchor="middle" font-family="Inter" font-weight="700">skill confiável</text>
-        <path d="M360 100 L 410 100" stroke="url(#heroLine)" stroke-width="2" fill="none" filter="url(#heroglow)"/>
-      </svg>
-
-      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-blue-400">5</div>
-          <div class="text-xs text-neutral-400">Módulos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-blue-400">30</div>
-          <div class="text-xs text-neutral-400">Tópicos</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-blue-400">~3h30</div>
-          <div class="text-xs text-neutral-400">Duração</div>
-        </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-          <div class="text-xl font-bold text-blue-400">Inter.</div>
-          <div class="text-xs text-neutral-400">Nível</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- MÓDULO 2.1 -->
-    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
-      <div class="p-6 border-b border-dark-600">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~40 min</span></div>
-        <h3 class="text-2xl font-bold mb-2">🔎 Lendo sinais de qualidade</h3>
-        <p class="text-neutral-400 text-sm">Install count, fonte, description, escopo e manutenção — os sinais que separam uma skill madura de um repo abandonado. Mais um checklist prático.</p>
-      </div>
-      <div class="divide-y divide-dark-600">
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span class="text-lg">📊</span>
-            <div><span class="font-medium">Install count como sinal</span><span class="text-neutral-500 text-sm ml-2">- e suas armadilhas</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A contagem de instalações que o skills.sh mostra ao lado de cada skill. É o sinal de popularidade mais visível — find-skills tem 1.802.925, frontend-design 488.299.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Installs altos correlacionam com qualidade, mas não são prova. Há viés de quem chegou cedo e efeito de marca. Saber ler isso evita instalar lixo popular.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">lei de potência · viés do early-mover · efeito de marca · 0,3% têm 100k+</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span class="text-lg">🏛️</span>
-            <div><span class="font-medium">A fonte importa</span><span class="text-neutral-500 text-sm ml-2">- quem publicou</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O repositório owner/repo que hospeda a skill. vercel-labs, anthropics e microsoft carregam reputação institucional; um repo aleatório de 3 estrelas, não.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A fonte é o segundo melhor sinal depois da description. Fontes oficiais mantêm a skill viva, seguem a spec e respondem a issues.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">vendor-backed · anthropics/skills · vercel-labs · microsoft/azure-skills · repo aleatório</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span class="text-lg">✍️</span>
-            <div><span class="font-medium">A description como sinal nº1</span><span class="text-neutral-500 text-sm ml-2">- clara = bem pensada</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O campo description do frontmatter. Uma boa diz O QUE a skill faz E QUANDO usá-la. É o gatilho que o agente lê para decidir disparar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Description clara revela que o autor entendeu o problema. Description vaga = skill que dispara errado ou nunca dispara. É o melhor preditor de qualidade.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">gatilho de ativação · O QUE + QUANDO · trigger preciso · subdisparo</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-            <span class="text-lg">🎯</span>
-            <div><span class="font-medium">Escopo e tamanho</span><span class="text-neutral-500 text-sm ml-2">- focada > tudo-sobre-X</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O quanto a skill tenta abraçar. Uma skill atômica resolve um problema bem; uma "tudo-sobre-X" tenta resolver dez e não resolve nenhum direito.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skills focadas absorvem melhor no contexto, disparam com precisão e compõem com outras. Tamanho enxuto (corpo &lt;500 linhas) é sinal de disciplina.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">atomicidade · uma responsabilidade · composição · &lt;500 linhas</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-            <span class="text-lg">🔄</span>
-            <div><span class="font-medium">Manutenção e atualização</span><span class="text-neutral-500 text-sm ml-2">- viva ou abandonada?</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Frequência de commits, issues respondidas e releases. Como skills instalam por symlink, <code class="bg-dark-700 px-1 rounded">npx skills update</code> puxa as melhorias da fonte automaticamente.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma skill viva acompanha mudanças de framework e da própria spec. Uma abandonada envelhece e passa a dar instruções erradas para o agente.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">último commit · issues abertas · npx skills update · symlink vs cópia</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-            <span class="text-lg">✅</span>
-            <div><span class="font-medium">Checklist prático</span><span class="text-neutral-500 text-sm ml-2">- antes de instalar</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um roteiro de 7 perguntas que junta todos os sinais — installs, fonte, description, escopo, manutenção, licença e fit — numa decisão de 2 minutos.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Transforma intuição em processo repetível. Você para de instalar por hype e passa a instalar por evidência.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">avaliação em 2 min · evidência > hype · fit com o seu stack · ler o SKILL.md</p></div>
-          </div></div>
-        </div>
-
-      </div>
-      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-        <button onclick="openModal('modal-2-1')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
-        <a href="modulo-2-1.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo</a>
-      </div>
-    </div>
-
-    <!-- MÓDULO 2.2 -->
-    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
-      <div class="p-6 border-b border-dark-600">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~40 min</span></div>
-        <h3 class="text-2xl font-bold mb-2">🏆 Vitrine: as melhores por grupo</h3>
-        <p class="text-neutral-400 text-sm">Seis grupos do catálogo, suas skills de referência e o porquê elas são boas — usando installs e fontes reais do skills.sh.</p>
-      </div>
-      <div class="divide-y divide-dark-600">
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span class="text-lg">🎨</span>
-            <div><span class="font-medium">Web & Frontend</span><span class="text-neutral-500 text-sm ml-2">- 4.694 skills · 4,5M installs</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de UI, React, CSS e design. As referências: frontend-design (488k, anthropics), vercel-react-best-practices (443k) e web-design-guidelines (358k).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o grupo mais maduro para quem programa front. Fontes oficiais + installs altíssimos = baixo risco de instalar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">frontend-design · vercel-react-best-practices · web-design-guidelines</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span class="text-lg">🤖</span>
-            <div><span class="font-medium">AI / LLM / Agentes</span><span class="text-neutral-500 text-sm ml-2">- 12.693 skills · 12,9M installs</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O maior grupo por volume. Referências: agent-browser (332k, vercel-labs), skill-creator (246k, anthropics) e vercel-composition-patterns (195k).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o coração do ecossistema. skill-creator é a própria ferramenta canônica para criar skills — meta e essencial.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">agent-browser · skill-creator · vercel-composition-patterns</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span class="text-lg">🗄️</span>
-            <div><span class="font-medium">Data & Databases</span><span class="text-neutral-500 text-sm ml-2">- 1.385 skills · 0,79M installs</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de SQL, Postgres e modelagem. Referências: supabase-postgres-best-practices (203k, supabase), supabase (99k) e neon-postgres (38k).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Aqui a fonte é vendor-backed (supabase, neondatabase): a empresa que faz o banco escreve as boas práticas. Confiança máxima.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">supabase-postgres-best-practices · supabase · neon-postgres</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-            <span class="text-lg">☁️</span>
-            <div><span class="font-medium">DevOps & Cloud</span><span class="text-neutral-500 text-sm ml-2">- 907 skills · 8,3M installs</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A suíte microsoft/azure-skills: foundry, ai, deploy, diagnostics e prepare — todas entre ~358k e 360k installs.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Poucas skills, mas installs gigantes (8,3M). Mostra como uma suíte coesa de um vendor domina um nicho de infraestrutura.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">microsoft-foundry · azure-ai · azure-deploy · azure-diagnostics · azure-prepare</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-            <span class="text-lg">🧪</span>
-            <div><span class="font-medium">Testing & QA</span><span class="text-neutral-500 text-sm ml-2">- 1.339 skills · 0,60M installs</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de teste e qualidade. Referências: test-driven-development (107k, obra/superpowers) e playwright-best-practices (45k).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skills de processo (como TDD) mostram que skills não são só sobre stack — também codificam disciplina de engenharia.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">test-driven-development · playwright-best-practices · skill de processo</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-            <span class="text-lg">📈</span>
-            <div><span class="font-medium">Marketing / Office / Finance</span><span class="text-neutral-500 text-sm ml-2">- além do código</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de negócio: marketing-psychology (84k, coreyhaines31), lark-slides (139k, larksuite) e stripe-best-practices (stripe/ai).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Prova que o ecossistema vai muito além de devs. Há grupos inteiros (Marketing 2,3M, Office, Finance) para trabalho não-técnico.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">marketing-psychology · lark-slides · stripe-best-practices</p></div>
-          </div></div>
-        </div>
-
-      </div>
-      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-        <button onclick="openModal('modal-2-2')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
-        <a href="modulo-2-2.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo</a>
-      </div>
-    </div>
-
-    <!-- MÓDULO 2.3 -->
-    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
-      <div class="p-6 border-b border-dark-600">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~42 min</span></div>
-        <h3 class="text-2xl font-bold mb-2">⭐ As Melhores por Sinal de Qualidade</h3>
-        <p class="text-neutral-400 text-sm">Para cada sinal de qualidade, a skill real que é seu retrato perfeito — description, escopo atômico, fonte forte e descoberta clara, com as descriptions reais do catálogo.</p>
-      </div>
-      <div class="divide-y divide-dark-600">
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span class="text-lg">✍️</span>
-            <div><span class="font-medium">Description impecável</span><span class="text-neutral-500 text-sm ml-2">- frontend-design (488k)</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">frontend-design (488k, anthropics) diz o quê, quando e dá exemplos: "Use this skill when the user asks to build web components, pages...". supabase (99k) é "pushy" com "Triggers:...".</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A description é o gatilho de roteamento. Ver o modelo perfeito te dá o padrão a copiar quando escrever a sua.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">o quê + quando + exemplos · "pushy" · Triggers: · combate ao subdisparo</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span class="text-lg">🎯</span>
-            <div><span class="font-medium">Escopo atômico perfeito</span><span class="text-neutral-500 text-sm ml-2">- vercel-react (443k)</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">vercel-react-best-practices (443k) e test-driven-development (107k, obra/superpowers): uma responsabilidade só, feita muito bem.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escopo atômico dispara com precisão e compõe com outras skills. É o sinal que separa skill madura de "tudo-sobre-X".</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">uma responsabilidade · teste da frase sem "e" · composição · skill de processo</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span class="text-lg">🏛️</span>
-            <div><span class="font-medium">Fonte forte e mantida</span><span class="text-neutral-500 text-sm ml-2">- suíte azure (~358k)</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A suíte microsoft/azure-skills (~358k cada) e vercel-labs: vendor oficial, suíte coesa, manutenção viva via symlink.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Vendor-backed é o teto de confiança — quem faz o produto conhece os edge cases que ninguém documenta.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">vendor-backed · suíte coesa · npx skills update · manutenção viva</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-            <span class="text-lg">🔍</span>
-            <div><span class="font-medium">Descoberta clara</span><span class="text-neutral-500 text-sm ml-2">- find-skills (1,8M)</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">find-skills (1.802.925, vercel-labs), a mais instalada do catálogo: nome e propósito instantaneamente óbvios.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Se o nome precisa de explicação, a descoberta falhou. Nome+description autoexplicativos viram a porta de entrada.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">nome autoexplicativo · porta de entrada · top 100 = 43,7% · 0,3% têm 100k+</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-            <span class="text-lg">🧩</span>
-            <div><span class="font-medium">Acertando vários sinais</span><span class="text-neutral-500 text-sm ml-2">- skill-creator (246k)</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">skill-creator (246k, anthropics) combina description clara + escopo focado + fonte oficial + descoberta óbvia.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Acertar vários sinais não soma — multiplica. É por isso que essas skills lideram o catálogo.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">efeito composto · meta-skill · reforço mútuo dos sinais</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-            <span class="text-lg">📋</span>
-            <div><span class="font-medium">Tabela de campeões</span><span class="text-neutral-500 text-sm ml-2">- gabarito por sinal</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O quadro de referência: cada sinal de qualidade com sua skill-modelo, fonte e installs reais.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Vira gabarito: ao avaliar ou criar uma skill, compare com o campeão do sinal que mais importa para você.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">gabarito · campeão por sinal · copie o padrão, não invente</p></div>
-          </div></div>
-        </div>
-
-      </div>
-      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-        <button onclick="openModal('modal-2-3')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
-        <a href="modulo-2-3.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo</a>
-      </div>
-    </div>
-
-    <!-- MÓDULO 2.4 -->
-    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
-      <div class="p-6 border-b border-dark-600">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
-        <h3 class="text-2xl font-bold mb-2">🛠️ Como Criar uma Skill que Parece (e É) de Alta Qualidade</h3>
-        <p class="text-neutral-400 text-sm">A parte prática: description que dispara certo, escopo atômico, checklist de polimento, antes/depois de uma skill fraca virando forte e um template de description pronto.</p>
-      </div>
-      <div class="divide-y divide-dark-600">
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span class="text-lg">✍️</span>
-            <div><span class="font-medium">Description que dispara certo</span><span class="text-neutral-500 text-sm ml-2">- o quê + quando + pushy</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Escrever a description em três partes: o resultado que entrega, o quando (gatilhos concretos) e ser "pushy" contra o subdisparo.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o gatilho de roteamento que fica sempre no contexto. Errar aqui = skill que dispara errado ou nunca dispara.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">resultado, não atividade · "Use when..." · "Triggers:" · regra dos 100 palavras</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span class="text-lg">🎯</span>
-            <div><span class="font-medium">Escopo atômico</span><span class="text-neutral-500 text-sm ml-2">- uma responsabilidade</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Manter a skill em uma única responsabilidade, como vercel-react-best-practices e a suíte azure-skills. Quebrar o que for grande.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill atômica absorve no contexto, dispara com precisão, é testável e compõe. "Tudo-sobre-X" falha em tudo.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">teste da frase única · &lt;500 linhas · sem "e"/"também" · composição</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span class="text-lg">✅</span>
-            <div><span class="font-medium">O checklist de polimento</span><span class="text-neutral-500 text-sm ml-2">- 7 checagens</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um roteiro de 7 itens — description, escopo, &lt;500 linhas, explicar o porquê, test prompts, scripts, nome óbvio — antes de publicar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Separa uma skill que parece de qualidade de uma que é. Inspirado no fluxo canônico do skill-creator.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">checklist de 7 · polir = remover · imperativo · bundled resources</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-            <span class="text-lg">🔁</span>
-            <div><span class="font-medium">Antes / depois</span><span class="text-neutral-500 text-sm ml-2">- fraca → forte</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Mesma intenção ("ajudar com SQL"), duas execuções lado a lado: a "sql-helper and more" que ninguém instala vs. o padrão postgres-best-practices.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostra que o salto de qualidade vem de roteamento e foco, não do conteúdo técnico.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">code box ✗/✓ · "and more" = escopo infinito · roteamento e foco</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-            <span class="text-lg">📐</span>
-            <div><span class="font-medium">Template de description pronto</span><span class="text-neutral-500 text-sm ml-2">- copie e preencha</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um molde de frontmatter que junta os padrões de frontend-design e supabase, com exemplo preenchido para uma skill de migrations.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Tira o "página em branco". Você preenche os colchetes e calibra os triggers contra near-misses.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">template · verbo de resultado · exemplos + Triggers · calibrar near-misses</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-            <span class="text-lg">🚦</span>
-            <div><span class="font-medium">O loop completo de criação</span><span class="text-neutral-500 text-sm ml-2">- iterar até disparar certo</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Capturar intent → draft → 2-3 test prompts vs baseline → generalizar e enxugar → otimizar description → empacotar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Criar uma skill boa é iterativo, não um chute. O loop garante que ela realmente ajuda antes de publicar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">com-skill vs baseline · should-trigger/should-not · iterar · empacotar</p></div>
-          </div></div>
-        </div>
-
-      </div>
-      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-        <button onclick="openModal('modal-2-4')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
-        <a href="modulo-2-4.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo</a>
-      </div>
-    </div>
-
-    <!-- MÓDULO 2.5 -->
-    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
-      <div class="p-6 border-b border-dark-600">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~43 min</span></div>
-        <h3 class="text-2xl font-bold mb-2">🚀 Dicas Avançadas: Sinais que Só os Experts Veem</h3>
-        <p class="text-neutral-400 text-sm">Os sinais finos: precisão de triggering, economia de contexto, ler transcripts, pass-rate de evals e assertions discriminantes, variância e por que uma skill popular ainda pode ser ruim.</p>
-      </div>
-      <div class="divide-y divide-dark-600">
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span class="text-lg">🎯</span>
-            <div><span class="font-medium">Precisão de triggering</span><span class="text-neutral-500 text-sm ml-2">- e os near-misses</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A skill dispara nos casos certos (should-trigger) e silencia nos parecidos-mas-errados (near-misses). Falso positivo é pior que não disparar.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o sinal invisível: skill que aciona errado injeta contexto irrelevante e degrada a resposta.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">should-trigger · should-NOT-trigger · falso positivo/negativo · precisão vs cobertura</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span class="text-lg">🪙</span>
-            <div><span class="font-medium">Economia de tokens/contexto</span><span class="text-neutral-500 text-sm ml-2">- description é orçamento</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Os 3 níveis do progressive disclosure: description sempre no contexto, corpo ao disparar, bundled sob demanda. Skill cara em tokens rouba espaço.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">30 descriptions inchadas gastam milhares de tokens antes de qualquer tarefa. Description densa-e-curta é orçamento.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">3 níveis · custo das sempre-ativas · empurrar detalhe para o nível 3</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span class="text-lg">📜</span>
-            <div><span class="font-medium">Ler transcripts</span><span class="text-neutral-500 text-sm ml-2">- achar trabalho desperdiçado</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Reler sessões reais procurando repetição, não-disparo (skill que devia ter acionado) e disparo errado (near-miss).</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Transcript é o melhor eval grátis. Cada padrão encontrado é um ajuste concreto de skill ou de description.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">repetição → script · não-disparo → trigger fraco · disparo errado → near-miss</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
-            <span class="text-lg">📊</span>
-            <div><span class="font-medium">Pass-rate e assertions</span><span class="text-neutral-500 text-sm ml-2">- discriminante vs inútil</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma assertion discriminante falha sem a skill e passa com ela. O número que vale é o delta entre com-skill e baseline.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pass-rate 100% que não distingue baseline de com-skill é falso conforto — não mede a contribuição da skill.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">assertion discriminante · delta vs baseline · sempre rodar o baseline</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
-            <span class="text-lg">🎲</span>
-            <div><span class="font-medium">Variância e flakiness</span><span class="text-neutral-500 text-sm ml-2">- rode N vezes</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O modelo é estocástico: a mesma skill passa numa rodada e falha na outra. Rode o eval várias vezes e olhe média ± desvio.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">90% flaky é pior que 80% estável. Estabilidade é qualidade; uma rodada só engana.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">estocástico · média ± σ · imperativo reduz variância · explicar o porquê</p></div>
-          </div></div>
-        </div>
-
-        <div class="topic-item">
-          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
-            <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
-            <span class="text-lg">⚠️</span>
-            <div><span class="font-medium">Quando popular ainda é ruim</span><span class="text-neutral-500 text-sm ml-2">- install não é prova</span></div>
-          </button>
-          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-            <div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Lei de potência: top 100 = 43,7% dos installs, só 0,3% (131 skills) passam de 100k. Há viés de early-mover e marca.</p></div>
-            <div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill popular pode estar abandonada, ser de outro stack ou inchada. Install é onde se começa a investigar, não onde termina.</p></div>
-            <div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">viés de early-mover · fit com o stack · manutenção · evidência > hype</p></div>
-          </div></div>
-        </div>
-
-      </div>
-      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-        <button onclick="openModal('modal-2-5')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
-        <a href="modulo-2-5.html" class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">Ver Completo</a>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mb-6 mt-12">Mapa da trilha</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-      <a href="modulo-2-1.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~40 min</span></div>
-        <div class="font-semibold mb-1">🔎 Lendo sinais de qualidade</div>
-        <p class="text-neutral-400 text-sm">Installs mentem; a description não. Aprenda a separar hype de evidência.</p>
-      </a>
-      <a href="modulo-2-2.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~40 min</span></div>
-        <div class="font-semibold mb-1">🏆 Vitrine: as melhores por grupo</div>
-        <p class="text-neutral-400 text-sm">Seis grupos, as skills de referência e o porquê — com números reais.</p>
-      </a>
-      <a href="modulo-2-3.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~42 min</span></div>
-        <div class="font-semibold mb-1">⭐ As Melhores por Sinal de Qualidade</div>
-        <p class="text-neutral-400 text-sm">Cada sinal tem uma campeã. find-skills, frontend-design, azure: imite os modelos.</p>
-      </a>
-      <a href="modulo-2-4.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
-        <div class="font-semibold mb-1">🛠️ Como Criar uma Skill de Alta Qualidade</div>
-        <p class="text-neutral-400 text-sm">Description que dispara, escopo atômico e o template pronto. Da fraca à forte.</p>
-      </a>
-      <a href="modulo-2-5.html" class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors">
-        <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.5</span><span class="text-xs text-neutral-500">~43 min</span></div>
-        <div class="font-semibold mb-1">🚀 Dicas Avançadas: Sinais de Experts</div>
-        <p class="text-neutral-400 text-sm">Triggering preciso, custo de contexto, evals honestos. Popular não é prova.</p>
-      </a>
-    </div>
-
-    <div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
-      <a href="../../index.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors text-center">← Início</a>
-      <a href="../trilha3/index.html" class="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors text-center">Trilha 3 →</a>
-    </div>
-
-  </main>
-
-  <div id="modal-2-1" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
-    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-        <div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Lendo sinais de qualidade</span></div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
-      </div>
-      <iframe src="modulo-2-1.html" class="flex-1 w-full rounded-b-xl"></iframe>
-    </div>
-  </div>
-
-  <div id="modal-2-2" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
-    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-        <div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Vitrine: as melhores por grupo</span></div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
-      </div>
-      <iframe src="modulo-2-2.html" class="flex-1 w-full rounded-b-xl"></iframe>
-    </div>
-  </div>
-
-  <div id="modal-2-3" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
-    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-        <div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">As Melhores por Sinal de Qualidade</span></div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
-      </div>
-      <iframe src="modulo-2-3.html" class="flex-1 w-full rounded-b-xl"></iframe>
-    </div>
-  </div>
-
-  <div id="modal-2-4" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
-    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-        <div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Como Criar uma Skill de Alta Qualidade</span></div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
-      </div>
-      <iframe src="modulo-2-4.html" class="flex-1 w-full rounded-b-xl"></iframe>
-    </div>
-  </div>
-
-  <div id="modal-2-5" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target===this)closeModal()">
-    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
-      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-        <div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.5</span><span class="font-semibold">Dicas Avançadas: Sinais de Experts</span></div>
-        <button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button>
-      </div>
-      <iframe src="modulo-2-5.html" class="flex-1 w-full rounded-b-xl"></iframe>
-    </div>
-  </div>
-
-  <footer class="border-t border-dark-600 py-8 mt-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Criando Agent Skills · <a href="https://inema.club" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
-    </div>
-  </footer>
-
-  <script>
+<link href="https://inematds.github.io/skills-craft/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Criando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-blue-400 bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Qualidade</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomia</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Criar</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRILHA 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⭐ Qualidade &amp; As Melhores</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Como ler sinais de qualidade — installs, fonte, descrição — e uma vitrine das melhores skills por grupo, com exemplos reais do catálogo.</p>
+<svg aria-label="Sinais de qualidade de uma skill convergindo em um selo de aprovação" class="w-full h-auto max-w-2xl my-6" role="img" viewbox="0 0 640 200">
+<defs>
+<filter id="heroglow"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="heroLine" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#3b82f6"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<rect fill="#3b82f6" fill-opacity="0.12" height="30" rx="6" stroke="#3b82f6" stroke-width="1.5" width="150" x="20" y="30"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="95" y="50">installs</text>
+<rect fill="#3b82f6" fill-opacity="0.12" height="30" rx="6" stroke="#3b82f6" stroke-width="1.5" width="150" x="20" y="85"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="95" y="105">fonte</text>
+<rect fill="#3b82f6" fill-opacity="0.12" height="30" rx="6" stroke="#3b82f6" stroke-width="1.5" width="150" x="20" y="140"></rect>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="95" y="160">description</text>
+<path d="M170 45 C 260 45, 280 100, 360 100" fill="none" filter="url(#heroglow)" stroke="url(#heroLine)" stroke-width="2"></path>
+<path d="M170 100 L 360 100" fill="none" filter="url(#heroglow)" stroke="url(#heroLine)" stroke-width="2"></path>
+<path d="M170 155 C 260 155, 280 100, 360 100" fill="none" filter="url(#heroglow)" stroke="url(#heroLine)" stroke-width="2"></path>
+<circle cx="470" cy="100" fill="#3b82f6" fill-opacity="0.1" filter="url(#heroglow)" r="55" stroke="#38bdf8" stroke-width="2.5"></circle>
+<path d="M445 100 l 18 18 l 34 -38" fill="none" filter="url(#heroglow)" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path>
+<text fill="#3b82f6" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle" x="470" y="178">skill confiável</text>
+<path d="M360 100 L 410 100" fill="none" filter="url(#heroglow)" stroke="url(#heroLine)" stroke-width="2"></path>
+</svg>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">5</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">30</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">~3h30</div>
+<div class="text-xs text-neutral-400">Duração</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Inter.</div>
+<div class="text-xs text-neutral-400">Nível</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- MÓDULO 2.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~40 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🔎 Lendo sinais de qualidade</h3>
+<p class="text-neutral-400 text-sm">Install count, fonte, description, escopo e manutenção — os sinais que separam uma skill madura de um repo abandonado. Mais um checklist prático.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📊</span>
+<div><span class="font-medium">Install count como sinal</span><span class="text-neutral-500 text-sm ml-2">- e suas armadilhas</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A contagem de instalações que o skills.sh mostra ao lado de cada skill. É o sinal de popularidade mais visível — find-skills tem 1.802.925, frontend-design 488.299.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Installs altos correlacionam com qualidade, mas não são prova. Há viés de quem chegou cedo e efeito de marca. Saber ler isso evita instalar lixo popular.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">lei de potência · viés do early-mover · efeito de marca · 0,3% têm 100k+</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🏛️</span>
+<div><span class="font-medium">A fonte importa</span><span class="text-neutral-500 text-sm ml-2">- quem publicou</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O repositório owner/repo que hospeda a skill. vercel-labs, anthropics e microsoft carregam reputação institucional; um repo aleatório de 3 estrelas, não.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A fonte é o segundo melhor sinal depois da description. Fontes oficiais mantêm a skill viva, seguem a spec e respondem a issues.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">vendor-backed · anthropics/skills · vercel-labs · microsoft/azure-skills · repo aleatório</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">✍️</span>
+<div><span class="font-medium">A description como sinal nº1</span><span class="text-neutral-500 text-sm ml-2">- clara = bem pensada</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O campo description do frontmatter. Uma boa diz O QUE a skill faz E QUANDO usá-la. É o gatilho que o agente lê para decidir disparar.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Description clara revela que o autor entendeu o problema. Description vaga = skill que dispara errado ou nunca dispara. É o melhor preditor de qualidade.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">gatilho de ativação · O QUE + QUANDO · trigger preciso · subdisparo</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Escopo e tamanho</span><span class="text-neutral-500 text-sm ml-2">- focada &gt; tudo-sobre-X</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O quanto a skill tenta abraçar. Uma skill atômica resolve um problema bem; uma "tudo-sobre-X" tenta resolver dez e não resolve nenhum direito.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skills focadas absorvem melhor no contexto, disparam com precisão e compõem com outras. Tamanho enxuto (corpo &lt;500 linhas) é sinal de disciplina.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">atomicidade · uma responsabilidade · composição · &lt;500 linhas</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔄</span>
+<div><span class="font-medium">Manutenção e atualização</span><span class="text-neutral-500 text-sm ml-2">- viva ou abandonada?</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Frequência de commits, issues respondidas e releases. Como skills instalam por symlink, <code class="bg-dark-700 px-1 rounded">npx skills update</code> puxa as melhorias da fonte automaticamente.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Uma skill viva acompanha mudanças de framework e da própria spec. Uma abandonada envelhece e passa a dar instruções erradas para o agente.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">último commit · issues abertas · npx skills update · symlink vs cópia</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">✅</span>
+<div><span class="font-medium">Checklist prático</span><span class="text-neutral-500 text-sm ml-2">- antes de instalar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um roteiro de 7 perguntas que junta todos os sinais — installs, fonte, description, escopo, manutenção, licença e fit — numa decisão de 2 minutos.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Transforma intuição em processo repetível. Você para de instalar por hype e passa a instalar por evidência.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">avaliação em 2 min · evidência &gt; hype · fit com o seu stack · ler o SKILL.md</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">Ver Completo</a>
+</div>
+</div>
+<!-- MÓDULO 2.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~40 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🏆 Vitrine: as melhores por grupo</h3>
+<p class="text-neutral-400 text-sm">Seis grupos do catálogo, suas skills de referência e o porquê elas são boas — usando installs e fontes reais do skills.sh.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎨</span>
+<div><span class="font-medium">Web &amp; Frontend</span><span class="text-neutral-500 text-sm ml-2">- 4.694 skills · 4,5M installs</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de UI, React, CSS e design. As referências: frontend-design (488k, anthropics), vercel-react-best-practices (443k) e web-design-guidelines (358k).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o grupo mais maduro para quem programa front. Fontes oficiais + installs altíssimos = baixo risco de instalar.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">frontend-design · vercel-react-best-practices · web-design-guidelines</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🤖</span>
+<div><span class="font-medium">AI / LLM / Agentes</span><span class="text-neutral-500 text-sm ml-2">- 12.693 skills · 12,9M installs</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O maior grupo por volume. Referências: agent-browser (332k, vercel-labs), skill-creator (246k, anthropics) e vercel-composition-patterns (195k).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o coração do ecossistema. skill-creator é a própria ferramenta canônica para criar skills — meta e essencial.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">agent-browser · skill-creator · vercel-composition-patterns</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🗄️</span>
+<div><span class="font-medium">Data &amp; Databases</span><span class="text-neutral-500 text-sm ml-2">- 1.385 skills · 0,79M installs</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de SQL, Postgres e modelagem. Referências: supabase-postgres-best-practices (203k, supabase), supabase (99k) e neon-postgres (38k).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Aqui a fonte é vendor-backed (supabase, neondatabase): a empresa que faz o banco escreve as boas práticas. Confiança máxima.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">supabase-postgres-best-practices · supabase · neon-postgres</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">☁️</span>
+<div><span class="font-medium">DevOps &amp; Cloud</span><span class="text-neutral-500 text-sm ml-2">- 907 skills · 8,3M installs</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A suíte microsoft/azure-skills: foundry, ai, deploy, diagnostics e prepare — todas entre ~358k e 360k installs.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Poucas skills, mas installs gigantes (8,3M). Mostra como uma suíte coesa de um vendor domina um nicho de infraestrutura.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">microsoft-foundry · azure-ai · azure-deploy · azure-diagnostics · azure-prepare</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧪</span>
+<div><span class="font-medium">Testing &amp; QA</span><span class="text-neutral-500 text-sm ml-2">- 1.339 skills · 0,60M installs</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de teste e qualidade. Referências: test-driven-development (107k, obra/superpowers) e playwright-best-practices (45k).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skills de processo (como TDD) mostram que skills não são só sobre stack — também codificam disciplina de engenharia.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">test-driven-development · playwright-best-practices · skill de processo</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📈</span>
+<div><span class="font-medium">Marketing / Office / Finance</span><span class="text-neutral-500 text-sm ml-2">- além do código</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Skills de negócio: marketing-psychology (84k, coreyhaines31), lark-slides (139k, larksuite) e stripe-best-practices (stripe/ai).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Prova que o ecossistema vai muito além de devs. Há grupos inteiros (Marketing 2,3M, Office, Finance) para trabalho não-técnico.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">marketing-psychology · lark-slides · stripe-best-practices</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">Ver Completo</a>
+</div>
+</div>
+<!-- MÓDULO 2.3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~42 min</span></div>
+<h3 class="text-2xl font-bold mb-2">⭐ As Melhores por Sinal de Qualidade</h3>
+<p class="text-neutral-400 text-sm">Para cada sinal de qualidade, a skill real que é seu retrato perfeito — description, escopo atômico, fonte forte e descoberta clara, com as descriptions reais do catálogo.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">✍️</span>
+<div><span class="font-medium">Description impecável</span><span class="text-neutral-500 text-sm ml-2">- frontend-design (488k)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">frontend-design (488k, anthropics) diz o quê, quando e dá exemplos: "Use this skill when the user asks to build web components, pages...". supabase (99k) é "pushy" com "Triggers:...".</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A description é o gatilho de roteamento. Ver o modelo perfeito te dá o padrão a copiar quando escrever a sua.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">o quê + quando + exemplos · "pushy" · Triggers: · combate ao subdisparo</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Escopo atômico perfeito</span><span class="text-neutral-500 text-sm ml-2">- vercel-react (443k)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">vercel-react-best-practices (443k) e test-driven-development (107k, obra/superpowers): uma responsabilidade só, feita muito bem.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escopo atômico dispara com precisão e compõe com outras skills. É o sinal que separa skill madura de "tudo-sobre-X".</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">uma responsabilidade · teste da frase sem "e" · composição · skill de processo</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🏛️</span>
+<div><span class="font-medium">Fonte forte e mantida</span><span class="text-neutral-500 text-sm ml-2">- suíte azure (~358k)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A suíte microsoft/azure-skills (~358k cada) e vercel-labs: vendor oficial, suíte coesa, manutenção viva via symlink.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Vendor-backed é o teto de confiança — quem faz o produto conhece os edge cases que ninguém documenta.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">vendor-backed · suíte coesa · npx skills update · manutenção viva</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔍</span>
+<div><span class="font-medium">Descoberta clara</span><span class="text-neutral-500 text-sm ml-2">- find-skills (1,8M)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">find-skills (1.802.925, vercel-labs), a mais instalada do catálogo: nome e propósito instantaneamente óbvios.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Se o nome precisa de explicação, a descoberta falhou. Nome+description autoexplicativos viram a porta de entrada.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">nome autoexplicativo · porta de entrada · top 100 = 43,7% · 0,3% têm 100k+</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Acertando vários sinais</span><span class="text-neutral-500 text-sm ml-2">- skill-creator (246k)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">skill-creator (246k, anthropics) combina description clara + escopo focado + fonte oficial + descoberta óbvia.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Acertar vários sinais não soma — multiplica. É por isso que essas skills lideram o catálogo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">efeito composto · meta-skill · reforço mútuo dos sinais</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📋</span>
+<div><span class="font-medium">Tabela de campeões</span><span class="text-neutral-500 text-sm ml-2">- gabarito por sinal</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O quadro de referência: cada sinal de qualidade com sua skill-modelo, fonte e installs reais.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Vira gabarito: ao avaliar ou criar uma skill, compare com o campeão do sinal que mais importa para você.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">gabarito · campeão por sinal · copie o padrão, não invente</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-3')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-3.html">Ver Completo</a>
+</div>
+</div>
+<!-- MÓDULO 2.4 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🛠️ Como Criar uma Skill que Parece (e É) de Alta Qualidade</h3>
+<p class="text-neutral-400 text-sm">A parte prática: description que dispara certo, escopo atômico, checklist de polimento, antes/depois de uma skill fraca virando forte e um template de description pronto.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">✍️</span>
+<div><span class="font-medium">Description que dispara certo</span><span class="text-neutral-500 text-sm ml-2">- o quê + quando + pushy</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Escrever a description em três partes: o resultado que entrega, o quando (gatilhos concretos) e ser "pushy" contra o subdisparo.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o gatilho de roteamento que fica sempre no contexto. Errar aqui = skill que dispara errado ou nunca dispara.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">resultado, não atividade · "Use when..." · "Triggers:" · regra dos 100 palavras</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Escopo atômico</span><span class="text-neutral-500 text-sm ml-2">- uma responsabilidade</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Manter a skill em uma única responsabilidade, como vercel-react-best-practices e a suíte azure-skills. Quebrar o que for grande.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill atômica absorve no contexto, dispara com precisão, é testável e compõe. "Tudo-sobre-X" falha em tudo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">teste da frase única · &lt;500 linhas · sem "e"/"também" · composição</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">✅</span>
+<div><span class="font-medium">O checklist de polimento</span><span class="text-neutral-500 text-sm ml-2">- 7 checagens</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um roteiro de 7 itens — description, escopo, &lt;500 linhas, explicar o porquê, test prompts, scripts, nome óbvio — antes de publicar.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Separa uma skill que parece de qualidade de uma que é. Inspirado no fluxo canônico do skill-creator.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">checklist de 7 · polir = remover · imperativo · bundled resources</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">Antes / depois</span><span class="text-neutral-500 text-sm ml-2">- fraca → forte</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Mesma intenção ("ajudar com SQL"), duas execuções lado a lado: a "sql-helper and more" que ninguém instala vs. o padrão postgres-best-practices.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostra que o salto de qualidade vem de roteamento e foco, não do conteúdo técnico.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">code box ✗/✓ · "and more" = escopo infinito · roteamento e foco</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📐</span>
+<div><span class="font-medium">Template de description pronto</span><span class="text-neutral-500 text-sm ml-2">- copie e preencha</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um molde de frontmatter que junta os padrões de frontend-design e supabase, com exemplo preenchido para uma skill de migrations.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Tira o "página em branco". Você preenche os colchetes e calibra os triggers contra near-misses.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">template · verbo de resultado · exemplos + Triggers · calibrar near-misses</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🚦</span>
+<div><span class="font-medium">O loop completo de criação</span><span class="text-neutral-500 text-sm ml-2">- iterar até disparar certo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Capturar intent → draft → 2-3 test prompts vs baseline → generalizar e enxugar → otimizar description → empacotar.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Criar uma skill boa é iterativo, não um chute. O loop garante que ela realmente ajuda antes de publicar.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">com-skill vs baseline · should-trigger/should-not · iterar · empacotar</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-4')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-4.html">Ver Completo</a>
+</div>
+</div>
+<!-- MÓDULO 2.5 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.5</span><span class="text-xs text-neutral-500">~43 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🚀 Dicas Avançadas: Sinais que Só os Experts Veem</h3>
+<p class="text-neutral-400 text-sm">Os sinais finos: precisão de triggering, economia de contexto, ler transcripts, pass-rate de evals e assertions discriminantes, variância e por que uma skill popular ainda pode ser ruim.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Precisão de triggering</span><span class="text-neutral-500 text-sm ml-2">- e os near-misses</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A skill dispara nos casos certos (should-trigger) e silencia nos parecidos-mas-errados (near-misses). Falso positivo é pior que não disparar.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o sinal invisível: skill que aciona errado injeta contexto irrelevante e degrada a resposta.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">should-trigger · should-NOT-trigger · falso positivo/negativo · precisão vs cobertura</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🪙</span>
+<div><span class="font-medium">Economia de tokens/contexto</span><span class="text-neutral-500 text-sm ml-2">- description é orçamento</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Os 3 níveis do progressive disclosure: description sempre no contexto, corpo ao disparar, bundled sob demanda. Skill cara em tokens rouba espaço.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">30 descriptions inchadas gastam milhares de tokens antes de qualquer tarefa. Description densa-e-curta é orçamento.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">3 níveis · custo das sempre-ativas · empurrar detalhe para o nível 3</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📜</span>
+<div><span class="font-medium">Ler transcripts</span><span class="text-neutral-500 text-sm ml-2">- achar trabalho desperdiçado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Reler sessões reais procurando repetição, não-disparo (skill que devia ter acionado) e disparo errado (near-miss).</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Transcript é o melhor eval grátis. Cada padrão encontrado é um ajuste concreto de skill ou de description.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">repetição → script · não-disparo → trigger fraco · disparo errado → near-miss</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📊</span>
+<div><span class="font-medium">Pass-rate e assertions</span><span class="text-neutral-500 text-sm ml-2">- discriminante vs inútil</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma assertion discriminante falha sem a skill e passa com ela. O número que vale é o delta entre com-skill e baseline.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Pass-rate 100% que não distingue baseline de com-skill é falso conforto — não mede a contribuição da skill.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">assertion discriminante · delta vs baseline · sempre rodar o baseline</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🎲</span>
+<div><span class="font-medium">Variância e flakiness</span><span class="text-neutral-500 text-sm ml-2">- rode N vezes</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O modelo é estocástico: a mesma skill passa numa rodada e falha na outra. Rode o eval várias vezes e olhe média ± desvio.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">90% flaky é pior que 80% estável. Estabilidade é qualidade; uma rodada só engana.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">estocástico · média ± σ · imperativo reduz variância · explicar o porquê</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚠️</span>
+<div><span class="font-medium">Quando popular ainda é ruim</span><span class="text-neutral-500 text-sm ml-2">- install não é prova</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Lei de potência: top 100 = 43,7% dos installs, só 0,3% (131 skills) passam de 100k. Há viés de early-mover e marca.</p></div>
+<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Skill popular pode estar abandonada, ser de outro stack ou inchada. Install é onde se começa a investigar, não onde termina.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">viés de early-mover · fit com o stack · manutenção · evidência &gt; hype</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-5')">Ver em Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-5.html">Ver Completo</a>
+</div>
+</div>
+<h2 class="text-2xl font-bold mb-6 mt-12">Mapa da trilha</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors" href="modulo-2-1.html">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~40 min</span></div>
+<div class="font-semibold mb-1">🔎 Lendo sinais de qualidade</div>
+<p class="text-neutral-400 text-sm">Installs mentem; a description não. Aprenda a separar hype de evidência.</p>
+</a>
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors" href="modulo-2-2.html">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~40 min</span></div>
+<div class="font-semibold mb-1">🏆 Vitrine: as melhores por grupo</div>
+<p class="text-neutral-400 text-sm">Seis grupos, as skills de referência e o porquê — com números reais.</p>
+</a>
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors" href="modulo-2-3.html">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~42 min</span></div>
+<div class="font-semibold mb-1">⭐ As Melhores por Sinal de Qualidade</div>
+<p class="text-neutral-400 text-sm">Cada sinal tem uma campeã. find-skills, frontend-design, azure: imite os modelos.</p>
+</a>
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors" href="modulo-2-4.html">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<div class="font-semibold mb-1">🛠️ Como Criar uma Skill de Alta Qualidade</div>
+<p class="text-neutral-400 text-sm">Description que dispara, escopo atômico e o template pronto. Da fraca à forte.</p>
+</a>
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-blue-400 transition-colors" href="modulo-2-5.html">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.5</span><span class="text-xs text-neutral-500">~43 min</span></div>
+<div class="font-semibold mb-1">🚀 Dicas Avançadas: Sinais de Experts</div>
+<p class="text-neutral-400 text-sm">Triggering preciso, custo de contexto, evals honestos. Popular não é prova.</p>
+</a>
+</div>
+<div class="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+<a class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors text-center" href="../../index.html">← Início</a>
+<a class="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors text-center" href="../trilha3/index.html">Trilha 3 →</a>
+</div>
+</main>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Lendo sinais de qualidade</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Vitrine: as melhores por grupo</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">As Melhores por Sinal de Qualidade</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-3.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-4" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Como Criar uma Skill de Alta Qualidade</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-4.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-5" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.5</span><span class="font-semibold">Dicas Avançadas: Sinais de Experts</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-5.html"></iframe>
+</div>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Criando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Dados coletados do skills.sh</p>
+</div>
+</footer>
+<script>
     function toggleTopic(button){const i=button.closest('.topic-item');const e=i.querySelector('.topic-explanation');const c=button.closest('.bg-dark-800');c.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==e)x.classList.remove('active')});e.classList.toggle('active');}
     function openModal(id){const m=document.getElementById(id);if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';}}
     function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));document.body.style.overflow='auto';}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5.5 — Gobernanza, seguridad y escala | Creando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha5/modulo-5-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha5/modulo-5-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha5/modulo-5-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-teal-400 bg-teal-500/10 transition-colors" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.5 · FINAL DEL CURSO</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Consejos avanzados: gobernanza, seguridad y escala</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Ya sabes crear y publicar. Ahora toca el nivel profesional: skills internas (privadas), el principio de no sorprender, estrategia de versionado, implementación gradual en el equipo, medición de la adopción y mantenimiento de decenas de skills activas sin que se conviertan en un caos.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Avanzado</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Escala</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔒 Skills internas (privadas)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        No todas las skills deben ir al catálogo público. El conocimiento propietario, las convenciones internas y los flujos de tu equipo viven como <strong class="text-teal-400">skills internas</strong> — marcadas con <code>metadata.internal</code> y se instalan solo con la flag <code>INSTALL_INTERNAL_SKILLS</code>. Quedan fuera de skills.sh y del conteo público de instalaciones.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">marcar una skill como interna:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: deploy-runbook-acme
+description: Runbook interno de deploy da Acme. Acione em deploy,
+  rollback ou incidente em produção.
+metadata:
+  internal: true
+---
+
+# só instala com a flag explícita:
+INSTALL_INTERNAL_SKILLS=1 npx skills add acme/skills-privadas</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-3">Buenas candidatas para uso interno</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Runbooks de deploy/incidentes del equipo</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Convenciones de código propias</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Integraciones con sistemas internos</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-white mb-3">Por qué separarlo del público</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Evita filtrar contexto sensible en el catálogo</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>No llenes skills.sh de ruido solo tuyo</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Instala solo con consentimiento explícito, nunca por accidente</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🛡️ Sin sorpresas y seguridad</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El principio de oro: <strong class="text-teal-400">la skill nunca hace lo que la description no promete</strong>. Como las skills se instalan mediante symlink y se actualizan con un comando, un repo malicioso o descuidado contamina a muchas personas de una vez. La confianza de todo el ecosistema depende de ello.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sorpresa / riesgo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Script que exfiltra datos o envía telemetría oculta</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code>rm -rf</code> o <code>git push --force</code> oculto en un paso</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Accede a secretos/credenciales sin que el usuario lo pida</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Descarga y ejecuta código de una fuente externa en tiempo de ejecución</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Confiable</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Hace exactamente lo que dice la description</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Una acción destructiva requiere confirmación explícita</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Principio de mínimo privilegio: accede solo a lo necesario</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Scripts auditables, sin dependencias oscuras</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Audita como quien instala</h3>
+<p class="text-neutral-300 text-sm">Antes de publicar, lee tus propios <code>scripts/</code> con los ojos de un usuario desconfiado. Sin malware, sin exfiltración, sin efectos secundarios inesperados. Una ruptura de confianza arruina la reputación de todo el repo — y afecta a skills.sh.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏷️ Estrategia de versionado</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A escala, "push en main" sin estrategia se convierte en inestabilidad. Como el symlink propaga cada cambio de inmediato, necesitas una disciplina de versionado que separe lo seguro de lo arriesgado.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+<h4 class="font-semibold text-teal-400 mb-4">Qué exige cada tipo de cambio</h4>
+<div class="space-y-3 text-sm">
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 font-mono text-xs flex-shrink-0">patch</span><p class="text-neutral-300">Corrección de texto, aclaración del cuerpo. Bajo riesgo: puedes aplicarla directamente, con una evaluación rápida.</p></div>
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 font-mono text-xs flex-shrink-0">minor</span><p class="text-neutral-300">Nuevo comportamiento aditivo. Sigue siendo compatible: ejecuta las evals completas antes.</p></div>
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-mono text-xs flex-shrink-0">major</span><p class="text-neutral-300">Cambio del activador o del comportamiento esperado. <strong class="text-white">Perjudica a quienes dependían de ella</strong> — comunícalo y documéntalo en el CHANGELOG.</p></div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">etiqueta la release y mantén un CHANGELOG:</p>
+<pre class="text-neutral-300 leading-relaxed">## [1.2.0] - 2026-06
+### Changed
+- description agora cobre o near-miss de "refatorar" (minor)
+### Fixed
+- corpo: removido MUST que causava overfit em projetos sem testes
+
+git tag v1.2.0 &amp;&amp; git push --tags</pre>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">La regla del cambio de activador</h3>
+<p class="text-neutral-300 text-sm">Modificar la <code>description</code> es el cambio más peligroso que existe: altera <em>cuándo</em> la skill se activa para todos los que la instalaron. Trata toda edición de description como potencial <code>major</code> hasta que los evals demuestren lo contrario.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">👥 Despliegue en equipo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Distribuir skills para un equipo es diferente de publicar para todo el mundo. Quieres consistencia (que todos tengan el mismo conjunto), control de versiones y una vía de adopción que no tome a nadie por sorpresa.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Un repo curado del equipo</h4>
+<p class="text-neutral-300 text-sm">Centraliza las skills aprobadas en un solo repo, público o interno. Se convierte en la fuente única: nadie instala skills aleatorias directamente en el proyecto compartido.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Haz una prueba piloto antes del despliegue general</h4>
+<p class="text-neutral-300 text-sm">Un subgrupo instala, usa durante una semana y envía comentarios. Ajusta el activador y el contenido con comentarios reales antes de ampliarlo a todo el mundo.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Comunica cada actualización antes de publicarla</h4>
+<p class="text-neutral-300 text-sm">Cómo <code>npx skills update</code> propaga todo; avisa al equipo antes de hacer cambios en los activadores. Un registro de cambios en un canal compartido evita el "¿por qué la skill empezó a activarse con esto?".</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo profesional para la incorporación</h3>
+<p class="text-neutral-300 text-sm">Documenta el conjunto de skills del equipo en el README del repo curado, con un <code>npx skills add</code> por línea. Quien se incorpora sigue la lista y es productivo desde el primer día, con el mismo comportamiento de agente que todos los demás.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📈 Medir la adopción</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una skill a escala es un producto, y los productos se miden. Dos métricas que importan: <strong class="text-teal-400">install count</strong> (cuántos lo adoptaron) y <strong class="text-teal-400">triggering</strong> (si se activa en los casos correctos). Una cifra alta y la otra baja cuentan historias muy distintas.
+      </p>
+<svg aria-label="Matriz de adopción que cruza la cantidad de instalaciones con la calidad del triggering" class="w-full h-auto my-6" role="img" viewbox="0 0 640 220">
+<defs><filter id="g55a"><fegaussianblur result="b" stddeviation="2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<line filter="url(#g55a)" opacity="0.6" stroke="#38bdf8" stroke-width="1.5" x1="80" x2="600" y1="190" y2="190"></line>
+<line filter="url(#g55a)" opacity="0.6" stroke="#38bdf8" stroke-width="1.5" x1="80" x2="80" y1="20" y2="190"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="340" y="212">triggering (acierta el disparador) →</text>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" transform="rotate(-90 30 105)" x="30" y="105">installs →</text>
+<g filter="url(#g55a)">
+<rect fill="#38bdf8" fill-opacity="0.10" height="70" rx="8" stroke="#38bdf8" stroke-width="1.5" width="220" x="100" y="40"></rect>
+<rect fill="#14b8a6" fill-opacity="0.16" height="70" rx="8" stroke="#14b8a6" stroke-width="2" width="220" x="350" y="40"></rect>
+<rect fill="#374151" fill-opacity="0.4" height="60" rx="8" stroke="#4b5563" stroke-width="1.5" width="220" x="100" y="120"></rect>
+<rect fill="#38bdf8" fill-opacity="0.10" height="60" rx="8" stroke="#38bdf8" stroke-width="1.5" width="220" x="350" y="120"></rect>
+</g>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="210" y="70">muchos installs,</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="210" y="88">activador malo → frustra</text>
+<text fill="#5eead4" font-size="12" text-anchor="middle" x="460" y="70">★ ideal:</text>
+<text fill="#5eead4" font-size="12" text-anchor="middle" x="460" y="88">adoptada y precisa</text>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="210" y="155">nicho pequeño (bien)</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="460" y="148">buena skill,</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="460" y="166">falta descubrimiento</text>
+</svg>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-white mb-2">Número de instalaciones</h4>
+<p class="text-neutral-300 text-sm">Mide el descubrimiento y la adopción. Un valor bajo con buen triggering = un problema de nombre/descripción o de nicho, no de calidad. No persigas el leaderboard.</p>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-2">Triggering</h4>
+<p class="text-neutral-300 text-sm">Mide si la skill aparece en el momento adecuado. Muchas instalaciones + triggering deficiente es el peor escenario: mucha gente frustrada. Mídelo con evals should-trigger / should-not-trigger / near-miss.</p>
+</div>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">♻️ Mantener skills actualizadas a escala</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una skill es fácil de mantener. Veinte skills se convierten en un portafolio, y un portafolio sin mantenimiento se deteriora. Los pro tips para mantener decenas de skills útiles sin caer en el caos:
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Portafolio que se deteriora</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Skills duplicadas con activadores que se superponen</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ningún eval: los errores pasan desapercibidos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Skills muertas que nadie usa y que contaminan las búsquedas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cuerpos que con el tiempo crecieron hasta 800 líneas</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Portafolio vivo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Cada skill atómica, activadores sin superposición</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>La suite de evals se ejecuta en CI en cada push</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Revisión periódica: retira lo que no se activa</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Cuerpo conciso; los detalles van en references/</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+<h4 class="font-semibold text-teal-400 mb-4">Consejos profesionales finales</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Evals en CI:</strong> ejecuta should-trigger / should-not-trigger automáticamente en cada PR: detecta pronto las regresiones del trigger.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Audita los solapamientos:</strong> dos skills que se activan con el mismo prompt compiten y confunden. Fúndelas o diferencia los activadores.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Retira sin piedad:</strong> una skill confiable sin crecimiento en las instalaciones y con una activación deficiente solo genera ruido. Despréciala en el CHANGELOG y elimínala.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Manténlo conciso:</strong> en cada release, pregunta qué se puede recortar. Un cuerpo de &lt;500 líneas no es una meta, es higiene.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> El cierre</h3>
+<p class="text-neutral-300 text-sm">Recorriste las 5 rutas: panorama del ecosistema, calidad y las mejores, anatomía, el ciclo de creación y los modelos mentales para decidir, publicar y escalar. A partir de aquí, toca practicar: elige un workflow repetible, escríbelo, publícalo, mide los resultados e itera.</p>
+</div>
+</section>
+<!-- Resumo + fechamento do curso -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo · Fin del curso</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Skills internas</strong><span class="text-neutral-400"> — metadata.internal + INSTALL_INTERNAL_SKILLS mantienen el conocimiento propietario fuera del catálogo público</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Previsibilidad y seguridad</strong><span class="text-neutral-400"> — sin malware/exfiltración; least privilege; audita tus resources como un usuario desconfiado</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Versionado</strong><span class="text-neutral-400"> — patch/minor/major; cambiar la description puede ser potencialmente major porque modifica el activador de todos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Implementación en el equipo</strong><span class="text-neutral-400"> — repo seleccionado, piloto antes de generalizar, comunica antes de cada actualización</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Medir la adopción</strong><span class="text-neutral-400"> — cantidad de instalaciones (descubrimiento) × activación (precisión); lo peor es muchas instalaciones con un mal activador</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Skills activas a escala</strong><span class="text-neutral-400"> — evals en CI, audita los solapamientos, retira las que ya no se usan, mantén todo conciso</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">¡Terminaste el curso! 🎉</h3>
+<p class="text-neutral-300">Cinco rutas, desde la visión del ecosistema hasta la gobernanza y la escala. Ahora te toca a ti: elige un workflow repetible de tu día a día, escribe tu primera skill, publícala, mídela e itera. Sigue aprendiendo en el portal.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 5</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="https://inema.club" target="_blank">Explora más cursos en INEMA.CLUB →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

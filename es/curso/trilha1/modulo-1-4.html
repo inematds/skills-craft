@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.4 — Tu primera skill en 10 minutos | Creando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.4</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ Cómo crear: tu primera skill en 10 minutos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Desde cero hasta que funcione, sin demasiada teoría. Elegimos un caso real y sencillo —una skill para el estándar de commits—, escribimos el SKILL.md mínimo, lo instalamos localmente y vemos cómo se activa. Todo listo para copiar.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Elige un caso pequeño y real</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La primera skill de todo el mundo debería ser <strong class="text-emerald-400">aburrida y útil</strong>, no ambiciosa. Una convención que repites todo el tiempo y detestas repetir. El ejemplo perfecto: el <strong class="text-emerald-400">patrón de mensajes de commit</strong> de tu equipo. Es concreto, tiene reglas claras y notarás enseguida si funcionó.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Malos casos de estreno</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Una skill que hace el deploy completo" — demasiado grande</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Una skill genérica de buenas prácticas" — vaga, no se activa</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Algo que no puedes probar en 1 minuto</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Buenos casos para empezar</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Convención de commits (Conventional Commits)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Convenciones del proyecto para nombrar archivos/branches</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Tono de voz de las respuestas en PT-BR</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Vamos a construir esta</h3>
+<p class="text-neutral-300 text-sm">Nuestro caso: una skill <strong>conventional-commits</strong> que hace que el agente escriba mensajes de commit en el formato <code class="bg-dark-700 px-1 rounded">tipo(escopo): descrição</code> siempre que vaya a hacer un commit. Pequeña, comprobable, inmediatamente útil.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🧬 La anatomía mínima de un SKILL.md</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una skill es un solo archivo: <code class="bg-dark-700 px-1 rounded">SKILL.md</code>. Dos partes. Arriba, un <strong class="text-emerald-400">frontmatter YAML</strong> con dos campos obligatorios — <code class="bg-dark-700 px-1 rounded">name</code> e <code class="bg-dark-700 px-1 rounded">description</code>. Abajo, el <strong class="text-emerald-400">cuerpo Markdown</strong> con las instrucciones en imperativo. Nada más.
+      </p>
+<svg aria-label="Anatomía de un archivo SKILL.md: frontmatter YAML con name y description al inicio, cuerpo Markdown imperativo debajo" class="w-full h-auto my-6" role="img" viewbox="0 0 600 220">
+<defs>
+<filter id="g14"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<rect fill="#10b981" fill-opacity="0.06" filter="url(#g14)" height="188" rx="10" stroke="#10b981" stroke-width="1.5" width="280" x="160" y="16"></rect>
+<text fill="#10b981" font-family="monospace" font-size="11" text-anchor="middle" x="300" y="36">SKILL.md</text>
+<rect fill="#38bdf8" fill-opacity="0.12" filter="url(#g14)" height="64" rx="6" stroke="#38bdf8" stroke-width="1.2" width="244" x="178" y="48"></rect>
+<text fill="#38bdf8" font-family="monospace" font-size="9" x="190" y="66">--- frontmatter YAML ---</text>
+<text fill="#10b981" font-family="monospace" font-size="9" x="190" y="82">name: conventional-commits</text>
+<text fill="#10b981" font-family="monospace" font-size="9" x="190" y="98">description: usa al hacer commit...</text>
+<rect fill="#10b981" fill-opacity="0.12" filter="url(#g14)" height="64" rx="6" stroke="#10b981" stroke-width="1.2" width="244" x="178" y="124"></rect>
+<text fill="#38bdf8" font-family="monospace" font-size="9" x="190" y="142"># cuerpo Markdown (imperativo)</text>
+<text fill="#10b981" font-family="monospace" font-size="9" x="190" y="158">Escribe los commits como tipo(esc):...</text>
+<text fill="#10b981" font-family="monospace" font-size="9" x="190" y="174">Usa feat, fix, docs, chore...</text>
+<g filter="url(#g14)" stroke="#38bdf8" stroke-opacity="0.7" stroke-width="1.2">
+<line x1="120" x2="176" y1="80" y2="80"></line>
+<line x1="120" x2="176" y1="156" y2="156"></line>
+</g>
+<text fill="#38bdf8" font-size="9" text-anchor="middle" x="60" y="76">siempre en el</text>
+<text fill="#38bdf8" font-size="9" text-anchor="middle" x="60" y="88">contexto</text>
+<text fill="#10b981" font-size="9" text-anchor="middle" x="60" y="152">carga al</text>
+<text fill="#10b981" font-size="9" text-anchor="middle" x="60" y="164">activarse</text>
+</svg>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">N</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">name — el identificador</h4>
+<p class="text-neutral-300 text-sm">Corto, en minúsculas y con guiones. Se convierte en el nombre de la carpeta y en la forma de referirse a la skill. Ej.: <code class="bg-dark-700 px-1 rounded">conventional-commits</code>.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">D</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">description — el activador</h4>
+<p class="text-neutral-300 text-sm">El campo más importante. Indica <strong>QUÉ</strong> la skill hace <strong>Y CUÁNDO</strong> usarla. Es aquí donde el agente decide activarla. Sé explícito e incluso un poco «insistente»: el agente tiende a activarla menos de lo necesario.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">B</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">cuerpo — las instrucciones</h4>
+<p class="text-neutral-300 text-sm">Markdown en imperativo: "Escribe...", "Usa...", "Evita...". Explica el <strong>por qué</strong> en vez de gritar MUSTs en mayúsculas. Mantén el contenido conciso (&lt;500 líneas).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">✍️ Escribe el SKILL.md (copia esto)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Aquí está la skill completa, lista para pegar. Crea el archivo en <code class="bg-dark-700 px-1 rounded">skills/conventional-commits/SKILL.md</code> y pega el contenido de abajo. Fíjate: frontmatter entre <code class="bg-dark-700 px-1 rounded">---</code>, description que dice qué y cuándo, cuerpo breve e imperativo.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">skills/conventional-commits/SKILL.md</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-emerald-400">---</span>
+<span class="text-sky-400">name</span>: conventional-commits
+<span class="text-sky-400">description</span>: Escreve mensagens de commit no padrão
+  Conventional Commits. Use SEMPRE que for criar um
+  commit, sugerir uma mensagem de commit, ou rodar
+  git commit neste repositório.
+<span class="text-emerald-400">---</span>
+
+# Conventional Commits
+
+Ao criar qualquer commit, escreva a mensagem no formato:
+
+    tipo(escopo): descrição no imperativo
+
+Use estes tipos:
+- <span class="text-sky-400">feat</span>    nova funcionalidade
+- <span class="text-sky-400">fix</span>     correção de bug
+- <span class="text-sky-400">docs</span>    só documentação
+- <span class="text-sky-400">refactor</span> mudança sem alterar comportamento
+- <span class="text-sky-400">test</span>    testes
+- <span class="text-sky-400">chore</span>   build, deps, config
+
+Regras:
+- Descrição em minúscula, no imperativo ("adiciona", não "adicionado").
+- Sem ponto final. Máximo ~72 caracteres na primeira linha.
+- escopo é opcional; use o módulo afetado quando ajudar.
+
+Exemplo bom:  feat(auth): adiciona login via magic link
+Exemplo ruim: Adicionei o login.</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> La description lleva el peso</h3>
+<p class="text-neutral-300 text-sm">Nota el "<strong>Úsala SIEMPRE que...</strong>" con tres activadores concretos (crear un commit, sugerir un mensaje, ejecutar git commit). Es deliberado: una descripción vaga ("ayuda con commits") casi nunca se activa. Dile al agente exactamente cuándo debe actuar.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📥 Instálala localmente y comprueba cómo funciona</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        No necesitas publicar nada para usarla. Las skills se instalan desde una ruta local con <code class="bg-dark-700 px-1 rounded">npx skills add ./...</code>. Sigue la timeline: desde la creación del archivo hasta que el agente respeta la regla.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Crea la carpeta y el archivo</h4>
+<p class="text-neutral-300 text-sm mb-2">La ruta importa: la carpeta se convierte en el nombre de la skill.</p>
+<pre class="text-neutral-300 text-xs font-mono bg-dark-900/60 rounded p-2 leading-relaxed">$ mkdir -p skills/conventional-commits
+$ $EDITOR skills/conventional-commits/SKILL.md  <span class="text-neutral-500"># cole o conteúdo</span></pre>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Instala desde la ruta local</h4>
+<pre class="text-neutral-300 text-xs font-mono bg-dark-900/60 rounded p-2 leading-relaxed">$ npx skills add ./skills/conventional-commits</pre>
+<p class="text-neutral-300 text-sm mt-2">Esto registra la skill en el agente (en <code class="bg-dark-700 px-1 rounded">.claude/skills/</code> o equivalente). El name + description pasan a vivir en el contexto.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Actívala con una solicitud real</h4>
+<p class="text-neutral-300 text-sm mb-2">Pídele al agente que haga el commit. La description coincide con el contexto y la skill se activa por sí sola.</p>
+<pre class="text-neutral-300 text-xs font-mono bg-dark-900/60 rounded p-2 leading-relaxed">você: "commita as mudanças do login"
+agente: feat(auth): adiciona login via magic link  <span class="text-emerald-400">✓</span></pre>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Confirma que se activó</h4>
+<p class="text-neutral-300 text-sm">Si el mensaje salió en el formato <code class="bg-dark-700 px-1 rounded">tipo(escopo): ...</code> sin que lo pidas en ese formato, la skill funcionó. Listo: creaste y ejecutaste tu primera skill.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-2">10 minutos, de verdad</h3>
+<p class="text-neutral-300 text-sm">Elegir el caso (1 min) → escribir el SKILL.md (4 min) → instalarlo (1 min) → probar y ajustar (4 min). Sin build, sin deploy, sin dependencias. Solo un archivo de texto.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🚫 Errores comunes de principiantes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Casi todo problema de una primera skill cae en uno de estos grupos. Compara ambos lados y ajusta antes de culpar al agente.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Lo que acaba con una skill</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>description vaga:</strong> "ayuda con git" — nunca se activa</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>sin CUÁNDO usar:</strong> describe qué, pero no el desencadenante</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>cuerpo enorme:</strong> 800 líneas que el agente no lee completas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>frontmatter roto:</strong> faltó uno <code class="bg-dark-700 px-1 rounded">---</code> o con indentación incorrecta</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>todo en MAYÚSCULAS a gritos:</strong> reglas sin explicar por qué</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Qué hace que funcione</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>description específica:</strong> verbo + objeto + 2-3 activadores</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>"Úsala cuando...":</strong> dice exactamente en qué situación actuar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>cuerpo conciso:</strong> solo lo esencial, ejemplos breves</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>YAML válido:</strong> dos <code class="bg-dark-700 px-1 rounded">---</code>, dos espacios de indentación</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span><strong>imperativo + por qué:</strong> "Usa feat para X porque Y"</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> ¿No se activó? Casi siempre es por la description</h3>
+<p class="text-neutral-300 text-sm">Si la skill existe pero el agente la ignora, 9 de cada 10 veces el problema está en una description débil, no en el cuerpo. Añade los activadores concretos («al hacer commit», «al ejecutar git commit») y vuelve a probar. Este ciclo de ajuste de la description es el corazón de la Ruta 4.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🌱 Evoluciona a partir de lo mínimo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Tienes una skill funcionando. Ahora resiste las ganas de inflarla. La evolución saludable es incremental: ajusta la description según lo que falló, añade ejemplos solo cuando hagan falta y extrae los recursos pesados a archivos separados (divulgación progresiva) solo cuando el contenido crezca.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Ajustar la description</h4>
+<p class="text-neutral-300 text-sm">¿Se activó demasiado (en conversaciones que no eran sobre commits)? Restringe. ¿Se activó poco? Añade activadores. La description es lo que más vas a modificar.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Agregar ejemplos bajo demanda</h4>
+<p class="text-neutral-300 text-sm">¿Te equivocaste en un caso específico? Añade un par "bueno/malo" para ese caso. No intentes preverlo todo de antemano: deja que los errores te guíen.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Versionar junto con el repo</h4>
+<p class="text-neutral-300 text-sm">SKILL.md es texto: haz commit junto con el proyecto. Todo el equipo hereda la convención, y la skill evoluciona en el historial de git como cualquier archivo.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">el ciclo, en una línea:</p>
+<pre class="text-neutral-300 leading-relaxed">escrever mínimo → instalar → testar → <span class="text-emerald-400">ajustar description</span> → repetir</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Pequeña y activa &gt; grande y muerta</h3>
+<p class="text-neutral-300 text-sm">Una skill de 30 líneas que usas todos los días y ajustas cada semana vale más que una de 500 líneas escrita como «completa» y nunca probada. Empieza con lo mínimo y deja que el uso real la depure y la haga crecer.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Empieza con algo pequeño y real</strong><span class="text-neutral-400"> — una convención que repites, como el estándar de commits</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">SKILL.md = frontmatter + cuerpo</strong><span class="text-neutral-400"> — name y description obligatorios; cuerpo Markdown imperativo</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">La description es el activador</strong><span class="text-neutral-400"> — di QUÉ y CUÁNDO, con activadores concretos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Instala localmente</strong><span class="text-neutral-400"> — npx skills add ./skills/&lt;nome&gt; y ya se activa</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Errores de principiantes</strong><span class="text-neutral-400"> — description vaga, sin CUÁNDO, cuerpo inflado, YAML roto</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Evoluciona de forma incremental</strong><span class="text-neutral-400"> — ajusta la description, agrega ejemplos bajo demanda, versiona en git</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">1.5 — 🚀 Consejos avanzados: lee el ecosistema como un profesional. Cómo interpretar el número de instalaciones, encontrar nichos vacíos y decidir cuándo NO instalar.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">Próximo: 1.5 Consejos avanzados →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

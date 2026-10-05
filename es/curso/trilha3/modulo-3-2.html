@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3.2 — Progressive disclosure y la description que se activa | Crear Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-purple-400 bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Trilha 3</a><span>/</span>
+<span class="text-purple-400">Módulo 3.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎚️ Divulgación progresiva y una description que activa</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Cómo cargar una skill en 3 niveles sin inflar el contexto, cómo escribir la description para que se active en el momento adecuado y cómo organizar el contenido por dominio para que el agente lea solo lo relevante.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Anatomía</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🪜 Los 3 niveles de carga</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El secreto de las skills es el <strong class="text-purple-400">divulgación progresiva</strong>: la información se revela por capas, según lo que necesita el agente. En vez de volcarlo todo en el contexto de una vez, la skill expone primero solo los metadatos, luego el cuerpo y, por último, los recursos pesados.
+      </p>
+<svg aria-label="Pirámide de los tres niveles de divulgación progresiva: metadata siempre cargada, cuerpo al activarse, recursos bajo demanda" class="w-full h-auto my-6" role="img" viewbox="0 0 600 320">
+<defs>
+<filter id="pgglow"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="lvl1" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a855f7" stop-opacity="0.45"></stop><stop offset="1" stop-color="#38bdf8" stop-opacity="0.35"></stop></lineargradient>
+<lineargradient id="lvl2" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a855f7" stop-opacity="0.28"></stop><stop offset="1" stop-color="#38bdf8" stop-opacity="0.2"></stop></lineargradient>
+<lineargradient id="lvl3" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#a855f7" stop-opacity="0.15"></stop><stop offset="1" stop-color="#38bdf8" stop-opacity="0.1"></stop></lineargradient>
+</defs>
+<!-- Nível 1 (topo) -->
+<polygon fill="url(#lvl1)" filter="url(#pgglow)" points="300,20 360,90 240,90" stroke="#a855f7" stroke-width="2"></polygon>
+<text fill="#a855f7" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle" x="300" y="70">NIVEL 1</text>
+<text fill="#38bdf8" font-family="Inter" font-size="12" x="430" y="60">metadata — name + description</text>
+<text fill="#94a3b8" font-family="Inter" font-size="11" x="430" y="78">~100 palabras · SIEMPRE en el contexto</text>
+<!-- Nível 2 (meio) -->
+<polygon fill="url(#lvl2)" filter="url(#pgglow)" points="360,100 420,180 180,180 240,100" stroke="#a855f7" stroke-width="2"></polygon>
+<text fill="#a855f7" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle" x="300" y="148">NIVEL 2</text>
+<text fill="#38bdf8" font-family="Inter" font-size="12" x="430" y="138">cuerpo del SKILL.md</text>
+<text fill="#94a3b8" font-family="Inter" font-size="11" x="430" y="156">&lt;500 líneas · se carga al activarse</text>
+<!-- Nível 3 (base) -->
+<polygon fill="url(#lvl3)" filter="url(#pgglow)" points="420,190 480,290 120,290 180,190" stroke="#38bdf8" stroke-width="2"></polygon>
+<text fill="#38bdf8" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle" x="300" y="248">NIVEL 3</text>
+<text fill="#38bdf8" font-family="Inter" font-size="12" x="430" y="238">bundled resources</text>
+<text fill="#94a3b8" font-family="Inter" font-size="11" x="430" y="256">ilimitado · bajo demanda</text>
+<line opacity="0.4" stroke="#38bdf8" stroke-width="1" x1="40" x2="560" y1="305" y2="305"></line>
+<text fill="#94a3b8" font-family="Inter" font-size="11" x="40" y="300">menos contexto ↑ · más contenido ↓</text>
+</svg>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">La idea central</h3>
+<p class="text-neutral-300 text-sm">Cuanto más alto el nivel, menos cuesta en contexto y más frecuente es la carga. Cuanto más bajo, más contenido cabe, pero solo se incluye cuando realmente es necesario. Eso es lo que permite que las skills enormes funcionen sin desperdiciar contexto.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">① Nivel 1 — metadatos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El Nivel 1 es solo el <strong class="text-purple-400">name + description</strong> — alrededor de <strong class="text-purple-400">100 palabras</strong> que quedan <strong class="text-purple-400">SIEMPRE en el contexto</strong> del agente, junto con los metadatos de todas las demás skills instaladas. Es el escaparate: a partir de ahí, el agente decide si vale la pena cargar el resto.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Qué queda siempre cargado (Nivel 1):</p>
+<pre class="text-neutral-300 leading-relaxed">name: skill-creator
+description: Create new skills, modify and
+  improve existing skills, and measure skill
+  performance. Use when users want to create
+  a skill from scratch, edit, or optimize an
+  existing skill, run evals to test a skill...</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">Como el Nivel 1 siempre está activo, cada palabra consume contexto multiplicado por TODAS las skills. Mantén unas ~100 palabras: lo bastante descriptivo para activarse y lo bastante conciso para no añadir peso.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">② Nivel 2 — contenido del SKILL.md</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Cuando la description coincide con la situación, el agente carga el <strong class="text-purple-400">cuerpo del SKILL.md</strong> — las instrucciones completas. La recomendación canónica es mantener el cuerpo <strong class="text-purple-400">menos de 500 líneas</strong>. Solo entra en el contexto cuando se activa, no antes.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">La description se activa</h4>
+<p class="text-neutral-300 text-sm">El agente reconoce que la situación actual corresponde al Nivel 1.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">El cuerpo se carga</h4>
+<p class="text-neutral-300 text-sm">Las instrucciones en Markdown se incorporan al contexto y empiezan a guiar la respuesta.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">El agente actúa</h4>
+<p class="text-neutral-300 text-sm">Sigue el cuerpo y, si hace falta, busca recursos del Nivel 3.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Por qué &lt;500 líneas</h3>
+<p class="text-neutral-300 text-sm">Los cuerpos largos diluyen la atención del agente y desperdician contexto cada vez que se activan. Si el contenido crece demasiado, mueve los detalles a <code class="bg-dark-700 px-1 rounded">references/</code> (Nivel 3) y deja el cuerpo solo con lo esencial y referencias.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">③ Nivel 3 — recursos incluidos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El Nivel 3 son los recursos empaquetados: archivos en <code class="bg-dark-700 px-1 rounded">scripts/</code>, <code class="bg-dark-700 px-1 rounded">references/</code> e <code class="bg-dark-700 px-1 rounded">assets/</code>. Tamaño <strong class="text-purple-400">ilimitado</strong>, cargados <strong class="text-purple-400">bajo demanda</strong>. El detalle poderoso: scripts <strong class="text-purple-400">se ejecutan sin cargar el código en el contexto</strong> — el agente solo recibe el resultado.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Todo en el cuerpo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tablas gigantes y documentos completos en SKILL.md</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Código pegado en Markdown para que el agente lo «lea y ejecute mentalmente»</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El contexto se desborda con cada activación</span></li>
+</ul>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-4">✓ Recursos en el Nivel 3</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Documentos largos en references/, que se leen solo cuando hace falta</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Scripts en scripts/ que se ejecutan de verdad, sin ocupar contexto</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">✓</span><span>Cuerpo conciso que apunta a los recursos</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">En el cuerpo, apunta al recurso (no pegues el contenido):</p>
+<pre class="text-neutral-300 leading-relaxed">Para converter o arquivo, execute:
+  python scripts/convert.py &lt;input&gt;
+
+Detalhes de configuração estão em
+references/config.md — leia se necessário.</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">Siempre que una tarea sea determinista (misma entrada → misma salida), prefiere un script de Nivel 3 a las instrucciones en el cuerpo. Es más confiable, más barato y ni siquiera hace falta incluir el código en el contexto.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🎯 Cómo escribir la description que activa</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Aquí está el punto más sutil de toda la anatomía: <strong class="text-purple-400">Claude tiende a activar menos skills de las necesarias</strong>. De forma predeterminada es conservador y, ante la duda, no se activa. La corrección es escribir una description un poco <strong class="text-purple-400">"insistente"</strong> — sé explícito con los disparadores y deja claro cuándo usarla.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-3">✗ Tímida (se activa de menos)</h4>
+<p class="text-neutral-300 text-sm font-mono mb-3">"Puede ayudar con pruebas."</p>
+<p class="text-neutral-400 text-sm">"Puede" y ningún activador. El agente rara vez se activará.</p>
+</div>
+<div class="bg-purple-900/20 rounded-xl border border-purple-500/30 p-6">
+<h4 class="font-bold text-purple-400 mb-3">✓ Insistente (se activa)</h4>
+<p class="text-neutral-300 text-sm font-mono mb-3">"Escribe y revisa pruebas. Úsalo SIEMPRE que el usuario pida pruebas, mencione TDD, cobertura o un bug que se deba reproducir."</p>
+<p class="text-neutral-400 text-sm">Qué + cuándo + disparadores explícitos.</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">La fórmula de la description que activa:</p>
+<pre class="text-neutral-300 leading-relaxed">description:
+  [QUÉ hace] +
+  [CUÁNDO usar — "Usa esta skill cuando..."] +
+  [ACTIVADORES concretos — ejemplos, palabras clave]</pre>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Calibra con casos cercanos que no activan la skill</h3>
+<p class="text-neutral-300 text-sm">Para afinar, piensa en queries que <em>deberían</em> activarse y en casos cercanos que <em>no</em> deberían. Si la skill ignora casos obvios, sé más insistente; si se activa en situaciones equivocadas, restringe los disparadores. Este ajuste fino es el corazón del ciclo de creación de la Trilha 4.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗂️ Organización por dominio</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Cuando una skill cubre varios dominios, divide las referencias por archivo — <code class="bg-dark-700 px-1 rounded">references/aws.md</code>, <code class="bg-dark-700 px-1 rounded">gcp.md</code>, <code class="bg-dark-700 px-1 rounded">azure.md</code> — para que el agente lo lea <strong class="text-purple-400">solo lo relevante</strong>. Y en cualquier archivo con más de <strong class="text-purple-400">300 líneas</strong>, agrega una tabla de contenido al principio.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">References divididas por dominio:</p>
+<pre class="text-neutral-300 leading-relaxed">references/
+├── aws.md      # só lido em tarefas AWS
+├── gcp.md      # só lido em tarefas GCP
+└── azure.md    # só lido em tarefas Azure</pre>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Tabla de contenido al inicio de un archivo de &gt;300 líneas:</p>
+<pre class="text-neutral-300 leading-relaxed"># Guia AWS
+
+## Índice
+- [IAM &amp; permissões](#iam)
+- [S3 &amp; storage](#s3)
+- [Lambda &amp; serverless](#lambda)
+- [Networking (VPC)](#vpc)</pre>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-3">Por qué esto ahorra contexto</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Un único archivo de 900 líneas obliga al agente a cargarlo todo. Tres de 300 le permiten usar solo uno.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>La tabla de contenido permite que el agente navegue hasta la sección adecuada sin volver a leer el archivo entero.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400">•</span><span>Separar los dominios también facilita el mantenimiento: editas azure.md sin tocar el resto.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mt-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo final</h3>
+<p class="text-neutral-300 text-sm">Los tres niveles + la organización por dominio forman un sistema: description insistente en el Nivel 1 para activarse, cuerpo conciso en el Nivel 2, recursos divididos por dominio en el Nivel 3. Así funcionan skills como la <code class="bg-dark-700 px-1 rounded">azure-ai</code> (358k instalaciones) escalan sin perder precisión.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">3 niveles de carga</strong><span class="text-neutral-400"> — metadata, cuerpo y recursos, revelados bajo demanda.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Nivel 1 — metadata</strong><span class="text-neutral-400"> — name+description, ~100 palabras, SIEMPRE en contexto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Nivel 2 — cuerpo</strong><span class="text-neutral-400"> — &lt;500 líneas, se carga solo cuando se activa la skill.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Nivel 3 — recursos</strong><span class="text-neutral-400"> — ilimitado, bajo demanda; los scripts se ejecutan sin ocupar contexto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Description que se activa</strong><span class="text-neutral-400"> — sé insistente; Claude se activa menos de lo necesario; el qué + cuándo + los disparadores.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Organización por dominio</strong><span class="text-neutral-400"> — aws/gcp/azure separados + índice en archivos de más de 300 líneas.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">Módulo 3.3 — ⭐ Las mejores anatomías para imitar: disecciona el SKILL.md de skills destacadas y mira qué copiar de cada una.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-3.html">Próximo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

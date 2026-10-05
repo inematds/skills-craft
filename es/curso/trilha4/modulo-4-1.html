@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4.1 — De la intención al primer borrador | Creando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-amber-400 bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Trilha 4</a><span>/</span>
+<span class="text-amber-400">Módulo 4.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🌱 Del intent al primer borrador</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Captura lo que la persona quiere, investiga lo suficiente y conviértelo en un SKILL.md que desde el inicio esté bien escrito: en imperativo, con el porqué y sin MUSTs a gritos.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">45</div>
+<div class="text-xs text-neutral-400">Minutos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Práctico</div>
+<div class="text-xs text-neutral-400">Nivel</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Creación</div>
+<div class="text-xs text-neutral-400">Tipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Capturar el intent</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        skill-creator empieza por entender la intención antes de escribir una sola línea. Si la conversación ya contiene el workflow que la persona quiere capturar (dice "convierte esto en una skill"), extráelo primero de los mensajes anteriores: las herramientas usadas, la secuencia de pasos, las correcciones que hizo, los formatos de entrada y salida que aparecieron. Solo después pídele que complete los huecos, y <strong class="text-amber-400">confirma antes de continuar</strong>.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">¿Qué permite hacer esta skill a Claude?</h4>
+<p class="text-neutral-300 text-sm">La capacidad central. No "ayudar con hojas de cálculo", sino "calcular el margen de ganancia y agregar la columna en un xlsx".</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">¿Cuándo debe activarse?</h4>
+<p class="text-neutral-300 text-sm">Qué frases y contextos del usuario activan la skill. Eso se convierte en el corazón de la description.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">¿Cuál es el formato de salida esperado?</h4>
+<p class="text-neutral-300 text-sm">¿Un archivo? ¿Un informe con secciones fijas? ¿Código? Definirlo pronto evita retrabajo.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">¿Vale la pena preparar casos de prueba?</h4>
+<p class="text-neutral-300 text-sm">Las skills con resultados que se pueden verificar objetivamente (transformar un archivo, extraer datos, generar código) se benefician de las pruebas. Los resultados subjetivos (estilo, arte) generalmente no las necesitan. Sugiere la opción predeterminada y deja que el usuario decida.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Cuidado con la jerga</h3>
+<p class="text-neutral-300 text-sm">skill-creator lo usan personas con niveles muy distintos de familiaridad técnica. Términos como "JSON" y "assertion" solo deberían aparecer sin explicación si hay indicios claros de que la persona los conoce. En caso de duda, define el término en una frase breve.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔎 Entrevistas e investigación</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Con el intent capturado, profundiza. Pregunta proactivamente sobre casos límite, formatos de entrada y salida, archivos de ejemplo, criterios de éxito y dependencias. <strong class="text-amber-400">Espera para escribir test prompts</strong> solo después de cerrar esta parte — una entrevista mal hecha genera una skill que cubre el caso ideal y falla en el resto.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Entrevista superficial</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Asume que solo hay un formato de entrada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignora lo que pasa con una entrada vacía o malformada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nunca pide archivos de ejemplo reales</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No define qué cuenta como "salió bien"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Deja el trabajo de investigación sobre los hombros del usuario</span></li>
+</ul>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Entrevista que prepara el terreno</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Mapea todos los formatos plausibles de entrada y salida</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Explora casos límite antes de programar</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Recopila ejemplos concretos del dominio</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Establece criterios de éxito explícitos</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Investigación en paralelo mediante subagentes/MCP</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Llega con el contexto preparado</h3>
+<p class="text-neutral-300 text-sm">Revisa los MCP disponibles. Si alguno es útil para la investigación —buscar documentación, encontrar skills parecidas, recopilar buenas prácticas—, investiga en paralelo mediante subagents (cuando los haya) o inline. La idea es reducir la fricción para el usuario: llegar con la tarea hecha en vez de preguntarlo todo desde cero.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📝 Escribir el SKILL.md</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A partir de la entrevista, completa los componentes del archivo. El SKILL.md es un frontmatter YAML (con <strong class="text-amber-400">name</strong> e <strong class="text-amber-400">description</strong> obligatorios) seguido del cuerpo en Markdown.
+      </p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4">Los componentes</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>name:</strong> el identificador de la skill</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>description:</strong> qué hace Y cuándo usarla. Es el mecanismo principal de activación: todo «cuándo usarla» va aquí, no en el cuerpo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>compatibility:</strong> herramientas/dependencias requeridas (opcional, rara vez necesario)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>el resto de la skill :)</strong> — el cuerpo con las instrucciones</span></li>
+</ul>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">La Description debe ser un poco "pushy"</h3>
+<p class="text-neutral-300 text-sm mb-3">Hoy Claude tiende a <strong>subdisparar</strong> skills — no usarlas cuando serían útiles. Para combatir esto, la description debe enumerar contextos concretos de uso, aunque el usuario no lo pida explícitamente.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Débil vs. insistente:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-red-400"># Fraca</span>
+description: How to build a simple fast dashboard to
+display internal Anthropic data.
+
+<span class="text-amber-400"># Pushy</span>
+description: How to build a simple fast dashboard to
+display internal Anthropic data. Make sure to use this
+skill whenever the user mentions dashboards, data
+visualization, internal metrics, or wants to display
+any kind of company data, even if they don't explicitly
+ask for a 'dashboard.'</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Recordatorio de la anatomía</h3>
+<p class="text-neutral-300 text-sm">Progressive disclosure en 3 niveles: (1) metadata name+description siempre en el contexto (~100 palabras); (2) cuerpo del SKILL.md cuando se activa, idealmente &lt;500 líneas; (3) recursos empaquetados que se cargan bajo demanda. La description es el activador.</p>
+</div>
+</section>
+<!-- SVG ilustrativo -->
+<svg aria-label="Flujo del intent al draft: la entrevista alimenta name, description y el cuerpo del SKILL.md" class="w-full h-auto my-6" role="img" viewbox="0 0 600 200">
+<defs><filter id="g41"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<g filter="url(#g41)">
+<rect fill="#f59e0b" fill-opacity="0.12" height="60" rx="12" stroke="#f59e0b" stroke-width="1.5" width="120" x="30" y="70"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="20"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="78"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="136"></rect>
+</g>
+<text fill="#f59e0b" font-family="Inter" font-size="13" text-anchor="middle" x="90" y="95">Entrevista</text>
+<text fill="#f59e0b" font-family="Inter" font-size="13" text-anchor="middle" x="90" y="113">+ research</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="47">name</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="105">description</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="163">cuerpo</text>
+<g fill="none" filter="url(#g41)" opacity="0.85" stroke="#38bdf8" stroke-width="1.8">
+<path d="M150 90 Q300 60 430 42" marker-end="url(#ah41)"></path>
+<path d="M150 100 L430 100" marker-end="url(#ah41)"></path>
+<path d="M150 110 Q300 140 430 158" marker-end="url(#ah41)"></path>
+</g>
+<defs><marker id="ah41" markerheight="8" markerwidth="8" orient="auto" refx="5" refy="4"><path d="M0 0 L8 4 L0 8 z" fill="#38bdf8"></path></marker></defs>
+</svg>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">✍️ Estilo de escritura</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La forma en que escribes el cuerpo de la skill importa tanto como lo que escribes. Prefiere el <strong class="text-amber-400">imperativo</strong>, usa theory of mind y explica el <strong class="text-amber-400">por qué</strong> de cada instrucción en vez de amontonar MUST en mayúsculas. Mantén la skill general, sin limitarla a ejemplos específicos.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Estilo demasiado intrusivo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"SIEMPRE haz X. NUNCA hagas Y." en mayúsculas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Reglas rígidas sin ninguna razón</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Instrucciones basadas en un único ejemplo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Trata el modelo como un ejecutor ciego</span></li>
+</ul>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Estilo que respeta el modelo</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Imperativo claro: "Empieza por entender..."</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Explica por qué importa cada paso</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Generaliza a muchos casos</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Usa theory of mind: apuesta por la inteligencia</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Por qué evitar los MUSTs a gritos</h3>
+<p class="text-neutral-300 text-sm">Los LLM actuales son inteligentes: tienen una buena theory of mind y, con un buen harness, van más allá de las instrucciones literales. Si te encuentras escribiendo ALWAYS o NEVER en mayúsculas, o usando estructuras muy rígidas, es una yellow flag: reformula y explica la razón para que el modelo entienda por qué importa. Es más humano, más potente y más eficaz.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">👀 Hacer un borrador y releerlo con ojos nuevos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        No te atasques buscando el borrador perfecto. Escribe un primer borrador y luego <strong class="text-amber-400">vuelve a leerlo con ojos nuevos</strong> y mejora. El ciclo borrador → revisar → mejorar ocurre durante la propia escritura, incluso antes de cualquier prueba.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Escribe el borrador</h4>
+<p class="text-neutral-300 text-sm">Ponlo todo por escrito sin editar. Primero, rapidez; después, pulido.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Vuelve a leer con distancia</h4>
+<p class="text-neutral-300 text-sm">Míralo como si fueras otra persona leyendo. ¿Qué resulta ambiguo? ¿Qué hace que el modelo pierda tiempo sin necesidad?</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Mejora</h4>
+<p class="text-neutral-300 text-sm">Elimina redundancias, reformula lo que estaba rígido y explica por qué lo que quedó era vago.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">skill-creator repite este consejo en varios puntos: "escribe un borrador y luego míralo con ojos nuevos para mejorarlo". Se aplica a todo el SKILL.md y a cada revisión futura en el ciclo de iteración.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">📦 Cuándo bundlear</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        No todo vive dentro del SKILL.md. Los recursos incluidos (<code>scripts/</code>, <code>references/</code>, <code>assets/</code>) se cargan bajo demanda. La regla práctica: si <strong class="text-amber-400">3 ejecuciones repiten el mismo script</strong>, extrae en <code>scripts/</code>; los docs grandes van a <code>references/</code>.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Anatomía de una skill:</p>
+<pre class="text-neutral-300 leading-relaxed">skill-name/
+├── SKILL.md            <span class="text-amber-400">(required)</span>
+│   ├── YAML frontmatter (name, description)
+│   └── Markdown instructions
+└── Bundled Resources   <span class="text-neutral-500">(optional)</span>
+    ├── scripts/    <span class="text-neutral-500"># código p/ tarefas repetitivas</span>
+    ├── references/ <span class="text-neutral-500"># docs carregadas sob demanda</span>
+    └── assets/     <span class="text-neutral-500"># templates, ícones, fontes</span></pre>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4">Señales de que es hora de agrupar</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>3 invocaciones independientes escribieron lo mismo <code>create_docx.py</code> → conviértete en <code>scripts/</code> y dile a la skill que lo use</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>El cuerpo de SKILL.md está cerca de las 500 líneas → agrega una capa de jerarquía con referencias claras</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Documento de referencia extenso (&gt;300 líneas) → incluye un índice/TOC</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>La skill admite varios dominios → organízalos por variante en <code>references/</code> (aws.md, gcp.md, azure.md)</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Por qué agrupar scripts repetidos</h3>
+<p class="text-neutral-300 text-sm">Escribir una vez, poner en <code>scripts/</code> y apuntar la skill a él evita que cada invocación futura tenga que reinventar la rueda. Los scripts se ejecutan sin necesidad de cargar todo el contenido en el contexto: es más rápido, más confiable y reutilizable entre iteraciones.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Captura la intención con 4 preguntas</strong><span class="text-neutral-400"> — qué habilita, cuándo se activa, formato de salida, si necesita pruebas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Entrevista e investiga antes de escribir pruebas</strong><span class="text-neutral-400"> — casos límite, formatos, ejemplos, criterios, dependencias</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Escribe el SKILL.md con una description insistente</strong><span class="text-neutral-400"> — el activador dice qué hace Y cuándo usarlo, para combatir la activación insuficiente</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Estilo imperativo que explica por qué</strong><span class="text-neutral-400"> — teoría de la mente en lugar de MUSTs que gritan en mayúsculas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Haz un borrador y vuelve a leerlo con ojos nuevos</strong><span class="text-neutral-400"> — borrador → revisar → mejorar, eliminando redundancias y ambigüedades</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Agrupa cuando haya repetición</strong><span class="text-neutral-400"> — 3 ejecuciones con el mismo script → scripts/; documentación extensa → references/</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">4.2 — 🔁 Probar, evaluar e iterar — escribe test prompts realistas, ejecútalos con skill vs. baseline, evalúa e itera hasta que la skill funcione mucho más allá de los ejemplos.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 4</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-2.html">Próximo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

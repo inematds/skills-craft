@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4.5 — Description Optimization and Benchmarking | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha4/modulo-4-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha4/modulo-4-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha4/modulo-4-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-amber-400 bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a><span>/</span>
+<span class="text-amber-400">Module 4.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Advanced Tips: Description Optimization and Benchmarking</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The description optimization loop (60/40 split, near-misses, best_description based on the test score), how triggering really works, blind comparison, and how to read the benchmark without being misled by non-discriminating assertions.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">50</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Advanced</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Tuning</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- SVG: split train/test + loop -->
+<svg aria-label="60/40 train/test split and optimization loop that picks best_description based on the test score" class="w-full h-auto my-2 max-w-3xl mx-auto" role="img" viewbox="0 0 640 210">
+<defs>
+<filter id="g45"><fegaussianblur result="b" stddeviation="2.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="ah45" markerheight="9" markerwidth="9" orient="auto" refx="5" refy="4.5"><path d="M0 0 L9 4.5 L0 9 z" fill="#38bdf8"></path></marker>
+</defs>
+<g filter="url(#g45)">
+<rect fill="#f59e0b" fill-opacity="0.14" height="40" rx="8" stroke="#f59e0b" stroke-width="1.8" width="180" x="30" y="30"></rect>
+<rect fill="#38bdf8" fill-opacity="0.13" height="40" rx="8" stroke="#38bdf8" stroke-width="1.8" width="120" x="30" y="90"></rect>
+<rect fill="#f59e0b" fill-opacity="0.13" height="46" rx="12" stroke="#f59e0b" stroke-width="2" width="150" x="280" y="60"></rect>
+<rect fill="#38bdf8" fill-opacity="0.14" height="46" rx="12" stroke="#38bdf8" stroke-width="2" width="130" x="490" y="60"></rect>
+</g>
+<text fill="#f59e0b" font-family="Inter" font-size="13" font-weight="600" text-anchor="middle" x="120" y="55">train 60%</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" font-weight="600" text-anchor="middle" x="90" y="115">test 40%</text>
+<text fill="#f59e0b" font-family="Inter" font-size="12" font-weight="600" text-anchor="middle" x="355" y="80">loop (≤5x)</text>
+<text fill="#f59e0b" font-family="Inter" font-size="10" text-anchor="middle" x="355" y="96">propose + reevaluate</text>
+<text fill="#38bdf8" font-family="Inter" font-size="12" font-weight="600" text-anchor="middle" x="555" y="80">best_desc</text>
+<text fill="#38bdf8" font-family="Inter" font-size="10" text-anchor="middle" x="555" y="96">by test score</text>
+<g fill="none" filter="url(#g45)" opacity="0.85" stroke="#38bdf8" stroke-width="2">
+<path d="M210 50 Q250 60 278 75" marker-end="url(#ah45)"></path>
+<path d="M150 110 Q220 100 278 90" marker-end="url(#ah45)"></path>
+<path d="M430 83 L488 83" marker-end="url(#ah45)"></path>
+<path d="M355 106 Q300 150 355 56" marker-end="url(#ah45)" opacity="0.5" stroke-dasharray="4 5"></path>
+</g>
+<text fill="#f59e0b" font-family="Inter" font-size="10" opacity="0.7" text-anchor="middle" x="320" y="165">test only decides; it never trains → prevents overfitting</text>
+</svg>
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎚️ The description optimization loop</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The description is the primary trigger mechanism. The <code>run_loop.py</code> automates tuning: splits the eval set into <strong class="text-amber-400">60% train / 40% held-out test</strong>, evaluate the current description (running each query <strong class="text-amber-400">3 times</strong> for a reliable trigger rate), calls Claude to propose improvements based on what failed, and reevaluates — up to 5 iterations.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">run the loop in the background:</p>
+<pre class="text-neutral-300 leading-relaxed">python -m scripts.run_loop \
+  --eval-set trigger-eval.json \
+  --skill-path ./margem-xlsx \
+  --model &lt;model-id-da-sessão&gt; \
+  --max-iterations 5 \
+  --verbose</pre>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Split 60/40</h4><p class="text-neutral-300 text-sm">Use train to guide proposals; use held-out test to decide. The test never trains.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">3 runs per query</h4><p class="text-neutral-300 text-sm">Triggering is stochastic; running it 3x gives you a stable trigger rate instead of a noisy yes/no.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Propose → reevaluate → repeat</h4><p class="text-neutral-300 text-sm">Claude sees what failed and proposes a new description; the loop reevaluates it on train and test, up to 5x.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Use the session’s model ID</h3>
+<p class="text-neutral-300 text-sm">Pass the model running the current session so the trigger test matches what the user actually experiences. Run it in the background and provide periodic updates by tailing the output—the loop takes a while.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🎯 Queries: should-trigger / should-not and near-misses</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Generate ~20 realistic queries—what a real user would type, with paths, column names, backstory, sometimes lowercase or with typos. Half should-trigger, half should-not. The gold is in the <strong class="text-amber-400">near-misses</strong>.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Should-trigger (8-10)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Same intent, different phrasing (formal/casual)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>The user doesn’t say "margin" but needs it</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Uncommon use cases; conflicts with another skill where this one should win</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Should-not-trigger (8-10)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">→</span><span>Near-miss: "clean up the duplicates in this sales spreadsheet" (same file, different task)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">→</span><span>Adjacent domain, ambiguous phrase</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">→</span><span><strong>Avoid</strong> obvious negatives: “write a fibonacci” tests nothing</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">trigger-eval.json — labeled queries:</p>
+<pre class="text-neutral-300 leading-relaxed">[
+  {"query": "boss mandou Q4 sales.xlsx, quer margem de lucro em %",
+   "should_trigger": true},
+  {"query": "remove as linhas duplicadas dessa planilha de vendas",
+   "should_trigger": false},
+  {"query": "qual a margem de erro dessa pesquisa de satisfação?",
+   "should_trigger": false}
+]</pre>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Why near-misses matter</h3>
+<p class="text-neutral-300 text-sm">"Margin of error in a survey" shares the word "margin" but has nothing to do with profit in a spreadsheet. Negatives like this force the description to truly distinguish. Obvious negatives always pass and teach the loop nothing. Bad eval queries lead to bad descriptions.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🧲 How triggering actually works</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Skills appear in the list <code>available_skills</code> with name + description, and Claude decides whether to consult it based on the description. The detail that changes everything: Claude <strong class="text-amber-400">only consults skills for tasks it can't easily handle on its own</strong>.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Weak query for testing</h4>
+<p class="text-neutral-300 text-sm mb-3">"read this PDF"</p>
+<p class="text-neutral-300 text-sm mb-3">"open this file"</p>
+<p class="text-neutral-400 text-xs">Too simple. Claude can handle it directly with basic tools—it won’t trigger a skill, no matter how good the description is.</p>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Substantive query</h4>
+<p class="text-neutral-300 text-sm mb-3">"take this sales xlsx, calculate the margin by SKU, and send it back formatted as %"</p>
+<p class="text-neutral-400 text-xs">Multi-step and specialized—the Claude benefits from consulting the skill.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Your test queries need to be substantive</h3>
+<p class="text-neutral-300 text-sm">If you test triggering with "read file X," you’ll conclude the description is bad when in fact the query wouldn’t trigger any skill. Simple, single-step queries are poor test cases. Add to that the fact that Claude tends to under-trigger: that’s why the description should be a little pushy.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">⚖️ Blind comparison: is the new one really better?</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        When the user asks, "Is the new version actually better?", there’s blind comparison. The idea: give two outputs to an independent agent <strong class="text-amber-400">without saying which is which</strong>, let it judge quality, and then analyze why the winner won.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Anonymize the outputs</h4><p class="text-neutral-300 text-sm">Output A and Output B, with no version labels. An independent comparator evaluates them without bias.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Assess quality</h4><p class="text-neutral-300 text-sm">The agent chooses the best option. Because it is blind, it doesn’t favor “the new” just because it’s new.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600"><h4 class="font-semibold text-white mb-1">Analyze why it won</h4><p class="text-neutral-300 text-sm">Understanding the reason is more useful than the score—it tells you what to keep in the next iteration.</p></div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Optional, and that’s fine</h3>
+<p class="text-neutral-300 text-sm">Blind comparison requires subagents, and most cases don't need it—the human review loop is usually enough. Save it for when the question “did it really improve?” is costly enough to justify the extra rigor.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📈 Read the benchmark without fooling yourself</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The benchmark provides <strong class="text-amber-400">pass_rate</strong>, <strong class="text-amber-400">tokens</strong> e <strong class="text-amber-400">time</strong> by configuration, with the mean ± standard deviation and the delta. But the number alone can be misleading. Do an analyst’s pass before celebrating.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">benchmark.json (summary) — what to look at:</p>
+<pre class="text-neutral-300 leading-relaxed">with_skill:    pass_rate 0.92 ± 0.05  | 84.8k tok | 23.3s
+without_skill: pass_rate 0.41 ± 0.18  | 61.2k tok | 18.1s
+delta:         +0.51 pass | +23.6k tok | +5.2s
+
+# leia também: assertions que passam em AMBOS (não discriminam)
+# e evals com desvio alto (possivelmente flaky)</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Reading traps</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Assertion passes with and without the skill → doesn’t measure the skill</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>High variance in an eval → may be flaky, not a real improvement</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Celebrate pass_rate while ignoring a spike in tokens/time</span></li>
+</ul>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Healthy reading</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Look at the delta between with_skill and baseline</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Cut non-discriminating assertions from the set</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Weigh the tradeoff: is the quality gain worth the cost?</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> A non-discriminating assertion is noise</h3>
+<p class="text-neutral-300 text-sm">If “file exists” passes with_skill and without_skill, it inflates the pass_rate for both equally and hides the real difference. The signal is in the assertions that only the skill makes pass. The analyst pass exists to reveal exactly these patterns that averages hide.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🏆 Pro tips: apply best_description and package it</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        At the end of the loop, get the <code>best_description</code> — <strong class="text-amber-400">chosen by the test score, not the train score</strong> — apply it to the frontmatter and show the user the before and after with the scores. Then, package it.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">loop output + apply + package:</p>
+<pre class="text-neutral-300 leading-relaxed"># run_loop retorna:
+{ "best_description": "...nova description afinada...",
+  "train_score": 0.94, "test_score": 0.89, "iterations": 4 }
+
+# aplique no SKILL.md (frontmatter) e mostre antes/depois
+# depois empacote a skill final:
+python -m scripts.package_skill ./margem-xlsx
+# → margem-xlsx.skill (pronto para instalar)</pre>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4">Pro tips checklist</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><span class="text-amber-400">•</span><p class="text-neutral-300 text-sm">Always choose based on <strong>test score</strong> — train inflates due to overfitting; held-out is honest.</p></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400">•</span><p class="text-neutral-300 text-sm">Optimize the description <strong>only after</strong> that the skill's content is good; don't fine-tune the trigger for something that's still changing.</p></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400">•</span><p class="text-neutral-300 text-sm">Review the eval set with the user <strong>before</strong> to run — poor queries produce poor descriptions.</p></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400">•</span><p class="text-neutral-300 text-sm">Keep the description pushy but honest—cover near-triggers, yes; promise what the skill doesn’t do, no.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Why the test score</h3>
+<p class="text-neutral-300 text-sm">If you chose the description based on the train set, you’d reward the one that memorized the training examples. The held-out test simulates queries the loop has never seen—it’s the best proxy for the real world. Choosing based on it is what separates a description that generalizes from one that only shines in the lab.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Optimization loop</strong><span class="text-neutral-400"> — 60/40 split, 3 runs per query, propose → reevaluate up to 5x, session model ID</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Near-misses are gold</strong><span class="text-neutral-400"> — should-not that shares words but needs something else; avoid obvious negatives</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Triggering only fires for nontrivial tasks</strong><span class="text-neutral-400"> — test queries need to be substantive</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Blind comparison</strong><span class="text-neutral-400"> — blind and optional; analyze why it won, not just the score</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Reading a benchmark with an analyst’s eye</strong><span class="text-neutral-400"> — remove non-discriminating assertions; watch out for variance and token tradeoffs</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">best_description by test score</strong><span class="text-neutral-400"> — apply it to the frontmatter, show before and after, package with package_skill</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Next:</h3>
+<p class="text-neutral-300">Track 5 — 🧠 What to Think About — principles and pitfalls when deciding what becomes a skill, how to keep them healthy, and what to avoid in the long run.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 4</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="../trilha5/index.html">Next →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

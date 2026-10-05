@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5.1 — When a Skill Is Worth It (and Anti-Patterns) | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha5/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha5/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha5/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha5/modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-teal-400 bg-teal-500/10 transition-colors" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Track 5</a><span>/</span>
+<span class="text-teal-400">Module 5.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MODULE 5.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧭 When a skill is worthwhile (and the anti-patterns)</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Before writing a single line of SKILL.md: is the skill really justified? And if it is, what are the three anti-patterns that will kill it before it triggers? This module is the mental filter.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">42</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Advanced</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Decision</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">✅ When a skill IS worth it</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A skill costs context and maintenance. It only pays off when it delivers real, repeated gains. There are four green flags—the more of them you see, the clearer the decision to package it. A practical rule: if <strong class="text-teal-400">two or more</strong> the signals line up; it's worth creating the skill.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">🔁 Repeatable workflow</h4>
+<p class="text-neutral-300 text-sm mb-3">You run the same sequence of steps every week — generating a component, configuring a deploy, writing a type of test. Repetition is the number one signal.</p>
+<p class="text-neutral-400 text-xs">Example: PR pattern, commit convention, feature scaffold.</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">🧠 The team's contextual knowledge</h4>
+<p class="text-neutral-300 text-sm mb-3">Something only your team knows: internal conventions, legacy gotchas, architecture decisions. The model can't guess this on its own.</p>
+<p class="text-neutral-400 text-xs">Example: "in this repo, always use wrapper X instead of direct fetch."</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">🔍 Verifiable Output</h4>
+<p class="text-neutral-300 text-sm mb-3">You can check whether it worked—tests pass, lint is clean, schema validates. Verifiable output lets you iterate on and measure the skill.</p>
+<p class="text-neutral-400 text-xs">Example: code that compiles, JSON that validates against a schema.</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">🪜 Multi-step</h4>
+<p class="text-neutral-300 text-sm mb-3">The task has several linked steps with order and dependencies. The skill encapsulates the entire process, not just one isolated tip.</p>
+<p class="text-neutral-400 text-xs">Example: read config → generate files → run build → validate.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Calibration tip</h3>
+<p class="text-neutral-300 text-sm">If you catch yourself explaining the same thing to the agent for the third time in a week, that’s a repeatable workflow + contextual knowledge. Two green signals: stop and write the skill now.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🚫 When It’s NOT Worth It</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Knowing when to create is just as important as knowing when to <strong class="text-teal-400">no</strong> create. Most useless skills come from the impulse to "I'll organize this into a skill" for something that didn't need one. Three red flags indicate over-engineering.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Do NOT create a skill when...</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>One-off task:</strong> you'll only do this once. A Skill is pure overhead.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>The model already does this on its own:</strong> format markdown, translate, summarize — native capability, no added value.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><strong>Simple one-step query:</strong> "what's the capital of France?" doesn't become a skill.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>You still don’t have the process clear, even in your own mind.</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Do something else</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>One-off → just include it in the prompt at hand.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Native capability → trust the model; don't duplicate it.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>1 step → one sentence in the prompt solves it.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Diffuse process → do it manually 3x, then extract the pattern.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">The "already does it on its own" test</h3>
+<p class="text-neutral-300 text-sm">Run the task before creating <strong>without</strong> skill (baseline). If the result is already good, the skill adds nothing — it only takes up context. A skill is worthwhile only if the with-skill vs. baseline delta is visible.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🌳 Skill vs. CLAUDE.md vs. MCP vs. subagent</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Four tools solve different problems. Choosing the wrong one is the most common design mistake. The decision tree below leads you to the right choice with two or three questions.
+      </p>
+<svg aria-label="Decision tree for choosing between a skill, CLAUDE.md, MCP, and a subagent, with valid and invalid branches" class="w-full h-auto my-6" role="img" viewbox="0 0 680 360">
+<defs>
+<filter id="g31"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<!-- raiz -->
+<rect fill="#14b8a6" fill-opacity="0.15" filter="url(#g31)" height="48" rx="10" stroke="#14b8a6" stroke-width="2" width="180" x="250" y="20"></rect>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="340" y="42">It’s always necessary,</text>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="340" y="58">in every session?</text>
+<!-- ramo SIM -> CLAUDE.md -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="290" x2="130" y1="68" y2="120"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="190" y="100">YES</text>
+<rect fill="#38bdf8" fill-opacity="0.12" filter="url(#g31)" height="44" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="40" y="120"></rect>
+<text fill="#7dd3fc" font-size="13" text-anchor="middle" x="130" y="147">CLAUDE.md (global rule)</text>
+<!-- ramo NÃO -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="390" x2="500" y1="68" y2="120"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="470" y="100">NO</text>
+<rect fill="#14b8a6" fill-opacity="0.15" filter="url(#g31)" height="48" rx="10" stroke="#14b8a6" stroke-width="2" width="190" x="410" y="120"></rect>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="505" y="142">Needs to connect to</text>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="505" y="158">an external service?</text>
+<!-- conexão SIM -> MCP -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="470" x2="360" y1="168" y2="220"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="395" y="200">YES</text>
+<rect fill="#38bdf8" fill-opacity="0.12" filter="url(#g31)" height="44" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="270" y="220"></rect>
+<text fill="#7dd3fc" font-size="13" text-anchor="middle" x="360" y="247">MCP (server/API)</text>
+<!-- conexão NÃO -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="540" x2="600" y1="168" y2="220"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="585" y="200">NO</text>
+<rect fill="#14b8a6" fill-opacity="0.15" filter="url(#g31)" height="48" rx="10" stroke="#14b8a6" stroke-width="2" width="170" x="500" y="220"></rect>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="585" y="242">It’s isolated work</text>
+<text fill="#5eead4" font-size="13" text-anchor="middle" x="585" y="258">and parallel?</text>
+<!-- subagente -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="540" x2="450" y1="268" y2="312"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="510" y="298">YES</text>
+<rect fill="#38bdf8" fill-opacity="0.12" filter="url(#g31)" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="170" x="360" y="312"></rect>
+<text fill="#7dd3fc" font-size="13" text-anchor="middle" x="445" y="337">Subagent</text>
+<!-- skill -->
+<line filter="url(#g31)" stroke="#14b8a6" stroke-width="2" x1="620" x2="620" y1="268" y2="312"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="650" y="295">NO</text>
+<rect fill="#14b8a6" fill-opacity="0.22" filter="url(#g31)" height="40" rx="10" stroke="#14b8a6" stroke-width="2.5" width="120" x="545" y="312"></rect>
+<text fill="#5eead4" font-size="13" font-weight="bold" text-anchor="middle" x="605" y="337">SKILL ✅</text>
+</svg>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">📌</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">CLAUDE.md — always active</h4>
+<p class="text-neutral-300 text-sm">Rules that apply in every session, with no trigger. Response style, language, general prohibitions. They weigh on context all the time—use them only for what’s universal.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">🔌</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">MCP—connection</h4>
+<p class="text-neutral-300 text-sm">A server that gives the agent tools to communicate with external services (database, API, browser). MCP is plumbing; a skill is knowledge. Don’t confuse them.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">🧑‍🚀</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Subagent — isolation</h4>
+<p class="text-neutral-300 text-sm">Heavy, parallel work with its own context (e.g., searching the entire repo). Keeps the main context clean. It can even use skills within it.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">🧩</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Skill—on demand</h4>
+<p class="text-neutral-300 text-sm">Knowledge that triggers only when the description matches. It doesn’t add weight when irrelevant. It’s the default choice for a repeatable workflow + context that doesn’t always fit in CLAUDE.md.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🐘 Anti-pattern: oversized scope</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The first anti-pattern that kills skills: the temptation to create a skill <strong class="text-teal-400">"everything-about-X"</strong>. An 800-line skill that covers all of React, from useState to deploy. It seems efficient. It’s the opposite.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Huge scope</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code>tudo-sobre-react.md</code> with 800 lines</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Description becomes generic: "helps with React"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Triggers on everything or nothing</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Agent absorbs it poorly — instruction diluted</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Impossible to test and version</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Atomic skills</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span><code>react-component-scaffold</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span><code>react-hooks-conventions</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span><code>react-a11y-guidelines</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Each one has a precise trigger and &lt;500 lines</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>They compose together when the context calls for it</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">The division rule—one trigger per skill:</p>
+<pre class="text-neutral-300 leading-relaxed"># ✗ ANTES (uma skill, vários gatilhos misturados)
+skills/
+  tudo-sobre-react/SKILL.md   # 800 linhas, dispara em "react"
+
+# ✓ DEPOIS (uma responsabilidade cada)
+skills/
+  react-component-scaffold/SKILL.md   # dispara em "novo componente"
+  react-hooks-conventions/SKILL.md    # dispara em "usar hook / estado"
+  react-a11y-guidelines/SKILL.md      # dispara em "acessibilidade"</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Splitting heuristic</h3>
+<p class="text-neutral-300 text-sm">If you can’t write a one-sentence description that says exactly when the skill triggers, it’s too big. Each distinct trigger = one skill. Atomicity isn’t about aesthetics: it’s what makes the trigger work.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📢 Anti-pattern: uppercase MUSTs and overfitting</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The second anti-pattern: stuffing the skill with <strong class="text-teal-400">"YOU MUST ALWAYS"</strong> in ALL CAPS and paste overly specific examples. The model memorizes the exact cases and fails on any variation. The skill passes your tests and breaks in real life—that’s overfitting.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">overfit vs. generalization:</p>
+<pre class="text-neutral-300 leading-relaxed"># ✗ OVERFIT (decora o caso, não o princípio)
+VOCÊ DEVE SEMPRE nomear o arquivo de "Button.tsx".
+VOCÊ DEVE SEMPRE usar a cor #14b8a6.
+
+# ✓ GENERALIZA (ensina o porquê, vale fora dos exemplos)
+Nomeie componentes em PascalCase, igual ao nome exportado,
+porque o resolver de imports e a navegação do editor
+dependem dessa correspondência. Ex.: Button → Button.tsx,
+UserCard → UserCard.tsx.</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ MUSTs and overfitting</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>ALL CAPS and shouted imperatives</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Examples pasted in as fixed rules</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No explanation of why</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Breaks on any new case</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Principle + why</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Calm, natural imperative</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Examples illustrate; they don't constrain</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Explain the reasoning behind</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Generalizes to new cases</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">Why the why matters</h3>
+<p class="text-neutral-300 text-sm">The model is good at reasoning from principles. When you explain the reason (“because the import resolver depends on this”), it applies the rule correctly in situations you never anticipated. Uppercase MUSTs only signal anxiety — they don’t improve adherence and even encourage memorization instead of understanding.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🎯 Anti-pattern: vague description</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The third anti-pattern — and the deadliest one. The <strong class="text-teal-400">description is the trigger</strong>: the only skill level that’s always in context. If it’s vague, the skill never triggers (under-triggering) or triggers in the wrong context. A brilliant skill with a poor description is invisible.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">bad trigger vs. good trigger:</p>
+<pre class="text-neutral-300 leading-relaxed"># ✗ VAGA (nunca dispara ou dispara errado)
+description: Ajuda com código.
+
+# ✓ ESPECÍFICA (diz O QUE faz E QUANDO usar)
+description: Gera componentes React com a convenção do time
+  (PascalCase, hooks, props tipadas). Use quando o usuário
+  pedir um novo componente, refatorar JSX, ou criar UI em
+  React/Next. Acione também ao mencionar "componente",
+  "tela" ou "página" num projeto React.</pre>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Say WHAT it does</h4>
+<p class="text-neutral-300 text-sm">The concrete capability, not the field. "Generates React components using the team's convention" — not "helps with frontend."</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Say WHEN to use it</h4>
+<p class="text-neutral-300 text-sm">The explicit triggers: verbs and nouns that appear in the user’s request. “Use when asking for a new component, refactoring JSX...”</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Be a little pushy</h4>
+<p class="text-neutral-300 text-sm">The model tends to under-trigger. Include “also trigger when mentioning X” for borderline cases. It’s better to trigger too often than to disappear when it should show up.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> The 5-second test</h3>
+<p class="text-neutral-300 text-sm">Read only the description (not the body). Can you tell exactly which request should trigger it? If you hesitated, the model will too. The description is the only part that determines whether the skill exists in practice.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Worth it when there are ≥2 green flags</strong><span class="text-neutral-400"> — repeatable workflow, contextual knowledge, verifiable output, multi-step</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Not for one-offs, native capabilities, or one-step queries</strong><span class="text-neutral-400"> — test the baseline before creating</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Decision tree</strong><span class="text-neutral-400"> — always-on → CLAUDE.md; connection → MCP; isolation → subagent; on-demand knowledge → skill</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Anti-pattern 1: giant scope</strong><span class="text-neutral-400"> — split "everything-about-X" into atomic skills, one trigger each</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Anti-pattern 2: MUSTs and overfitting</strong><span class="text-neutral-400"> — explain the rationale and generalize beyond the examples</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Anti-pattern 3: vague description</strong><span class="text-neutral-400"> — say WHAT it does AND WHEN to use it; a bad trigger kills the skill</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Next Module:</h3>
+<p class="text-neutral-300">5.2 — 🚀 Publish, Version, and Measure — you decided it’s worthwhile and avoided the anti-patterns; now take the skill to the world: repo, git, skills.sh, trigger evals, and the lifecycle</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 5</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-2.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

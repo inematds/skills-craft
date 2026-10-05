@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4.1 — From Intent to First Draft | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-amber-400 bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a><span>/</span>
+<span class="text-amber-400">Module 4.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🌱 From intent to first draft</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Capture what the person wants, do enough research, and turn it into a well-written SKILL.md from the start — imperative, with the why, and without shouting MUSTs.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">45</div>
+<div class="text-xs text-neutral-400">Minutes</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Practical</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Creation</div>
+<div class="text-xs text-neutral-400">Type</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Capture the intent</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        skill-creator starts by understanding the intent before writing a single line. If the conversation already contains the workflow the person wants to capture (they say "turn this into a skill"), first extract it from earlier messages — the tools used, the sequence of steps, the corrections they made, and the input and output formats that appeared. Only then ask them to fill in the gaps, and <strong class="text-amber-400">confirm before proceeding</strong>.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">What does this skill enable Claude to do?</h4>
+<p class="text-neutral-300 text-sm">The core capability. Not "help with spreadsheets," but "calculate profit margin and add the column in an xlsx."</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">When should it trigger?</h4>
+<p class="text-neutral-300 text-sm">Which user phrases and contexts trigger the skill. This becomes the heart of the description.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">What’s the expected output format?</h4>
+<p class="text-neutral-300 text-sm">One file? A report with fixed sections? Code? Defining this early prevents rework.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Worth putting together test cases?</h4>
+<p class="text-neutral-300 text-sm">Skills with objectively verifiable output (transforming a file, extracting data, generating code) benefit from tests. Subjective output (style, art) usually doesn’t need them. Suggest the default and let the user decide.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Watch the jargon</h3>
+<p class="text-neutral-300 text-sm">skill-creator is used by people with very different levels of technical familiarity. Terms like "JSON" and "assertion" should appear without explanation only when there are clear signs the person knows them. When in doubt, define the term in a short sentence.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔎 Interview &amp; Research</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        With the intent captured, go deeper. Proactively ask about edge cases, input and output formats, example files, success criteria, and dependencies. <strong class="text-amber-400">Wait to write test prompts</strong> only after finishing this part — a poorly conducted interview creates a skill that covers the happy path and breaks everywhere else.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Shallow interview</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Assumes there’s only one input format</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignores what happens with empty or malformed input</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Never asks for real example files</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Doesn’t define what counts as "success"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Puts the research burden on the user</span></li>
+</ul>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Interview that sets the stage</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Maps all plausible in/out formats</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Explore edge cases before coding</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Collects concrete examples from the domain</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Establishes explicit success criteria</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Parallel research via subagents/MCPs</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Arrive with context ready</h3>
+<p class="text-neutral-300 text-sm">Check which MCPs are available. If any could help with the research — finding docs, similar skills, or best practices — research in parallel using subagents (when available) or inline. The goal is to reduce friction for the user: come with the homework done instead of asking everything from scratch.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📝 Write the SKILL.md</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Based on the interview, fill in the file components. SKILL.md is YAML frontmatter (with <strong class="text-amber-400">name</strong> e <strong class="text-amber-400">description</strong> required) followed by the Markdown body.
+      </p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4">The components</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>name:</strong> the skill identifier</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>description:</strong> what it does AND when to use it. It’s the primary trigger mechanism — every “when to use” belongs here, not in the body.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>compatibility:</strong> required tools/dependencies (optional, rarely needed)</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span><strong>the rest of the skill :)</strong> — the body with the instructions</span></li>
+</ul>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Description should be a little "pushy"</h3>
+<p class="text-neutral-300 text-sm mb-3">Today Claude tends to <strong>sub-trigger</strong> skills — not using them when they would be useful. To combat this, the description needs to list concrete use cases, even when the user doesn't explicitly ask.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Weak vs. pushy:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-red-400"># Fraca</span>
+description: How to build a simple fast dashboard to
+display internal Anthropic data.
+
+<span class="text-amber-400"># Pushy</span>
+description: How to build a simple fast dashboard to
+display internal Anthropic data. Make sure to use this
+skill whenever the user mentions dashboards, data
+visualization, internal metrics, or wants to display
+any kind of company data, even if they don't explicitly
+ask for a 'dashboard.'</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Anatomy reminder</h3>
+<p class="text-neutral-300 text-sm">Progressive disclosure in 3 levels: (1) name+description metadata always in context (~100 words); (2) SKILL.md body when triggered, ideally &lt;500 lines; (3) bundled resources loaded on demand. The description is the trigger.</p>
+</div>
+</section>
+<!-- SVG ilustrativo -->
+<svg aria-label="Intent-to-draft workflow: the interview informs the name, description, and body of SKILL.md" class="w-full h-auto my-6" role="img" viewbox="0 0 600 200">
+<defs><filter id="g41"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<g filter="url(#g41)">
+<rect fill="#f59e0b" fill-opacity="0.12" height="60" rx="12" stroke="#f59e0b" stroke-width="1.5" width="120" x="30" y="70"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="20"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="78"></rect>
+<rect fill="#38bdf8" fill-opacity="0.12" height="44" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="430" y="136"></rect>
+</g>
+<text fill="#f59e0b" font-family="Inter" font-size="13" text-anchor="middle" x="90" y="95">Interview</text>
+<text fill="#f59e0b" font-family="Inter" font-size="13" text-anchor="middle" x="90" y="113">+ research</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="47">name</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="105">description</text>
+<text fill="#38bdf8" font-family="Inter" font-size="13" text-anchor="middle" x="500" y="163">body</text>
+<g fill="none" filter="url(#g41)" opacity="0.85" stroke="#38bdf8" stroke-width="1.8">
+<path d="M150 90 Q300 60 430 42" marker-end="url(#ah41)"></path>
+<path d="M150 100 L430 100" marker-end="url(#ah41)"></path>
+<path d="M150 110 Q300 140 430 158" marker-end="url(#ah41)"></path>
+</g>
+<defs><marker id="ah41" markerheight="8" markerwidth="8" orient="auto" refx="5" refy="4"><path d="M0 0 L8 4 L0 8 z" fill="#38bdf8"></path></marker></defs>
+</svg>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">✍️ Writing style</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        How you write the skill body matters as much as what you write. Prefer the <strong class="text-amber-400">imperative</strong>, use theory of mind and explain the <strong class="text-amber-400">why</strong> each instruction instead of stacking MUSTs in all caps. Keep the skill general, not tied to specific examples.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Heavy-handed style</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"ALWAYS do X. NEVER do Y." in all caps</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Rigid rules with no reason</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Instructions tied to a single example</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Treat the model as a blind executor</span></li>
+</ul>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6">
+<h4 class="font-bold text-amber-400 mb-4">✓ Style that respects the model</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Clear imperative: "Start by understanding..."</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Explain why each step matters</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Generalizes to many cases</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400">✓</span><span>Uses theory of mind: bets on intelligence</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3">Why avoid shouting MUSTs</h3>
+<p class="text-neutral-300 text-sm">Today’s LLMs are smart: they have good theory of mind and, with a good harness, go beyond rote instructions. If you find yourself writing ALWAYS or NEVER in all caps, or using highly rigid structures, that’s a yellow flag—rephrase it by explaining the reason so the model understands why it matters. It’s more human, more powerful, and more effective.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">👀 Draft and reread with fresh eyes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Don’t get stuck trying to find the perfect draft. Write a first draft, then <strong class="text-amber-400">reread with fresh eyes</strong> and improve. The draft → review → improve cycle happens during the writing itself, even before any testing.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Write the draft</h4>
+<p class="text-neutral-300 text-sm">Get everything down on paper without editing. Speed first, polish later.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Reread from a distance</h4>
+<p class="text-neutral-300 text-sm">Read it as if you were someone else. What’s ambiguous? What makes the model waste time?</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Improve</h4>
+<p class="text-neutral-300 text-sm">Cut redundancy, rephrase what was too rigid, explain the reasoning behind what was vague.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">💡</span> Tip</h3>
+<p class="text-neutral-300 text-sm">skill-creator repeats this advice in several places: "write a draft, then look at it with fresh eyes to improve it." This applies to the entire SKILL.md and to every future review in the iteration loop.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">📦 When to bundle</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Not everything lives inside SKILL.md. Bundled resources (<code>scripts/</code>, <code>references/</code>, <code>assets/</code>) load on demand. The rule of thumb: if <strong class="text-amber-400">3 runs repeat the same script</strong>, extract into <code>scripts/</code>; large docs go in <code>references/</code>.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Anatomy of a skill:</p>
+<pre class="text-neutral-300 leading-relaxed">skill-name/
+├── SKILL.md            <span class="text-amber-400">(required)</span>
+│   ├── YAML frontmatter (name, description)
+│   └── Markdown instructions
+└── Bundled Resources   <span class="text-neutral-500">(optional)</span>
+    ├── scripts/    <span class="text-neutral-500"># código p/ tarefas repetitivas</span>
+    ├── references/ <span class="text-neutral-500"># docs carregadas sob demanda</span>
+    └── assets/     <span class="text-neutral-500"># templates, ícones, fontes</span></pre>
+</div>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4">Signs it’s time to bundle</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>3 independent invocations wrote the same thing <code>create_docx.py</code> → become <code>scripts/</code> and tell the skill to use it</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>The SKILL.md body is close to 500 lines → add a hierarchy layer with clear pointers</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Large reference doc (&gt;300 lines) → include an index/TOC</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>A skill supports multiple domains → organize by variant in <code>references/</code> (aws.md, gcp.md, azure.md)</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3"><span class="mr-2">🎯</span> Why bundle a repeated script</h3>
+<p class="text-neutral-300 text-sm">Write it once, put it in <code>scripts/</code> and pointing the skill to it saves every future invocation from reinventing the wheel. Scripts run without having to load all the content into context—they’re faster, more reliable, and reusable across iterations.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Capture the intent with 4 questions</strong><span class="text-neutral-400"> — what it enables, when it triggers, output format, whether it needs tests</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Interview and research before writing tests</strong><span class="text-neutral-400"> — edge cases, formats, examples, criteria, dependencies</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Write the SKILL.md with a pushy description</strong><span class="text-neutral-400"> — the trigger says what it does AND when to use it, combating under-triggering</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Imperative style that explains why</strong><span class="text-neutral-400"> — theory of mind instead of MUSTs shouting in all caps</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Draft and reread with fresh eyes</strong><span class="text-neutral-400"> — draft → review → improve, cutting redundancy and ambiguity</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Bundle when there's repetition</strong><span class="text-neutral-400"> — 3 runs with the same script → scripts/; large docs → references/</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Next:</h3>
+<p class="text-neutral-300">4.2 — 🔁 Test, Evaluate, and Iterate — write realistic test prompts, run with-skill vs. baseline, evaluate, and iterate until the skill works well beyond the examples.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 4</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-2.html">Next →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

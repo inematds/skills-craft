@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5.5 — Governance, Security, and Scale | Creating Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha5/modulo-5-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha5/modulo-5-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha5/modulo-5-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-5-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha5/modulo-5-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creating Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Overview</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Quality</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomy</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Create</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-teal-400 bg-teal-500/10 transition-colors" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Think</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Track 5</a><span>/</span>
+<span class="text-teal-400">Module 5.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MODULE 5.5 · END OF COURSE</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Advanced Tips: Governance, Security, and Scale</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You already know how to create and publish. Now for the professional level: internal (private) skills, the principle of no surprises, versioning strategy, team rollout, measuring adoption, and keeping dozens of skills alive without turning things into chaos.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">45</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Advanced</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Scale</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔒 Internal Skills (Private)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Not every skill belongs in the public catalog. Proprietary knowledge, internal conventions, and your team’s workflows live as <strong class="text-teal-400">internal skills</strong> — marked with <code>metadata.internal</code> and installed only with the flag <code>INSTALL_INTERNAL_SKILLS</code>. They're outside skills.sh and the public install count.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">mark a skill as internal:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: deploy-runbook-acme
+description: Runbook interno de deploy da Acme. Acione em deploy,
+  rollback ou incidente em produção.
+metadata:
+  internal: true
+---
+
+# só instala com a flag explícita:
+INSTALL_INTERNAL_SKILLS=1 npx skills add acme/skills-privadas</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-3">Good candidates for internal use</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Team deploy/incident runbooks</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Proprietary coding conventions</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Integrations with internal systems</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-white mb-3">Why separate it from the public</h4>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Prevents sensitive context from leaking into the catalog</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Doesn’t clutter skills.sh with noise that’s just for you</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">›</span><span>Install only with explicit opt-in, never by accident</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🛡️ No Surprises and Security</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        The golden rule: <strong class="text-teal-400">the skill never does what the description doesn’t promise</strong>. Because skills are installed via symlink and updated with one command, a malicious or careless repo can contaminate many people at once. The trust of the entire ecosystem depends on this.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Surprise / risk</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Script that exfiltrates data or sends hidden telemetry</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span><code>rm -rf</code> or <code>git push --force</code> hidden in one step</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Accesses secrets/credentials without the user asking</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Downloads and runs code from an external source at runtime</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Reliable</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Does exactly what the description says</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Destructive actions require explicit confirmation</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Least privilege: touches only what’s necessary</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Auditable scripts, with no obscure dependencies</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Audit it as someone installing it would</h3>
+<p class="text-neutral-300 text-sm">Before publishing, read your own <code>scripts/</code> through the eyes of a skeptical user. No malware, no exfiltration, no surprise side effects. One breach of trust burns the reputation of the entire repo—and spills over to skills.sh.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏷️ Versioning strategy</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        At scale, "push to main" without a strategy creates instability. Because the symlink propagates every change immediately, you need versioning discipline that separates what's safe from what's risky.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+<h4 class="font-semibold text-teal-400 mb-4">What each type of change requires</h4>
+<div class="space-y-3 text-sm">
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 font-mono text-xs flex-shrink-0">patch</span><p class="text-neutral-300">Text edits, body clarification. Low risk — can go straight through, with a quick eval.</p></div>
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 font-mono text-xs flex-shrink-0">minor</span><p class="text-neutral-300">New additive behavior. Still compatible—run full evals first.</p></div>
+<div class="flex items-start space-x-3"><span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-mono text-xs flex-shrink-0">major</span><p class="text-neutral-300">A change to the trigger or expected behavior. <strong class="text-white">Breaks for those who depended on it</strong> — communicate and document in the CHANGELOG.</p></div>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">tag a release and maintain a CHANGELOG:</p>
+<pre class="text-neutral-300 leading-relaxed">## [1.2.0] - 2026-06
+### Changed
+- description agora cobre o near-miss de "refatorar" (minor)
+### Fixed
+- corpo: removido MUST que causava overfit em projetos sem testes
+
+git tag v1.2.0 &amp;&amp; git push --tags</pre>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3">The trigger-change rule</h3>
+<p class="text-neutral-300 text-sm">Change the <code>description</code> is the most dangerous change there is: it changes <em>when</em> the skill triggers for everyone who installed it. Treat every description edit as a potential <code>major</code> until the evals prove otherwise.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">👥 Team rollout</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Sharing skills with a team is different from publishing them to the world. You want consistency (everyone using the same set), version control, and an adoption path that doesn't catch anyone by surprise.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">A curated team repo</h4>
+<p class="text-neutral-300 text-sm">Centralize approved skills in a single public or internal repo. It becomes the single source of truth — no one installs random skills directly in the shared project.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Pilot before the general rollout</h4>
+<p class="text-neutral-300 text-sm">Have a small group install and use it for a week, then report back. Adjust the trigger and body based on real feedback before rolling it out to everyone.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Communicate before each update</h4>
+<p class="text-neutral-300 text-sm">How <code>npx skills update</code> propagates everything; notify the team before trigger changes. A changelog in a shared channel prevents the question, "why did the skill start triggering on this?".</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Onboarding pro tip</h3>
+<p class="text-neutral-300 text-sm">Document the team's skill set in the curated repo's README, with a <code>npx skills add</code> line by line. Anyone joining can follow the list and be productive on day one, with the same agent behavior as everyone else.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📈 Measure adoption</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A skill at scale is a product—and products are measured. Two metrics matter: <strong class="text-teal-400">install count</strong> (how many adopted it) and <strong class="text-teal-400">triggering</strong> (whether it triggers in the right cases). One high and the other low tell very different stories.
+      </p>
+<svg aria-label="Adoption matrix crossing install count with triggering quality" class="w-full h-auto my-6" role="img" viewbox="0 0 640 220">
+<defs><filter id="g55a"><fegaussianblur result="b" stddeviation="2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<line filter="url(#g55a)" opacity="0.6" stroke="#38bdf8" stroke-width="1.5" x1="80" x2="600" y1="190" y2="190"></line>
+<line filter="url(#g55a)" opacity="0.6" stroke="#38bdf8" stroke-width="1.5" x1="80" x2="80" y1="20" y2="190"></line>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="340" y="212">triggering (gets the trigger right) →</text>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" transform="rotate(-90 30 105)" x="30" y="105">installs →</text>
+<g filter="url(#g55a)">
+<rect fill="#38bdf8" fill-opacity="0.10" height="70" rx="8" stroke="#38bdf8" stroke-width="1.5" width="220" x="100" y="40"></rect>
+<rect fill="#14b8a6" fill-opacity="0.16" height="70" rx="8" stroke="#14b8a6" stroke-width="2" width="220" x="350" y="40"></rect>
+<rect fill="#374151" fill-opacity="0.4" height="60" rx="8" stroke="#4b5563" stroke-width="1.5" width="220" x="100" y="120"></rect>
+<rect fill="#38bdf8" fill-opacity="0.10" height="60" rx="8" stroke="#38bdf8" stroke-width="1.5" width="220" x="350" y="120"></rect>
+</g>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="210" y="70">many installs,</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="210" y="88">bad trigger → frustration</text>
+<text fill="#5eead4" font-size="12" text-anchor="middle" x="460" y="70">★ ideal:</text>
+<text fill="#5eead4" font-size="12" text-anchor="middle" x="460" y="88">established and precise</text>
+<text fill="#9ca3af" font-size="12" text-anchor="middle" x="210" y="155">small niche (okay)</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="460" y="148">good skill,</text>
+<text fill="#7dd3fc" font-size="12" text-anchor="middle" x="460" y="166">discovery is lacking</text>
+</svg>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-white mb-2">Install count</h4>
+<p class="text-neutral-300 text-sm">Measures discovery and adoption. Low installs with good triggering = a naming/description or niche problem, not a quality problem. Don’t chase the leaderboard.</p>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-2">Triggering</h4>
+<p class="text-neutral-300 text-sm">Measures whether the skill appears at the right time. High installs + poor triggering is the worst case: lots of frustrated users. Measure with should-trigger / should-not-trigger / near-miss evals.</p>
+</div>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">♻️ Keep skills alive at scale</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        A skill is easy to maintain. Twenty skills become a portfolio—and a portfolio without maintenance goes stale. Pro tips for keeping dozens of skills useful without turning them into chaos:
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Portfolio that rots</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Duplicate skills with overlapping triggers</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No evals — breakages go unnoticed</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dead skills nobody uses, cluttering search</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Bodies that have grown to 800 lines over time</span></li>
+</ul>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6">
+<h4 class="font-bold text-teal-400 mb-4">✓ Living portfolio</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Each skill is atomic, with non-overlapping triggers</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Eval suite runs in CI on every push</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Periodic review: retire what doesn’t trigger</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">✓</span><span>Lean body; details go in references/</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
+<h4 class="font-semibold text-teal-400 mb-4">Final pro tips</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Evals in CI:</strong> run should-trigger / should-not-trigger automatically on every PR — catch trigger regressions early.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Audit for overlap:</strong> Two skills triggered by the same prompt compete and cause confusion. Merge them or differentiate their triggers.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Retire without mercy:</strong> a skill with a stalled install count and poor triggering just adds noise. Deprecate it in the CHANGELOG and remove it.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400">★</span><span><strong class="text-white">Keep it concise:</strong> with every release, ask what can be cut. A body under 500 lines isn’t a goal; it’s hygiene.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> The closing</h3>
+<p class="text-neutral-300 text-sm">You’ve completed all 5 tracks: ecosystem overview, quality and the best skills, anatomy, the creation loop, and the mental models for decisions, publishing, and scaling. Now it’s time to practice: choose a repeatable workflow, write, publish, measure, and iterate.</p>
+</div>
+</section>
+<!-- Resumo + fechamento do curso -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary · End of Course</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Internal skills</strong><span class="text-neutral-400"> — metadata.internal + INSTALL_INTERNAL_SKILLS keep proprietary knowledge out of the public catalog</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Predictability and security</strong><span class="text-neutral-400"> — no malware/exfiltration; least privilege; audit your resources like a suspicious user</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Versioning</strong><span class="text-neutral-400"> — patch/minor/major; a description change is potentially major because it changes the trigger for everyone</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Team rollout</strong><span class="text-neutral-400"> — curated repo, pilot before broader rollout, communicate before each update</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Measure adoption</strong><span class="text-neutral-400"> — install count (discovery) × triggering (precision); the worst case is lots of installs with a poor trigger</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Living skills at scale</strong><span class="text-neutral-400"> — evals in CI, audit overlap, retire the dead ones, keep it lean</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">You’ve completed the course! 🎉</h3>
+<p class="text-neutral-300">Five tracks, from the ecosystem overview to governance and scale. Now it's your turn: choose a repeatable workflow from your day-to-day, write your first skill, publish it, measure it, and iterate. Keep learning on the portal.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 5</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="https://inema.club" target="_blank">Explore more courses on INEMA.CLUB →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creating Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Data collected from skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

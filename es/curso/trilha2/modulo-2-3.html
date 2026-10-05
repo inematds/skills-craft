@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2.3 — Las mejores por señal de calidad | Crear Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-blue-400 bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 2</a><span>/</span>
+<span class="text-blue-400">Módulo 2.3</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⭐ Las mejores por señal de calidad</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Cada señal del módulo 2.1 tiene una skill que la representa a la perfección. Aquí ves los modelos que debes imitar —descripción impecable, alcance atómico, fuente sólida, descubrimiento claro— con las descripciones reales de skills.sh.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">6</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">42</div>
+<div class="text-xs text-neutral-400">Minutos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Inter.</div>
+<div class="text-xs text-neutral-400">Nivel</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Modelo</div>
+<div class="text-xs text-neutral-400">Tipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<svg aria-label="Cuatro señales de calidad y la skill modelo de cada una" class="w-full h-auto mb-12" role="img" viewbox="0 0 640 210">
+<defs>
+<filter id="g23"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="l23" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#3b82f6"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<circle cx="320" cy="105" fill="#3b82f6" fill-opacity="0.1" filter="url(#g23)" r="40" stroke="#38bdf8" stroke-width="2.5"></circle>
+<text fill="#38bdf8" font-family="Inter" font-size="13" font-weight="700" text-anchor="middle" x="320" y="101">SEÑALES</text>
+<text fill="#3b82f6" font-family="Inter" font-size="11" text-anchor="middle" x="320" y="118">de calidad</text>
+<g font-family="Inter" font-size="11">
+<path d="M280 90 L 150 45" fill="none" filter="url(#g23)" stroke="url(#l23)" stroke-width="2"></path>
+<rect fill="#3b82f6" fill-opacity="0.12" height="34" rx="6" stroke="#3b82f6" stroke-width="1.5" width="130" x="20" y="28"></rect>
+<text fill="#38bdf8" font-weight="700" text-anchor="middle" x="85" y="44">description</text>
+<text fill="#3b82f6" text-anchor="middle" x="85" y="57">frontend-design 488k</text>
+<path d="M360 90 L 490 45" fill="none" filter="url(#g23)" stroke="url(#l23)" stroke-width="2"></path>
+<rect fill="#3b82f6" fill-opacity="0.12" height="34" rx="6" stroke="#3b82f6" stroke-width="1.5" width="130" x="490" y="28"></rect>
+<text fill="#38bdf8" font-weight="700" text-anchor="middle" x="555" y="44">alcance atómico</text>
+<text fill="#3b82f6" text-anchor="middle" x="555" y="57">vercel-react 443k</text>
+<path d="M280 120 L 150 165" fill="none" filter="url(#g23)" stroke="url(#l23)" stroke-width="2"></path>
+<rect fill="#3b82f6" fill-opacity="0.12" height="34" rx="6" stroke="#3b82f6" stroke-width="1.5" width="130" x="20" y="148"></rect>
+<text fill="#38bdf8" font-weight="700" text-anchor="middle" x="85" y="164">fuente sólida</text>
+<text fill="#3b82f6" text-anchor="middle" x="85" y="177">azure ~358k</text>
+<path d="M360 120 L 490 165" fill="none" filter="url(#g23)" stroke="url(#l23)" stroke-width="2"></path>
+<rect fill="#3b82f6" fill-opacity="0.12" height="34" rx="6" stroke="#3b82f6" stroke-width="1.5" width="130" x="490" y="148"></rect>
+<text fill="#38bdf8" font-weight="700" text-anchor="middle" x="555" y="164">descubrimiento</text>
+<text fill="#3b82f6" text-anchor="middle" x="555" y="177">find-skills 1,8M</text>
+</g>
+</svg>
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">✍️ Description impecable — frontend-design</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La señal n.º 1. Una descripción de ejemplo dice <strong class="text-blue-400">qué hace la skill</strong>, <strong class="text-blue-400">cuándo usarla</strong> y enumera activadores concretos. <strong class="text-blue-400">frontend-design</strong> (488.299 instalaciones, anthropics/skills) es el caso de manual: enumera ejemplos de tareas y el efecto deseado, sin dejar que el agente tenga que adivinar.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">description real (frontend-design · anthropics/skills · 488k):</p>
+<pre class="text-neutral-300 leading-relaxed whitespace-pre-wrap">Create distinctive, production-grade frontend interfaces with
+high design quality. Use this skill when the user asks to build
+web components, pages, artifacts, posters, or applications
+(examples include websites, landing pages, dashboards, React
+components, HTML/CSS layouts, or when styling/beautifying any
+web UI). Generates creative, polished code and UI design that
+avoids generic AI aesthetics.</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Qué la hace ejemplar</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Empieza con el <strong>resultado</strong>: "interfaces frontend de calidad de producción".</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>"Usa esta skill cuando..." — el <strong>cuándo</strong> explícito.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Paréntesis con <strong>ejemplos</strong>: sitios web, dashboards, React, HTML/CSS.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Diferencial declarado: "evita la estética genérica de la IA".</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Lo que haría una débil</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Ayuda con frontend." — sin cuándo ni ejemplos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin palabras clave que el agente reconozca en la tarea.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin diferenciador: ¿por qué esta y no otra?</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-2">Variante «pushy»: supabase</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>supabase</strong> (99k) prácticamente fuerza la activación: <span class="font-mono text-blue-400">"Úsala para CUALQUIER tarea relacionada con Supabase. Triggers:..."</span> — declara explícitamente los activadores e impulsa al agente a activarse. Esto combate la falta de activación (Claude tiende a no activarla lo suficiente).</p>
+<p class="text-neutral-300 text-sm">Lección: la description no es un resumen cortés; es una instrucción de enrutamiento. Sé específico en el <em>cuándo</em> y enumera activadores.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🎯 Alcance atómico perfecto — vercel-react-best-practices</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una responsabilidad, muy bien resuelta. <strong class="text-blue-400">vercel-react-best-practices</strong> (443.261, vercel-labs/agent-skills) no intenta ser "todo sobre web": cubre solo buenas prácticas de React. Al ser atómica, se activa con precisión y se combina con web-design-guidelines y frontend-design sin superposición.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl overflow-hidden mb-6">
+<table class="w-full text-sm">
+<thead class="bg-dark-700/50 text-neutral-400">
+<tr><th class="text-left px-4 py-3 font-semibold">Skill atómica</th><th class="text-left px-4 py-3 font-semibold">Hace UNA cosa</th><th class="text-right px-4 py-3 font-semibold">Instalaciones</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="px-4 py-3 font-medium text-white">vercel-react-best-practices</td><td class="px-4 py-3 text-neutral-400">patrones de React</td><td class="px-4 py-3 text-right text-blue-400 font-mono">443k</td></tr>
+<tr><td class="px-4 py-3 font-medium text-white">test-driven-development</td><td class="px-4 py-3 text-neutral-400">prueba antes del código</td><td class="px-4 py-3 text-right text-blue-400 font-mono">107k</td></tr>
+<tr><td class="px-4 py-3 font-medium text-white">web-design-guidelines</td><td class="px-4 py-3 text-neutral-400">diseño y accesibilidad</td><td class="px-4 py-3 text-right text-blue-400 font-mono">358k</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">test-driven-development: alcance del proceso</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>test-driven-development</strong> (107k, obra/superpowers) es el ejemplo más puro de atomicidad: una sola regla — "escribe la prueba antes que el código". No habla de frameworks ni de lenguajes. Una responsabilidad, un disparador ("al implementar una funcionalidad o corregir un error").</p>
+<p class="text-neutral-300 text-sm">Por ser tan específica, ella <strong>nunca</strong> se activa de forma incorrecta y <strong>siempre</strong> se combina con la skill del stack que esté activa.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Prueba del alcance atómico</h3>
+<p class="text-neutral-300 text-sm">¿Puedes describir en una frase lo que hace la skill sin usar "y"/"también"? Si sí, es atómica. Si la frase tiene tres cláusulas, probablemente sean tres skills.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏛️ Fuente sólida y bien mantenida — suite microsoft/azure</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Quién publica y mantiene importa tanto como el contenido. La suite <strong class="text-blue-400">microsoft/azure-skills</strong> — foundry, ai, deploy, diagnostics, prepare, todas <strong class="text-blue-400">~358–360k instalaciones</strong> — es el retrato de una fuente sólida: proveedor oficial, conjunto coherente y mantenimiento continuo que acompaña a la propia plataforma.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Proveedor oficial</h4>
+<p class="text-neutral-300 text-sm">Microsoft escribe sobre Azure. Quien opera la plataforma conoce los edge cases que nadie documenta.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Suite coherente, no un monolito</h4>
+<p class="text-neutral-300 text-sm">Cinco skills atómicas que se complementan: señal de que la fuente entiende el diseño de skills, no solo el producto.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-1">Mantenimiento continuo</h4>
+<p class="text-neutral-300 text-sm">Como se instalan mediante symlink, <code class="bg-dark-700 px-1 rounded">npx skills update</code> obtiene las mejoras de la fuente. Un proveedor activo = una skill siempre actualizada.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3">Otras fuentes de modelos</h3>
+<p class="text-neutral-300 text-sm mb-2"><strong>vercel-labs</strong> sustenta find-skills (1,8M), vercel-react-best-practices (443k) y web-design-guidelines (358k) — todo un portafolio de skills de referencia.</p>
+<p class="text-neutral-300 text-sm"><strong>supabase</strong> e <strong>neondatabase</strong> escriben las prácticas de los propios bancos; <strong>stripe/ai</strong>, las de pago. Tener respaldo del proveedor es el máximo nivel de confianza.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Heurística de fuente</h3>
+<p class="text-neutral-300 text-sm">Pregunta: "¿esta skill trata sobre un producto y quien la escribió es dueño de ese producto?" Si la respuesta es sí, está respaldada por el vendor: la señal de fuente más sólida que existe.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔍 Descubrimiento claro — find-skills</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La skill más instalada de todo el catálogo: <strong class="text-blue-400">find-skills</strong>, <strong class="text-blue-400">1.802.925 instalaciones</strong> (vercel-labs/skills). Gana en una señal específica — <strong class="text-blue-400">descubrimiento</strong>: su propósito (encontrar y sugerir otras skills) es instantáneamente obvio, y por eso se convierte en la primera que todo el mundo instala.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">✓ Por qué se convierte en un modelo de descubrimiento</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Nombre autoexplicativo: <strong>find-skills</strong> lo dice todo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Propósito único: ayudar a encontrar la skill adecuada.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Puerta de entrada: se instala antes que cualquier otra.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Una fuente sólida (vercel-labs) refuerza la decisión de adoptarla.</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6">
+<h4 class="font-bold text-white mb-4">La escala de la señal</h4>
+<p class="text-neutral-300 text-sm mb-3">find-skills por sí sola (1,8M) supera a grupos enteros. Las <strong>top 100 skills = 43,7%</strong> de todas las instalaciones; solo <strong>0,3% (131 skills)</strong> superan los 100k. Un nombre y propósito claros son lo que lleva una skill a esa élite.</p>
+<p class="text-neutral-300 text-sm">Un descubrimiento claro no es solo marketing: se trata de que el agente pueda <em>encontrar y elegir</em> la skill en el momento adecuado.</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">descubrimiento claro = nombre + descripción que se explican por sí solos:</p>
+<pre class="text-neutral-300 leading-relaxed">find-skills          → "encontra a skill certa"      (óbvio)
+skill-creator        → "cria skills"                  (óbvio)
+xyz-helper-v2-final  → "???"                          (ninguém instala)</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">Si el nombre necesita explicación, el descubrimiento ya falló. find-skills, skill-creator, frontend-design: todos dicen lo que hacen sin abrir el SKILL.md.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🧩 Cuando una skill acierta con varias señales — skill-creator</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Los modelos anteriores destacan en <em>un</em> señal. Las referencias verdaderas aciertan <em>varios</em>. <strong class="text-blue-400">skill-creator</strong> (246k, anthropics) tiene una descripción clara + alcance enfocado (crear/evaluar skills) + fuente oficial de Anthropic + descubrimiento obvio por el nombre. Es la meta-skill que estudiarás en la Trilha 3.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl overflow-hidden mb-6">
+<table class="w-full text-sm">
+<thead class="bg-dark-700/50 text-neutral-400">
+<tr><th class="text-left px-4 py-3 font-semibold">Skill</th><th class="text-center px-4 py-3 font-semibold">Descr.</th><th class="text-center px-4 py-3 font-semibold">Alcance</th><th class="text-center px-4 py-3 font-semibold">Fuente</th><th class="text-center px-4 py-3 font-semibold">Descub.</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="px-4 py-3 font-medium text-white">skill-creator</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td></tr>
+<tr><td class="px-4 py-3 font-medium text-white">frontend-design</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td></tr>
+<tr><td class="px-4 py-3 font-medium text-white">find-skills</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td><td class="px-4 py-3 text-center text-blue-400">✓</td></tr>
+<tr><td class="px-4 py-3 font-medium text-white">"sql-helper" genérico</td><td class="px-4 py-3 text-center text-red-400">✗</td><td class="px-4 py-3 text-center text-red-400">✗</td><td class="px-4 py-3 text-center text-red-400">✗</td><td class="px-4 py-3 text-center text-red-400">✗</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-2">El efecto compuesto</h3>
+<p class="text-neutral-300 text-sm">Acertar las cuatro señales al mismo tiempo no suma: multiplica. Por eso estas tres están entre las más instaladas del catálogo: el agente las encuentra, las entiende, se activa correctamente y confía en la fuente. Las cuatro señales se refuerzan entre sí.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">📋 Tabla de líderes por señal</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El marco de referencia del módulo. Para cada señal de calidad, la skill que debes imitar, con instalaciones y fuente reales. Usa esta tabla como modelo al evaluar (o crear) una skill.
+      </p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl overflow-hidden mb-6">
+<table class="w-full text-sm">
+<thead class="bg-dark-700/50 text-neutral-400">
+<tr><th class="text-left px-4 py-3 font-semibold">Señal</th><th class="text-left px-4 py-3 font-semibold">Skill modelo</th><th class="text-left px-4 py-3 font-semibold">Fuente</th><th class="text-right px-4 py-3 font-semibold">Instalaciones</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Description</td><td class="px-4 py-3 font-medium text-white">frontend-design</td><td class="px-4 py-3 font-mono text-neutral-400">anthropics</td><td class="px-4 py-3 text-right text-blue-400 font-mono">488k</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Description "pushy"</td><td class="px-4 py-3 font-medium text-white">supabase</td><td class="px-4 py-3 font-mono text-neutral-400">supabase</td><td class="px-4 py-3 text-right text-blue-400 font-mono">99k</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Alcance atómico</td><td class="px-4 py-3 font-medium text-white">vercel-react-best-practices</td><td class="px-4 py-3 font-mono text-neutral-400">vercel-labs</td><td class="px-4 py-3 text-right text-blue-400 font-mono">443k</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Alcance del proceso</td><td class="px-4 py-3 font-medium text-white">test-driven-development</td><td class="px-4 py-3 font-mono text-neutral-400">obra/superpowers</td><td class="px-4 py-3 text-right text-blue-400 font-mono">107k</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Fuente sólida/mantenida</td><td class="px-4 py-3 font-medium text-white">azure-skills (suite)</td><td class="px-4 py-3 font-mono text-neutral-400">microsoft</td><td class="px-4 py-3 text-right text-blue-400 font-mono">~358k</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Descubrimiento claro</td><td class="px-4 py-3 font-medium text-white">find-skills</td><td class="px-4 py-3 font-mono text-neutral-400">vercel-labs</td><td class="px-4 py-3 text-right text-blue-400 font-mono">1,8M</td></tr>
+<tr><td class="px-4 py-3 text-blue-400 font-semibold">Lo acierta todo</td><td class="px-4 py-3 font-medium text-white">skill-creator</td><td class="px-4 py-3 font-mono text-neutral-400">anthropics</td><td class="px-4 py-3 text-right text-blue-400 font-mono">246k</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">💡</span> Cómo usar la tabla</h3>
+<p class="text-neutral-300 text-sm">Al evaluar una skill nueva, compárala con la ganadora de la señal más importante para ti. Al crear la tuya (módulo 2.4), copia el patrón de la ganadora; no lo inventes desde cero.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Description impecable</strong><span class="text-neutral-400"> — frontend-design (488k) dice qué + cuándo + ejemplos; supabase (99k) es «insistente» con «Triggers:».</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Alcance atómico</strong><span class="text-neutral-400"> — vercel-react-best-practices (443k) y test-driven-development (107k): una responsabilidad, se activa correctamente, se combina.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Fuente sólida y mantenida</strong><span class="text-neutral-400"> — la suite azure-skills (~358k) y vercel-labs: vendor oficial, suite coherente, actualización por symlink.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Descubrimiento claro</strong><span class="text-neutral-400"> — find-skills (1,8M): un nombre y propósito obvios se convierten en la puerta de entrada al ecosistema.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Las mejores aciertan en varias señales</strong><span class="text-neutral-400"> — skill-creator (246k) combina los cuatro; el efecto es multiplicativo, no aditivo.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">Módulo 2.4 — 🛠️ Cómo crear una skill que parece (y es) de alta calidad. Ahora que viste los modelos, vamos a imitarlos en la práctica: una description que se activa, un alcance atómico y la lista de verificación de pulido.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">Próximo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

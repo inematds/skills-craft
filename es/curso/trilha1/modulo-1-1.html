@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1.1 — Qué es una Agent Skill | Creando Skills</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,.12); }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,.12); }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,.12); }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(180,83,9,.12); }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,.12); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+  </style>
+<link href="https://inematds.github.io/skills-craft/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skills-craft/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skills-craft/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🛠️</span><span class="font-bold text-lg hidden sm:inline">Creando Skills</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Panorama</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Calidad</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Anatomía</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Crear</span></a>
+<a class="px-2 py-1.5 rounded-lg text-xs font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Pensar</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 Qué es una Agent Skill (y por qué se impuso el formato)</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Desde la definición de una skill —un archivo SKILL.md que el agente incorpora— hasta por qué este formato de texto sin formato se convirtió en el estándar de facto en más de 50 agentes, con 53,9M installs en total en skills.sh.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📄 Qué es una agent skill</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una agent skill es, en la práctica, un único archivo: <strong class="text-emerald-400">SKILL.md</strong>. Tiene dos partes: un <strong class="text-emerald-400">frontmatter YAML</strong> con los campos obligatorios <code class="bg-dark-700 px-1 rounded">name</code> e <code class="bg-dark-700 px-1 rounded">description</code>, y un <strong class="text-emerald-400">cuerpo en Markdown</strong> con la instrucción en sí. Cuando el contexto de la conversación coincide con la descripción, el agente lee ese archivo y <em>incorpora</em> la instrucción sobre el propio comportamiento, como si hubieras explicado la convención en ese momento.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto central</h3>
+<p class="text-neutral-300 mb-4">Una skill no es un plugin que ejecuta código. Es <strong>conocimiento empaquetado en texto</strong> que el agente empieza a «saber». El canónico aquí es el <code class="bg-dark-700 px-1 rounded">skill-creator</code> de Anthropic, que define la estructura SKILL.md como estándar.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Formato:</strong> Markdown con frontmatter YAML</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Obligatorios:</strong> name + description</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Activación:</strong> automática, según la relevancia del contexto</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Distribución:</strong> versionada vía git, instalable vía skills.sh</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">SKILL.md mínimo:</p>
+<pre class="text-neutral-300 leading-relaxed">---
+name: react-best-practices
+description: Aplica boas práticas React ao gerar ou revisar componentes. Use quando o usuário cria ou edita arquivos .jsx/.tsx.
+---
+
+# React Best Practices
+
+Ao gerar componentes React, sempre:
+- Use componentes funcionais com hooks
+- Prefira TypeScript com tipos explícitos
+- Siga nomenclatura PascalCase para componentes</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm">Piensa en una skill como la memoria persistente del agente. Sin ella, tienes que volver a explicar las convenciones en cada sesión. Con ella, el agente ya las conoce, y el conocimiento queda en un archivo que comparte todo el equipo.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🧠 Instrucción, no script</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El error más común de quienes vienen de la programación es tratar la skill como una función. Una skill <strong class="text-emerald-400">no ejecuta</strong> — se lee. No hay una «llamada»; se activa según el contexto. El agente compara la situación actual con la <code class="bg-dark-700 px-1 rounded">description</code> de cada skill instalada y, cuando es relevante, aplica la instrucción. Tú describes <em>qué</em> e <em>cuándo</em>, no los pasos mecánicos.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Pensar como un script</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Paso 1, paso 2, paso 3..." rígido</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Espera que la skill "se ejecute" y devuelva</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Description vaga ("ayuda con código")</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Asume un control de flujo determinista</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Pensar como una instrucción</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Describe el comportamiento y el porqué</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Confía en que el agente la aplique en el momento adecuado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>La Description dice QUÉ hace Y CUÁNDO usarla</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Deja espacio para el criterio del agente</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3">La description es el activador</h3>
+<p class="text-neutral-300 text-sm mb-3">Como la activación depende del contexto, la <code class="bg-dark-700 px-1 rounded">description</code> es literalmente lo que decide si la skill se activa. Debe decir <strong>qué hace</strong> e <strong>cuándo usar</strong>, y ser incluso un poco "pushy": los agentes tienden a activar las skills menos de lo debido.</p>
+<p class="text-neutral-300 text-sm">Por eso, el cuerpo de la skill debe explicar el <strong>por qué</strong> de las cosas, en vez de amontonar MUST en mayúsculas. Las instrucciones con una razón se siguen mejor que las órdenes secas.</p>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏆 Por qué se impuso el formato</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Había muchas maneras de enseñar comportamiento a un agente: archivos propietarios, configuraciones específicas, plugins binarios. Lo que se impuso fue lo más simple: <strong class="text-emerald-400">Markdown puro</strong>. Por tres razones que se refuerzan entre sí: portabilidad entre agentes, control de versiones vía git y un efecto de red medido en millones de instalaciones.
+      </p>
+<svg aria-label="Un único archivo SKILL.md de texto sin formato sirve a 50 o más agentes diferentes, frente al escenario anterior de un formato propietario por herramienta" class="w-full h-auto my-6" role="img" viewbox="0 0 600 220">
+<defs>
+<filter id="g11"><fegaussianblur result="b" stddeviation="2.5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="grad11" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#10b981"></stop><stop offset="100%" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<rect fill="#10b981" fill-opacity="0.14" filter="url(#g11)" height="44" rx="8" stroke="#10b981" stroke-width="1.5" width="140" x="230" y="90"></rect>
+<text fill="#10b981" font-family="monospace" font-size="13" text-anchor="middle" x="300" y="110">SKILL.md</text>
+<text fill="#38bdf8" font-family="monospace" font-size="9" text-anchor="middle" x="300" y="125">texto sin formato</text>
+<g filter="url(#g11)" stroke="url(#grad11)" stroke-width="1.6">
+<line x1="230" x2="120" y1="100" y2="40"></line>
+<line x1="230" x2="110" y1="112" y2="112"></line>
+<line x1="230" x2="120" y1="124" y2="184"></line>
+<line x1="370" x2="480" y1="100" y2="40"></line>
+<line x1="370" x2="490" y1="112" y2="112"></line>
+<line x1="370" x2="480" y1="124" y2="184"></line>
+</g>
+<g font-family="sans-serif" font-size="10">
+<rect fill="#38bdf8" fill-opacity="0.12" height="26" rx="6" stroke="#38bdf8" stroke-width="1" width="100" x="20" y="26"></rect><text fill="#38bdf8" text-anchor="middle" x="70" y="43">Claude Code</text>
+<rect fill="#38bdf8" fill-opacity="0.12" height="26" rx="6" stroke="#38bdf8" stroke-width="1" width="100" x="10" y="99"></rect><text fill="#38bdf8" text-anchor="middle" x="60" y="116">Cursor</text>
+<rect fill="#38bdf8" fill-opacity="0.12" height="26" rx="6" stroke="#38bdf8" stroke-width="1" width="100" x="20" y="170"></rect><text fill="#38bdf8" text-anchor="middle" x="70" y="187">Copilot</text>
+<rect fill="#10b981" fill-opacity="0.12" height="26" rx="6" stroke="#10b981" stroke-width="1" width="100" x="480" y="26"></rect><text fill="#10b981" text-anchor="middle" x="530" y="43">Codex</text>
+<rect fill="#10b981" fill-opacity="0.12" height="26" rx="6" stroke="#10b981" stroke-width="1" width="100" x="490" y="99"></rect><text fill="#10b981" text-anchor="middle" x="540" y="116">Windsurf</text>
+<rect fill="#10b981" fill-opacity="0.12" height="26" rx="6" stroke="#10b981" stroke-width="1" width="100" x="480" y="170"></rect><text fill="#10b981" text-anchor="middle" x="530" y="187">+50 agentes</text>
+</g>
+</svg>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Portable entre más de 50 agentes</h4>
+<p class="text-neutral-300 text-sm">Markdown es el mínimo común denominador. Una skill escrita una vez funciona en Claude Code, Cursor, Copilot, Codex y decenas de herramientas más. Tu inversión no queda atada a una herramienta.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Se puede versionar mediante git</h4>
+<p class="text-neutral-300 text-sm">Por ser texto, la skill se integra al flujo de trabajo que los equipos ya dominan: PRs, diffs, revisión, historial. ¿Cambió la convención? Es un commit. Nada de formatos binarios opacos.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">53,9M de installs en total</h4>
+<p class="text-neutral-300 text-sm">El efecto de red ya ocurrió: skills.sh suma <strong>53,9 millones de instalaciones</strong>. Cuando todos publican en el mismo formato, el formato se convierte en el estándar de facto y se refuerza a sí mismo.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Por qué esto te importa</h3>
+<p class="text-neutral-300 text-sm">Escribir una skill es una de las pocas cosas en IA con bajo riesgo de "vendor lock-in". El artefacto es un .md. Si la herramienta cambia mañana, tu skill sigue siendo válida.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔀 Skill vs prompt vs CLAUDE.md vs MCP vs subagente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Una skill no reemplaza las otras capas: convive con ellas. El error es convertir todo en una skill o no convertir nada. Cada mecanismo resuelve un problema distinto. La tabla mental de abajo te ayuda a elegir.
+      </p>
+<div class="space-y-4 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-emerald-400 mb-1">💬 Prompt</h4>
+<p class="text-neutral-300 text-sm">Efímero, solo sirve para ese mensaje. Úsalo para algo puntual que no vas a repetir. No escala ni se versiona.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-emerald-400 mb-1">📌 CLAUDE.md (reglas del proyecto)</h4>
+<p class="text-neutral-300 text-sm">Contexto <strong>siempre activa</strong> de ese repositorio. Úsalo para reglas que se aplican en todas las sesiones del proyecto. Consume tokens todo el tiempo; por eso, incluye solo lo esencial.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-emerald-400 mb-1">🔌 MCP</h4>
+<p class="text-neutral-300 text-sm">Le da al agente <strong>herramientas y datos</strong> (llamar a una API, leer una base de datos). Es capacidad, no conocimiento. La skill indica cómo actuar; MCP proporciona qué usar.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-emerald-400 mb-1">🤖 Subagente</h4>
+<p class="text-neutral-300 text-sm">Uno <strong>ejecutor aislado</strong> con su propio contexto, para delegar una tarea pesada sin saturar la conversación principal. Es arquitectura de ejecución, no una instrucción reutilizable.</p>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 border border-emerald-500/30 rounded-xl p-5">
+<h4 class="font-semibold text-emerald-400 mb-1">🧩 Skill</h4>
+<p class="text-neutral-300 text-sm"><strong>Conocimiento reutilizable que se activa según el contexto.</strong> Úsala cuando haya un comportamiento que se repita en muchas situaciones y convenga cargarlo solo cuando sea relevante, sin ocupar contexto todo el tiempo (a diferencia de CLAUDE.md).</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Regla práctica para elegir:</p>
+<pre class="text-neutral-300 leading-relaxed">é só desta vez?            -&gt; prompt
+vale sempre, neste repo?    -&gt; CLAUDE.md
+preciso de uma ferramenta?  -&gt; MCP
+quero delegar execução?     -&gt; subagente
+conhecimento que se repete? -&gt; skill</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Atención al costo de contexto</h3>
+<p class="text-neutral-300 text-sm">La gran ventaja de la skill sobre el CLAUDE.md es el <strong>carga bajo demanda</strong>: solo name+description permanece siempre en el contexto; el cuerpo entra únicamente cuando se activa la skill. El conocimiento extenso que no siempre se necesita debería convertirse en una skill, no en una regla del proyecto.</p>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📦 skills.sh como registry — el "npm de skills"</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Si la skill es el «paquete», el <strong class="text-emerald-400">skills.sh</strong> es el registry — el npm de este mundo. Cataloga skills por repositorio y muestra la <strong class="text-emerald-400">recuento de instalaciones</strong> (la mejor señal pública de calidad y confianza) y se instala con un comando.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6">
+<h4 class="font-bold text-blue-400 mb-4">📦 npm (Node.js)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span><code>npm install react</code> — instala un paquete</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>descargas/semana — señal de adopción</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>registro central (npmjs.com)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>package.json — registro local</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6">
+<h4 class="font-bold text-emerald-400 mb-4">🧩 skills.sh (agentes)</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">→</span><span><code>npx skills add owner/repo</code> — instala una skill</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">→</span><span>install count — señal de adopción</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">→</span><span>catálogo central (skills.sh)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">→</span><span>repos en GitHub — fuente versionada</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Flujo de uso del catálogo:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-neutral-500"># 1. descobrir no leaderboard / buscar</span>
+npx skills find react
+<span class="text-neutral-500"># 2. instalar pelo caminho owner/repo</span>
+npx skills add vercel-labs/skills
+<span class="text-neutral-500"># 3. listar o que está instalado</span>
+npx skills list</pre>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3">El número de instalaciones es tu indicador de calidad</h3>
+<p class="text-neutral-300 text-sm mb-3">Como en cualquier registry abierto, junto a las skills excelentes hay muchas de baja calidad. La cantidad de instalaciones es el filtro más sencillo: la skill más instalada del catálogo, <strong>find-skills</strong> (vercel-labs/skills), tiene <strong>1.802.925 instalaciones</strong>. <strong>frontend-design</strong> (anthropics/skills) tiene 488.299.</p>
+<p class="text-neutral-300 text-sm">No es una prueba de calidad, pero sí un fuerte indicador de que mucha gente confió en ella y la siguió usando.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">👥 Quién publica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El ecosistema no es un jardín amurallado de una sola empresa. Publican grandes empresas y miles de personas de la comunidad: en total <strong class="text-emerald-400">5.075 repos fuente</strong> alimentan el catálogo. Esto es lo que le da fuerza al formato: nadie es su dueño.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-white mb-2">🟢 vercel-labs</h4>
+<p class="text-neutral-300 text-sm">Creadora de skills con más instalaciones como <strong>find-skills</strong> (1,8M), <strong>vercel-react-best-practices</strong> (443k) e <strong>web-design-guidelines</strong> (358k). Enfoque en web/frontend y herramientas para agentes.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-white mb-2">🟢 anthropics</h4>
+<p class="text-neutral-300 text-sm">Publica el <strong>skill-creator</strong> (246k) — el canónico sobre cómo escribir skills — y <strong>frontend-design</strong> (488k). Es la referencia de estructura del formato.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-white mb-2">🟢 microsoft</h4>
+<p class="text-neutral-300 text-sm">Con azure-skills, domina DevOps/Cloud: <strong>microsoft-foundry</strong> (360k), <strong>azure-ai</strong> (358k) y la familia azure-deploy/diagnostics/prepare.</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5">
+<h4 class="font-semibold text-white mb-2">🟢 comunidad</h4>
+<p class="text-neutral-300 text-sm">La mayoría de los repos. Ejemplos: <strong>obra/superpowers</strong> (test-driven-development, 107k), <strong>larksuite/cli</strong> (lark-slides, 139k), supabase, stripe, coreyhaines31.</p>
+</div>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm">
+<p class="text-neutral-500 mb-3">Anatomía de una ruta de skill en el catálogo:</p>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-emerald-400">vercel-labs</span>/<span class="text-neutral-100">skills</span>          <span class="text-neutral-500"># repo fonte (owner/repo)</span>
+   └── <span class="text-emerald-400">find-skills</span>          <span class="text-neutral-500"># a skill (1.802.925 installs)</span>
+       └── SKILL.md         <span class="text-neutral-500"># o arquivo de instrução</span></pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Qué te dice esto</h3>
+<p class="text-neutral-300 text-sm">Los grandes nombres dominan los temas más populares (web, cloud, agentes). Queda muchísimo espacio en los nichos que no cubren, y es justo donde tu skill de la comunidad puede liderar. El mapa completo es el tema del Módulo 1.2.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Skill = archivo SKILL.md</strong><span class="text-neutral-400"> — frontmatter YAML (name + description) + cuerpo Markdown que el agente incorpora</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Instrucciones, no scripts</strong><span class="text-neutral-400"> — se activa según el contexto mediante description; no ejecuta código</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">El formato se impuso por ser texto sin formato</strong><span class="text-neutral-400"> — portátil en más de 50 agentes, versionable con git, 53,9M instalaciones en total</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Cada capa tiene su lugar</strong><span class="text-neutral-400"> — prompt, CLAUDE.md, MCP, subagente y skill resuelven problemas distintos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">skills.sh es el npm de skills</strong><span class="text-neutral-400"> — catálogo + cantidad de instalaciones + npx skills add owner/repo</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Publican todos</strong><span class="text-neutral-400"> — vercel-labs, anthropics, microsoft y miles de contribuidores de la comunidad (5.075 repos)</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo:</h3>
+<p class="text-neutral-300">1.2 — 🗺️ El mapa de skills.sh: 39k skills, la ley de potencia y los 16 grupos. Dónde están las oportunidades y por qué casi nadie instala la mayoría de las skills.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-12">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Creando Agent Skills · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club">INEMA.CLUB</a> · 2026 · Datos recopilados de skills.sh</p>
+</div>
+</footer>
+<script>
+    const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),html=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){d.classList.remove('hidden');html.classList.remove('dark');}else{l.classList.remove('hidden');}
+    themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});
+  </script>
+</body></html>

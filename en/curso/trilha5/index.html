@@ -99,9 +99,9 @@
 <text fill="#9ca3af" font-size="13" text-anchor="middle" x="560" y="145">Measure</text>
 </svg>
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">5</div><div class="text-xs text-neutral-400">Modules</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">30</div><div class="text-xs text-neutral-400">Topics</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">~3h30</div><div class="text-xs text-neutral-400">Duration</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Modules</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">38</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">~4h15</div><div class="text-xs text-neutral-400">Duration</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Advanced</div><div class="text-xs text-neutral-400">Level</div></div>
 </div>
 </div>
@@ -456,7 +456,7 @@
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.5</span><span class="text-xs text-neutral-500">~45 min</span></div>
 <h3 class="text-2xl font-bold mb-2">🚀 Advanced Tips: Governance, Security, and Scale</h3>
-<p class="text-neutral-400 text-sm">The professional level: internal skills, the principle of no surprises, versioning strategy, team rollout, measuring adoption, and maintaining dozens of live skills. This closes the course.</p>
+<p class="text-neutral-400 text-sm">The professional level: internal skills, the principle of least surprise, versioning strategy, team rollout, measuring adoption, and keeping dozens of skills alive.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
@@ -537,6 +537,116 @@
 <a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-5.html">View Full</a>
 </div>
 </div>
+<!-- MÓDULO 5.6 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold">5.6</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<h3 class="text-2xl font-bold mb-2">📏 2026 rules: the skill for 5.5 models</h3>
+<p class="text-neutral-400 text-sm">What was missing: degrees of freedom, third-person descriptions and their limits, hooks inside the skill, the 5,000-token cutoff, not asking for reasoning, a checklist with a return path, and the 10-rule checklist with the validator. Wraps up the course.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🧭</span>
+<div><span class="font-medium">What changed (and what didn’t)</span><span class="text-neutral-500 text-sm ml-2">- stable rules, new models</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The basic rules in Anthropic's skills guide have been stable for about a year; what's changed are the 5.5 models, which follow instructions more closely.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">According to the prompting guide cited by skill-creator-plus, older skills are often too prescriptive for 5.5 models—a hypothesis to test with your skill.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">stable rules · 5.5 models · too prescriptive · test</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎚️</span>
+<div><span class="font-medium">Degrees of freedom</span><span class="text-neutral-500 text-sm ml-2">- high · medium · low</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">How much you specify each step depends on how fragile it is: free-form text, a model with variation, or an exact script.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Lock everything down and the skill becomes rigid; leave everything open and the risky step is left to chance. The test: “What if the agent does this another way?”</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">high · medium · low · narrow bridge × open field</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">✍️</span>
+<div><span class="font-medium">Third-person description</span><span class="text-neutral-500 text-sm ml-2">- 1,024 and 1,536 characters</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The description goes into the system prompt: third person, what it does, and “Use when…,” up to 1,024 characters.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Claude Code truncates description + when_to_use at 1,536 characters in the listing; anything beyond that isn’t read by the agent.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">third person · Use when · 1.024 · 1.536 · when_to_use</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🪝</span>
+<div><span class="font-medium">Hooks in the skill frontmatter</span><span class="text-neutral-500 text-sm ml-2">- active for the rest of the session</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A skill can declare hooks in its own frontmatter; they log when it's called.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">A rule that must not be broken needs to apply every time, and a hook is always followed, through the end of the session.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">hooks: · PreToolUse · once: true · hard rule</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🗜️</span>
+<div><span class="font-medium">Compaction and 5,000 tokens</span><span class="text-neutral-500 text-sm ml-2">- what’s at the top is what sticks</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">After compaction, Claude Code reattaches only the first 5,000 tokens of each skill.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">An important rule at the end of a long SKILL.md gets lost in a long session.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">order = importance · 5,000 tokens · permanent instructions</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🚫</span>
+<div><span class="font-medium">Don’t ask for reasoning</span><span class="text-neutral-500 text-sm ml-2">- ask for the result</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Asking it to write out its reasoning may be refused by 5.5 models (reasoning_extraction).</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The skill stops halfway; asking for the answer, a short explanation, or a summary of the actions fixes it.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">reasoning_extraction · result · summary of actions · give the reason</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">☑️</span>
+<div><span class="font-medium">Checklist copied</span><span class="text-neutral-500 text-sm ml-2">- "go back to step X"</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">A list the agent copies into its response and checks off, with “done when…” for each step.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Prevents skipped steps and declaring success too early; the fallback line says what to do when the check fails.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">checklist · done when · return to step X · verification loop</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">8</span>
+<span class="text-lg">🔎</span>
+<div><span class="font-medium">Audit with the validator</span><span class="text-neutral-500 text-sm ml-2">- audit-skills</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">auditar-skills (a mirror of skill-creator-plus, MIT) includes a Python validator that checks all your skills in one second.</p></div>
+<div><span class="text-teal-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">On a real machine: 123 skills, 358 errors, only 15 clean. Measure before rewriting.</p></div>
+<div><span class="text-teal-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">validate_skill.py --all · ST5 · ST4 · DS3 · five at a time</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-6')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-6.html">View Full</a>
+</div>
+</div>
 <!-- MAPA DA TRILHA -->
 <h2 class="text-2xl font-bold mb-6 mt-12">Learning path overview</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -563,7 +673,12 @@
 <a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-teal-400 transition-colors" href="modulo-5-5.html">
 <div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.5</span><span class="text-xs text-neutral-500">~45 min</span></div>
 <div class="font-semibold mb-1">🚀 Governance, Security, and Scale</div>
-<p class="text-neutral-400 text-sm">Internal skills, no surprises, and a living portfolio. The course wrap-up.</p>
+<p class="text-neutral-400 text-sm">Internal skills, least surprise, and a living portfolio.</p>
+</a>
+<a class="block bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-teal-400 transition-colors" href="modulo-5-6.html">
+<div class="flex items-center justify-between mb-2"><span class="text-teal-400 font-bold text-sm">5.6</span><span class="text-xs text-neutral-500">~45 min</span></div>
+<div class="font-semibold mb-1">📏 2026 rules</div>
+<p class="text-neutral-400 text-sm">What 5.5 models require from a skill, in a 10-rule checklist. The course wrap-up.</p>
 </a>
 </div>
 <!-- CTA portal -->
@@ -624,6 +739,15 @@
 <button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
 <iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-5.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-6" onclick="if(event.target===this)closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.6</span><span class="font-semibold">2026 Rules</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-6.html"></iframe>
 </div>
 </div>
 <footer class="border-t border-dark-600 py-8 mt-12">
